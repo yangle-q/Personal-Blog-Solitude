@@ -1738,7 +1738,7 @@ OK，就啰嗦这么多，开始发车！
 CloudFlare官网：https://www.cloudflare.com/zh-cn/
 注册好以后就会直接跳转到账号的控制面板。
 
-准备 V2ray如果知道怎么用 GitHub 的当然是到 GitHub 里面下载最好啦~下面是 V2rayN（电脑版）和 V2rayNG（手机版）的GitHub 仓库，记得点个 star 哦！
+准备 V2ray如果知道怎么用 GitHub 的当然是到 GitHub 里面下载最好啦~下面是 V2rayN（Windows版）和 V2rayNG（Android版）的GitHub 仓库，记得点个 star 哦！
 
   
   
@@ -1753,11 +1753,11 @@ CloudFlare官网：https://www.cloudflare.com/zh-cn/
     fetch('https://api.github.com/repos/2dust/v2rayN')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-isy600lq9').innerText = data.name;
-        document.querySelector('.desc-isy600lq9').innerText = data.description;
-        document.querySelector('.star-isy600lq9').innerText = data.stargazers_count;
-        document.querySelector('.fork-isy600lq9').innerText = data.forks_count;
-        document.querySelector('.lang-isy600lq9').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-t8rlko7bc').innerText = data.name;
+        document.querySelector('.desc-t8rlko7bc').innerText = data.description;
+        document.querySelector('.star-t8rlko7bc').innerText = data.stargazers_count;
+        document.querySelector('.fork-t8rlko7bc').innerText = data.forks_count;
+        document.querySelector('.lang-t8rlko7bc').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   
   
@@ -1775,11 +1775,11 @@ CloudFlare官网：https://www.cloudflare.com/zh-cn/
     fetch('https://api.github.com/repos/2dust/v2rayNG')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-i5s301ewr').innerText = data.name;
-        document.querySelector('.desc-i5s301ewr').innerText = data.description;
-        document.querySelector('.star-i5s301ewr').innerText = data.stargazers_count;
-        document.querySelector('.fork-i5s301ewr').innerText = data.forks_count;
-        document.querySelector('.lang-i5s301ewr').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-j9iwj1adt').innerText = data.name;
+        document.querySelector('.desc-j9iwj1adt').innerText = data.description;
+        document.querySelector('.star-j9iwj1adt').innerText = data.stargazers_count;
+        document.querySelector('.fork-j9iwj1adt').innerText = data.forks_count;
+        document.querySelector('.lang-j9iwj1adt').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   
   
@@ -1802,20 +1802,7 @@ Android 版
 
 我们点“编辑代码”。进入下面这个页面
 
-这里有两种代码，一种是明文版的，一种是加密版的，我推荐如果你人是在中国大陆的话，尽量使用加密版的，如果不成功再换到明文版。
-
-    引用站外链接
-    
-        
-          
-        
-        
-            加密版
-            github.com
-        
-        
-    
-
+这里有两种代码，一种是明文版的，一种是加密版的，我推荐如果你人是在中国大陆的话，尽量使用加密版的，如果不成功再换到明文版。（加密版已于2025.6.11失效）
 
     引用站外链接
     
@@ -1837,9 +1824,12 @@ Android 版
 
 然后点击“部署”。等到提示“新版本已保存”后，点左上角的返回键（不是浏览器的，是 CloudFlare 图标下面的那个），返回到项目页面。
 
-绑定域名然后我们再点击上面的设置，进入设置页面。
+然后我们再点击上面的设置，进入设置页面。
 
-这里我们就可以看到这个 Worker 默认绑定的域名了，但是呢这个域名现在被中国墙了，需要 Vpn 才能进（有点讽刺），所以我们要绑定一下我们自己的域名。
+我们可以看到下面有一个“变量与机密”，点击“添加”。
+这里我们在“类型”里面选择“文本”，“变量名称”输入“PASSWORD”（一定要大写），值就输入你自己自定义的密码，点击“部署”。
+
+绑定域名然后我们再看上面“域和路由”这一栏，这里我们就可以看到这个 Worker 默认绑定的域名了，但是呢这个域名现在被中国墙了，需要 Vpn 才能进（有点讽刺），所以我们要绑定一下我们自己的域名。
 这个域名如果大家自己有的话当然最好，如果没有的话可以看看我这篇文章，免费获取一个二级的域名。
 
     站内链接
@@ -1854,7 +1844,20 @@ Android 版
         
     
 
-]]></content>
+我们点击“添加”
+
+选择“自定义域”,在这里输入你希望绑定的域名，我就用我那篇文章里面注册的域名了。
+
+点击“添加域”，CloudFlare 会自动帮你添加一个 CNAME 记录。
+注意：输入的域名一定要绑定在 CloudFlare 你的账号下面，否则就不能绑定。
+现在就等 DNS 生效就行了，一般来说几分钟就能好，最多不会超过48小时。DNS 生效就可以访问这个域名啦！
+导入V2rayN&#x2F;NG现在我们在浏览器里面访问刚才绑定的那个域名，然后在域名的后面加一个斜杠/，再加上你的密码，就可以进入到订阅地址页面了。
+
+然后我们要把上面的“自适应订阅地址”输入到 V2rayN&#x2F;NG 里面。
+Windows 版Mac 版Android 版打开前面下载下来的 v2rayN 压缩包，运行里面的 v2rayN.exe 文件。
+
+由于博主家里面没有 Mac 电脑，下载下来的 v2rayX 压缩包我也没看懂，所以只能麻烦大家自己摸索啦~（面壁思过中
+不过我觉得应该和 Windows 版是差不多的叭😃]]></content>
   </entry>
   <entry>
     <title></title>
