@@ -1366,7 +1366,7 @@ OK，那现在我们就返回到首页，在搜索框下面有一个按钮写着
 
 
 等到服务器生效了你就成功拥有一个免费域名啦！
-后续这个域名的有效期是365天，过期之后如果你没有续的话这个域名就失效了，你可以在失效前180天之内登入网站续订一年，一定要记住哦！
+后续维护这个域名的有效期是365天，过期之后如果你没有续的话这个域名就失效了，你可以在失效前180天之内登入网站续订一年，一定要记住哦！
 大功告成！开瓶香槟庆祝一下吧！
 ]]></content>
       <categories>
@@ -1503,11 +1503,11 @@ OK，那现在我们就返回到首页，在搜索框下面有一个按钮写着
     fetch('https://api.github.com/repos/Yangle-q/Personal-Blog-Solitude')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-tkx96fljg').innerText = data.name;
-        document.querySelector('.desc-tkx96fljg').innerText = data.description;
-        document.querySelector('.star-tkx96fljg').innerText = data.stargazers_count;
-        document.querySelector('.fork-tkx96fljg').innerText = data.forks_count;
-        document.querySelector('.lang-tkx96fljg').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-6ensr3fda').innerText = data.name;
+        document.querySelector('.desc-6ensr3fda').innerText = data.description;
+        document.querySelector('.star-6ensr3fda').innerText = data.stargazers_count;
+        document.querySelector('.fork-6ensr3fda').innerText = data.forks_count;
+        document.querySelector('.lang-6ensr3fda').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   
   
@@ -1540,7 +1540,8 @@ OK，那现在我们就返回到首页，在搜索框下面有一个按钮写着
     
 
 
-建站大事记No.2 Article UpdateArticle No.2Updated on 2025.6.9更新文章“我们为什么还在做个人博客？”优化了阅读体验
+建站大事记No.9 Article PublishArticle No.9Published on 2025.6.10发表文章“如何注册免费域名并托管到CloudFlare”
+No.2 Article UpdateArticle No.2Updated on 2025.6.9更新文章“我们为什么还在做个人博客？”优化了阅读体验
 DomainDomainBought on 2025.6.7购买域名“lemonstar.me，hellofrom.cn”
 No.8 Article PublishArticle No.8Published on 2025.6.7发表文章“利用 Zoho WorkDrive 生成下载链接”
 No.7 Article UpdateArticle No.7Updated on 2025.6.8更新文章“Markdown 格式详解与 Solitude 主题 Front Matter 使用说明”新加了“下载源码”一段
@@ -1753,11 +1754,11 @@ CloudFlare官网：https://www.cloudflare.com/zh-cn/
     fetch('https://api.github.com/repos/2dust/v2rayN')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-t8rlko7bc').innerText = data.name;
-        document.querySelector('.desc-t8rlko7bc').innerText = data.description;
-        document.querySelector('.star-t8rlko7bc').innerText = data.stargazers_count;
-        document.querySelector('.fork-t8rlko7bc').innerText = data.forks_count;
-        document.querySelector('.lang-t8rlko7bc').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-3rv38b5qy').innerText = data.name;
+        document.querySelector('.desc-3rv38b5qy').innerText = data.description;
+        document.querySelector('.star-3rv38b5qy').innerText = data.stargazers_count;
+        document.querySelector('.fork-3rv38b5qy').innerText = data.forks_count;
+        document.querySelector('.lang-3rv38b5qy').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   
   
@@ -1775,11 +1776,11 @@ CloudFlare官网：https://www.cloudflare.com/zh-cn/
     fetch('https://api.github.com/repos/2dust/v2rayNG')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-j9iwj1adt').innerText = data.name;
-        document.querySelector('.desc-j9iwj1adt').innerText = data.description;
-        document.querySelector('.star-j9iwj1adt').innerText = data.stargazers_count;
-        document.querySelector('.fork-j9iwj1adt').innerText = data.forks_count;
-        document.querySelector('.lang-j9iwj1adt').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-c5r1abyyl').innerText = data.name;
+        document.querySelector('.desc-c5r1abyyl').innerText = data.description;
+        document.querySelector('.star-c5r1abyyl').innerText = data.stargazers_count;
+        document.querySelector('.fork-c5r1abyyl').innerText = data.forks_count;
+        document.querySelector('.lang-c5r1abyyl').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   
   
