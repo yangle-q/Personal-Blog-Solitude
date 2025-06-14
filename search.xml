@@ -1754,11 +1754,11 @@ CloudFlare官网：https://www.cloudflare.com/zh-cn/
     fetch('https://api.github.com/repos/2dust/v2rayN')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-67wgdsm6a').innerText = data.name;
-        document.querySelector('.desc-67wgdsm6a').innerText = data.description;
-        document.querySelector('.star-67wgdsm6a').innerText = data.stargazers_count;
-        document.querySelector('.fork-67wgdsm6a').innerText = data.forks_count;
-        document.querySelector('.lang-67wgdsm6a').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-p5ihqrfgx').innerText = data.name;
+        document.querySelector('.desc-p5ihqrfgx').innerText = data.description;
+        document.querySelector('.star-p5ihqrfgx').innerText = data.stargazers_count;
+        document.querySelector('.fork-p5ihqrfgx').innerText = data.forks_count;
+        document.querySelector('.lang-p5ihqrfgx').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   
   
@@ -1776,11 +1776,11 @@ CloudFlare官网：https://www.cloudflare.com/zh-cn/
     fetch('https://api.github.com/repos/2dust/v2rayNG')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-fq8tifkv7').innerText = data.name;
-        document.querySelector('.desc-fq8tifkv7').innerText = data.description;
-        document.querySelector('.star-fq8tifkv7').innerText = data.stargazers_count;
-        document.querySelector('.fork-fq8tifkv7').innerText = data.forks_count;
-        document.querySelector('.lang-fq8tifkv7').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-z1knwtomu').innerText = data.name;
+        document.querySelector('.desc-z1knwtomu').innerText = data.description;
+        document.querySelector('.star-z1knwtomu').innerText = data.stargazers_count;
+        document.querySelector('.fork-z1knwtomu').innerText = data.forks_count;
+        document.querySelector('.lang-z1knwtomu').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   
   
@@ -1874,7 +1874,8 @@ Windows 版Android 版Mac 版解压前面下载下来的 v2rayN 压缩包，运�
 
 更换节点如果想要更换到速度更快的节点，在你想要更换到的节点上右键，选择“设为活动服务器”，删除该节点同理。
 
-关闭&#x2F;开启 VPN如果你想打开 VPN，可以在下面选择“自动配置系统代理”，反之，如果想关闭，可以在下面选择“清除系统代理”（其他两个我就不知道是干啥用的啦！）
+关闭&#x2F;开启 VPN如果你想打开 VPN，可以在下面选择“自动配置系统代理”，反之，如果想关闭，可以在下面选择“清除系统代理”
+如果你用了另一个 VPN 的话请记得在下面选择“不改变系统代理”，以支持另一个 VPN 的运行。
 
 测速
     引用站外链接
@@ -1889,7 +1890,7 @@ Windows 版Android 版Mac 版解压前面下载下来的 v2rayN 压缩包，运�
         
     待更新中……
 
-优选节点如果你想要提升你的 VPN 节点的质量的话，就需要用到下面这款IP优选工具啦！
+优选节点如果你想要提升你的 VPN 节点的质量的话，就需要用到下面这两款IP优选工具啦！
 
     引用站外链接
     
@@ -1921,6 +1922,7 @@ Windows 版Android 版Mac 版解压前面下载下来的 v2rayN 压缩包，运�
 
 然后复制你选择的IP的地址，在一个无效的节点上右键，选择“编辑服务器”，然后在弹出的窗口里面把“地址”换成你选择的IP地址。
 
+
 如果测速完还是显示-1的话就把“地址”下面的“端口”改成443或者80就可以了。
 故障排除如果碰到报错，可以试试以几个解决方法：
 
@@ -1937,8 +1939,7 @@ Windows 版Android 版Mac 版解压前面下载下来的 v2rayN 压缩包，运�
 更换 CloudFlare 账号
 换一台电脑试试看
 
-（亲身经历）
-如果遇到以下报错则基本可以确定是网络的问题：
+亲身经历如果遇到以下报错则基本可以确定是网络的问题：
 
 如果遇到以下报错则是绑定的域名的问题：
 
