@@ -590,7 +590,7 @@ https\://bilibili.comno\@thankyou.com`https://bilibili.com``no@thankyou.com`
 定义列表一些Markdown处理器允许您创建术语及其对应定义的定义列表。要创建定义列表，请在第一行上键入术语。在下一行，键入一个冒号，后跟一个空格和定义。
 C++: C++（c plus plus）是一种计算机高级程序设计语言，由C语言扩展升级而产生，最早于1979年由本贾尼·斯特劳斯特卢普在AT&amp;T贝尔工作室研发。 
 输出：C++C++（c plus plus）是一种计算机高级程序设计语言，由C语言扩展升级而产生，最早于1979年由本贾尼·斯特劳斯特卢普在AT&amp;T贝尔工作室研发。
-表情符号你可以直接输入或从 Emojipedia 等来源复制表情符号并将其粘贴到文档中。
+表情符号你可以直接输入或从 Emojipedia 等来源复制表情符号并将其粘贴到文档中，或按快捷键Win⌘ + .使用 Windows 系统自带的表情符号。
 
 忽略 Markdown 格式要显示原本用于格式化 Markdown 文档的字符，请在字符前面添加反斜杠字符 \ 。
 输入密码后请按\*号开门
@@ -1754,11 +1754,11 @@ CloudFlare官网：https://www.cloudflare.com/zh-cn/
     fetch('https://api.github.com/repos/2dust/v2rayN')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-5z5ktjfpa').innerText = data.name;
-        document.querySelector('.desc-5z5ktjfpa').innerText = data.description;
-        document.querySelector('.star-5z5ktjfpa').innerText = data.stargazers_count;
-        document.querySelector('.fork-5z5ktjfpa').innerText = data.forks_count;
-        document.querySelector('.lang-5z5ktjfpa').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-67wgdsm6a').innerText = data.name;
+        document.querySelector('.desc-67wgdsm6a').innerText = data.description;
+        document.querySelector('.star-67wgdsm6a').innerText = data.stargazers_count;
+        document.querySelector('.fork-67wgdsm6a').innerText = data.forks_count;
+        document.querySelector('.lang-67wgdsm6a').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   
   
@@ -1776,11 +1776,11 @@ CloudFlare官网：https://www.cloudflare.com/zh-cn/
     fetch('https://api.github.com/repos/2dust/v2rayNG')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-edv2y8mfb').innerText = data.name;
-        document.querySelector('.desc-edv2y8mfb').innerText = data.description;
-        document.querySelector('.star-edv2y8mfb').innerText = data.stargazers_count;
-        document.querySelector('.fork-edv2y8mfb').innerText = data.forks_count;
-        document.querySelector('.lang-edv2y8mfb').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-fq8tifkv7').innerText = data.name;
+        document.querySelector('.desc-fq8tifkv7').innerText = data.description;
+        document.querySelector('.star-fq8tifkv7').innerText = data.stargazers_count;
+        document.querySelector('.fork-fq8tifkv7').innerText = data.forks_count;
+        document.querySelector('.lang-fq8tifkv7').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   
   
@@ -1803,7 +1803,7 @@ Android 版
 
 我们点“编辑代码”。进入下面这个页面
 
-这里有两种代码，一种是明文版的，一种是加密版的，我推荐如果你人是在中国大陆的话，尽量使用加密版的，如果不成功再换到明文版。（加密版已于2025.6.11失效）
+这里有两种代码，一种是明文版的，一种是加密版的，我推荐如果你人是在中国大陆的话，尽量使用加密版的，如果不成功再换到明文版。（加密版已于2025.6.11被原作者删除）
 
     引用站外链接
     
@@ -1811,15 +1811,14 @@ Android 版
           
         
         
-            明文版
+            Worker 代码
             github.com
         
         
     
 
 因为如果把这个代码放在页面上的话这个页面会非常卡，所以说我给的链接是到GitHub复制代码。直接点击右上角 “raw” 标识旁边的复制图标就可以了。如果你打不开 GitHub 的话请点击下面的按钮下载 txt 文件，然后复制里面的代码。
-加密版
-明文版
+Worker 代码
 
 回到编辑代码页面，把左边原来的代码全选删掉，粘贴上刚刚复制的明文&#x2F;加密代码。
 
@@ -1855,10 +1854,97 @@ Android 版
 导入V2rayN&#x2F;NG现在我们在浏览器里面访问刚才绑定的那个域名，然后在域名的后面加一个斜杠/，再加上你的密码，就可以进入到订阅地址页面了。
 
 然后我们要把上面的“自适应订阅地址”输入到 V2rayN&#x2F;NG 里面。
-Windows 版Mac 版Android 版打开前面下载下来的 v2rayN 压缩包，运行里面的 v2rayN.exe 文件。
+Windows 版Android 版Mac 版解压前面下载下来的 v2rayN 压缩包，运行里面的 v2rayN.exe 文件。
 
-由于博主家里面没有 Mac 电脑，下载下来的 v2rayX 压缩包我也没看懂，所以只能麻烦大家自己摸索啦~（面壁思过中
-不过我觉得应该和 Windows 版是差不多的叭😃]]></content>
+
+复制刚刚的“自适应订阅地址”，点击 v2rayN 界面上的 + 号按钮，就会弹出来订阅分组设置界面。
+
+然后别名可以自定义，下面的“可选地址”一栏里填上刚刚复制的“自适应订阅地址”，点击确定。
+
+然后点击上面操作栏里面的“订阅分组”，点击更新全部订阅（不通过代理）
+
+然后就能够获取到 VPN 节点啦！
+待更新中……由于博主家里面没有 Mac 电脑，下载下来的 v2rayX 压缩包我也没看懂，所以只能麻烦大家自己摸索啦~（面壁思过中
+不过我觉得应该和 Windows 版是差不多的叭😃
+
+日常使用Windows 版Android 版测试 VPN 节点速度与可用性在节点列表上右键，选择“一键多线程测试延迟和速度”
+
+然后如果节点测速显示“-1”说明这个节点无法使用，如果显示绿色表示速度不错，如果显示红色就表示速度比较低（但也受到网络的影响，如果换到好一点的网络的话测试结果会好得多，不一定是节点本身的问题。另外-1的好像也能用？）
+然后你就可以通过右键菜单里面的 按测试结果 &gt; 按测试结果移除无效 来移除不可用的节点。
+
+更换节点如果想要更换到速度更快的节点，在你想要更换到的节点上右键，选择“设为活动服务器”，删除该节点同理。
+
+关闭&#x2F;开启 VPN如果你想打开 VPN，可以在下面选择“自动配置系统代理”，反之，如果想关闭，可以在下面选择“清除系统代理”（其他两个我就不知道是干啥用的啦！）
+
+测速
+    引用站外链接
+    
+        
+          
+        
+        
+            测速工具
+            The Global Broadband Speed Test
+        
+        
+    待更新中……
+
+优选节点如果你想要提升你的 VPN 节点的质量的话，就需要用到下面这款IP优选工具啦！
+
+    引用站外链接
+    
+        
+          
+        
+        
+            ip优选工具
+            Cloudflare IP Batch Test Tool
+        
+        
+    
+
+
+    引用站外链接
+    
+        
+          
+        
+        
+            ip优选工具
+            全球主机监控 - 国内外VPS、云服务器的库存监控和优惠信息
+        
+        
+    
+
+注意：在打开这两个网页之前一定要关闭 VPN（选择“清除系统代理”），否则会显示 400 Bad Request 报错或者获取不到IP！
+进入以后就可以选择速度最快的IP使用啦！如果是第一个网站的话，需要手动测一下速，直接点击 Select All，再点击 Test Respond，最后点击下面的 Speed 就可以啦
+
+然后复制你选择的IP的地址，在一个无效的节点上右键，选择“编辑服务器”，然后在弹出的窗口里面把“地址”换成你选择的IP地址。
+
+如果测速完还是显示-1的话就把“地址”下面的“端口”改成443或者80就可以了。
+故障排除如果碰到报错，可以试试以几个解决方法：
+
+检查&#x2F;更换网络
+通过代理更新全部订阅
+重新部署一遍 CloudFlare Worker
+将 CloudFlare Worker 的代码换成以下代码（老版）试试
+
+加密版
+明文版
+
+更换绑定的域名
+重新下载软件或选择不同版本
+更换 CloudFlare 账号
+换一台电脑试试看
+
+（亲身经历）
+如果遇到以下报错则基本可以确定是网络的问题：
+
+如果遇到以下报错则是绑定的域名的问题：
+
+后记这篇文章写作耗时一周，基本上每天只有晚上的几个小时拿来写，而且中间代码的原作者还更新了一次代码，删掉了加密版，我这边也是问题不断，CloudFlare Workers 一直报错，差点让我以为我原来的订阅分组也不能用了，幸亏最后查出来是网络和域名的问题。所以说你如果看完这篇文章成功搭建好了你自己的 VPN，那么看在我写得这么辛苦的情况下可以在下面留个言嘛？蟹蟹你们哦~
+另外，安卓版的预计在6月21号更新，Mac版嘛……等我有钱之前别想了！😝
+]]></content>
   </entry>
   <entry>
     <title></title>
