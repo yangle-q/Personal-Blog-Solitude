@@ -315,54 +315,54 @@ if (sco_keyboards) {
     keyboard?.classList.add('on');
 }</script><!-- righhtside--><div class="needEndHide" id="rightside"><div class="rs_hide"><button class="translate" type="button" title="简繁转换">简</button><button class="mode" type="button" title="显示模式切换" onclick="sco.switchDarkMode()"><i class="fas fa-circle-half-stroke"></i></button><button class="aside pc" type="button" title="侧边栏" onclick="sco.switchHideAside()"><i class="fas fa-arrows-alt-h"></i></button><button class="keyboard pc" type="button" title="键盘快捷键" onclick="sco.switchKeyboard()"><i class="fas fa-keyboard"></i></button></div><div class="rs_show"><button class="config" type="button" title="扩展" onclick="document.querySelector(&quot;.rs_hide&quot;).classList.toggle(&quot;show&quot;)"><i class="fas fa-gear fa-spin"></i></button><button class="mobile toc" type="button" title="目录" onclick="document.querySelector('#card-toc').classList.toggle('open')"><i class="fas fa-list"></i></button><button class="comment" type="button" title="评论" onclick="sco.scrollTo('post-comment')"><i class="fas fa-comment"></i></button><button class="barrage pc" type="button" title="弹" onclick="sco.switchCommentBarrage()"><span>弹</span></button><button class="top" type="button" title="返回顶部" onclick="sco.toTop()"><i class="fas fa-arrow-up"></i><span id="percent">0</span></button></div></div><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav class="show" id="nav"><div id="nav-group"><div id="blog_name"><div class="back-home-button" tabindex="-1"><i class="back-home-button-icon solitude fas fa-bars-progress"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">博客相关</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/yangle-q/Personal-Blog-Solitude" title="Github 仓库"><img class="nolazyload back-menu-item-icon" src="https://i.postimg.cc/F1Xfz7gK/Github.jpg" alt="Github 仓库"><span class="back-menu-item-text">Github 仓库</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://birthday.star-lake.world" title="Happy Birthady"><img class="nolazyload back-menu-item-icon" src="https://i.postimg.cc/FRgbc8FN/Happy-Birthday-Logo.png" alt="Happy Birthady"><span class="back-menu-item-text">Happy Birthady</span></a></div></div></div></div><a id="site-name" href="/" title="返回博客主页"><span class="title">星湖碧境</span><i class="solitude fas fa-home"></i></a></div><div id="page-name-mask"><div id="page-name"><a id="page-name-text" onclick="sco.toTop()">Github 开源项目自建 VPN 超详细教程</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span>基地</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>仓库</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="solitude  fas fa-folder-closed"></i><span>目录</span></a></li><li><a class="site-page child" href="/categories/"><i class="solitude  fas fa-clone"></i><span>分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="solitude  fas fa-tags"></i><span>标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>互联</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/links/"><i class="solitude  fas fa-user-group"></i><span>友链</span></a></li><li><a class="site-page child" href="/message/"><i class="solitude  fas fa-comment-alt"></i><span>留言</span></a></li><li><a class="site-page child" href="/recentcomments/"><i class="solitude  fas fa-comments"></i><span>评论</span></a></li><li><a class="site-page child" href="/tlink/"><i class="solitude  fas fa-share-alt-square"></i><span>网站</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>私人空间</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/essay/"><i class="solitude  fas fa-pen-nib"></i><span>碎语</span></a></li><li><a class="site-page child" href="/music/"><i class="solitude  fas fa-music"></i><span>音吧</span></a></li><li><a class="site-page child" href="/gallery/"><i class="solitude   fas fa-images"></i><span>画馆</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>关于</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="solitude  fa-solid fa-address-card"></i><span>本人</span></a></li><li><a class="site-page child" href="/aboutsite/"><i class="solitude  fas fa-pager"></i><span>本站</span></a></li></ul></div></div></div><div id="nav-left"></div><div id="nav-right"><div class="nav-button" id="travellings_button"><a class="site-page" target="_blank" rel="noopener" href="https://theuselessweb.com/" title=""><i class="solitude fas fa-train"></i></a></div><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机一篇文章" href="javascript:void(0);"><i class="solitude fas fa-dice-d6"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索"><i class="solitude fas fa-magnifying-glass"></i></a></div><div class="nav-button" id="nav-console"><a class="console_switchbutton" onclick="sco.showConsole()" title="中控台" href="javascript:void(0);"><label><i class="left"></i><i class="center"></i><i class="right"></i></label></a></div><div id="toggle-menu"><a class="site-page"><i class="solitude fas fa-bars"></i></a></div></div></div></nav></header><main class="layout hide-aside" id="content-inner"><div id="page"><div class="article-container"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近好多我之前的同学来问我怎么自己建VPN，<del>果然我这个电脑达人的名声已经声名在外了</del>（其实比很多我在博客圈接触到的大佬们还差得远啦，我今天还在知乎上看到一个初二就自己写代码开发网站的）那么今天，我就应邀来写写怎么用 Github 开源项目 V2ray 自己来建一个 VPN，且看且珍惜哦！</p>
 <p>这篇文章的资料来自一个 Youtube 博主做的一个视频，具体是谁我就不说了，这东西还是有点……你们都懂的。他在 Bilibili 上也有账号，但是这篇内容没有发布在B站上，国内又上不去 Youtube ，所以我把他的视频整理了一下，加上了一点我自己的东西。别看我是转载别人的，我也是自己又做了一遍才写的这篇文章的，安卓的那一部分也是我自己加的，所以说一定要多多支持噢！</p>
-<p>因为我之前都没有见到大佬们写这方面的文章，再加上我也不确定这个东西在中国大陆的合法性，所以我就不把它放在文章列表里面了，能看到这篇文章的一定都是有缘人，大家自己用就好啦！**不要传播！不要传播！！不要传播！！！**要是看的人太多了我是真有可能被关站的，而且我的域名是用我妈的实名认证的，到时候波及到她可就麻烦大了！</p>
+<p>因为我之前都没有见到大佬们写这方面的文章，再加上我也不确定这个东西在中国大陆的合法性，所以我就不把它放在文章列表里面了，能看到这篇文章的一定都是有缘人，大家自己用就好啦！<strong>不要传播！不要传播！！不要传播！！！</strong> 要是看的人太多了我是真有可能被关站的，而且我的域名是用我妈的实名认证的，到时候波及到她可就麻烦大了！</p>
 <p>OK，就啰嗦这么多，开始发车！</p>
 <h1 id="准备账号"><a href="#准备账号" class="headerlink" title="准备账号"></a>准备账号</h1><p>这个我还是按照惯例不说了，都非常简单，一个 CloudFlare 账号就行了，在主页直接点免费开始使用。</p>
 <p>CloudFlare官网：<a target="_blank" rel="noopener" href="https://www.cloudflare.com/zh-cn/">https://www.cloudflare.com/zh-cn/</a></p>
 <p>注册好以后就会直接跳转到账号的控制面板。</p>
 <p><img src="https://i.postimg.cc/d04VjFZx/vpn-1.png" alt="控制面板"></p>
-<h1 id="准备-V2ray"><a href="#准备-V2ray" class="headerlink" title="准备 V2ray"></a>准备 V2ray</h1><p>如果知道怎么用 GitHub 的当然是到 GitHub 里面下载最好啦~下面是 V2rayN（Windows版）和 V2rayNG（Android版）的GitHub 仓库，记得点个 star 哦！</p>
+<h1 id="准备-V2ray"><a href="#准备-V2ray" class="headerlink" title="准备 V2ray"></a>准备 V2ray</h1><p>如果知道怎么用 GitHub 的当然是到 GitHub 里面下载最好啦~下面是 V2rayN（电脑版）和 V2rayNG（Android版）的GitHub 仓库，记得点个 star 哦！</p>
 <div class="repo-card">
-  <a class='name-yuoswoqux repo-title fancybox' target="_blank" rel="noopener" href="https://github.com/2dust/v2rayN"></a>
-  <p class='desc-yuoswoqux repo-desc'></p>
+  <a class='name-8u1knb6rc repo-title fancybox' target="_blank" rel="noopener" href="https://github.com/2dust/v2rayN"></a>
+  <p class='desc-8u1knb6rc repo-desc'></p>
   <div class="repo-gist">
     <i class="fas fa-star"></i>
-    <span class='star-yuoswoqux'></span>
+    <span class='star-8u1knb6rc'></span>
     <i class="fas fa-code-branch"></i>
-    <span class='fork-yuoswoqux'></span>
+    <span class='fork-8u1knb6rc'></span>
   </div>
-  <img class='lang-yuoswoqux repo-language no-lightbox' />
+  <img class='lang-8u1knb6rc repo-language no-lightbox' />
   <script>
     fetch('https://api.github.com/repos/2dust/v2rayN')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-yuoswoqux').innerText = data.name;
-        document.querySelector('.desc-yuoswoqux').innerText = data.description;
-        document.querySelector('.star-yuoswoqux').innerText = data.stargazers_count;
-        document.querySelector('.fork-yuoswoqux').innerText = data.forks_count;
-        document.querySelector('.lang-yuoswoqux').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-8u1knb6rc').innerText = data.name;
+        document.querySelector('.desc-8u1knb6rc').innerText = data.description;
+        document.querySelector('.star-8u1knb6rc').innerText = data.stargazers_count;
+        document.querySelector('.fork-8u1knb6rc').innerText = data.forks_count;
+        document.querySelector('.lang-8u1knb6rc').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   </script>
   </div>
 <div class="repo-card">
-  <a class='name-yhqpsyvuc repo-title fancybox' target="_blank" rel="noopener" href="https://github.com/2dust/v2rayNG"></a>
-  <p class='desc-yhqpsyvuc repo-desc'></p>
+  <a class='name-qxp2au54x repo-title fancybox' target="_blank" rel="noopener" href="https://github.com/2dust/v2rayNG"></a>
+  <p class='desc-qxp2au54x repo-desc'></p>
   <div class="repo-gist">
     <i class="fas fa-star"></i>
-    <span class='star-yhqpsyvuc'></span>
+    <span class='star-qxp2au54x'></span>
     <i class="fas fa-code-branch"></i>
-    <span class='fork-yhqpsyvuc'></span>
+    <span class='fork-qxp2au54x'></span>
   </div>
-  <img class='lang-yhqpsyvuc repo-language no-lightbox' />
+  <img class='lang-qxp2au54x repo-language no-lightbox' />
   <script>
     fetch('https://api.github.com/repos/2dust/v2rayNG')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-yhqpsyvuc').innerText = data.name;
-        document.querySelector('.desc-yhqpsyvuc').innerText = data.description;
-        document.querySelector('.star-yhqpsyvuc').innerText = data.stargazers_count;
-        document.querySelector('.fork-yhqpsyvuc').innerText = data.forks_count;
-        document.querySelector('.lang-yhqpsyvuc').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-qxp2au54x').innerText = data.name;
+        document.querySelector('.desc-qxp2au54x').innerText = data.description;
+        document.querySelector('.star-qxp2au54x').innerText = data.stargazers_count;
+        document.querySelector('.fork-qxp2au54x').innerText = data.forks_count;
+        document.querySelector('.lang-qxp2au54x').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   </script>
   </div>

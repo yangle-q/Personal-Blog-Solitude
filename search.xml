@@ -1633,11 +1633,11 @@ OK，那现在我们就返回到首页，在搜索框下面有一个按钮写着
     fetch('https://api.github.com/repos/Yangle-q/Personal-Blog-Solitude')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-althnv6gj').innerText = data.name;
-        document.querySelector('.desc-althnv6gj').innerText = data.description;
-        document.querySelector('.star-althnv6gj').innerText = data.stargazers_count;
-        document.querySelector('.fork-althnv6gj').innerText = data.forks_count;
-        document.querySelector('.lang-althnv6gj').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-sa7ehwpns').innerText = data.name;
+        document.querySelector('.desc-sa7ehwpns').innerText = data.description;
+        document.querySelector('.star-sa7ehwpns').innerText = data.stargazers_count;
+        document.querySelector('.fork-sa7ehwpns').innerText = data.forks_count;
+        document.querySelector('.lang-sa7ehwpns').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   
   
@@ -1671,6 +1671,8 @@ OK，那现在我们就返回到首页，在搜索框下面有一个按钮写着
 
 
 建站大事记全部全站更新文章发布/更新新功能购买域名
+2.3.11 Solitude CyberpunkVersion 2.3.11Updated on 2025.6.16新增“不公开的页面&#x2F;文章”页面一级、二级标题上下增高高度本页面时间表更新样式
+
 No.4 Article UpdateArticle No.4Updated on 2025.6.16更新文章“Solitude魔改记录”新加了“更新-表格”板块置顶该文章
 
 No.6 Article UpdateArticle No.6Updated on 2025.6.16更新文章“Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church”把图库挪到了一个独立的页面
@@ -1746,6 +1748,8 @@ Version 1.0.2, New Function 1Version 1.0.2New Function 1Created on 2025.4.25新�
 0.0.1 Hexo DefaultVersion 0.0.1Created on 2025.4.13正式创建星湖蔚境博客
 
 DomainDomainBought on 2025.4.13购买域名“star-lake.world”
+2.3.11 Solitude CyberpunkVersion 2.3.11Updated on 2025.6.16新增“不公开的页面&#x2F;文章”页面一级、二级标题上下增高高度本页面时间表新增分类
+
 2.3.10 Solitude CyberpunkVersion 2.3.10Updated on 2025.6.1全站字体改成“霞鹜文楷”删除日历、那年今日、来访者卡片更换背景图
 
 2.3.9 Solitude CyberpunkVersion 2.3.9Updated on 2025.5.29全站字体改成MiSans首页添加日历、那年今日、来访者卡片（参考@青桔气球）
@@ -1901,13 +1905,6 @@ Part 3
 ]]></content>
   </entry>
   <entry>
-    <title>个人喜爱</title>
-    <url>/gallery-favourite/index.html</url>
-    <content><![CDATA[
-        
-      ]]></content>
-  </entry>
-  <entry>
     <title>亨利八世</title>
     <url>/gallery-henryviii/index.html</url>
     <content><![CDATA[所有人像宫殿和城堡景象
@@ -1917,6 +1914,13 @@ Part 3
       
         
       
+        
+      ]]></content>
+  </entry>
+  <entry>
+    <title>个人喜爱</title>
+    <url>/gallery-favourite/index.html</url>
+    <content><![CDATA[
         
       ]]></content>
   </entry>
@@ -1978,6 +1982,101 @@ Part 3
     <content><![CDATA[]]></content>
   </entry>
   <entry>
+    <title>我滴账号们~</title>
+    <url>/myaccounts/index.html</url>
+    <content><![CDATA[说明这里收集了我所有的账号，防止我记不住。
+如果我的账号是公开的话我就会放我的账号的链接，如果不是的话就放那个软件&#x2F;网站的官网。
+另：这个页面不对外公开。
+AAivenyangle
+阿里云杨乐
+BBilibili
+CCloudFlareyangle.q@outlook.com
+DDeepseek13381962051
+Duolingo
+钉钉yangleqy
+DigitalPlat Freedomainsnothingnoway
+EEdx（MOOC）YangLe_ChrisK_QingYun
+Ewishwellyangle
+GGithub
+Google（Gmail）Qingyun
+国家中小学智慧教育平台TryEveryThing
+gitee
+高德地图
+Iiconfont
+K扣子
+夸克
+可汗学院
+LLeanCloudyangle-q
+MMicrosoft（Windows,Edge,Outlook,Bing）杨 乐
+MongoDB乐
+NNetlify乐 杨
+PPostimgyangle.q@outlook.com
+pixabay
+QQQ3978716397
+Quora
+全历史
+R热铁盒yangle-qscixyvfi
+Runway
+SSteamyangle.q
+T腾讯会议乐~
+淘气兔yangle.q@outlook.com
+UUWC 常熟世界联合学院杨乐
+VVercel
+W微信YangLe_QingYun
+WeTab杨乐 CHRIS KEVIN
+WPS
+网易云音乐
+XX
+YYoutube
+yousician
+有道词典
+有道云笔记LegeYang
+有道智慧学习
+Z知乎
+Zoho WorkDrive杨乐
+致美化
+#16 Personalities
+自建网站账号Emailsyangle.q@outlook.com
+Yangle-Qingyun@outlook.com
+ylmeteorite@gmail.com
+Domains名下的域名lemonstar.me
+star-lake.world
+hellofrom.cn
+heythere.dpdns.org
+icesea.dpdns.org
+分配的二级域名]]></content>
+  </entry>
+  <entry>
+    <title>不公开的页面/文章</title>
+    <url>/notpublic-/index.html</url>
+    <content><![CDATA[提示：请在本网页的网址-号后面跟上正确的密码以访问不公开的页面&#x2F;文章。
+]]></content>
+  </entry>
+  <entry>
+    <title>不公开的页面/文章</title>
+    <url>/notpublic-yang20100807/index.html</url>
+    <content><![CDATA[
+
+  
+  
+  VPN
+  Github 开源项目自建 VPN 超详细教程
+  
+  
+  
+  
+
+  
+  
+  MY ACCOUNTS
+  我的账号列表
+  
+  
+  
+  
+]]></content>
+  </entry>
+  <entry>
     <title>最近评论</title>
     <url>/recentcomments/index.html</url>
     <content><![CDATA[]]></content>
@@ -1992,13 +2091,13 @@ Part 3
     <url>/vpn/index.html</url>
     <content><![CDATA[前言最近好多我之前的同学来问我怎么自己建VPN，果然我这个电脑达人的名声已经声名在外了（其实比很多我在博客圈接触到的大佬们还差得远啦，我今天还在知乎上看到一个初二就自己写代码开发网站的）那么今天，我就应邀来写写怎么用 Github 开源项目 V2ray 自己来建一个 VPN，且看且珍惜哦！
 这篇文章的资料来自一个 Youtube 博主做的一个视频，具体是谁我就不说了，这东西还是有点……你们都懂的。他在 Bilibili 上也有账号，但是这篇内容没有发布在B站上，国内又上不去 Youtube ，所以我把他的视频整理了一下，加上了一点我自己的东西。别看我是转载别人的，我也是自己又做了一遍才写的这篇文章的，安卓的那一部分也是我自己加的，所以说一定要多多支持噢！
-因为我之前都没有见到大佬们写这方面的文章，再加上我也不确定这个东西在中国大陆的合法性，所以我就不把它放在文章列表里面了，能看到这篇文章的一定都是有缘人，大家自己用就好啦！**不要传播！不要传播！！不要传播！！！**要是看的人太多了我是真有可能被关站的，而且我的域名是用我妈的实名认证的，到时候波及到她可就麻烦大了！
+因为我之前都没有见到大佬们写这方面的文章，再加上我也不确定这个东西在中国大陆的合法性，所以我就不把它放在文章列表里面了，能看到这篇文章的一定都是有缘人，大家自己用就好啦！不要传播！不要传播！！不要传播！！！ 要是看的人太多了我是真有可能被关站的，而且我的域名是用我妈的实名认证的，到时候波及到她可就麻烦大了！
 OK，就啰嗦这么多，开始发车！
 准备账号这个我还是按照惯例不说了，都非常简单，一个 CloudFlare 账号就行了，在主页直接点免费开始使用。
 CloudFlare官网：https://www.cloudflare.com/zh-cn/
 注册好以后就会直接跳转到账号的控制面板。
 
-准备 V2ray如果知道怎么用 GitHub 的当然是到 GitHub 里面下载最好啦~下面是 V2rayN（Windows版）和 V2rayNG（Android版）的GitHub 仓库，记得点个 star 哦！
+准备 V2ray如果知道怎么用 GitHub 的当然是到 GitHub 里面下载最好啦~下面是 V2rayN（电脑版）和 V2rayNG（Android版）的GitHub 仓库，记得点个 star 哦！
 
   
   
@@ -2013,11 +2112,11 @@ CloudFlare官网：https://www.cloudflare.com/zh-cn/
     fetch('https://api.github.com/repos/2dust/v2rayN')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-yuoswoqux').innerText = data.name;
-        document.querySelector('.desc-yuoswoqux').innerText = data.description;
-        document.querySelector('.star-yuoswoqux').innerText = data.stargazers_count;
-        document.querySelector('.fork-yuoswoqux').innerText = data.forks_count;
-        document.querySelector('.lang-yuoswoqux').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-8u1knb6rc').innerText = data.name;
+        document.querySelector('.desc-8u1knb6rc').innerText = data.description;
+        document.querySelector('.star-8u1knb6rc').innerText = data.stargazers_count;
+        document.querySelector('.fork-8u1knb6rc').innerText = data.forks_count;
+        document.querySelector('.lang-8u1knb6rc').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   
   
@@ -2035,11 +2134,11 @@ CloudFlare官网：https://www.cloudflare.com/zh-cn/
     fetch('https://api.github.com/repos/2dust/v2rayNG')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-yhqpsyvuc').innerText = data.name;
-        document.querySelector('.desc-yhqpsyvuc').innerText = data.description;
-        document.querySelector('.star-yhqpsyvuc').innerText = data.stargazers_count;
-        document.querySelector('.fork-yhqpsyvuc').innerText = data.forks_count;
-        document.querySelector('.lang-yhqpsyvuc').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-qxp2au54x').innerText = data.name;
+        document.querySelector('.desc-qxp2au54x').innerText = data.description;
+        document.querySelector('.star-qxp2au54x').innerText = data.stargazers_count;
+        document.querySelector('.fork-qxp2au54x').innerText = data.forks_count;
+        document.querySelector('.lang-qxp2au54x').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   
   
@@ -2206,264 +2305,6 @@ Windows 版Android 版Mac/Linux 版解压前面下载下来的 v2rayN 压缩包�
 后记这篇文章写作耗时一周，基本上每天只有晚上的几个小时拿来写，而且中间代码的原作者还更新了一次代码，删掉了加密版，我这边也是问题不断，CloudFlare Workers 一直报错，差点让我以为我原来的订阅分组也不能用了，幸亏最后查出来是网络和域名的问题。所以说你如果看完这篇文章成功搭建好了你自己的 VPN，那么看在我写得这么辛苦的情况下可以在下面留个言嘛？蟹蟹你们哦~
 另外，安卓版的预计在6月21号更新，Mac版嘛……等我有钱之前别想了！😝
 ]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/custom/css/custom.css</url>
-    <content><![CDATA[/*Calender*/
-.card-widget {
-    padding: 10px!important;
-    max-height: calc(100vh - 100px);
-}
-
-.card-times a, .card-times div {
-    color: var(--efu-fontcolor);
-}
-
-#card-widget-calendar .item-content {
-    display: flex;
-}
-
-#calendar-area-left {
-    width: 45%;
-}
-
-#calendar-area-right {
-    width: 55%;
-}
-
-#calendar-area-left, #calendar-area-right {
-    height: 100%;
-    padding: 4px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-#calendar-main {
-    width: 100%;
-}
-
-#calendar-week {
-    height: 1.2rem;
-    font-size: 14px;
-    letter-spacing: 1px;
-    font-weight: 700;
-    align-items: center;
-    display: flex;
-}
-
-#calendar-date {
-    height: 3rem;
-    line-height: 1.3;
-    font-size: 64px;
-    letter-spacing: 3px;
-    color: var(--efu-main);
-    font-weight: 700;
-    align-items: center;
-    display: flex;
-    position: absolute;
-    top: calc(50% - 2.1rem);
-}
-
-#calendar-lunar, #calendar-solar {
-    height: 1rem;
-    font-size: 12px;
-    align-items: center;
-    display: flex;
-    position: absolute;
-}
-
-#calendar-solar {
-    bottom: 2.1rem;
-}
-
-#calendar-lunar {
-    bottom: 1rem;
-    color: var(--efu-secondtext);
-}
-
-#calendar-main a {
-    height: 1rem;
-    width: 1rem;
-    border-radius: 50%;
-    font-size: 12px;
-    line-height: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#calendar-main a.now {
-    background: var(--efu-main);
-    color: var(--efu-card-bg);
-}
-
-#calendar-main .calendar-rh a {
-    color: var(--efu-secondtext);
-}
-
-.calendar-r0, .calendar-r1, .calendar-r2, .calendar-r3, .calendar-r4, .calendar-r5, .calendar-rh {
-    height: 1.2rem;
-    display: flex;
-}
-
-.calendar-d0, .calendar-d1, .calendar-d2, .calendar-d3, .calendar-d4, .calendar-d5, .calendar-d6 {
-    width: calc(100% / 7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#card-widget-schedule .item-content {
-    display: flex;
-}
-
-#schedule-area-left, #schedule-area-right {
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-#schedule-area-left {
-    width: 30%;
-}
-
-#schedule-area-right {
-    width: 70%;
-    padding: 0 5px;
-}
-
-.schedule-r0, .schedule-r1, .schedule-r2 {
-    height: 2rem;
-    width: 100%;
-    align-items: center;
-    display: flex;
-}
-
-.schedule-d0 {
-    width: 30px;
-    margin-right: 5px;
-    text-align: center;
-    font-size: 12px;
-}
-
-.schedule-d1 {
-    width: calc(100% - 35px);
-    height: 1.5rem;
-    align-items: center;
-    display: flex;
-}
-
-progress::-webkit-progress-bar {
-    background: linear-gradient(to right, var(--efu-main-op-deep), var(--efu-main-op), var(--efu-main-op-light));
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-progress::-webkit-progress-value {
-    background: var(--efu-main);
-    border-radius: 5px;
-}
-
-.aside-span1, .aside-span2 {
-    height: 1rem;
-    font-size: 12px;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    position: absolute;
-}
-
-.aside-span1 {
-    margin-left: 5px;
-}
-
-.aside-span2 {
-    right: 20px;
-    color: var(--efu-secondtext);
-}
-
-.aside-span2 a {
-    margin: 0 3px;
-}
-
-#pBar_month, #pBar_week, #pBar_year {
-    width: 100%;
-    border-radius: 5px;
-    height: 100%;
-}
-
-#schedule-date, #schedule-days, #schedule-title {
-    display: flex;
-    align-items: center;
-}
-
-#schedule-title {
-    height: 25px;
-    line-height: 1;
-    font-size: 14px;
-    font-weight: 700;
-}
-
-#schedule-days {
-    height: 40px;
-    line-height: 1;
-    font-size: 30px;
-    font-weight: 900;
-    color: var(--efu-main);
-}
-
-#schedule-date {
-    height: 20px;
-    line-height: 1;
-    font-size: 12px;
-    color: var(--efu-secondtext);
-}
-/*History*/
-#aside-content .card-history .swiper-wrapper {
-    flex-direction: column
-}
-
-#aside-content .card-history .item-headline {
-    margin-left: 0;
-}
-
-#aside-content .card-history .history_slide {
-    text-align: left;
-    display: flex !important;
-    flex-direction: column;
-    align-items: flex-start
-}
-
-#aside-content .card-history .history_slide_time {
-    color: var(--efu-secondtext);
-    font-size: 14px;
-    font-style: italic;
-    font-weight: lighter
-}
-
-#aside-content .card-history .history_slide_link {
-    line-height: 1.5;
-    -webkit-line-clamp: 2;
-    display: -webkit-box;
-    overflow: hidden;
-    -webkit-box-orient: vertical
-}
-
-#aside-content .card-history .history_slide_link a {
-    color: var(--efu-main);
-    padding: 0 4px;
-    border-radius: 4px
-}
-
-#aside-content .card-history .history_slide_link a:hover {
-    color: var(--efu-white);
-    background: var(--efu-main)
-}]]></content>
   </entry>
   <entry>
     <title></title>
@@ -3411,98 +3252,261 @@ return;
 })]]></content>
   </entry>
   <entry>
-    <title>我滴账号们~</title>
-    <url>/myaccounts/index.html</url>
-    <content><![CDATA[说明这里收集了我所有的账号，防止我记不住。
-如果我的账号是公开的话我就会放我的账号的链接，如果不是的话就放那个软件&#x2F;网站的官网。
-另：这个页面不对外公开。
-AAivenyangle
-阿里云杨乐
-BBilibili
-CCloudFlareyangle.q@outlook.com
-DDeepseek13381962051
-Duolingo
-钉钉yangleqy
-DigitalPlat Freedomainsnothingnoway
-EEdx（MOOC）YangLe_ChrisK_QingYun
-Ewishwellyangle
-GGithub
-Google（Gmail）Qingyun
-国家中小学智慧教育平台TryEveryThing
-gitee
-高德地图
-Iiconfont
-K扣子
-夸克
-可汗学院
-LLeanCloudyangle-q
-MMicrosoft（Windows,Edge,Outlook,Bing）杨 乐
-MongoDB乐
-NNetlify乐 杨
-PPostimgyangle.q@outlook.com
-pixabay
-QQQ3978716397
-Quora
-全历史
-R热铁盒yangle-qscixyvfi
-Runway
-SSteamyangle.q
-T腾讯会议乐~
-淘气兔yangle.q@outlook.com
-UUWC 常熟世界联合学院杨乐
-VVercel
-W微信YangLe_QingYun
-WeTab杨乐 CHRIS KEVIN
-WPS
-网易云音乐
-XX
-YYoutube
-yousician
-有道词典
-有道云笔记LegeYang
-有道智慧学习
-Z知乎
-Zoho WorkDrive杨乐
-致美化
-#16 Personalities
-自建网站账号Emailsyangle.q@outlook.com
-Yangle-Qingyun@outlook.com
-ylmeteorite@gmail.com
-Domains名下的域名lemonstar.me
-star-lake.world
-hellofrom.cn
-heythere.dpdns.org
-icesea.dpdns.org
-分配的二级域名]]></content>
-  </entry>
-  <entry>
-    <title>不公开的页面/文章</title>
-    <url>/notpublic-/index.html</url>
-    <content><![CDATA[提示：请在本网页的网址后面跟上正确的密码以访问不公开的页面&#x2F;文章。
-]]></content>
-  </entry>
-  <entry>
-    <title>不公开的页面/文章</title>
-    <url>/notpublic-yang20100807/index.html</url>
-    <content><![CDATA[
+    <title></title>
+    <url>/custom/css/custom.css</url>
+    <content><![CDATA[/*Calender*/
+.card-widget {
+    padding: 10px!important;
+    max-height: calc(100vh - 100px);
+}
 
-  
-  
-  VPN
-  Github 开源项目自建 VPN 超详细教程
-  
-  
-  
-  
+.card-times a, .card-times div {
+    color: var(--efu-fontcolor);
+}
 
-  
-  
-  MY ACCOUNTS
-  我的账号列表
-  
-  
-  
-  
-]]></content>
+#card-widget-calendar .item-content {
+    display: flex;
+}
+
+#calendar-area-left {
+    width: 45%;
+}
+
+#calendar-area-right {
+    width: 55%;
+}
+
+#calendar-area-left, #calendar-area-right {
+    height: 100%;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#calendar-main {
+    width: 100%;
+}
+
+#calendar-week {
+    height: 1.2rem;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    align-items: center;
+    display: flex;
+}
+
+#calendar-date {
+    height: 3rem;
+    line-height: 1.3;
+    font-size: 64px;
+    letter-spacing: 3px;
+    color: var(--efu-main);
+    font-weight: 700;
+    align-items: center;
+    display: flex;
+    position: absolute;
+    top: calc(50% - 2.1rem);
+}
+
+#calendar-lunar, #calendar-solar {
+    height: 1rem;
+    font-size: 12px;
+    align-items: center;
+    display: flex;
+    position: absolute;
+}
+
+#calendar-solar {
+    bottom: 2.1rem;
+}
+
+#calendar-lunar {
+    bottom: 1rem;
+    color: var(--efu-secondtext);
+}
+
+#calendar-main a {
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    font-size: 12px;
+    line-height: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#calendar-main a.now {
+    background: var(--efu-main);
+    color: var(--efu-card-bg);
+}
+
+#calendar-main .calendar-rh a {
+    color: var(--efu-secondtext);
+}
+
+.calendar-r0, .calendar-r1, .calendar-r2, .calendar-r3, .calendar-r4, .calendar-r5, .calendar-rh {
+    height: 1.2rem;
+    display: flex;
+}
+
+.calendar-d0, .calendar-d1, .calendar-d2, .calendar-d3, .calendar-d4, .calendar-d5, .calendar-d6 {
+    width: calc(100% / 7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#card-widget-schedule .item-content {
+    display: flex;
+}
+
+#schedule-area-left, #schedule-area-right {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#schedule-area-left {
+    width: 30%;
+}
+
+#schedule-area-right {
+    width: 70%;
+    padding: 0 5px;
+}
+
+.schedule-r0, .schedule-r1, .schedule-r2 {
+    height: 2rem;
+    width: 100%;
+    align-items: center;
+    display: flex;
+}
+
+.schedule-d0 {
+    width: 30px;
+    margin-right: 5px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.schedule-d1 {
+    width: calc(100% - 35px);
+    height: 1.5rem;
+    align-items: center;
+    display: flex;
+}
+
+progress::-webkit-progress-bar {
+    background: linear-gradient(to right, var(--efu-main-op-deep), var(--efu-main-op), var(--efu-main-op-light));
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+progress::-webkit-progress-value {
+    background: var(--efu-main);
+    border-radius: 5px;
+}
+
+.aside-span1, .aside-span2 {
+    height: 1rem;
+    font-size: 12px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    position: absolute;
+}
+
+.aside-span1 {
+    margin-left: 5px;
+}
+
+.aside-span2 {
+    right: 20px;
+    color: var(--efu-secondtext);
+}
+
+.aside-span2 a {
+    margin: 0 3px;
+}
+
+#pBar_month, #pBar_week, #pBar_year {
+    width: 100%;
+    border-radius: 5px;
+    height: 100%;
+}
+
+#schedule-date, #schedule-days, #schedule-title {
+    display: flex;
+    align-items: center;
+}
+
+#schedule-title {
+    height: 25px;
+    line-height: 1;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#schedule-days {
+    height: 40px;
+    line-height: 1;
+    font-size: 30px;
+    font-weight: 900;
+    color: var(--efu-main);
+}
+
+#schedule-date {
+    height: 20px;
+    line-height: 1;
+    font-size: 12px;
+    color: var(--efu-secondtext);
+}
+/*History*/
+#aside-content .card-history .swiper-wrapper {
+    flex-direction: column
+}
+
+#aside-content .card-history .item-headline {
+    margin-left: 0;
+}
+
+#aside-content .card-history .history_slide {
+    text-align: left;
+    display: flex !important;
+    flex-direction: column;
+    align-items: flex-start
+}
+
+#aside-content .card-history .history_slide_time {
+    color: var(--efu-secondtext);
+    font-size: 14px;
+    font-style: italic;
+    font-weight: lighter
+}
+
+#aside-content .card-history .history_slide_link {
+    line-height: 1.5;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical
+}
+
+#aside-content .card-history .history_slide_link a {
+    color: var(--efu-main);
+    padding: 0 4px;
+    border-radius: 4px
+}
+
+#aside-content .card-history .history_slide_link a:hover {
+    color: var(--efu-white);
+    background: var(--efu-main)
+}]]></content>
   </entry>
 </search>
