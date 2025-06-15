@@ -5,15 +5,17 @@
     <url>/2025/HenryVIII/</url>
     <content><![CDATA[Before You ReadBefore You ReadOrigin of this ArticleIf you wanna know why I write this article, please read the article below:    站内链接                                                  A Brief Biography and Interesting Facts of Three Most Famous English Monarches in their Time and Life. Part 1, Introduction            2025.6.1                    
 The Gallery of this ArticleFor the convenience of browsing, I gather all the photoes in this article and classified them by topics below:
-AllPortraitCastles and PalacesScenes
-        
-      
-        
-      
-        
-      
-        
-      
+
+
+  
+  
+  亨利八世
+  Henry VIII 里面的所有图片
+  
+  
+  
+  
+
 Before Henry Ⅷ Becomes a KingThe full name of Henry Ⅷ was Henry Tudor. He is the son of the first Tudor King, Henry Ⅶ. Henry Ⅷ was born in June 28th, 1491. We don’t know much about his childhood, but he didn’t prepare to be king at first. In 1502, his elder brother, Arthur, the Prince of Wales, died at the age of fifteen, just after his wedding day for 6 months. Henry got what all his brother have - the title of prince of Wales, and his widow, Catherine of Aragon, who was the only child of king Fordinand of Spain.Spain was then a powerful country, and King Henry Ⅶ didn’t want the alliance between two countries to break, so he let young Henry engage Catherine, even if he was only eleven. She will be the first wife of Henry Ⅷ.During that time it was the Renaissance Period. The word ‘Renaisance’ is a word from French that means ‘reborn’ in Enlish. Just like what it means, the Renaissanse took a totally reborn from arts, philosophy, to science and economy. It made a great change that pulled the whole Europe out from the dark night of Middle age. And absolutely, this kind of great change took place at the root of Middle age – Religion – too. Many of the new ideas clashed with the traditional Church. The Reformation began.Henry Ⅷ was a quite controversial king in British history. He was always remembered by world mainly at two terms: Push the Renaissance took place in England, and the number of his wives, notably there were to of them were killed in order of him. The reason of why Henry changed his wife so frequently was, he was very attached to the importance of having a male heir in his life. Henry wanted a king to keep the Tudors on the throne of England but not a Queen. A Queen always means the end of the reign of the family to Great Britain because her sons or daughters will always follow her husband’s surname. This was a topic throughout Henry’s life. These is what we should know before we start Henry Ⅷ’s story. 
 
 
@@ -735,7 +737,7 @@ Front Matter简介Front Matter 是位于 HTML&#x2F;Markdown 文件顶部的 YAML
 ---title: Hello Worlddate: 2013/7/13 20:46:25---
 &quot;title&quot;: &quot;Hello World&quot;,&quot;date&quot;: &quot;2013/7/13 20:46:25&quot;;;;
 Solitude 主题 Front Matter 使用说明在显示为不同类型（文章、页面、特色页面）的 Markdown 文件中 Front Matter 所包含的内容是不同的。下面是在这三种Markdown 文件中 Front Matter 包含的内容。
-文章页面特色页面（即刻、工具箱、我的装备、豆瓣页（音乐、图书、游戏））---title:date:updated:tags:categories:permalink:comment:cover:katex:reprint:locate:------title:date:updated:type:comment:desc:cover:katex:aside:------leftend:rightend:rightbtn:rightbtnlink:---
+文章页面特色页面（即刻、工具箱、我的装备、豆瓣页（音乐、图书、游戏））---title:date:updated:tags:categories:permalink:comment:cover:katex:reprint:locate:sticky:------title:date:updated:type:comment:desc:cover:katex:aside:------leftend:rightend:rightbtn:rightbtnlink:---
 
 以下为各值代表的内容以及默认值：
 
@@ -880,6 +882,13 @@ true&#x2F;false
 可选
 是否开启容器
 true
+
+
+sticky
+数字
+可选
+设置文章置顶，其中较高的数字代表着较高的排序
+
 
 
 分类和标签的说明只有文章支持分类和标签。 分类按顺序应用于文章，从而形成分类和子分类的层次结构。 标签是在相同的层次结构上定义的，因此它们的出现顺序不重要。
@@ -1033,8 +1042,107 @@ TXT 格式
   <entry>
     <title>Solitude魔改记录（持续更新）</title>
     <url>/2025/Solitude%E9%AD%94%E6%94%B9%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[前言众所周知啊，Solitude主题留给我们魔改的空间还是蛮大的，因为要是不改的话原生solitude就一股半成品的味道（有可能是因为看多了大佬们的博客觉得原生的solitude很土？）而且很多哥哥们都在自己博客里面放出来了各种教程，怎么说，看完了有点心动了捏于是!我又拿出了我的祖传看家本领，那就是:翻!家!其实我在网站还没上线的时候就已经把青桔哥哥的博客翻了一遍了，他的博客里面超级多魔改的教程的，我本来是想先把这些搞完一部分再上线的，但是因为我当时自定义css没弄明白（后面会说），所以就没搞。前天终于把这个自定义css搞好了，所以说我终于能开始我的魔改之路啦！OK，废话不多说，开搞!
-自定义Css&#x2F;js这个地方真的是我的噩梦，因为我刚开始看青桔哥哥的教程的时候我看的是后面字体，日历那几篇，青桔哥哥正好没有写怎么引入css。他之前每篇文章都会写的，后面几篇估计是觉得我们都知道了就没有写，然后呢我又没有看他前面的几篇文章，所以说我截至到前天为止都还一直不知道自定义css居然是要引入的！当然这也不能怪青桔哥哥啦，谁叫我自己没有认真把他的博客翻个底朝天的（是不是有一点不礼貌(≧∀≦)ゞ）我刚开始的时候甚至都不知道自定义css要放在哪里，我还以为是放在solitude文件夹的sourse文件夹里面呢，因为blog文件夹下面不是有两个sourse文件夹嘛，一个在blog下面，一个在blog&#x2F;themes&#x2F;solitude文件夹下面，然后solitude文件夹下面的那个sourse文件夹里面又分了css，js，img三个文件夹，我就以为自定义css文件和blog&#x2F;themes&#x2F;soitude&#x2F;sourse&#x2F;css文件夹里面的其他css文件放在一起就好了，solitude主题会自动引用的（当时我也不知道这个东西要引入啊）。然后我不放心我还问了一下星港哥哥，他说只要放在sourse文件夹里面就行了，然后我就非常确信这个东西就是放在这的了。还是⟪论翻家翻到底的重要性⟫，星港哥哥博客里面也有写css文件放在哪你干嘛自己不看奥，也是醉了。你绝对想不出来我为了解决这个问题想了多少种可能出问题的情况，实际上我也记不住有多少了，反正我能想起来的就有这么多
+    <content><![CDATA[前言这篇文章其实主要就是作为一个记录使用啦，顺便分享一下怎么魔改，其实我也在这上面踩了一个大坑的，所以我就想所有看到我这篇文章的人不要和我一样浪费那么多时间精力，所以教程会写得尽可能详细一点，大佬们不要瞧不起我哦！如果你感兴趣我是怎么踩坑的的话，可以看看原文-记录这一部分~
+更新-表格原文-记录CSS&#x2F;JS引入效果教程参考这是前置准备工作，后面所有基于CSS&#x2F;JS的魔改都要依靠它的！一定要先准备好噢！
+创建文件夹
+
+找到里面有 _post 文件夹的那个 source 文件夹（blog&#x2F;source，不是blog&#x2F;themes&#x2F;solitude&#x2F;source），在里面创建 js 和 css 文件夹。
+
+创建css&#x2F;js文件
+
+在 css 文件夹里面创建 custom.css 文件，在 js 文件夹里面创建 custom.js 文件。（这个文件也可以是其他名字，只要后缀名是 .css&#x2F;.js 就行。）
+
+引入主题
+
+在主题配置文件（不是站点的）里面的扩展部分中引入（Solitude 主题是在第770行左右）。
+css 文件在 head 引入，js 文件在 bottom 里引入。有的 js 要求在 head 引入，不然无法生效。
+# --------------------------- start ---------------------------# Extend# 扩展extends:  # Insert in head  # 插入到 head  head:    - &lt;link rel=&quot;stylesheet&quot; href=&quot;/custom/css/custom.css&quot;&gt;  # Insert in body      # 插入到 body  body:    - &lt;script defer pjax src=&quot;/custom/js/custom.js&quot;&gt;&lt;/script&gt;# --------------------------- end ---------------------------
+
+引入多个文件可以直接往下复制粘贴多添加一行然后改一下文件名就行。
+    引用站外链接
+    
+        
+          
+        
+        
+            如何添加 CSS/JS？
+            冰火之砺
+        
+        
+    
+
+更换全站显示字体效果教程参考默认的字体（苹方）效果：
+
+月星楷的效果：
+
+霞鹜文楷的效果：
+你现在在看的字全都是呀
+打开以下网站：
+
+
+    引用站外链接
+    
+        
+          
+        
+        
+            中文网字计划
+            提供便捷实用的全字符集中文渲染方案
+        
+        
+    
+
+
+找一个你喜欢的字体，进入详情页，下滑找到通过链接嵌入部分，复制以’&lt;link rel&#x3D;’stylesheet’’开头的链接。
+
+在主题配置文件（不是站点的）里面的扩展部分的 head 中引入。
+
+
+# Extend# 扩展extends:  # Insert in head  # 插入到 head  head:    - &lt;link rel=&#x27;stylesheet&#x27; href=&#x27;https://chinese-fonts-cdn.deno.dev/packages/lywkpmydb/dist/LXGWWenKaiScreen/result.css&#x27; /&gt;
+    引用站外链接
+    
+        
+          
+        
+        
+            solitude｜自定义站点字体
+            ❖星港◎Star☆
+        
+        
+    
+
+H1，H2标题宽度修改效果教程参考修改之前：
+
+
+修改之后：
+自己看！
+打开blog&#x2F;themes&#x2F;solitude&#x2F;source&#x2F;css&#x2F;_layout目录下面的 article-container.styl 文件
+
+把第181行至189行替换为以下代码：
+
+
+h1  font-size 1.5rem  line-height 1.3  padding-top 1rem  padding-bottom 1remh2  font-size 1.3rem  line-height 1.3  border-top 1px dashed var(--efu-theme-op)  padding-top 1rem  padding-bottom 1rem
+    引用站外链接
+    
+        
+          
+        
+        
+            关于本站｜Solitude主题魔改内容
+            ❖星港◎Star☆
+        
+        
+    前言众所周知啊，Solitude主题留给我们魔改的空间还是蛮大的，因为要是不改的话原生solitude就一股半成品的味道（有可能是因为看多了大佬们的博客觉得原生的solitude很土？）而且很多哥哥们都在自己博客里面放出来了各种教程，怎么说，看完了有点心动了捏
+于是!我又拿出了我的祖传看家本领，那就是:翻!家!
+其实我在网站还没上线的时候就已经把青桔哥哥的博客翻了一遍了，他的博客里面超级多魔改的教程的，我本来是想先把这些搞完一部分再上线的，但是因为我当时自定义css没弄明白（后面会说），所以就没搞。前天终于把这个自定义css搞好了，所以说我终于能开始我的魔改之路啦！
+OK，废话不多说，开搞!
+自定义Css&#x2F;js这个地方真的是我的噩梦，因为我刚开始看青桔哥哥的教程的时候我看的是后面字体，日历那几篇，青桔哥哥正好没有写怎么引入css。他之前每篇文章都会写的，后面几篇估计是觉得我们都知道了就没有写，然后呢我又没有看他前面的几篇文章，所以说我截至到前天为止都还一直不知道自定义css居然是要引入的！
+当然这也不能怪青桔哥哥啦，谁叫我自己没有认真把他的博客翻个底朝天的（是不是有一点不礼貌(≧∀≦)ゞ）
+我刚开始的时候甚至都不知道自定义css要放在哪里，我还以为是放在solitude文件夹的sourse文件夹里面呢，因为blog文件夹下面不是有两个sourse文件夹嘛，一个在blog下面，一个在blog&#x2F;themes&#x2F;solitude文件夹下面，然后solitude文件夹下面的那个sourse文件夹里面又分了css，js，img三个文件夹，我就以为自定义css文件和blog&#x2F;themes&#x2F;soitude&#x2F;sourse&#x2F;css文件夹里面的其他css文件放在一起就好了，solitude主题会自动引用的（当时我也不知道这个东西要引入啊）。然后我不放心我还问了一下星港哥哥，他说只要放在sourse文件夹里面就行了，然后我就非常确信这个东西就是放在这的了。
+
+
+还是⟪论翻家翻到底的重要性⟫，星港哥哥博客里面也有写css文件放在哪你干嘛自己不看奥，也是醉了。
+你绝对想不出来我为了解决这个问题想了多少种可能出问题的情况，实际上我也记不住有多少了，反正我能想起来的就有这么多
 
 我是在本地看的，到时候部署到网站上看就好了（然而并没有）
 css文件写错了（我真的一个字一个字看过了，没写错，我发誓）
@@ -1048,8 +1156,14 @@ Git 没装插件（我去找了，没找到css的插件）
 浏览器的问题（用360浏览器也还是一样）
 那就是我电脑上Git的问题（我换了台电脑也还是一样）
 
-反正我各种办法都试过了，花了我保守估计得整整四五个小时，整得我都有一段时间都不想碰博客了，就是没想到去翻大佬们的博客（不是说好是祖传技能的吗）然后后来我是上周三(今天周日)闲着没事翻Marice哥哥的博客的时候看到他在2023年写的一篇文章（他当时应该和我现在差不多大吧）如何自定义js&#x2F;css之后才知道，原来这个东西是要放在blog的sourse文件夹下面的耶（终于看到了啊，真受不了了）。然后呢我去试，git页面终于有反应了，反馈了一个WARN说尝试创建xxx.css文件，但是那个已经存在了，于是我又去解决这个问题去了，其实那个东西完全可以不用管他的（星港哥哥都说了那个东西没什么大问题了你还要搞它干嘛）到最后我又搞了一个小时还是没有搞好，我悬着的心终于死掉了。我想我干脆直接找叶泯希哥哥叫他帮我弄一下吧，然后第二天晚上我问了几个类似于css文件到底放哪这种我已经知道了的问题的时候准备说出“我给你十块钱你帮我远程看一下呗”的时候，他突然给我发了一张图片说css要这样引入，我才知道原来还要引入啊（不是Marice哥哥文章里面清清楚楚的写着怎么引入css你是没长眼睛吗）反正最后终于是搞好啦，讲真的真不容易啊，主要是主题文档里面压根对这个一个字都没提（你看看又在找借口了）不管怎么样终于搞好啦，要不然默认的这个苹方字体我真的是看腻了，总之非常非常谢谢叶泯希和Marice两位哥哥啦！
-自定义侧边栏卡片日历、那年今日、来访者卡片这几个卡片是我早就羡慕了，那么现在css搞好了，肯定要第一个把这几个加上啦！来，3、2、1，上教程！
+反正我各种办法都试过了，花了我保守估计得整整四五个小时，整得我都有一段时间都不想碰博客了，就是没想到去翻大佬们的博客（不是说好是祖传技能的吗）
+
+然后后来我是上周三(今天周日)闲着没事翻Marice哥哥的博客的时候看到他在2023年写的一篇文章（他当时应该和我现在差不多大吧）如何自定义js&#x2F;css之后才知道，原来这个东西是要放在blog的sourse文件夹下面的耶（终于看到了啊，真受不了了）。然后呢我去试，git页面终于有反应了，反馈了一个WARN说尝试创建xxx.css文件，但是那个已经存在了，于是我又去解决这个问题去了，其实那个东西完全可以不用管他的（星港哥哥都说了那个东西没什么大问题了你还要搞它干嘛）
+到最后我又搞了一个小时还是没有搞好，我悬着的心终于死掉了。我想我干脆直接找叶泯希哥哥叫他帮我弄一下吧，然后第二天晚上我问了几个类似于css文件到底放哪这种我已经知道了的问题的时候准备说出“我给你十块钱你帮我远程看一下呗”的时候，他突然给我发了一张图片说css要这样引入，我才知道原来还要引入啊（不是Marice哥哥文章里面清清楚楚的写着怎么引入css你是没长眼睛吗）
+反正最后终于是搞好啦，讲真的真不容易啊，主要是主题文档里面压根对这个一个字都没提（你看看又在找借口了）不管怎么样终于搞好啦，要不然默认的这个苹方字体我真的是看腻了，总之非常非常谢谢叶泯希和Marice两位哥哥啦！
+
+自定义侧边栏卡片日历、那年今日、来访者卡片这几个卡片是我早就羡慕了，那么现在css搞好了，肯定要第一个把这几个加上啦！
+来，3、2、1，上教程！
 
     引用站外链接
     
@@ -1063,6 +1177,7 @@ Git 没装插件（我去找了，没找到css的插件）
         
     
 
+
     引用站外链接
     
         
@@ -1075,6 +1190,7 @@ Git 没装插件（我去找了，没找到css的插件）
         
     
 
+
     引用站外链接
     
         
@@ -1086,8 +1202,14 @@ Git 没装插件（我去找了，没找到css的插件）
         
         
     
-但是我发现了一个大问题。我明明css和js引入都是正确的啊，那年今日和来访者卡片里面的内容它就是显示不出来，我还以为是我这次又翻车了呢，但是日历那一块就是好好的呀（除了有亿点点错位）结果我一看Marice新出的一篇文章才知道，原来青桔哥哥太久没更新，api失效了！我赶紧去星港哥哥青桔哥哥的博客里面看看，他们的卡片也显示不出来，呼，那我就放心了。但是日历那个又是怎么回事啊！！！我在群里面问了也没有人回我呜呜呜算啦，到时候再说吧，我到时候再找找其他大佬还有没有写这些侧边栏卡片的教程的，但是那个来访者卡片我是真的喜欢啊！在星港哥哥的博客里面看到的时候一眼就心动了。（青桔哥哥快点更新啊！！）
-等我找找找其他大佬写的教程再更新哦自定义字体这个字体也算是我的噩梦之一了，我前面也写了我搞css到时候第一个就是搞的这个字体，毕竟字体是一个博客的灵魂嘛，字体不对劲整个博客也好看不到哪里去。css弄好之后我本来是想通过css引入ttf格式的文件自定义字体的，但是这个东西我已经对它有心理阴影了，所以我就换了一种方式，就是直接通过extends引入。我是在叶泯希哥哥的博客上先看到这个方法的，但是叶泯希哥哥只给了小米字体的链接，我换上去试了试，感觉和我的博客不太搭，所以我又翻了翻，找到了星港哥哥有一篇教程
+
+但是我发现了一个大问题。我明明css和js引入都是正确的啊，那年今日和来访者卡片里面的内容它就是显示不出来，我还以为是我这次又翻车了呢，但是日历那一块就是好好的呀（除了有亿点点错位）
+
+结果我一看Marice新出的一篇文章才知道，原来青桔哥哥太久没更新，api失效了！
+我赶紧去星港哥哥青桔哥哥的博客里面看看，他们的卡片也显示不出来，呼，那我就放心了。但是日历那个又是怎么回事啊！！！我在群里面问了也没有人回我呜呜呜
+算啦，到时候再说吧，我到时候再找找其他大佬还有没有写这些侧边栏卡片的教程的，但是那个来访者卡片我是真的喜欢啊！在星港哥哥的博客里面看到的时候一眼就心动了。（青桔哥哥快点更新啊！！）
+自定义字体这个字体也算是我的噩梦之一了，我前面也写了我搞css到时候第一个就是搞的这个字体，毕竟字体是一个博客的灵魂嘛，字体不对劲整个博客也好看不到哪里去。css弄好之后我本来是想通过css引入ttf格式的文件自定义字体的，但是这个东西我已经对它有心理阴影了，所以我就换了一种方式，就是直接通过extends引入。
+我是在叶泯希哥哥的博客上先看到这个方法的，但是叶泯希哥哥只给了小米字体的链接，我换上去试了试，感觉和我的博客不太搭，所以我又翻了翻，找到了星港哥哥有一篇教程
 
     引用站外链接
     
@@ -1100,11 +1222,18 @@ Git 没装插件（我去找了，没找到css的插件）
         
         
     
-我就按照他的教程用中文网字计划提供的公共字体搞辣，我本来是想用月星楷的，但是我用上去之后发现这款字体太复古了，也和我的博客配不上，所以我现在用的是霞鹜文楷。用上新字体是不是好看多啦？至于在哪里看霞鹜文楷的效果嘛……你现在看的这些字不都是嘛这个字体看起来舒服多了，甚至我现在看我写的那篇六千多字的随笔我们为什么还在做个人博客？都看得不那么累了，之前我是真的会晕字的（不是那篇文章我是怎么写出来的我自己都看不下去，太~长了）
-结语这篇文章是持续更新的，所以我也不知道它什么时候又会跑最上面去啦。现在你看到的这些文字是在2025年5月31号写的，后面更新我都会标更新日期哒还有，提前剧透一下，我的一篇大制作很快明后天就能上线啦（不会是像那篇文章一样的长篇大论啦！我发誓我以后绝对不会再写那种文章了），这篇文章据说和其他的文章都非常不一样，而且绝对图文并茂，甚至还会有视频呢！大家可以期待一下哦！
-]]></content>
+
+我就按照他的教程用中文网字计划提供的公共字体搞辣，我本来是想用月星楷的，但是我用上去之后发现这款字体太复古了，也和我的博客配不上，所以我现在用的是霞鹜文楷。
+
+
+用上新字体是不是好看多啦？至于在哪里看霞鹜文楷的效果嘛……你现在看的这些字不都是嘛
+这个字体看起来舒服多了，甚至我现在看我写的那篇六千多字的随笔我们为什么还在做个人博客？都看得不那么累了，之前我是真的会晕字的（不是那篇文章我是怎么写出来的我自己都看不下去，太~长了）
+结语这篇文章是持续更新的，所以我也不知道它什么时候又会跑最上面去啦。现在你看到的这些文字是在2025年5月31号写的，后面更新我都会标更新日期哒
+还有，提前剧透一下，我的一篇大制作很快明后天就能上线啦（不会是像那篇文章一样的长篇大论啦！我发誓我以后绝对不会再写那种文章了），这篇文章据说和其他的文章都非常不一样，而且绝对图文并茂，甚至还会有视频呢！大家可以期待一下哦！]]></content>
       <categories>
         <category>记录</category>
+        <category>教程</category>
+        <category>持续更新</category>
       </categories>
       <tags>
         <tag>Solitude</tag>
@@ -1215,7 +1344,8 @@ Vercel加速（2025.5.29更新）Vercel用了一段时间之后感觉还是有�
     
 
 我的个人博客可以通过以下几个地址访问：
-https://blog.star-lake.world （主域名）
+https://blog.lemonstar.me （主域名）
+https://blog.star-lake.world 
 https://star-lake.world （跳转到blog.star-lake.world）
 https://personal-blog-solitude.pages.dev
 https://personal-blog-solitude.vercel.app
@@ -1481,6 +1611,11 @@ OK，那现在我们就返回到首页，在搜索框下面有一个按钮写着
     <content><![CDATA[{"headers":[{"source":"/sw.js","headers":[{"key":"Cache-Control","value":"public, max-age=0, must-revalidate"}]},{"source":"(.*)","headers":[{"key":"Cache-Control","value":"public, s-maxage=86400, max-age=86400"},{"key":"Vercel-CDN-Cache-Control","value":"max-age=31536000"}]}]}]]></content>
   </entry>
   <entry>
+    <title>个人简介</title>
+    <url>/about/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>本站介绍</title>
     <url>/aboutsite/index.html</url>
     <content><![CDATA[本站使用：框架：Hexo主题：Solitude域名购买：阿里云域名管理：CloudFlare网站托管：Vercel网站仓库：GitHub评论系统：Waline评论系统：Twikoo访问统计：Umami图床：Postimage字体：霞鹜文楷
@@ -1498,11 +1633,11 @@ OK，那现在我们就返回到首页，在搜索框下面有一个按钮写着
     fetch('https://api.github.com/repos/Yangle-q/Personal-Blog-Solitude')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-8ynyf17gx').innerText = data.name;
-        document.querySelector('.desc-8ynyf17gx').innerText = data.description;
-        document.querySelector('.star-8ynyf17gx').innerText = data.stargazers_count;
-        document.querySelector('.fork-8ynyf17gx').innerText = data.forks_count;
-        document.querySelector('.lang-8ynyf17gx').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-althnv6gj').innerText = data.name;
+        document.querySelector('.desc-althnv6gj').innerText = data.description;
+        document.querySelector('.star-althnv6gj').innerText = data.stargazers_count;
+        document.querySelector('.fork-althnv6gj').innerText = data.forks_count;
+        document.querySelector('.lang-althnv6gj').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   
   
@@ -1535,44 +1670,151 @@ OK，那现在我们就返回到首页，在搜索框下面有一个按钮写着
     
 
 
-建站大事记No.9 Article PublishArticle No.9Published on 2025.6.10发表文章“如何注册免费域名并托管到CloudFlare”
+建站大事记全部全站更新文章发布/更新新功能购买域名
+No.4 Article UpdateArticle No.4Updated on 2025.6.16更新文章“Solitude魔改记录”新加了“更新-表格”板块置顶该文章
+
+No.6 Article UpdateArticle No.6Updated on 2025.6.16更新文章“Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church”把图库挪到了一个独立的页面
+
+No.9 Article PublishArticle No.9Published on 2025.6.10发表文章“如何注册免费域名并托管到CloudFlare”
+
 No.2 Article UpdateArticle No.2Updated on 2025.6.9更新文章“我们为什么还在做个人博客？”优化了阅读体验
+
 DomainDomainBought on 2025.6.7购买域名“lemonstar.me，hellofrom.cn”
+
 No.8 Article PublishArticle No.8Published on 2025.6.7发表文章“利用 Zoho WorkDrive 生成下载链接”
+
 No.7 Article UpdateArticle No.7Updated on 2025.6.8更新文章“Markdown 格式详解与 Solitude 主题 Front Matter 使用说明”新加了“下载源码”一段
+
 No.7 Article PublishArticle No.7Published on 2025.6.7发表文章“Markdown 格式详解与 Solitude 主题 Front Matter 使用说明”
+
 No.6 Article UpdateArticle No.6Updated on 2025.6.7更新文章“Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church”根据史实修改了一些资料
+
 No.3 Article UpdateArticle No.3Updated on 2025.6.3更新文章“从 CloudFlare Pages 转到 Vercel”新加了前置要求一段文章“从CloudFlarePages转到Vercel”改名为使用Vercel部署博客更新文章封面
+
 No.6 Article UpdateArticle No.6Updated on 2025.6.3文章“A Brief Biography and Interesting Facts of Three Most Famous English Monarches in their Time and Life. Part 1, Introduction”改名为“Part 1, Introduction”
+
 No.6 Article UpdateArticle No.6Updated on 2025.6.3更新文章“A Brief Biography and Interesting Facts of three Most Famous English Monarchs in Their Time and Life. Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church”更新文章排版改名为 “Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church”
+
 No.6 Article PublishArticle No.6Published on 2025.6.1发表文章“A Brief Biography and Interesting Facts of three Most Famous English Monarchs in Their Time and Life. Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church”
+
 No.5 Article PublishArticle No.5Published on 2025.6.1发表文章“A Brief Biography and Interesting Facts of Three Most Famous English Monarches in their Time and Life. Part 1, Introduction”
+
 No.3 Article UpdateArticle No.3Updated on 2025.6.1更新文章“从 CloudFlare Pages 转到 Vercel”新加了手动配置一段
+
 2.3.10 Solitude CyberpunkVersion 2.3.10Updated on 2025.6.1全站字体改成“霞鹜文楷”删除日历、那年今日、来访者卡片更换背景图
+
 No.4 Article PublishArticle No.4Published on 2025.5.31发表文章“Solitude魔改记录”
+
 2.3.9 Solitude CyberpunkVersion 2.3.9Updated on 2025.5.29全站字体改成MiSans首页添加日历、那年今日、来访者卡片（参考@青桔气球）
+
 No.3 Article UpdateArticle No.3Updated on 2025.5.29更新文章“从 CloudFlare Pages 转到 Vercel”修改了一些表达新加了Vercel加速一段
+
 No.3 Article UpdateArticle No.3Updated on 2025.5.22更新文章“从 CloudFlare Pages 转到 Vercel”修改了一些表达新加了在这里硬塞进去一个Vercel简介和参考文章两段新加了一张图片优化了阅读体验
+
 No.3 Article PublishArticle No.3Published on 2025.5.19发表文章“从 CloudFlare Pages 转到 Vercel”
+
 2.2.8 Solitude CyberpunkVersion 2.2.8Updated on 2025.5.19网站托管从CloudFlare Pages 换到Vercel
+
 No.2 Article PublishArticle No.2Published on 2025.5.18发表文章“我们为什么还在做个人博客？”(看完文章约需用时21分钟，请谨慎阅读（๑ • ‿ • ๑ ）)
+
 1.1.7 Solitude CyberpunkVersion 1.1.7Updated on 2025.5.12禁用Waline评论系统更新了一下About页面头像旁边那一圈文字（我真的不知道那东西叫啥╮(╯∀╰)╭）
+
 No.1 Article UpdateArticle No.1Updated on 2025.5.12更新文章“建站备忘录”加上了颜文字(⸝⸝•̀֊•́⸝⸝)
+
 No.1 Article UpdateArticle No.1Updated on 2025.5.10更新文章“建站备忘录”修改了一些表达
+
 1.1.6 Solitude CyberpunkVersion 1.1.6Updated on 2025.5.9换背景图片更换个人头像完善友链页面
+
 1.1.5 Solitude CyberpunkVersion 1.1.5Updated on 2025.5.8换背景图片新建页面“本站介绍”更改目录栏布局更新音乐胶囊里的歌曲为“I Really Want to Stay at Your House”从现在开始认真记录更新啦
+
 1.1.4 Solitude CyberpunkVersion 1.1.4Updated on 2025.5.2统一博客视觉样式为“赛博朋克”更新左顶部栏文字与图标，右顶部栏图片更改网站图标加背景图片更新目录栏文字显示，更改目录栏布局深色模式配色颜色改为#cc00ff更新About页面信息更新“建站备忘录”文章封面启用封面取色
+
 Version 1.0.3, New Function 2Version 1.0.3New Function 2Created on 2025.5.1Twikoo开通邮箱回复提醒
+
 No.1 Article PublishArticle No.1Published on 2025.4.27发表文章“建站备忘录”
+
 1.0.3 Solitude DefaultVersion 1.0.3Updated on 2025.4.26域名star-lake.world重定向到blog.star-lake.world顶部盒子新增Happy Birthady项目
+
 Version 1.0.2, New Function 1Version 1.0.2New Function 1Created on 2025.4.25新增Umami数据统计（特别感谢叶泯希哥哥远程帮忙搭建）
+
 1.0.2 Solitude DefaultVersion 1.0.2Updated on 2025.4.23改变网站配色：浅色模式#fdbe02，深色模式#8c00ff网站改名：星湖蔚境 → 星湖碧境
+
 1.0.1 Solitude DefaultVersion 1.0.1Updated on 2025.4.23网站正式上线 启用域名star-lake.world &amp; blog.star-lake.world顶部盒子新增Github仓库地址
+
 0.0.2 Solitude DefaultVersion 0.0.2Updated on 2025.4.13开始使用Solitude主题
+
 0.0.1 Hexo DefaultVersion 0.0.1Created on 2025.4.13正式创建星湖蔚境博客
+
+DomainDomainBought on 2025.4.13购买域名“star-lake.world”
+2.3.10 Solitude CyberpunkVersion 2.3.10Updated on 2025.6.1全站字体改成“霞鹜文楷”删除日历、那年今日、来访者卡片更换背景图
+
+2.3.9 Solitude CyberpunkVersion 2.3.9Updated on 2025.5.29全站字体改成MiSans首页添加日历、那年今日、来访者卡片（参考@青桔气球）
+
+2.2.8 Solitude CyberpunkVersion 2.2.8Updated on 2025.5.19网站托管从CloudFlare Pages 换到Vercel
+
+1.1.7 Solitude CyberpunkVersion 1.1.7Updated on 2025.5.12禁用Waline评论系统更新了一下About页面头像旁边那一圈文字（我真的不知道那东西叫啥╮(╯∀╰)╭）
+
+1.1.6 Solitude CyberpunkVersion 1.1.6Updated on 2025.5.9换背景图片更换个人头像完善友链页面
+
+1.1.5 Solitude CyberpunkVersion 1.1.5Updated on 2025.5.8换背景图片新建页面“本站介绍”更改目录栏布局更新音乐胶囊里的歌曲为“I Really Want to Stay at Your House”从现在开始认真记录更新啦
+
+1.1.4 Solitude CyberpunkVersion 1.1.4Updated on 2025.5.2统一博客视觉样式为“赛博朋克”更新左顶部栏文字与图标，右顶部栏图片更改网站图标加背景图片更新目录栏文字显示，更改目录栏布局深色模式配色颜色改为#cc00ff更新About页面信息更新“建站备忘录”文章封面启用封面取色
+
+1.0.3 Solitude DefaultVersion 1.0.3Updated on 2025.4.26域名star-lake.world重定向到blog.star-lake.world顶部盒子新增Happy Birthady项目
+
+1.0.2 Solitude DefaultVersion 1.0.2Updated on 2025.4.23改变网站配色：浅色模式#fdbe02，深色模式#8c00ff网站改名：星湖蔚境 → 星湖碧境
+
+1.0.1 Solitude DefaultVersion 1.0.1Updated on 2025.4.23网站正式上线 启用域名star-lake.world &amp; blog.star-lake.world顶部盒子新增Github仓库地址
+
+0.0.2 Solitude DefaultVersion 0.0.2Updated on 2025.4.13开始使用Solitude主题
+
+0.0.1 Hexo DefaultVersion 0.0.1Created on 2025.4.13正式创建星湖蔚境博客
+
+No.4 Article UpdateArticle No.4Updated on 2025.6.16更新文章“Solitude魔改记录”新加了“更新-表格”板块置顶该文章
+
+No.6 Article UpdateArticle No.6Updated on 2025.6.16更新文章“Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church”把图库挪到了一个独立的页面
+
+No.9 Article PublishArticle No.9Published on 2025.6.10发表文章“如何注册免费域名并托管到CloudFlare”
+
+No.2 Article UpdateArticle No.2Updated on 2025.6.9更新文章“我们为什么还在做个人博客？”优化了阅读体验
+
+DomainDomainBought on 2025.6.7购买域名“lemonstar.me，hellofrom.cn”
+
+No.8 Article PublishArticle No.8Published on 2025.6.7发表文章“利用 Zoho WorkDrive 生成下载链接”
+
+No.7 Article UpdateArticle No.7Updated on 2025.6.8更新文章“Markdown 格式详解与 Solitude 主题 Front Matter 使用说明”新加了“下载源码”一段
+
+No.7 Article PublishArticle No.7Published on 2025.6.7发表文章“Markdown 格式详解与 Solitude 主题 Front Matter 使用说明”
+
+No.6 Article UpdateArticle No.6Updated on 2025.6.7更新文章“Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church”根据史实修改了一些资料
+
+No.3 Article UpdateArticle No.3Updated on 2025.6.3更新文章“从 CloudFlare Pages 转到 Vercel”新加了前置要求一段文章“从CloudFlarePages转到Vercel”改名为使用Vercel部署博客更新文章封面
+
+No.6 Article UpdateArticle No.6Updated on 2025.6.3文章“A Brief Biography and Interesting Facts of Three Most Famous English Monarches in their Time and Life. Part 1, Introduction”改名为“Part 1, Introduction”
+
+No.6 Article UpdateArticle No.6Updated on 2025.6.3更新文章“A Brief Biography and Interesting Facts of three Most Famous English Monarchs in Their Time and Life. Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church”更新文章排版改名为 “Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church”
+
+No.6 Article PublishArticle No.6Published on 2025.6.1发表文章“A Brief Biography and Interesting Facts of three Most Famous English Monarchs in Their Time and Life. Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church”
+
+No.5 Article PublishArticle No.5Published on 2025.6.1发表文章“A Brief Biography and Interesting Facts of Three Most Famous English Monarches in their Time and Life. Part 1, Introduction”
+
+No.3 Article UpdateArticle No.3Updated on 2025.6.1更新文章“从 CloudFlare Pages 转到 Vercel”新加了手动配置一段
+
+2.3.10 Solitude CyberpunkVersion 2.3.10Updated on 2025.6.1全站字体改成“霞鹜文楷”删除日历、那年今日、来访者卡片更换背景图
+
+No.4 Article PublishArticle No.4Published on 2025.5.31发表文章“Solitude魔改记录”
+
+Version 1.0.3, New Function 2Version 1.0.3New Function 2Created on 2025.5.1Twikoo开通邮箱回复提醒
+
+Version 1.0.2, New Function 1Version 1.0.2New Function 1Created on 2025.4.25新增Umami数据统计（特别感谢叶泯希哥哥远程帮忙搭建）
+
+DomainDomainBought on 2025.6.7购买域名“lemonstar.me，hellofrom.cn”
+
 DomainDomainBought on 2025.4.13购买域名“star-lake.world”
 
-说明本站更新信息说明因本站使用的版本号迭代方式比较特殊，很多朋友有可能看不懂，故特此说明。
+
+
+版本号说明本站更新信息说明因本站使用的版本号迭代方式比较特殊，很多朋友有可能看不懂，故特此说明。
 版本号说明
 本站版本号大致采用x.y.z格式，如1.2.3
 x: 重大更新，如域名，主题，服务商更新等
@@ -1630,36 +1872,8 @@ Part 3
 这是本次更新的内容。]]></content>
   </entry>
   <entry>
-    <title>个人喜爱</title>
-    <url>/favourite-photos/index.html</url>
-    <content><![CDATA[
-        
-      ]]></content>
-  </entry>
-  <entry>
-    <title>个人简介</title>
-    <url>/about/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>网站留言</title>
-    <url>/message/index.html</url>
-    <content><![CDATA[大家来这里畅所欲言吧~
-]]></content>
-  </entry>
-  <entry>
-    <title>音乐空间</title>
-    <url>/music/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>最近评论</title>
-    <url>/recentcomments/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>网站推荐</title>
-    <url>/tlink/index.html</url>
+    <title>闲言碎语</title>
+    <url>/essay/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
@@ -1675,7 +1889,36 @@ Part 3
   
   
   
+
+  
+  
+  亨利八世
+  Henry VIII 里面的所有图片
+  
+  
+  
+  
 ]]></content>
+  </entry>
+  <entry>
+    <title>个人喜爱</title>
+    <url>/gallery-favourite/index.html</url>
+    <content><![CDATA[
+        
+      ]]></content>
+  </entry>
+  <entry>
+    <title>亨利八世</title>
+    <url>/gallery-henryviii/index.html</url>
+    <content><![CDATA[所有人像宫殿和城堡景象
+        
+      
+        
+      
+        
+      
+        
+      ]]></content>
   </entry>
   <entry>
     <title>友情链接</title>
@@ -1724,8 +1967,24 @@ Part 3
 ]]></content>
   </entry>
   <entry>
-    <title>闲言碎语</title>
-    <url>/essay/index.html</url>
+    <title>网站留言</title>
+    <url>/message/index.html</url>
+    <content><![CDATA[大家来这里畅所欲言吧~
+]]></content>
+  </entry>
+  <entry>
+    <title>音乐空间</title>
+    <url>/music/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>最近评论</title>
+    <url>/recentcomments/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>网站推荐</title>
+    <url>/tlink/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
@@ -1754,11 +2013,11 @@ CloudFlare官网：https://www.cloudflare.com/zh-cn/
     fetch('https://api.github.com/repos/2dust/v2rayN')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-p5ihqrfgx').innerText = data.name;
-        document.querySelector('.desc-p5ihqrfgx').innerText = data.description;
-        document.querySelector('.star-p5ihqrfgx').innerText = data.stargazers_count;
-        document.querySelector('.fork-p5ihqrfgx').innerText = data.forks_count;
-        document.querySelector('.lang-p5ihqrfgx').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-yuoswoqux').innerText = data.name;
+        document.querySelector('.desc-yuoswoqux').innerText = data.description;
+        document.querySelector('.star-yuoswoqux').innerText = data.stargazers_count;
+        document.querySelector('.fork-yuoswoqux').innerText = data.forks_count;
+        document.querySelector('.lang-yuoswoqux').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   
   
@@ -1776,11 +2035,11 @@ CloudFlare官网：https://www.cloudflare.com/zh-cn/
     fetch('https://api.github.com/repos/2dust/v2rayNG')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-z1knwtomu').innerText = data.name;
-        document.querySelector('.desc-z1knwtomu').innerText = data.description;
-        document.querySelector('.star-z1knwtomu').innerText = data.stargazers_count;
-        document.querySelector('.fork-z1knwtomu').innerText = data.forks_count;
-        document.querySelector('.lang-z1knwtomu').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-yhqpsyvuc').innerText = data.name;
+        document.querySelector('.desc-yhqpsyvuc').innerText = data.description;
+        document.querySelector('.star-yhqpsyvuc').innerText = data.stargazers_count;
+        document.querySelector('.fork-yhqpsyvuc').innerText = data.forks_count;
+        document.querySelector('.lang-yhqpsyvuc').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   
   
@@ -1791,6 +2050,7 @@ https://v2ray.tools/
 Windows 版
 Mac 版
 Android 版
+Linux 版
 
 创建 CloudFlare Worker接着我们回到刚刚 CloudFlare 账号的主页，左边栏往下滑，找到“计算（Workers）”，点击它进入 Workers 页面。
 
@@ -1854,7 +2114,7 @@ Worker 代码
 导入V2rayN&#x2F;NG现在我们在浏览器里面访问刚才绑定的那个域名，然后在域名的后面加一个斜杠/，再加上你的密码，就可以进入到订阅地址页面了。
 
 然后我们要把上面的“自适应订阅地址”输入到 V2rayN&#x2F;NG 里面。
-Windows 版Android 版Mac 版解压前面下载下来的 v2rayN 压缩包，运行里面的 v2rayN.exe 文件。
+Windows 版Android 版Mac/Linux 版解压前面下载下来的 v2rayN 压缩包，运行里面的 v2rayN.exe 文件。
 
 
 复制刚刚的“自适应订阅地址”，点击 v2rayN 界面上的 + 号按钮，就会弹出来订阅分组设置界面。
@@ -1864,7 +2124,7 @@ Windows 版Android 版Mac 版解压前面下载下来的 v2rayN 压缩包，运�
 然后点击上面操作栏里面的“订阅分组”，点击更新全部订阅（不通过代理）
 
 然后就能够获取到 VPN 节点啦！
-待更新中……由于博主家里面没有 Mac 电脑，下载下来的 v2rayX 压缩包我也没看懂，所以只能麻烦大家自己摸索啦~（面壁思过中
+待更新中……由于博主家里面没有 Mac&#x2F;Linux 电脑，下载下来的压缩包我也没看懂，所以只能麻烦大家自己摸索啦~（面壁思过中
 不过我觉得应该和 Windows 版是差不多的叭😃
 
 日常使用Windows 版Android 版测试 VPN 节点速度与可用性在节点列表上右键，选择“一键多线程测试延迟和速度”
@@ -3149,5 +3409,100 @@ return;
  cardHistory()
  document.addEventListener('pjax:complete', cardHistory);
 })]]></content>
+  </entry>
+  <entry>
+    <title>我滴账号们~</title>
+    <url>/myaccounts/index.html</url>
+    <content><![CDATA[说明这里收集了我所有的账号，防止我记不住。
+如果我的账号是公开的话我就会放我的账号的链接，如果不是的话就放那个软件&#x2F;网站的官网。
+另：这个页面不对外公开。
+AAivenyangle
+阿里云杨乐
+BBilibili
+CCloudFlareyangle.q@outlook.com
+DDeepseek13381962051
+Duolingo
+钉钉yangleqy
+DigitalPlat Freedomainsnothingnoway
+EEdx（MOOC）YangLe_ChrisK_QingYun
+Ewishwellyangle
+GGithub
+Google（Gmail）Qingyun
+国家中小学智慧教育平台TryEveryThing
+gitee
+高德地图
+Iiconfont
+K扣子
+夸克
+可汗学院
+LLeanCloudyangle-q
+MMicrosoft（Windows,Edge,Outlook,Bing）杨 乐
+MongoDB乐
+NNetlify乐 杨
+PPostimgyangle.q@outlook.com
+pixabay
+QQQ3978716397
+Quora
+全历史
+R热铁盒yangle-qscixyvfi
+Runway
+SSteamyangle.q
+T腾讯会议乐~
+淘气兔yangle.q@outlook.com
+UUWC 常熟世界联合学院杨乐
+VVercel
+W微信YangLe_QingYun
+WeTab杨乐 CHRIS KEVIN
+WPS
+网易云音乐
+XX
+YYoutube
+yousician
+有道词典
+有道云笔记LegeYang
+有道智慧学习
+Z知乎
+Zoho WorkDrive杨乐
+致美化
+#16 Personalities
+自建网站账号Emailsyangle.q@outlook.com
+Yangle-Qingyun@outlook.com
+ylmeteorite@gmail.com
+Domains名下的域名lemonstar.me
+star-lake.world
+hellofrom.cn
+heythere.dpdns.org
+icesea.dpdns.org
+分配的二级域名]]></content>
+  </entry>
+  <entry>
+    <title>不公开的页面/文章</title>
+    <url>/notpublic-/index.html</url>
+    <content><![CDATA[提示：请在本网页的网址后面跟上正确的密码以访问不公开的页面&#x2F;文章。
+]]></content>
+  </entry>
+  <entry>
+    <title>不公开的页面/文章</title>
+    <url>/notpublic-yang20100807/index.html</url>
+    <content><![CDATA[
+
+  
+  
+  VPN
+  Github 开源项目自建 VPN 超详细教程
+  
+  
+  
+  
+
+  
+  
+  MY ACCOUNTS
+  我的账号列表
+  
+  
+  
+  
+]]></content>
   </entry>
 </search>
