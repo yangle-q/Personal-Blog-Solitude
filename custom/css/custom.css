@@ -1,4 +1,4 @@
-/*Calender*/
+/* Calender */
 .card-widget {
     padding: 10px!important;
     max-height: calc(100vh - 100px);
@@ -251,4 +251,11 @@ progress::-webkit-progress-value {
 #aside-content .card-history .history_slide_link a:hover {
     color: var(--efu-white);
     background: var(--efu-main)
+}
+
+/* 评论协议样式 */
+a.plxycss {
+  float: right;
+  font-weight: bold;
+  font-size: 20px;
 }
