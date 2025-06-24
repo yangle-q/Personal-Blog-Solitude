@@ -244,11 +244,11 @@ Tip：如果不小心把文件改坏了不知道怎么改回来的话可以去 S
     fetch('https://api.github.com/repos/everfu/hexo-theme-solitude')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-bctbgnwxf').innerText = data.name;
-        document.querySelector('.desc-bctbgnwxf').innerText = data.description;
-        document.querySelector('.star-bctbgnwxf').innerText = data.stargazers_count;
-        document.querySelector('.fork-bctbgnwxf').innerText = data.forks_count;
-        document.querySelector('.lang-bctbgnwxf').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-292qawm8k').innerText = data.name;
+        document.querySelector('.desc-292qawm8k').innerText = data.description;
+        document.querySelector('.star-292qawm8k').innerText = data.stargazers_count;
+        document.querySelector('.fork-292qawm8k').innerText = data.forks_count;
+        document.querySelector('.lang-292qawm8k').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   
   
@@ -260,10 +260,10 @@ Tip：如果不小心把文件改坏了不知道怎么改回来的话可以去 S
 创建css&#x2F;js文件：
  在 css 文件夹里面创建 custom.css 文件，在 js 文件夹里面创建 custom.js 文件。（这个文件也可以是其他名字，只要后缀名是 .css&#x2F;.js 就行。）
 
-引入主题：
+引入css&#x2F;js：
  在主题配置文件（不是站点的）里面的扩展部分中引入（Solitude 主题是在第770行左右）。
  css 文件在 head 引入，js 文件在 bottom 里引入。有的 js 要求在 head 引入，不然无法生效。
- # --------------------------- start ---------------------------# Extend# 扩展extends:  # Insert in head  # 插入到 head  head:    - &lt;link rel=&quot;stylesheet&quot; href=&quot;/custom/css/custom.css&quot;&gt;  # Insert in body      # 插入到 body  body:    - &lt;script defer pjax src=&quot;/custom/js/custom.js&quot;&gt;&lt;/script&gt;# --------------------------- end ---------------------------
+ # --------------------------- start ---------------------------# Extend# 扩展extends:  # Insert in head  # 插入到 head  head:    - &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/custom.css&quot;&gt;  # Insert in body      # 插入到 body  body:    - &lt;script defer pjax src=&quot;/js/custom.js&quot;&gt;&lt;/script&gt;# --------------------------- end ---------------------------
 
  引入多个文件可以直接往下复制粘贴多添加一行然后改一下文件名就行。
 
@@ -390,6 +390,63 @@ H1，H2标题宽度修改效果教程参考修改之前：
         
             评论协议
             叶泯希
+        
+        
+    
+
+添加网站运行时间效果教程参考在页脚那里哦！
+新建文件：
+ 在blog&#x2F;source&#x2F;js文件夹（就是放自定义js的那个）新建 jz.min.js 文件。
+
+输入内容：
+ 在文件中输入以下内容：
+ document.addEventListener(&quot;DOMContentLoaded&quot;,(function()&#123;const startTime=new Date(&quot;2025-04-13T00:00:00Z&quot;);function padZero(num)&#123;return num&lt;10?&quot;0&quot;+num:String(num)&#125;function calculateElapsedTime(start)&#123;const elapsedMilliseconds=new Date-start,totalSeconds=Math.floor(elapsedMilliseconds/1e3);return&#123;days:Math.floor(totalSeconds/86400),hours:Math.floor(totalSeconds%86400/3600),minutes:padZero(Math.floor(totalSeconds%3600/60)),seconds:padZero(totalSeconds%60)&#125;&#125;function updateDisplay()&#123;const&#123;days:days,hours:hours,minutes:minutes,seconds:seconds&#125;=calculateElapsedTime(startTime),runtimeElement=document.getElementById(&quot;runtime&quot;);runtimeElement&amp;&amp;(runtimeElement.textContent=`本站已萌萌哒运行$&#123;days&#125; 天 $&#123;hours&#125; 小时 $&#123;minutes&#125; 分 $&#123;seconds&#125; 秒啦~`),requestAnimationFrame(updateDisplay)&#125;updateDisplay()&#125;));
+
+ 可以修改代码中以下的内容：
+ Date(&quot;2025-04-13T00:00:00Z&quot;);`本站已萌萌哒运行$&#123;days&#125; 天 $&#123;hours&#125; 小时 $&#123;minutes&#125; 分 $&#123;seconds&#125; 秒啦~`
+
+引入js：
+ 在主题配置文件（不是站点的）里面的扩展部分的bottom 里引入（Solitude 主题是在第770行左右）。
+ # --------------------------- start ---------------------------# Extend# 扩展extends:  # Insert in body      # 插入到 body  body:    - &lt;script defer pjax src=&quot;/js/jz.min.js&quot;&gt;&lt;/script&gt;# --------------------------- end ---------------------------
+
+在配置文件中添加：
+ 在主题配置文件（不是站点的）里面的页脚部分的页脚信息文字里添加以下信息（Solitude 主题是在第580行左右）：
+   # 页脚信息文字links:   - name: &lt;span id=&quot;runtime&quot;&gt;&lt;/span&gt;     url: /info/ # 链接可以自定义
+
+    引用站外链接
+    
+        
+          
+        
+        
+            主题魔改——Solitude主题
+            叶泯希
+        
+        
+    
+
+未添加成功的教程就是记录一下我的小小遗憾啦~顺便做个备份，到时候技术进步了再来试试😝（主要是主题不一样不知道怎么改js）
+
+    引用站外链接
+    
+        
+          
+        
+        
+            博客背景切换-页面版
+            Leonus
+        
+        
+     
+
+    引用站外链接
+    
+        
+          
+        
+        
+            给主题侧边栏添加倒计时
+            梦爱吃鱼
         
         
     前言众所周知啊，Solitude主题留给我们魔改的空间还是蛮大的，因为要是不改的话原生solitude就一股半成品的味道（有可能是因为看多了大佬们的博客觉得原生的solitude很土？）而且很多哥哥们都在自己博客里面放出来了各种教程，怎么说，看完了有点心动了捏
@@ -1693,6 +1750,42 @@ OK，那现在我们就返回到首页，在搜索框下面有一个按钮写着
       </tags>
   </entry>
   <entry>
+    <title>【关于博客】近况公告 25#1</title>
+    <url>/2025/%E8%BF%91%E5%86%B5%E5%85%AC%E5%91%8A/</url>
+    <content><![CDATA[最近回了趟上海，又去杭州宁波常熟等地走了一圈，本来想写一篇详细的游记的，但是奈何玩的地方太杂了，只能勉强整理出来一个简报啦（别催明天就开始写😀）
+这次出去也是状况频发（我就没有一次出去玩不状况频发的）本来路上想一直更博客的，但是……
+
+Q&amp;A：
+Q：这是啥？
+A：我硬盘的数据线。
+Q：这么成这样的？
+A：被酒店的工作人员摔的
+Q：怎么摔的？
+A：我就把行李拿去酒店前台寄存，回来就成这样了。
+Q：那这有啥影响？
+A：我更不了博客了。
+Q：为什么更不了博客？
+A：我tm博客文件全都存在硬盘里面。
+Q：为什么存在硬盘里面？
+A：因为我想两个电脑都能更博客，文件存电脑里面的话不方便同步。
+Q：……
+基本上就是这么一个情况啦，本来数据线坏了也不是什么麻烦事是吧，大不了几天更不了博客。但是呢我们从那个酒店离开的时候我电脑充电线又落在房间了（我发誓我真的看过一遍没有看到它没收进来），酒店打电话给我的时候我们已经在常熟了，只好让酒店给我们寄回家里面。
+好了现在不只是博客更不了连电脑都玩不了了🤩🤩
+对于一个电脑重度依赖者来说我表示没有电脑我是真受不了啊，你成天让我对着手机那么小小的屏幕我会发疯的！
+OK 很棒添麻烦这一块我是真的优秀。
+对于后面博客有什么打算嘛……首先这几天还是专注魔改，域名换一下，CloudFlare有点事情，还有两三篇文章要更（随笔这块有上新哦！）这几天没碰电脑积攒下来的事情还真不少，大家等着哦，我先去忙啦！
+]]></content>
+      <categories>
+        <category>记录</category>
+      </categories>
+      <tags>
+        <tag>个人博客</tag>
+        <tag>建站记录</tag>
+        <tag>近况公告</tag>
+        <tag>关于博客</tag>
+      </tags>
+  </entry>
+  <entry>
     <title></title>
     <url>/vercel.json</url>
     <content><![CDATA[{"headers":[{"source":"/sw.js","headers":[{"key":"Cache-Control","value":"public, max-age=0, must-revalidate"}]},{"source":"(.*)","headers":[{"key":"Cache-Control","value":"public, s-maxage=86400, max-age=86400"},{"key":"Vercel-CDN-Cache-Control","value":"max-age=31536000"}]}]}]]></content>
@@ -1738,274 +1831,6 @@ OK，那现在我们就返回到首页，在搜索框下面有一个按钮写着
 七、违反承诺的法律责任若用户违反承诺、发布侵害第三人合法权益的信息而导致本网站被判决向被侵权人赔偿，我们保留依法向该用户追偿的权利。
 八、用户提交内容的使用权利用户提交的任何内容，本网站有权在世界范围内，利用媒体、已知或未知的技术，永久、免费、独家、再授权使用，包括复制、修改、改编、出版、翻译、创作衍生作品等。
 ]]></content>
-  </entry>
-  <entry>
-    <title>本站介绍</title>
-    <url>/aboutsite/index.html</url>
-    <content><![CDATA[本站使用：框架：Hexo主题：Solitude域名购买：阿里云域名管理：CloudFlare网站托管：Vercel网站仓库：GitHub评论系统：Waline评论系统：Twikoo访问统计：Umami图床：Postimage字体：霞鹜文楷
-网站GitHub仓库：
-  
-  
-  
-    
-    
-    
-    
-  
-  
-  
-    fetch('https://api.github.com/repos/Yangle-q/Personal-Blog-Solitude')
-      .then(res => res.json())
-      .then(data => {
-        document.querySelector('.name-fxgdxej60').innerText = data.name;
-        document.querySelector('.desc-fxgdxej60').innerText = data.description;
-        document.querySelector('.star-fxgdxej60').innerText = data.stargazers_count;
-        document.querySelector('.fork-fxgdxej60').innerText = data.forks_count;
-        document.querySelector('.lang-fxgdxej60').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
-    });
-  
-  
-
-了解更多：请查看页面：
-
-    站内链接
-    
-        
-          
-        
-        
-            网站推荐
-            本站使用的资源
-        
-        
-    
-或阅读文章
-
-    站内链接
-    
-        
-          
-        
-        
-            建站备忘录
-            2025.4.27
-        
-        
-    
-
-
-建站大事记全部全站更新文章发布/更新新功能购买域名
-No.2 Article UpdateArticle No.2Updated on 2025.6.18更新文章“我们为什么还在做个人博客？”修改了一些文字，添加了一个指向我的文章“如何注册免费域名并托管到CloudFlare”的外挂标签
-
-No.4 Article UpdateArticle No.4Updated on 2025.6.18更新文章“Solitude魔改记录”新加了“添加评论协议”一段置顶该文章
-
-2.3.11 Solitude CyberpunkVersion 2.3.11Updated on 2025.6.16新增“不公开的页面&#x2F;文章”页面一级、二级标题上下增高高度评论区添加评论协议本页面时间表更新样式
-
-No.4 Article UpdateArticle No.4Updated on 2025.6.16更新文章“Solitude魔改记录”新加了“更新-表格”板块置顶该文章
-
-No.6 Article UpdateArticle No.6Updated on 2025.6.16更新文章“Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church”把图库挪到了一个独立的页面
-
-No.9 Article PublishArticle No.9Published on 2025.6.10发表文章“如何注册免费域名并托管到CloudFlare”
-
-No.2 Article UpdateArticle No.2Updated on 2025.6.9更新文章“我们为什么还在做个人博客？”优化了阅读体验
-
-DomainDomainBought on 2025.6.7购买域名“lemonstar.me，hellofrom.cn”
-
-No.8 Article PublishArticle No.8Published on 2025.6.7发表文章“利用 Zoho WorkDrive 生成下载链接”
-
-No.7 Article UpdateArticle No.7Updated on 2025.6.8更新文章“Markdown 格式详解与 Solitude 主题 Front Matter 使用说明”新加了“下载源码”一段
-
-No.7 Article PublishArticle No.7Published on 2025.6.7发表文章“Markdown 格式详解与 Solitude 主题 Front Matter 使用说明”
-
-No.6 Article UpdateArticle No.6Updated on 2025.6.7更新文章“Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church”根据史实修改了一些资料
-
-No.3 Article UpdateArticle No.3Updated on 2025.6.3更新文章“从 CloudFlare Pages 转到 Vercel”新加了前置要求一段文章“从CloudFlarePages转到Vercel”改名为使用Vercel部署博客更新文章封面
-
-No.6 Article UpdateArticle No.6Updated on 2025.6.3文章“A Brief Biography and Interesting Facts of Three Most Famous English Monarches in their Time and Life. Part 1, Introduction”改名为“Part 1, Introduction”
-
-No.6 Article UpdateArticle No.6Updated on 2025.6.3更新文章“A Brief Biography and Interesting Facts of three Most Famous English Monarchs in Their Time and Life. Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church”更新文章排版改名为 “Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church”
-
-No.6 Article PublishArticle No.6Published on 2025.6.1发表文章“A Brief Biography and Interesting Facts of three Most Famous English Monarchs in Their Time and Life. Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church”
-
-No.5 Article PublishArticle No.5Published on 2025.6.1发表文章“A Brief Biography and Interesting Facts of Three Most Famous English Monarches in their Time and Life. Part 1, Introduction”
-
-No.3 Article UpdateArticle No.3Updated on 2025.6.1更新文章“从 CloudFlare Pages 转到 Vercel”新加了手动配置一段
-
-2.3.10 Solitude CyberpunkVersion 2.3.10Updated on 2025.6.1全站字体改成“霞鹜文楷”删除日历、那年今日、来访者卡片更换背景图
-
-No.4 Article PublishArticle No.4Published on 2025.5.31发表文章“Solitude魔改记录”
-
-2.3.9 Solitude CyberpunkVersion 2.3.9Updated on 2025.5.29全站字体改成MiSans首页添加日历、那年今日、来访者卡片（参考@青桔气球）
-
-No.3 Article UpdateArticle No.3Updated on 2025.5.29更新文章“从 CloudFlare Pages 转到 Vercel”修改了一些表达新加了Vercel加速一段
-
-No.3 Article UpdateArticle No.3Updated on 2025.5.22更新文章“从 CloudFlare Pages 转到 Vercel”修改了一些表达新加了在这里硬塞进去一个Vercel简介和参考文章两段新加了一张图片优化了阅读体验
-
-No.3 Article PublishArticle No.3Published on 2025.5.19发表文章“从 CloudFlare Pages 转到 Vercel”
-
-2.2.8 Solitude CyberpunkVersion 2.2.8Updated on 2025.5.19网站托管从CloudFlare Pages 换到Vercel
-
-No.2 Article PublishArticle No.2Published on 2025.5.18发表文章“我们为什么还在做个人博客？”(看完文章约需用时21分钟，请谨慎阅读（๑ • ‿ • ๑ ）)
-
-1.1.7 Solitude CyberpunkVersion 1.1.7Updated on 2025.5.12禁用Waline评论系统更新了一下About页面头像旁边那一圈文字（我真的不知道那东西叫啥╮(╯∀╰)╭）
-
-No.1 Article UpdateArticle No.1Updated on 2025.5.12更新文章“建站备忘录”加上了颜文字(⸝⸝•̀֊•́⸝⸝)
-
-No.1 Article UpdateArticle No.1Updated on 2025.5.10更新文章“建站备忘录”修改了一些表达
-
-1.1.6 Solitude CyberpunkVersion 1.1.6Updated on 2025.5.9换背景图片更换个人头像完善友链页面
-
-1.1.5 Solitude CyberpunkVersion 1.1.5Updated on 2025.5.8换背景图片新建页面“本站介绍”更改目录栏布局更新音乐胶囊里的歌曲为“I Really Want to Stay at Your House”从现在开始认真记录更新啦
-
-1.1.4 Solitude CyberpunkVersion 1.1.4Updated on 2025.5.2统一博客视觉样式为“赛博朋克”更新左顶部栏文字与图标，右顶部栏图片更改网站图标加背景图片更新目录栏文字显示，更改目录栏布局深色模式配色颜色改为#cc00ff更新About页面信息更新“建站备忘录”文章封面启用封面取色
-
-Version 1.0.3, New Function 2Version 1.0.3New Function 2Created on 2025.5.1Twikoo开通邮箱回复提醒
-
-No.1 Article PublishArticle No.1Published on 2025.4.27发表文章“建站备忘录”
-
-1.0.3 Solitude DefaultVersion 1.0.3Updated on 2025.4.26域名star-lake.world重定向到blog.star-lake.world顶部盒子新增Happy Birthady项目
-
-Version 1.0.2, New Function 1Version 1.0.2New Function 1Created on 2025.4.25新增Umami数据统计（特别感谢叶泯希哥哥远程帮忙搭建）
-
-1.0.2 Solitude DefaultVersion 1.0.2Updated on 2025.4.23改变网站配色：浅色模式#fdbe02，深色模式#8c00ff网站改名：星湖蔚境 → 星湖碧境
-
-1.0.1 Solitude DefaultVersion 1.0.1Updated on 2025.4.23网站正式上线 启用域名star-lake.world &amp; blog.star-lake.world顶部盒子新增Github仓库地址
-
-0.0.2 Solitude DefaultVersion 0.0.2Updated on 2025.4.13开始使用Solitude主题
-
-0.0.1 Hexo DefaultVersion 0.0.1Created on 2025.4.13正式创建星湖蔚境博客
-
-DomainDomainBought on 2025.4.13购买域名“star-lake.world”
-2.3.11 Solitude CyberpunkVersion 2.3.11Updated on 2025.6.16新增“不公开的页面&#x2F;文章”页面一级、二级标题上下增高高度评论区添加评论协议本页面时间表更新样式
-
-2.3.10 Solitude CyberpunkVersion 2.3.10Updated on 2025.6.1全站字体改成“霞鹜文楷”删除日历、那年今日、来访者卡片更换背景图
-
-2.3.9 Solitude CyberpunkVersion 2.3.9Updated on 2025.5.29全站字体改成MiSans首页添加日历、那年今日、来访者卡片（参考@青桔气球）
-
-2.2.8 Solitude CyberpunkVersion 2.2.8Updated on 2025.5.19网站托管从CloudFlare Pages 换到Vercel
-
-1.1.7 Solitude CyberpunkVersion 1.1.7Updated on 2025.5.12禁用Waline评论系统更新了一下About页面头像旁边那一圈文字（我真的不知道那东西叫啥╮(╯∀╰)╭）
-
-1.1.6 Solitude CyberpunkVersion 1.1.6Updated on 2025.5.9换背景图片更换个人头像完善友链页面
-
-1.1.5 Solitude CyberpunkVersion 1.1.5Updated on 2025.5.8换背景图片新建页面“本站介绍”更改目录栏布局更新音乐胶囊里的歌曲为“I Really Want to Stay at Your House”从现在开始认真记录更新啦
-
-1.1.4 Solitude CyberpunkVersion 1.1.4Updated on 2025.5.2统一博客视觉样式为“赛博朋克”更新左顶部栏文字与图标，右顶部栏图片更改网站图标加背景图片更新目录栏文字显示，更改目录栏布局深色模式配色颜色改为#cc00ff更新About页面信息更新“建站备忘录”文章封面启用封面取色
-
-1.0.3 Solitude DefaultVersion 1.0.3Updated on 2025.4.26域名star-lake.world重定向到blog.star-lake.world顶部盒子新增Happy Birthady项目
-
-1.0.2 Solitude DefaultVersion 1.0.2Updated on 2025.4.23改变网站配色：浅色模式#fdbe02，深色模式#8c00ff网站改名：星湖蔚境 → 星湖碧境
-
-1.0.1 Solitude DefaultVersion 1.0.1Updated on 2025.4.23网站正式上线 启用域名star-lake.world &amp; blog.star-lake.world顶部盒子新增Github仓库地址
-
-0.0.2 Solitude DefaultVersion 0.0.2Updated on 2025.4.13开始使用Solitude主题
-
-0.0.1 Hexo DefaultVersion 0.0.1Created on 2025.4.13正式创建星湖蔚境博客
-
-No.2 Article UpdateArticle No.2Updated on 2025.6.18更新文章“我们为什么还在做个人博客？”修改了一些文字，添加了一个指向我的文章“如何注册免费域名并托管到CloudFlare”的外挂标签
-
-No.4 Article UpdateArticle No.4Updated on 2025.6.18更新文章“Solitude魔改记录”新加了“添加评论协议”一段置顶该文章
-
-No.4 Article UpdateArticle No.4Updated on 2025.6.16更新文章“Solitude魔改记录”新加了“更新-表格”板块置顶该文章
-
-No.6 Article UpdateArticle No.6Updated on 2025.6.16更新文章“Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church”把图库挪到了一个独立的页面
-
-No.9 Article PublishArticle No.9Published on 2025.6.10发表文章“如何注册免费域名并托管到CloudFlare”
-
-No.2 Article UpdateArticle No.2Updated on 2025.6.9更新文章“我们为什么还在做个人博客？”优化了阅读体验
-
-DomainDomainBought on 2025.6.7购买域名“lemonstar.me，hellofrom.cn”
-
-No.8 Article PublishArticle No.8Published on 2025.6.7发表文章“利用 Zoho WorkDrive 生成下载链接”
-
-No.7 Article UpdateArticle No.7Updated on 2025.6.8更新文章“Markdown 格式详解与 Solitude 主题 Front Matter 使用说明”新加了“下载源码”一段
-
-No.7 Article PublishArticle No.7Published on 2025.6.7发表文章“Markdown 格式详解与 Solitude 主题 Front Matter 使用说明”
-
-No.6 Article UpdateArticle No.6Updated on 2025.6.7更新文章“Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church”根据史实修改了一些资料
-
-No.3 Article UpdateArticle No.3Updated on 2025.6.3更新文章“从 CloudFlare Pages 转到 Vercel”新加了前置要求一段文章“从CloudFlarePages转到Vercel”改名为使用Vercel部署博客更新文章封面
-
-No.6 Article UpdateArticle No.6Updated on 2025.6.3文章“A Brief Biography and Interesting Facts of Three Most Famous English Monarches in their Time and Life. Part 1, Introduction”改名为“Part 1, Introduction”
-
-No.6 Article UpdateArticle No.6Updated on 2025.6.3更新文章“A Brief Biography and Interesting Facts of three Most Famous English Monarchs in Their Time and Life. Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church”更新文章排版改名为 “Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church”
-
-No.6 Article PublishArticle No.6Published on 2025.6.1发表文章“A Brief Biography and Interesting Facts of three Most Famous English Monarchs in Their Time and Life. Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church”
-
-No.5 Article PublishArticle No.5Published on 2025.6.1发表文章“A Brief Biography and Interesting Facts of Three Most Famous English Monarches in their Time and Life. Part 1, Introduction”
-
-No.3 Article UpdateArticle No.3Updated on 2025.6.1更新文章“从 CloudFlare Pages 转到 Vercel”新加了手动配置一段
-
-2.3.10 Solitude CyberpunkVersion 2.3.10Updated on 2025.6.1全站字体改成“霞鹜文楷”删除日历、那年今日、来访者卡片更换背景图
-
-No.4 Article PublishArticle No.4Published on 2025.5.31发表文章“Solitude魔改记录”
-
-Version 1.0.3, New Function 2Version 1.0.3New Function 2Created on 2025.5.1Twikoo开通邮箱回复提醒
-
-Version 1.0.2, New Function 1Version 1.0.2New Function 1Created on 2025.4.25新增Umami数据统计（特别感谢叶泯希哥哥远程帮忙搭建）
-
-DomainDomainBought on 2025.6.7购买域名“lemonstar.me，hellofrom.cn”
-
-DomainDomainBought on 2025.4.13购买域名“star-lake.world”
-
-
-
-版本号说明本站更新信息说明因本站使用的版本号迭代方式比较特殊，很多朋友有可能看不懂，故特此说明。
-版本号说明
-本站版本号大致采用x.y.z格式，如1.2.3
-x: 重大更新，如域名，主题，服务商更新等
-y: 大更新，如整体视觉样式，新功能等。若一次更新项目太多有可能也会算作大更新
-z: 一般更新。
-
-
-本站x,y,z代表三个类型的更新的版本号各自独立，不存在从属关系，更上一级的号码（如x)更新后下级号码（如y,z）不会清零，但会往下更新一代（如上一版本号是2.2.1，x更新后其他都往下更新一个数字为3.3.2）
-
-信息说明以1.3.6版本更新举例：
-1.3.6 Solitude CyberpunkVersion 1.3.6Updated on 2025.5.2统一博客视觉样式为“赛博朋克”更新左顶部栏文字与图标，右顶部栏图片更新网站头像加背景图片更新目录栏文字显示，更改目录栏布局深色模式配色颜色改为#cc00ff更新About页面信息更新“建站备忘录”文章封面启用封面取色
-
-可以看到这是一次y级更新，在它之前的一个版本为1.2.5
-Part 1：1.3.6 Solitude Cyberpunk这是本次更新的名称，1.3.6 为版本号，Solitude为当前使用主题，Cyberpunk为视觉样式。
-Part 2：Version 1.3.6Updated on 2025.5.2这是本次更新的前置信息，Version后跟的是版本号，Updated on后跟的是更新时间。
-Part 3：
-统一博客视觉样式为“赛博朋克”
-更新左顶部栏文字与图标，右顶部栏图片
-更新网站头像
-加背景图片
-更新目录栏文字显示，更改目录栏布局
-深色模式配色颜色改为#cc00ff
-
-
-更新About页面信息
-更新“建站备忘录”文章封面
-启用封面取色
-
-这是本次更新的内容。
-特殊更新文章更新以下为示例：
-No.1 Article PublishArticle No.1Published on 2025.4.27发表文章“建站备忘录”
-
-Part 1No.3 Article Publish这是本次更新的名称，文章更新有两种，一种是Article Publish，发表文章；一种是Article Update，更新文章内容。前面No.3代表这是第三篇文章。
-Part 2Article No.3Published on 2025.5.19这是本次更新的前置信息，**Article No.**后跟的是文章顺序，Published&#x2F;Updated on后跟的是更新&#x2F;发表时间
-Part 3
-发表文章“建站备忘录”
-
-这是本次发表的文章及其链接，如果是更新文章内容的话会在下面指出更新了什么，如：
-
-更新文章“建站备忘录”
-
-修改了一些表达
-
-
-
-新增功能以下为示例：
-Version 1.1.3, New Function 1Version 1.1.3New Function 1Created on 2025.4.25新增Umami数据统计（特别感谢叶泯希哥哥远程帮忙搭建）
-
-在它之前的一个版本为1.0.2
-Part 1Version 1.1.3, New Function 1这是本次新增功能的名称，New Function后面跟的数字代表这是第几次新增功能。
-Part 2Version 1.1.3New Function 1Created on 2025.4.25这是本次新增功能的前置信息，Version后跟的是版本号，New Function后面跟的数字代表这是第几次新增功能，Created on后跟的是增加此功能的时间。
-Part 3
-新增Umami数据统计（特别感谢叶泯希哥哥远程帮忙搭建）
-
-这是本次更新的内容。]]></content>
   </entry>
   <entry>
     <title>友情链接</title>
@@ -2076,13 +1901,6 @@ Part 3
   
   
 ]]></content>
-  </entry>
-  <entry>
-    <title>个人喜爱</title>
-    <url>/gallery-favourite/index.html</url>
-    <content><![CDATA[
-        
-      ]]></content>
   </entry>
   <entry>
     <title>我滴账号们~</title>
@@ -2158,43 +1976,6 @@ icesea.dpdns.org
     <title>不公开的页面/文章</title>
     <url>/notpublic/index.html</url>
     <content><![CDATA[提示：请在本网页的网址后面跟上正确的密码以访问不公开的页面&#x2F;文章。
-]]></content>
-  </entry>
-  <entry>
-    <title>亨利八世</title>
-    <url>/gallery-henryviii/index.html</url>
-    <content><![CDATA[所有人像宫殿和城堡景象
-        
-      
-        
-      
-        
-      
-        
-      ]]></content>
-  </entry>
-  <entry>
-    <title>不公开的页面/文章</title>
-    <url>/notpublic/yang20100807/index.html</url>
-    <content><![CDATA[
-
-  
-  
-  VPN
-  Github 开源项目自建 VPN 超详细教程
-  
-  
-  
-  
-
-  
-  
-  MY ACCOUNTS
-  我的账号列表
-  
-  
-  
-  
 ]]></content>
   </entry>
   <entry>
@@ -2664,7 +2445,7 @@ progress::-webkit-progress-value {
     font-size: 12px;
     color: var(--efu-secondtext);
 }
-/*History*/
+/* History */
 #aside-content .card-history .swiper-wrapper {
     flex-direction: column
 }
@@ -2711,127 +2492,15 @@ a.plxycss {
   float: right;
   font-weight: bold;
   font-size: 20px;
-}]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/custom/js/calendar.js</url>
-    <content><![CDATA[document.addEventListener("DOMContentLoaded", () => {
-    initializeCard();
-});
-
-document.addEventListener("pjax:complete", () => {
-    initializeCard();
-});
-
-function initializeCard() {
-    cardTimes();
-    cardRefreshTimes();
 }
 
-let year, month, week, date, dates, weekStr, monthStr, asideTime, asideDay, asideDayNum, animalYear, ganzhiYear, lunarMon, lunarDay;
-const now = new Date();
-
-function cardRefreshTimes() {
-    const e = document.getElementById("card-widget-schedule");
-    if (e) {
-        asideDay = (now - asideTime) / 1e3 / 60 / 60 / 24;
-        e.querySelector("#pBar_year").value = asideDay;
-        e.querySelector("#p_span_year").innerHTML = (asideDay / 365 * 100).toFixed(1) + "%";
-        e.querySelector(".schedule-r0 .schedule-d1 .aside-span2").innerHTML = `还剩 ${(365 - asideDay).toFixed(0)} 天`;
-        e.querySelector("#pBar_month").value = date;
-        e.querySelector("#pBar_month").max = dates;
-        e.querySelector("#p_span_month").innerHTML = (date / dates * 100).toFixed(1) + "%";
-        e.querySelector(".schedule-r1 .schedule-d1 .aside-span2").innerHTML = `还剩 ${(dates - date)} 天`;
-        e.querySelector("#pBar_week").value = week === 0 ? 7 : week;
-        e.querySelector("#p_span_week").innerHTML = ((week === 0 ? 7 : week) / 7 * 100).toFixed(1) + "%";
-        e.querySelector(".schedule-r2 .schedule-d1 .aside-span2").innerHTML = `还剩 ${(7 - (week === 0 ? 7 : week))} 天`;
-    }
-}
-
-function cardTimes() {
-    year = now.getFullYear();
-    month = now.getMonth();
-    week = now.getDay();
-    date = now.getDate();
-
-    const e = document.getElementById("card-widget-calendar");
-    if (e) {
-        const isLeapYear = year % 4 === 0 && year % 100 !== 0 || year % 400 === 0;
-        weekStr = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"][week];
-        const monthData = [
-            { month: "1月", days: 31 },
-            { month: "2月", days: isLeapYear ? 29 : 28 },
-            { month: "3月", days: 31 },
-            { month: "4月", days: 30 },
-            { month: "5月", days: 31 },
-            { month: "6月", days: 30 },
-            { month: "7月", days: 31 },
-            { month: "8月", days: 31 },
-            { month: "9月", days: 30 },
-            { month: "10月", days: 31 },
-            { month: "11月", days: 30 },
-            { month: "12月", days: 31 }
-        ];
-        monthStr = monthData[month].month;
-        dates = monthData[month].days;
-
-        const t = (week + 8 - date % 7) % 7;
-        let n = "", d = false, s = 7 - t;
-        const o = (dates - s) % 7 === 0 ? Math.floor((dates - s) / 7) + 1 : Math.floor((dates - s) / 7) + 2;
-        const c = e.querySelector("#calendar-main");
-        const l = e.querySelector("#calendar-date");
-
-        l.style.fontSize = ["64px", "48px", "36px"][Math.min(o - 3, 2)];
-
-        for (let i = 0; i < o; i++) {
-            if (!c.querySelector(`.calendar-r${i}`)) {
-                c.innerHTML += ``;
-            }
-            for (let j = 0; j < 7; j++) {
-                if (i === 0 && j === t) {
-                    n = 1;
-                    d = true;
-                }
-                const r = n === date ? " class='now'" : "";
-                if (!c.querySelector(`.calendar-r${i} .calendar-d${j} a`)) {
-                    c.querySelector(`.calendar-r${i}`).innerHTML += `${n}`;
-                }
-                if (n >= dates) {
-                    n = "";
-                    d = false;
-                }
-                if (d) {
-                    n += 1;
-                }
-            }
-        }
-
-        const lunarDate = chineseLunar.solarToLunar(new Date(year, month, date));
-        animalYear = chineseLunar.format(lunarDate, "A");
-        ganzhiYear = chineseLunar.format(lunarDate, "T").slice(0, -1);
-        lunarMon = chineseLunar.format(lunarDate, "M");
-        lunarDay = chineseLunar.format(lunarDate, "d");
-
-        const newYearDate = new Date("2025/01/28 00:00:00");
-        const daysUntilNewYear = Math.floor((newYearDate - now) / 1e3 / 60 / 60 / 24);
-        asideTime = new Date(`${new Date().getFullYear()}/01/01 00:00:00`);
-        asideDay = (now - asideTime) / 1e3 / 60 / 60 / 24;
-        asideDayNum = Math.floor(asideDay);
-        const weekNum = week - asideDayNum % 7 >= 0 ? Math.ceil(asideDayNum / 7) : Math.ceil(asideDayNum / 7) + 1;
-
-        e.querySelector("#calendar-week").innerHTML = `第${weekNum}周&nbsp;${weekStr}`;
-        e.querySelector("#calendar-date").innerHTML = date.toString().padStart(2, "0");
-        e.querySelector("#calendar-solar").innerHTML = `${year}年${monthStr}&nbsp;第${asideDay.toFixed(0)}天`;
-        e.querySelector("#calendar-lunar").innerHTML = `${ganzhiYear}${animalYear}年&nbsp;${lunarMon}${lunarDay}`;
-        document.getElementById("schedule-days").innerHTML = daysUntilNewYear;
-    }
-}]]></content>
+]]></content>
   </entry>
   <entry>
     <title></title>
     <url>/custom/js/custom.js</url>
     <content><![CDATA[// Location
+
  let ipLocation; // 确保 ipLocation 在全局范围内定义
 
 // 进行 fetch 请求
@@ -3235,7 +2904,9 @@ function cardTimes() {
         document.getElementById("schedule-days").innerHTML = daysUntilNewYear;
     }
 }
+
 // History
+
  document.addEventListener('DOMContentLoaded', function () {
  async function cardHistory() {
      const historyContainer = document.getElementById('history-container');
@@ -3296,366 +2967,366 @@ function cardTimes() {
 
  cardHistory()
  document.addEventListener('pjax:complete', cardHistory);
-})]]></content>
+})
+
+ ]]></content>
+  </entry>
+  <entry>
+    <title>版权声明</title>
+    <url>/copyright/index.html</url>
+    <content><![CDATA[版权声明
+
+
+声明最新更新时间为：2025-06-18
+
+
+本站使用CC BY-NC-SA 4.0（）协议
+声明我宣布：本站站主Meteorite（本人）为本站所有原创文章的版权所有者，并会将非原创文章在文章顶部注明非原创以及来源；本人自愿将本博客所有未注明特定共享协议的原创文章以CC BY-NC-SA 4.0协议无偿共享，并此协议不可收回，若我表明收回，则在我收回此协议以前的原创文章继续使用本协议共享，本站站主无权向您索要版权费。
+使用协议在使用本站的文章时，请您遵守 CC BY-NC-SA 4.0 协议的各项规定：
+您可以：
+
+自由使用：您可以在任何媒介以任何形式复制、发行本站的作品，无需通知作者。
+
+自由更改：您可以任意修改、变动、截取或以本站的作品为基础进行创作。
+
+
+您必须：
+
+ 署名：表明本文来自本站。
+ 您需要在文章明显位置标注原文章链接（建议使用超链接提升阅读体验）。
+
+ 进行非商业性使用：您不得将本作品用于商业目的。
+ “商业性使用”包括：
+
+在转载页面中插入广告（例如谷歌广告、百度广告）
+禁止阅读的拦截行为（例如关注公众号、下载 App 或开通 VIP 观看文章）
+其他一切以盈利（浏览量、收入）为目的的使用行为
+
+
+ 以相同方式共享：您使用本站作品时也需要按照CC BY-NC-SA 4.0协议贡献您的作品。
+
+
+例外情况如果您确实有需要以宽松于本站协议的协议共享条款转载&#x2F;引用&#x2F;截取本站的作品，请在下方评论区留言，得到本站站主的许可后方可以本站协议的协议共享条款转载&#x2F;引用&#x2F;截取本站的作品。
+更多信息需要更多信息，请浏览Creative Commons官网对CC BY-NC-SA 4.0协议的介绍：https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans
+]]></content>
+  </entry>
+  <entry>
+    <title>本站介绍</title>
+    <url>/info/index.html</url>
+    <content><![CDATA[本站使用：框架：Hexo主题：Solitude域名购买：阿里云域名管理：CloudFlare网站托管：Vercel网站仓库：GitHub评论系统：Waline评论系统：Twikoo访问统计：Umami图床：Postimage字体：霞鹜文楷
+网站GitHub仓库：
+  
+  
+  
+    
+    
+    
+    
+  
+  
+  
+    fetch('https://api.github.com/repos/Yangle-q/Personal-Blog-Solitude')
+      .then(res => res.json())
+      .then(data => {
+        document.querySelector('.name-zbabxxj1e').innerText = data.name;
+        document.querySelector('.desc-zbabxxj1e').innerText = data.description;
+        document.querySelector('.star-zbabxxj1e').innerText = data.stargazers_count;
+        document.querySelector('.fork-zbabxxj1e').innerText = data.forks_count;
+        document.querySelector('.lang-zbabxxj1e').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+    });
+  
+  
+
+了解更多：请查看页面：
+
+    站内链接
+    
+        
+          
+        
+        
+            网站推荐
+            本站使用的资源
+        
+        
+    
+或阅读文章
+
+    站内链接
+    
+        
+          
+        
+        
+            建站备忘录
+            2025.4.27
+        
+        
+    
+
+
+建站大事记全部全站更新文章发布/更新新功能购买域名
+2.3.11 Solitude CyberpunkVersion 2.3.11Updated on 2025.6.16添加版权声明评论区添加评论协议
+
+No.2 Article UpdateArticle No.2Updated on 2025.6.18更新文章“我们为什么还在做个人博客？”修改了一些文字，添加了一个指向我的文章“如何注册免费域名并托管到CloudFlare”的外挂标签
+
+No.4 Article UpdateArticle No.4Updated on 2025.6.18更新文章“Solitude魔改记录”新加了“添加评论协议”一段置顶该文章
+
+2.3.11 Solitude CyberpunkVersion 2.3.11Updated on 2025.6.16新增“不公开的页面&#x2F;文章”页面一级、二级标题上下增高高度本页面时间表更新样式
+
+No.4 Article UpdateArticle No.4Updated on 2025.6.16更新文章“Solitude魔改记录”新加了“更新-表格”板块置顶该文章
+
+No.6 Article UpdateArticle No.6Updated on 2025.6.16更新文章“Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church”把图库挪到了一个独立的页面
+
+No.9 Article PublishArticle No.9Published on 2025.6.10发表文章“如何注册免费域名并托管到CloudFlare”
+
+No.2 Article UpdateArticle No.2Updated on 2025.6.9更新文章“我们为什么还在做个人博客？”优化了阅读体验
+
+DomainDomainBought on 2025.6.7购买域名“lemonstar.me，hellofrom.cn”
+
+No.8 Article PublishArticle No.8Published on 2025.6.7发表文章“利用 Zoho WorkDrive 生成下载链接”
+
+No.7 Article UpdateArticle No.7Updated on 2025.6.8更新文章“Markdown 格式详解与 Solitude 主题 Front Matter 使用说明”新加了“下载源码”一段
+
+No.7 Article PublishArticle No.7Published on 2025.6.7发表文章“Markdown 格式详解与 Solitude 主题 Front Matter 使用说明”
+
+No.6 Article UpdateArticle No.6Updated on 2025.6.7更新文章“Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church”根据史实修改了一些资料
+
+No.3 Article UpdateArticle No.3Updated on 2025.6.3更新文章“从 CloudFlare Pages 转到 Vercel”新加了前置要求一段文章“从CloudFlarePages转到Vercel”改名为使用Vercel部署博客更新文章封面
+
+No.6 Article UpdateArticle No.6Updated on 2025.6.3文章“A Brief Biography and Interesting Facts of Three Most Famous English Monarches in their Time and Life. Part 1, Introduction”改名为“Part 1, Introduction”
+
+No.6 Article UpdateArticle No.6Updated on 2025.6.3更新文章“A Brief Biography and Interesting Facts of three Most Famous English Monarchs in Their Time and Life. Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church”更新文章排版改名为 “Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church”
+
+No.6 Article PublishArticle No.6Published on 2025.6.1发表文章“A Brief Biography and Interesting Facts of three Most Famous English Monarchs in Their Time and Life. Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church”
+
+No.5 Article PublishArticle No.5Published on 2025.6.1发表文章“A Brief Biography and Interesting Facts of Three Most Famous English Monarches in their Time and Life. Part 1, Introduction”
+
+No.3 Article UpdateArticle No.3Updated on 2025.6.1更新文章“从 CloudFlare Pages 转到 Vercel”新加了手动配置一段
+
+2.3.10 Solitude CyberpunkVersion 2.3.10Updated on 2025.6.1全站字体改成“霞鹜文楷”删除日历、那年今日、来访者卡片更换背景图
+
+No.4 Article PublishArticle No.4Published on 2025.5.31发表文章“Solitude魔改记录”
+
+2.3.9 Solitude CyberpunkVersion 2.3.9Updated on 2025.5.29全站字体改成MiSans首页添加日历、那年今日、来访者卡片（参考@青桔气球）
+
+No.3 Article UpdateArticle No.3Updated on 2025.5.29更新文章“从 CloudFlare Pages 转到 Vercel”修改了一些表达新加了Vercel加速一段
+
+No.3 Article UpdateArticle No.3Updated on 2025.5.22更新文章“从 CloudFlare Pages 转到 Vercel”修改了一些表达新加了在这里硬塞进去一个Vercel简介和参考文章两段新加了一张图片优化了阅读体验
+
+No.3 Article PublishArticle No.3Published on 2025.5.19发表文章“从 CloudFlare Pages 转到 Vercel”
+
+2.2.8 Solitude CyberpunkVersion 2.2.8Updated on 2025.5.19网站托管从CloudFlare Pages 换到Vercel
+
+No.2 Article PublishArticle No.2Published on 2025.5.18发表文章“我们为什么还在做个人博客？”(看完文章约需用时21分钟，请谨慎阅读（๑ • ‿ • ๑ ）)
+
+1.1.7 Solitude CyberpunkVersion 1.1.7Updated on 2025.5.12禁用Waline评论系统更新了一下About页面头像旁边那一圈文字（我真的不知道那东西叫啥╮(╯∀╰)╭）
+
+No.1 Article UpdateArticle No.1Updated on 2025.5.12更新文章“建站备忘录”加上了颜文字(⸝⸝•̀֊•́⸝⸝)
+
+No.1 Article UpdateArticle No.1Updated on 2025.5.10更新文章“建站备忘录”修改了一些表达
+
+1.1.6 Solitude CyberpunkVersion 1.1.6Updated on 2025.5.9换背景图片更换个人头像完善友链页面
+
+1.1.5 Solitude CyberpunkVersion 1.1.5Updated on 2025.5.8换背景图片新建页面“本站介绍”更改目录栏布局更新音乐胶囊里的歌曲为“I Really Want to Stay at Your House”从现在开始认真记录更新啦
+
+1.1.4 Solitude CyberpunkVersion 1.1.4Updated on 2025.5.2统一博客视觉样式为“赛博朋克”更新左顶部栏文字与图标，右顶部栏图片更改网站图标加背景图片更新目录栏文字显示，更改目录栏布局深色模式配色颜色改为#cc00ff更新About页面信息更新“建站备忘录”文章封面启用封面取色
+
+Version 1.0.3, New Function 2Version 1.0.3New Function 2Created on 2025.5.1Twikoo开通邮箱回复提醒
+
+No.1 Article PublishArticle No.1Published on 2025.4.27发表文章“建站备忘录”
+
+1.0.3 Solitude DefaultVersion 1.0.3Updated on 2025.4.26域名star-lake.world重定向到blog.star-lake.world顶部盒子新增Happy Birthady项目
+
+Version 1.0.2, New Function 1Version 1.0.2New Function 1Created on 2025.4.25新增Umami数据统计（特别感谢叶泯希哥哥远程帮忙搭建）
+
+1.0.2 Solitude DefaultVersion 1.0.2Updated on 2025.4.23改变网站配色：浅色模式#fdbe02，深色模式#8c00ff网站改名：星湖蔚境 → 星湖碧境
+
+1.0.1 Solitude DefaultVersion 1.0.1Updated on 2025.4.23网站正式上线 启用域名star-lake.world &amp; blog.star-lake.world顶部盒子新增Github仓库地址
+
+0.0.2 Solitude DefaultVersion 0.0.2Updated on 2025.4.13开始使用Solitude主题
+
+0.0.1 Hexo DefaultVersion 0.0.1Created on 2025.4.13正式创建星湖蔚境博客
+
+DomainDomainBought on 2025.4.13购买域名“star-lake.world”
+2.3.11 Solitude CyberpunkVersion 2.3.11Updated on 2025.6.16新增“不公开的页面&#x2F;文章”页面一级、二级标题上下增高高度评论区添加评论协议本页面时间表更新样式
+
+2.3.10 Solitude CyberpunkVersion 2.3.10Updated on 2025.6.1全站字体改成“霞鹜文楷”删除日历、那年今日、来访者卡片更换背景图
+
+2.3.9 Solitude CyberpunkVersion 2.3.9Updated on 2025.5.29全站字体改成MiSans首页添加日历、那年今日、来访者卡片（参考@青桔气球）
+
+2.2.8 Solitude CyberpunkVersion 2.2.8Updated on 2025.5.19网站托管从CloudFlare Pages 换到Vercel
+
+1.1.7 Solitude CyberpunkVersion 1.1.7Updated on 2025.5.12禁用Waline评论系统更新了一下About页面头像旁边那一圈文字（我真的不知道那东西叫啥╮(╯∀╰)╭）
+
+1.1.6 Solitude CyberpunkVersion 1.1.6Updated on 2025.5.9换背景图片更换个人头像完善友链页面
+
+1.1.5 Solitude CyberpunkVersion 1.1.5Updated on 2025.5.8换背景图片新建页面“本站介绍”更改目录栏布局更新音乐胶囊里的歌曲为“I Really Want to Stay at Your House”从现在开始认真记录更新啦
+
+1.1.4 Solitude CyberpunkVersion 1.1.4Updated on 2025.5.2统一博客视觉样式为“赛博朋克”更新左顶部栏文字与图标，右顶部栏图片更改网站图标加背景图片更新目录栏文字显示，更改目录栏布局深色模式配色颜色改为#cc00ff更新About页面信息更新“建站备忘录”文章封面启用封面取色
+
+1.0.3 Solitude DefaultVersion 1.0.3Updated on 2025.4.26域名star-lake.world重定向到blog.star-lake.world顶部盒子新增Happy Birthady项目
+
+1.0.2 Solitude DefaultVersion 1.0.2Updated on 2025.4.23改变网站配色：浅色模式#fdbe02，深色模式#8c00ff网站改名：星湖蔚境 → 星湖碧境
+
+1.0.1 Solitude DefaultVersion 1.0.1Updated on 2025.4.23网站正式上线 启用域名star-lake.world &amp; blog.star-lake.world顶部盒子新增Github仓库地址
+
+0.0.2 Solitude DefaultVersion 0.0.2Updated on 2025.4.13开始使用Solitude主题
+
+0.0.1 Hexo DefaultVersion 0.0.1Created on 2025.4.13正式创建星湖蔚境博客
+
+No.2 Article UpdateArticle No.2Updated on 2025.6.18更新文章“我们为什么还在做个人博客？”修改了一些文字，添加了一个指向我的文章“如何注册免费域名并托管到CloudFlare”的外挂标签
+
+No.4 Article UpdateArticle No.4Updated on 2025.6.18更新文章“Solitude魔改记录”新加了“添加评论协议”一段置顶该文章
+
+No.4 Article UpdateArticle No.4Updated on 2025.6.16更新文章“Solitude魔改记录”新加了“更新-表格”板块置顶该文章
+
+No.6 Article UpdateArticle No.6Updated on 2025.6.16更新文章“Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church”把图库挪到了一个独立的页面
+
+No.9 Article PublishArticle No.9Published on 2025.6.10发表文章“如何注册免费域名并托管到CloudFlare”
+
+No.2 Article UpdateArticle No.2Updated on 2025.6.9更新文章“我们为什么还在做个人博客？”优化了阅读体验
+
+DomainDomainBought on 2025.6.7购买域名“lemonstar.me，hellofrom.cn”
+
+No.8 Article PublishArticle No.8Published on 2025.6.7发表文章“利用 Zoho WorkDrive 生成下载链接”
+
+No.7 Article UpdateArticle No.7Updated on 2025.6.8更新文章“Markdown 格式详解与 Solitude 主题 Front Matter 使用说明”新加了“下载源码”一段
+
+No.7 Article PublishArticle No.7Published on 2025.6.7发表文章“Markdown 格式详解与 Solitude 主题 Front Matter 使用说明”
+
+No.6 Article UpdateArticle No.6Updated on 2025.6.7更新文章“Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church”根据史实修改了一些资料
+
+No.3 Article UpdateArticle No.3Updated on 2025.6.3更新文章“从 CloudFlare Pages 转到 Vercel”新加了前置要求一段文章“从CloudFlarePages转到Vercel”改名为使用Vercel部署博客更新文章封面
+
+No.6 Article UpdateArticle No.6Updated on 2025.6.3文章“A Brief Biography and Interesting Facts of Three Most Famous English Monarches in their Time and Life. Part 1, Introduction”改名为“Part 1, Introduction”
+
+No.6 Article UpdateArticle No.6Updated on 2025.6.3更新文章“A Brief Biography and Interesting Facts of three Most Famous English Monarchs in Their Time and Life. Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church”更新文章排版改名为 “Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church”
+
+No.6 Article PublishArticle No.6Published on 2025.6.1发表文章“A Brief Biography and Interesting Facts of three Most Famous English Monarchs in Their Time and Life. Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church”
+
+No.5 Article PublishArticle No.5Published on 2025.6.1发表文章“A Brief Biography and Interesting Facts of Three Most Famous English Monarches in their Time and Life. Part 1, Introduction”
+
+No.3 Article UpdateArticle No.3Updated on 2025.6.1更新文章“从 CloudFlare Pages 转到 Vercel”新加了手动配置一段
+
+2.3.10 Solitude CyberpunkVersion 2.3.10Updated on 2025.6.1全站字体改成“霞鹜文楷”删除日历、那年今日、来访者卡片更换背景图
+
+No.4 Article PublishArticle No.4Published on 2025.5.31发表文章“Solitude魔改记录”
+
+Version 1.0.3, New Function 2Version 1.0.3New Function 2Created on 2025.5.1Twikoo开通邮箱回复提醒
+
+Version 1.0.2, New Function 1Version 1.0.2New Function 1Created on 2025.4.25新增Umami数据统计（特别感谢叶泯希哥哥远程帮忙搭建）
+
+DomainDomainBought on 2025.6.7购买域名“lemonstar.me，hellofrom.cn”
+
+DomainDomainBought on 2025.4.13购买域名“star-lake.world”
+
+
+
+版本号说明本站更新信息说明因本站使用的版本号迭代方式比较特殊，很多朋友有可能看不懂，故特此说明。
+版本号说明
+本站版本号大致采用x.y.z格式，如1.2.3
+x: 重大更新，如域名，主题，服务商更新等
+y: 大更新，如整体视觉样式，新功能等。若一次更新项目太多有可能也会算作大更新
+z: 一般更新。
+
+
+本站x,y,z代表三个类型的更新的版本号各自独立，不存在从属关系，更上一级的号码（如x)更新后下级号码（如y,z）不会清零，但会往下更新一代（如上一版本号是2.2.1，x更新后其他都往下更新一个数字为3.3.2）
+
+信息说明以1.3.6版本更新举例：
+1.3.6 Solitude CyberpunkVersion 1.3.6Updated on 2025.5.2统一博客视觉样式为“赛博朋克”更新左顶部栏文字与图标，右顶部栏图片更新网站头像加背景图片更新目录栏文字显示，更改目录栏布局深色模式配色颜色改为#cc00ff更新About页面信息更新“建站备忘录”文章封面启用封面取色
+
+可以看到这是一次y级更新，在它之前的一个版本为1.2.5
+Part 1：1.3.6 Solitude Cyberpunk这是本次更新的名称，1.3.6 为版本号，Solitude为当前使用主题，Cyberpunk为视觉样式。
+Part 2：Version 1.3.6Updated on 2025.5.2这是本次更新的前置信息，Version后跟的是版本号，Updated on后跟的是更新时间。
+Part 3：
+统一博客视觉样式为“赛博朋克”
+更新左顶部栏文字与图标，右顶部栏图片
+更新网站头像
+加背景图片
+更新目录栏文字显示，更改目录栏布局
+深色模式配色颜色改为#cc00ff
+
+
+更新About页面信息
+更新“建站备忘录”文章封面
+启用封面取色
+
+这是本次更新的内容。
+特殊更新文章更新以下为示例：
+No.1 Article PublishArticle No.1Published on 2025.4.27发表文章“建站备忘录”
+
+Part 1No.3 Article Publish这是本次更新的名称，文章更新有两种，一种是Article Publish，发表文章；一种是Article Update，更新文章内容。前面No.3代表这是第三篇文章。
+Part 2Article No.3Published on 2025.5.19这是本次更新的前置信息，**Article No.**后跟的是文章顺序，Published&#x2F;Updated on后跟的是更新&#x2F;发表时间
+Part 3
+发表文章“建站备忘录”
+
+这是本次发表的文章及其链接，如果是更新文章内容的话会在下面指出更新了什么，如：
+
+更新文章“建站备忘录”
+
+修改了一些表达
+
+
+
+新增功能以下为示例：
+Version 1.1.3, New Function 1Version 1.1.3New Function 1Created on 2025.4.25新增Umami数据统计（特别感谢叶泯希哥哥远程帮忙搭建）
+
+在它之前的一个版本为1.0.2
+Part 1Version 1.1.3, New Function 1这是本次新增功能的名称，New Function后面跟的数字代表这是第几次新增功能。
+Part 2Version 1.1.3New Function 1Created on 2025.4.25这是本次新增功能的前置信息，Version后跟的是版本号，New Function后面跟的数字代表这是第几次新增功能，Created on后跟的是增加此功能的时间。
+Part 3
+新增Umami数据统计（特别感谢叶泯希哥哥远程帮忙搭建）
+
+这是本次更新的内容。]]></content>
+  </entry>
+  <entry>
+    <title>不公开的页面/文章</title>
+    <url>/notpublic/yang20100807/index.html</url>
+    <content><![CDATA[
+
+  
+  
+  VPN
+  Github 开源项目自建 VPN 超详细教程
+  
+  
+  
+  
+
+  
+  
+  MY ACCOUNTS
+  我的账号列表
+  
+  
+  
+  
+]]></content>
+  </entry>
+  <entry>
+    <title>个人喜爱</title>
+    <url>/gallery/favourite/index.html</url>
+    <content><![CDATA[
+        
+      ]]></content>
+  </entry>
+  <entry>
+    <title>亨利八世</title>
+    <url>/gallery/henryviii/index.html</url>
+    <content><![CDATA[所有人像宫殿和城堡景象
+        
+      
+        
+      
+        
+      
+        
+      ]]></content>
   </entry>
   <entry>
     <title></title>
-    <url>/custom/js/location.js</url>
-    <content><![CDATA[ let ipLocation; // 确保 ipLocation 在全局范围内定义
-
-// 进行 fetch 请求
-fetch('https://api.nsmao.net/api/ip/query?key=你的key') //申请key:https://api.nsmao.net
-.then(response => {
-if (!response.ok) {
-throw new Error('Network response was not ok');
-}
-return response.json();
-})
-.then(data => {
-ipLocation = data;
-if (isHomePage()) {
-showWelcome();
-}
-})
-.catch(error => console.error('Error:', error));
-
-function getDistance(e1, n1, e2, n2) {
-const R = 6371;
-const { sin, cos, asin, PI, hypot } = Math;
-let getPoint = (e, n) => {
-e *= PI / 180;
-n *= PI / 180;
-return { x: cos(n) * cos(e), y: cos(n) * sin(e), z: sin(n) };
-};
-
-    let a = getPoint(e1, n1);
-    let b = getPoint(e2, n2);
-    let c = hypot(a.x - b.x, a.y - b.y, a.z - b.z);
-    let r = asin(c / 2) * 2 * R;
-    return Math.round(r);
-}
-
-function showWelcome() {
-if (!ipLocation || !ipLocation.data) {
-console.error('ipLocation data is not available.');
-return;
-}
-
- let dist = getDistance(121.413921, 31.089290, ipLocation.data.lng, ipLocation.data.lat); // 修改自己的经度（121.413921）纬度（31.089290）
- let pos = ipLocation.data.country;
- let ip = ipLocation.ip;
- let posdesc;
-
- switch (ipLocation.data.country) {
-     case "日本":
-         posdesc = "よろしく，一起去看樱花吗";
-         break;
-     case "美国":
-         posdesc = "Let us live in peace!";
-         break;
-     case "英国":
-         posdesc = "想同你一起夜乘伦敦眼";
-         break;
-     case "俄罗斯":
-         posdesc = "干了这瓶伏特加！";
-         break;
-     case "法国":
-         posdesc = "C'est La Vie";
-         break;
-     case "德国":
-         posdesc = "Die Zeit verging im Fluge.";
-         break;
-     case "澳大利亚":
-         posdesc = "一起去大堡礁吧！";
-         break;
-     case "加拿大":
-         posdesc = "拾起一片枫叶赠予你";
-         break;
-     case "中国":
-         pos = ipLocation.data.prov + " " + ipLocation.data.city + " " + ipLocation.data.district;
-         switch (ipLocation.data.prov) {
-             case "北京市":
-                 posdesc = "北——京——欢迎你~~~";
-                 break;
-             case "上海市":
-                 posdesc = "走在外滩，感受历史与现代的交融。";
-                 break;
-             case "广东省":
-                 switch (ipLocation.data.city) {
-                     case "广州市":
-                         posdesc = "看小蛮腰，喝早茶了嘛~";
-                         break;
-                     case "深圳市":
-                         posdesc = "今天你逛商场了嘛~";
-                         break;
-                     default:
-                         posdesc = "带你感受广东的热情与美食！";
-                         break;
-                 }
-                 break;
-             case "浙江省":
-                 switch (ipLocation.data.city) {
-                     case "杭州市":
-                         posdesc = "西湖美景，三月天~";
-                         break;
-                     case "宁波市":
-                         posdesc = "来宁波，感受大海的气息。";
-                         break;
-                     default:
-                         posdesc = "这里是浙江，充满江南的韵味！";
-                         break;
-                 }
-                 break;
-             case "四川省":
-                 switch (ipLocation.data.city) {
-                     case "成都市":
-                         posdesc = "宽窄巷子，成都慢生活。";
-                         break;
-                     case "绵阳市":
-                         posdesc = "享受科技城的宁静与创新。";
-                         break;
-                     default:
-                         posdesc = "来四川，品麻辣火锅，赏壮丽山河。";
-                         break;
-                 }
-                 break;
-             case "福建省":
-                 switch (ipLocation.data.city) {
-                     case "厦门市":
-                         posdesc = "鼓浪屿听海，厦门美食让人流连忘返。";
-                         break;
-                     case "福州市":
-                         posdesc = "有福之州，来此感受千年古城。";
-                         break;
-                     default:
-                         posdesc = "福建山水如画，美景无处不在。";
-                         break;
-                 }
-                 break;
-             case "山东省":
-                 switch (ipLocation.data.city) {
-                     case "青岛市":
-                         posdesc = "来青岛喝啤酒，看大海吧！";
-                         break;
-                     case "济南市":
-                         posdesc = "泉城济南，四面荷花三面柳。";
-                         break;
-                     default:
-                         posdesc = "山东好客，欢迎来感受齐鲁文化！";
-                         break;
-                 }
-                 break;
-             case "江苏省":
-                 switch (ipLocation.data.city) {
-                     case "南京市":
-                         posdesc = "六朝古都南京，历史与现代的碰撞。";
-                         break;
-                     case "苏州市":
-                         posdesc = "来苏州，感受园林之美。";
-                         break;
-                     default:
-                         posdesc = "水乡泽国，江南佳丽地。";
-                         break;
-                 }
-                 break;
-             case "河北省":
-                 posdesc = "燕赵大地，英雄辈出的河北，等你探索！";
-                 break;
-             case "河南省":
-                 switch (ipLocation.data.city) {
-                     case "郑州市":
-                         posdesc = "中原大地，郑州是交通枢纽与历史重镇。";
-                         break;
-                     case "洛阳市":
-                         posdesc = "千年古都洛阳，牡丹花开的城市。";
-                         break;
-                     default:
-                         posdesc = "这里是河南，历史悠久文化灿烂。";
-                         break;
-                 }
-                 break;
-             case "湖南省":
-                 switch (ipLocation.data.city) {
-                     case "长沙市":
-                         posdesc = "热辣长沙，吃小龙虾逛黄兴路步行街。";
-                         break;
-                     default:
-                         posdesc = "湖南，烟雨迷蒙的湘江流过这片土地。";
-                         break;
-                 }
-                 break;
-             case "湖北省":
-                 switch (ipLocation.data.city) {
-                     case "武汉市":
-                         posdesc = "来大武汉，过长江大桥，吃热干面！";
-                         break;
-                     default:
-                         posdesc = "湖北，长江中游的明珠，风景秀丽。";
-                         break;
-                 }
-                 break;
-             case "安徽省":
-                 switch (ipLocation.data.city) {
-                     case "合肥市":
-                         posdesc = "创新之城合肥，科教文化汇聚地。";
-                         break;
-                     default:
-                         posdesc = "安徽山水，黄山、九华山欢迎你。";
-                         break;
-                 }
-                 break;
-             case "广西壮族自治区":
-                 switch (ipLocation.data.city) {
-                     case "桂林市":
-                         posdesc = "桂林山水甲天下，风景如画。";
-                         break;
-                     case "南宁市":
-                         posdesc = "绿城南宁，宜居宜游。";
-                         break;
-                     default:
-                         posdesc = "广西山清水秀，民俗风情浓郁。";
-                         break;
-                 }
-                 break;
-             case "贵州省":
-                 posdesc = "来贵州，品茅台，赏黄果树瀑布。";
-                 break;
-             case "云南省":
-                 switch (ipLocation.data.city) {
-                     case "昆明市":
-                         posdesc = "春城昆明，四季如春，风景秀丽。";
-                         break;
-                     case "大理市":
-                         posdesc = "苍山洱海，大理古城，你来了就不想走。";
-                         break;
-                     default:
-                         posdesc = "云南风景独特，风情万种。";
-                         break;
-                 }
-                 break;
-             case "西藏自治区":
-                 posdesc = "世界屋脊西藏，神秘而纯净。";
-                 break;
-             case "新疆维吾尔自治区":
-                 posdesc = "辽阔新疆，民族风情与壮丽景观并存。";
-                 break;
-             case "内蒙古自治区":
-                 posdesc = "草原辽阔的内蒙古，等你来策马奔腾。";
-                 break;
-             case "宁夏回族自治区":
-                 posdesc = "宁夏，塞上江南，黄河流经的美丽地方。";
-                 break;
-             case "海南省":
-                 posdesc = "阳光、沙滩、椰风海韵，欢迎来海南度假。";
-                 break;
-             default:
-                 posdesc = "带我去你的城市逛逛吧！";
-                 break;
-         }
-         break;
-     default:
-         posdesc = "带我去你的国家逛逛吧";
-         break;
- }
-
- // 根据本地时间切换欢迎语
- let timeChange;
- let date = new Date();
- if (date.getHours() >= 5 && date.getHours() < 11) timeChange = "🌤️ 早上好，一日之计在于晨";
- else if (date.getHours() >= 11 && date.getHours() < 13) timeChange = "☀️ 中午好，记得午休喔~";
- else if (date.getHours() >= 13 && date.getHours() < 17) timeChange = "🕞 下午好，饮茶先啦！";
- else if (date.getHours() >= 17 && date.getHours() < 19) timeChange = "🚶‍♂️ 即将下班，记得按时吃饭~";
- else if (date.getHours() >= 19 && date.getHours() < 24) timeChange = "🌙 晚上好，夜生活嗨起来！";
- else timeChange = "夜深了，早点休息，少熬夜";
-
- let welcomeInfoElement = document.getElementById("welcome-info");
-
- if (welcomeInfoElement) {
-     welcomeInfoElement.innerHTML =
-         `欢迎来自 ${pos} 的小友💖当前位置距博主约 ${dist.toFixed(2)} 公里！${timeChange}Tip：${posdesc}`;
- }
-}
-
-   function handlePjaxComplete() {
-   if (isHomePage()) {
-   showWelcome();
-   }
-   }
-   
-   function isHomePage() {
-   return window.location.pathname === '/' || window.location.pathname === '/index.html';
-   }
-   
-   window.onload = function () {
-   if (isHomePage()) {
-   showWelcome();
-   }
-   document.addEventListener("pjax:complete", handlePjaxComplete);
-   }]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/custom/js/yesterday.js</url>
-    <content><![CDATA[ document.addEventListener('DOMContentLoaded', function () {
- async function cardHistory() {
-     const historyContainer = document.getElementById('history-container');
-     if (!historyContainer) return;
-
-     const data = await fetchHistoryData();
-     const html = data.map(item => `
-         
-             A.D.${item.year}
-             ${item.title}
-         
-     `).join('');
-
-     const swiperContainer = document.querySelector('.history_swiper-container');
-     document.getElementById('history_container_wrapper').innerHTML = html;
-
-     const swiperHistory = new Swiper(swiperContainer, {
-         loop: true,
-         direction: 'vertical',
-         autoplay: {disableOnInteraction: true, delay: 5000},
-         mousewheel: false,
-     });
-
-     historyContainer.onmouseenter = () => swiperHistory.autoplay.stop();
-     historyContainer.onmouseleave = () => swiperHistory.autoplay.start();
- }
-
- cardHistory();
- document.addEventListener('pjax:complete', cardHistory);
-
- async function fetchHistoryData() {
-     const myDate = new Date();
-     const month = `${myDate.getMonth() + 1}`.padStart(2, '0');
-     const day = `${myDate.getDate()}`.padStart(2, '0');
-     const formattedDate = `${month}${day}`;
-     const historyDataUrl = `https://api.nsmao.net/api/history/query?key=你的key`; //申请：https://api.nsmao.net
-
-     try {
-         const response = await fetch(historyDataUrl);
-         const result = await response.json();
-
-         if (result.code === 200) {
-             const data = result.data;
-             const formattedData = Object.entries(data).map(([year, event]) => ({
-                 year: year.replace(/年$/, ''),
-                 title: event
-             }));
-             return formattedData;
-         } else {
-             console.error('Error fetching history data:', result.msg);
-             return [];
-         }
-     } catch (error) {
-         console.error('Fetch error:', error);
-         return [];
-     }
- }
-
- cardHistory()
- document.addEventListener('pjax:complete', cardHistory);
-})]]></content>
+    <url>/custom/js/jz.min.js</url>
+    <content><![CDATA[document.addEventListener("DOMContentLoaded",(function(){const startTime=new Date("2025-04-13T00:00:00Z");function padZero(num){return num]]></content>
   </entry>
 </search>

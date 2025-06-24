@@ -1,4 +1,5 @@
 // Location
+
  let ipLocation; // 确保 ipLocation 在全局范围内定义
 
 // 进行 fetch 请求
@@ -402,7 +403,9 @@ function cardTimes() {
         document.getElementById("schedule-days").innerHTML = daysUntilNewYear;
     }
 }
+
 // History
+
  document.addEventListener('DOMContentLoaded', function () {
  async function cardHistory() {
      const historyContainer = document.getElementById('history-container');
@@ -464,3 +467,5 @@ function cardTimes() {
  cardHistory()
  document.addEventListener('pjax:complete', cardHistory);
 })
+
+ 
