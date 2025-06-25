@@ -2437,17 +2437,17 @@ span.tags-punctuation i {
 #global_bg {
   position: fixed;
   z-index: 999;
-  opacity: 0.2;
+  opacity: 0.3;
   width: 100%;
   height: 100%;
-  background-image: url("");
+  background-image: url("/img/banckground-1.jpg");
   background-size: cover;
   background-position: center;
   pointer-events: none;
   background-repeat: no-repeat;
 }
 [data-theme=dark] #global_bg {
-  background-image: url("https://i.postimg.cc/ZKQx2WXR/cyberpunk-13.jpg");
+  background-image: url("/img/banckground-1.jpg");
 }
 .article-container {
   overflow-wrap: break-word;
@@ -10978,10 +10978,10 @@ div#banners .bannerText {
   background: var(--efu-card-bg);
 }
 [data-theme=dark] {
-  --efu-theme: #c0f;
-  --efu-theme-op: rgba(204,0,255,0.137);
-  --efu-theme-op-deep: rgba(204,0,255,0.867);
-  --efu-theme-none: rgba(204,0,255,0);
+  --efu-theme: #32cd32;
+  --efu-theme-op: rgba(50,205,50,0.137);
+  --efu-theme-op-deep: rgba(50,205,50,0.867);
+  --efu-theme-none: rgba(50,205,50,0);
   --efu-blue: #0084ff;
   --efu-red: #ff3842;
   --efu-pink: #d44040;
@@ -11023,11 +11023,11 @@ div#banners .bannerText {
   --efu-hltools-bg: #454a50;
 }
 [data-theme=light] {
-  --efu-theme: #fdbe02;
-  --efu-theme-op: rgba(253,190,2,0.137);
-  --efu-theme-op-deep: rgba(253,190,2,0.867);
+  --efu-theme: #fcd337;
+  --efu-theme-op: rgba(252,211,55,0.137);
+  --efu-theme-op-deep: rgba(252,211,55,0.867);
   --efu-theme-op-light: rgba(66,89,239,0.051);
-  --efu-theme-none: rgba(253,190,2,0);
+  --efu-theme-none: rgba(252,211,55,0);
   --efu-blue: #425aef;
   --efu-red: #f04a63;
   --efu-pink: #ff7c7c;
