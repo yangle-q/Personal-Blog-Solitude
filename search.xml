@@ -244,11 +244,11 @@ Tip：如果不小心把文件改坏了不知道怎么改回来的话可以去 S
     fetch('https://api.github.com/repos/everfu/hexo-theme-solitude')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-292qawm8k').innerText = data.name;
-        document.querySelector('.desc-292qawm8k').innerText = data.description;
-        document.querySelector('.star-292qawm8k').innerText = data.stargazers_count;
-        document.querySelector('.fork-292qawm8k').innerText = data.forks_count;
-        document.querySelector('.lang-292qawm8k').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-qzr8u84yo').innerText = data.name;
+        document.querySelector('.desc-qzr8u84yo').innerText = data.description;
+        document.querySelector('.star-qzr8u84yo').innerText = data.stargazers_count;
+        document.querySelector('.fork-qzr8u84yo').innerText = data.forks_count;
+        document.querySelector('.lang-qzr8u84yo').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   
   
@@ -1863,7 +1863,7 @@ OK 很棒添麻烦这一块我是真的优秀。
 本站单向友链不接受申请（想啥呢🧐），仅为博主自行添加。若您发现您的博客&#x2F;网站被本站添加为单向友链并因种种原因不愿出现在本站友链列表上的，请通过邮箱联系博主，我会尽快删除。
 另外，本站还属于建站初期，单向友链可能较多，以后我会努力慢慢减少哒！
 
-本站友链信息常规信息Solitude/Anzhiyu名称：星湖碧境链接：https://blog.star-lake.world简介：在这个世界上，唯一不变的就是变化本身。头像：https://i.postimg.cc/rmb019PS/site-icon-2.png- name: 星湖碧境  link: https://blog.star-lake.world  descr: 在这个世界上，唯一不变的就是变化本身。  avatar: https://i.postimg.cc/rmb019PS/site-icon-2.png
+本站友链信息常规信息yml 格式（Solitude & Anzhiyu）json 格式HTML 超链接格式名称：星湖碧境链接：https://blog.star-lake.world简介：在这个世界上，唯一不变的就是变化本身。头像：https://i.postimg.cc/rmb019PS/site-icon-2.png- name: 星湖碧境  link: https://blog.star-lake.world  descr: 在这个世界上，唯一不变的就是变化本身。  avatar: https://i.postimg.cc/rmb019PS/site-icon-2.png&#123;  &quot;title&quot;: &quot;星湖碧境&quot;,  &quot;url&quot;: &quot;https://blog.star-lake.world&quot;,  &quot;avatar&quot;: &quot;https://i.postimg.cc/rmb019PS/site-icon-2.png&quot;,  &quot;description&quot;: &quot;在这个世界上，唯一不变的就是变化本身。&quot;,  &quot;keywords&quot;: &quot;星湖碧境&quot;&#125;&lt;a href=&quot;https://blog.star-lake.world&quot; rel=&quot;external nofollow&quot;&gt;星湖碧境 - 一个10后的小博客~&lt;/a&gt;
 
 申请友链请在申请本站友链前将本站放入您的友链页哦！
 请留意友链申请注意事项，如您的站点不符合要求将不会同意加入友链
@@ -2004,11 +2004,11 @@ CloudFlare官网：https://www.cloudflare.com/zh-cn/
     fetch('https://api.github.com/repos/2dust/v2rayN')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-u6c225tyq').innerText = data.name;
-        document.querySelector('.desc-u6c225tyq').innerText = data.description;
-        document.querySelector('.star-u6c225tyq').innerText = data.stargazers_count;
-        document.querySelector('.fork-u6c225tyq').innerText = data.forks_count;
-        document.querySelector('.lang-u6c225tyq').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-0fnr80679').innerText = data.name;
+        document.querySelector('.desc-0fnr80679').innerText = data.description;
+        document.querySelector('.star-0fnr80679').innerText = data.stargazers_count;
+        document.querySelector('.fork-0fnr80679').innerText = data.forks_count;
+        document.querySelector('.lang-0fnr80679').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   
   
@@ -2026,11 +2026,11 @@ CloudFlare官网：https://www.cloudflare.com/zh-cn/
     fetch('https://api.github.com/repos/2dust/v2rayNG')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-qfepifmkk').innerText = data.name;
-        document.querySelector('.desc-qfepifmkk').innerText = data.description;
-        document.querySelector('.star-qfepifmkk').innerText = data.stargazers_count;
-        document.querySelector('.fork-qfepifmkk').innerText = data.forks_count;
-        document.querySelector('.lang-qfepifmkk').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-jh824q3hm').innerText = data.name;
+        document.querySelector('.desc-jh824q3hm').innerText = data.description;
+        document.querySelector('.star-jh824q3hm').innerText = data.stargazers_count;
+        document.querySelector('.fork-jh824q3hm').innerText = data.forks_count;
+        document.querySelector('.lang-jh824q3hm').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   
   
@@ -2110,13 +2110,29 @@ Windows 版Android 版Mac/Linux 版解压前面下载下来的 v2rayN 压缩包�
 
 复制刚刚的“自适应订阅地址”，点击 v2rayN 界面上的 + 号按钮，就会弹出来订阅分组设置界面。
 
-然后别名可以自定义，下面的“可选地址”一栏里填上刚刚复制的“自适应订阅地址”，点击确定。
+这里别名可以自定义，下面的“可选地址”一栏里填上刚刚复制的“自适应订阅地址”，点击确定。
 
 然后点击上面操作栏里面的“订阅分组”，点击更新全部订阅（不通过代理）
 
 然后就能够获取到 VPN 节点啦！
-待更新中……由于博主家里面没有 Mac&#x2F;Linux 电脑，下载下来的压缩包我也没看懂，所以只能麻烦大家自己摸索啦~（面壁思过中
+安装前面下载下来的 Apk 安装包（这个不用教了吧？）
+打开软件，点击旁边的三条横线，再点击“设置”，就会进入设置界面。
+
+再设置界面往下划，找到“Language”一项，把它调成“中文”，这样就方便操作了。
+
+回到主界面，点击旁边的三条横线，再点击“订阅分组设置”，就会进入订阅分组设置界面。
+
+点击“+”。
+
+这里备注可以自定义，下面的“可选地址”一栏里填上刚刚复制的“自适应订阅地址”，点击“”。
+OK 现在回到主界面，点击“”，再点击更新当前组订阅
+
+然后就能够获取到 VPN 节点啦！由于博主家里面没有 Mac&#x2F;Linux 电脑，下载下来的压缩包我也没看懂，所以只能麻烦大家自己摸索啦~（面壁思过中
 不过我觉得应该和 Windows 版是差不多的叭😃
+2025.6.25：
+前两天去苹果店里面试了一下，结果……
+
+我对 Mac 不是很熟，请问这是可以绕开的吗？
 
 日常使用Windows 版Android 版测试 VPN 节点速度与可用性在节点列表上右键，选择“一键多线程测试延迟和速度”
 
@@ -2139,7 +2155,24 @@ Windows 版Android 版Mac/Linux 版解压前面下载下来的 v2rayN 压缩包�
             The Global Broadband Speed Test
         
         
-    待更新中……
+    测试 VPN 节点速度与可用性点击“”，再点击测试当前组配置Tcping&#x2F;真链接（应该都一样）。
+然后如果节点测速显示“-1”说明这个节点无法使用，如果显示绿色表示速度不错，如果显示红色就表示速度比较低（但也受到网络的影响，如果换到好一点的网络的话测试结果会好得多，不一定是节点本身的问题。另外-1的好像也能用？）
+如果你想移除-1的节点的话点击“移除当前组无效配置”就可以了。
+
+更换节点直接点击你想更换的节点（比 Windows 逻辑简单多了）
+关闭&#x2F;开启 VPN点击&#x2F;
+测速
+    引用站外链接
+    
+        
+          
+        
+        
+            测速工具
+            The Global Broadband Speed Test
+        
+        
+    
 
 优选节点如果你想要提升你的 VPN 节点的质量的话，就需要用到下面这两款IP优选工具啦！
 
@@ -2175,7 +2208,7 @@ Windows 版Android 版Mac/Linux 版解压前面下载下来的 v2rayN 压缩包�
 
 
 如果测速完还是显示-1的话就把“端口”改成443或者80就可以了。
-故障排除如果碰到报错，可以试试以几个解决方法：
+故障排除如果碰到报错，可以试试以下几个解决方法：
 
 检查&#x2F;更换网络
 
