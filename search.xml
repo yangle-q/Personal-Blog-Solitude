@@ -1923,11 +1923,11 @@ http://localhost:4000/ （其实是玩梗啦）
     fetch('https://api.github.com/repos/Yangle-q/Personal-Blog-Solitude')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-asc8ysd06').innerText = data.name;
-        document.querySelector('.desc-asc8ysd06').innerText = data.description;
-        document.querySelector('.star-asc8ysd06').innerText = data.stargazers_count;
-        document.querySelector('.fork-asc8ysd06').innerText = data.forks_count;
-        document.querySelector('.lang-asc8ysd06').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-xf4j55scv').innerText = data.name;
+        document.querySelector('.desc-xf4j55scv').innerText = data.description;
+        document.querySelector('.star-xf4j55scv').innerText = data.stargazers_count;
+        document.querySelector('.fork-xf4j55scv').innerText = data.forks_count;
+        document.querySelector('.lang-xf4j55scv').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   
   
@@ -1959,11 +1959,11 @@ GitHub仓库：
     fetch('https://api.github.com/repos/Yangle-q-2/Personal-Blog-Solitude-Cyberpunk')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-bv4jm2fia').innerText = data.name;
-        document.querySelector('.desc-bv4jm2fia').innerText = data.description;
-        document.querySelector('.star-bv4jm2fia').innerText = data.stargazers_count;
-        document.querySelector('.fork-bv4jm2fia').innerText = data.forks_count;
-        document.querySelector('.lang-bv4jm2fia').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-pjqqq4r0e').innerText = data.name;
+        document.querySelector('.desc-pjqqq4r0e').innerText = data.description;
+        document.querySelector('.star-pjqqq4r0e').innerText = data.stargazers_count;
+        document.querySelector('.fork-pjqqq4r0e').innerText = data.forks_count;
+        document.querySelector('.lang-pjqqq4r0e').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   
   
@@ -1997,7 +1997,9 @@ GitHub仓库：
 
 
 建站大事记全部全站更新文章发布/更新新功能购买域名
-No.9 Article PublishArticle No.9Published on 2025.6.10发表文章“【关于博客】近况公告 25#1”
+3.4.12 Solitude otakuVersion 3.4.12Updated on 2025.6.26更换视觉样式为“二次元”更改网站图标更换背景图片更新左顶部栏文字，删除图标，右顶部栏图片与文字改变网站配色：浅色模式#81d8cf，深色模式#fcd337更换加载图片更换头像网站改名为“柠檬星”
+
+No.10 Article PublishArticle No.10Published on 2025.6.10发表文章“【关于博客】近况公告 25#1”
 
 2.3.11 Solitude CyberpunkVersion 2.3.11Updated on 2025.6.16添加版权声明评论区添加评论协议
 
@@ -2053,17 +2055,17 @@ No.3 Article PublishArticle No.3Published on 2025.5.19发表文章“从 CloudFl
 
 No.2 Article PublishArticle No.2Published on 2025.5.18发表文章“我们为什么还在做个人博客？”(看完文章约需用时21分钟，请谨慎阅读（๑ • ‿ • ๑ ）)
 
-1.1.7 Solitude CyberpunkVersion 1.1.7Updated on 2025.5.12禁用Waline评论系统更新了一下About页面头像旁边那一圈文字（我真的不知道那东西叫啥╮(╯∀╰)╭）
+2.1.7 Solitude CyberpunkVersion 2.1.7Updated on 2025.5.12禁用Waline评论系统更新了一下About页面头像旁边那一圈文字（我真的不知道那东西叫啥╮(╯∀╰)╭）
 
 No.1 Article UpdateArticle No.1Updated on 2025.5.12更新文章“建站备忘录”加上了颜文字(⸝⸝•̀֊•́⸝⸝)
 
 No.1 Article UpdateArticle No.1Updated on 2025.5.10更新文章“建站备忘录”修改了一些表达
 
-1.1.6 Solitude CyberpunkVersion 1.1.6Updated on 2025.5.9换背景图片更换个人头像完善友链页面
+2.1.6 Solitude CyberpunkVersion 2.1.6Updated on 2025.5.9换背景图片更换个人头像完善友链页面
 
-1.1.5 Solitude CyberpunkVersion 1.1.5Updated on 2025.5.8换背景图片新建页面“本站介绍”更改目录栏布局更新音乐胶囊里的歌曲为“I Really Want to Stay at Your House”从现在开始认真记录更新啦
+2.1.5 Solitude CyberpunkVersion 2.1.5Updated on 2025.5.8换背景图片新建页面“本站介绍”更改目录栏布局更新音乐胶囊里的歌曲为“I Really Want to Stay at Your House”从现在开始认真记录更新啦
 
-1.1.4 Solitude CyberpunkVersion 1.1.4Updated on 2025.5.2统一博客视觉样式为“赛博朋克”更新左顶部栏文字与图标，右顶部栏图片更改网站图标加背景图片更新目录栏文字显示，更改目录栏布局深色模式配色颜色改为#cc00ff更新About页面信息更新“建站备忘录”文章封面启用封面取色
+2.1.4 Solitude CyberpunkVersion 2.1.4Updated on 2025.5.2统一博客视觉样式为“赛博朋克”更新左顶部栏文字与图标，右顶部栏图片更改网站图标加背景图片更新目录栏文字显示，更改目录栏布局深色模式配色颜色改为#cc00ff更新About页面信息更新“建站备忘录”文章封面启用封面取色
 
 Version 1.0.3, New Function 2Version 1.0.3New Function 2Created on 2025.5.1Twikoo开通邮箱回复提醒
 
@@ -2082,6 +2084,8 @@ Version 1.0.2, New Function 1Version 1.0.2New Function 1Created on 2025.4.25新�
 0.0.1 Hexo DefaultVersion 0.0.1Created on 2025.4.13正式创建星湖蔚境博客
 
 DomainDomainBought on 2025.4.13购买域名“star-lake.world”
+3.4.12 Solitude otakuVersion 3.4.12Updated on 2025.6.26更换视觉样式为“二次元”更改网站图标更换背景图片更新左顶部栏文字，删除图标，右顶部栏图片与文字改变网站配色：浅色模式#81d8cf，深色模式#fcd337更换加载图片更换头像网站改名为“柠檬星”
+
 2.3.11 Solitude CyberpunkVersion 2.3.11Updated on 2025.6.16新增“不公开的页面&#x2F;文章”页面一级、二级标题上下增高高度评论区添加评论协议本页面时间表更新样式
 
 2.3.10 Solitude CyberpunkVersion 2.3.10Updated on 2025.6.1全站字体改成“霞鹜文楷”删除日历、那年今日、来访者卡片更换背景图
@@ -2090,13 +2094,13 @@ DomainDomainBought on 2025.4.13购买域名“star-lake.world”
 
 2.2.8 Solitude CyberpunkVersion 2.2.8Updated on 2025.5.19网站托管从CloudFlare Pages 换到Vercel
 
-1.1.7 Solitude CyberpunkVersion 1.1.7Updated on 2025.5.12禁用Waline评论系统更新了一下About页面头像旁边那一圈文字（我真的不知道那东西叫啥╮(╯∀╰)╭）
+2.1.7 Solitude CyberpunkVersion 2.1.7Updated on 2025.5.12禁用Waline评论系统更新了一下About页面头像旁边那一圈文字（我真的不知道那东西叫啥╮(╯∀╰)╭）
 
-1.1.6 Solitude CyberpunkVersion 1.1.6Updated on 2025.5.9换背景图片更换个人头像完善友链页面
+2.1.6 Solitude CyberpunkVersion 2.1.6Updated on 2025.5.9换背景图片更换个人头像完善友链页面
 
-1.1.5 Solitude CyberpunkVersion 1.1.5Updated on 2025.5.8换背景图片新建页面“本站介绍”更改目录栏布局更新音乐胶囊里的歌曲为“I Really Want to Stay at Your House”从现在开始认真记录更新啦
+2.1.5 Solitude CyberpunkVersion 2.1.5Updated on 2025.5.8换背景图片新建页面“本站介绍”更改目录栏布局更新音乐胶囊里的歌曲为“I Really Want to Stay at Your House”从现在开始认真记录更新啦
 
-1.1.4 Solitude CyberpunkVersion 1.1.4Updated on 2025.5.2统一博客视觉样式为“赛博朋克”更新左顶部栏文字与图标，右顶部栏图片更改网站图标加背景图片更新目录栏文字显示，更改目录栏布局深色模式配色颜色改为#cc00ff更新About页面信息更新“建站备忘录”文章封面启用封面取色
+2.1.4 Solitude CyberpunkVersion 2.1.4Updated on 2025.5.2统一博客视觉样式为“赛博朋克”更新左顶部栏文字与图标，右顶部栏图片更改网站图标加背景图片更新目录栏文字显示，更改目录栏布局深色模式配色颜色改为#cc00ff更新About页面信息更新“建站备忘录”文章封面启用封面取色
 
 1.0.3 Solitude DefaultVersion 1.0.3Updated on 2025.4.26域名star-lake.world重定向到blog.star-lake.world顶部盒子新增Happy Birthady项目
 
@@ -2107,6 +2111,9 @@ DomainDomainBought on 2025.4.13购买域名“star-lake.world”
 0.0.2 Solitude DefaultVersion 0.0.2Updated on 2025.4.13开始使用Solitude主题
 
 0.0.1 Hexo DefaultVersion 0.0.1Created on 2025.4.13正式创建星湖蔚境博客
+
+No.9 Article PublishArticle No.9Published on 2025.6.10发表文章“【关于博客】近况公告 25#1”
+
 
 No.2 Article UpdateArticle No.2Updated on 2025.6.18更新文章“我们为什么还在做个人博客？”修改了一些文字，添加了一个指向我的文章“如何注册免费域名并托管到CloudFlare”的外挂标签
 
@@ -2159,19 +2166,19 @@ DomainDomainBought on 2025.4.13购买域名“star-lake.world”
 版本号说明本站更新信息说明因本站使用的版本号迭代方式比较特殊，很多朋友有可能看不懂，故特此说明。
 版本号说明
 本站版本号大致采用x.y.z格式，如1.2.3
-x: 重大更新，如域名，主题，服务商更新等
-y: 大更新，如整体视觉样式，新功能等。若一次更新项目太多有可能也会算作大更新
+x: 重大更新，如域名，主题，整体视觉样式更新等
+y: 大更新，如服务商更换，新功能等。若一次更新项目太多有可能也会算作大更新
 z: 一般更新。
 
 
 本站x,y,z代表三个类型的更新的版本号各自独立，不存在从属关系，更上一级的号码（如x)更新后下级号码（如y,z）不会清零，但会往下更新一代（如上一版本号是2.2.1，x更新后其他都往下更新一个数字为3.3.2）
 
-信息说明以1.3.6版本更新举例：
-1.3.6 Solitude CyberpunkVersion 1.3.6Updated on 2025.5.2统一博客视觉样式为“赛博朋克”更新左顶部栏文字与图标，右顶部栏图片更新网站头像加背景图片更新目录栏文字显示，更改目录栏布局深色模式配色颜色改为#cc00ff更新About页面信息更新“建站备忘录”文章封面启用封面取色
+信息说明以2.1.4版本更新举例：
+2.1.4 Solitude CyberpunkVersion 2.1.4Updated on 2025.5.2统一博客视觉样式为“赛博朋克”更新左顶部栏文字与图标，右顶部栏图片更新网站头像加背景图片更新目录栏文字显示，更改目录栏布局深色模式配色颜色改为#cc00ff更新About页面信息更新“建站备忘录”文章封面启用封面取色
 
-可以看到这是一次y级更新，在它之前的一个版本为1.2.5
-Part 1：1.3.6 Solitude Cyberpunk这是本次更新的名称，1.3.6 为版本号，Solitude为当前使用主题，Cyberpunk为视觉样式。
-Part 2：Version 1.3.6Updated on 2025.5.2这是本次更新的前置信息，Version后跟的是版本号，Updated on后跟的是更新时间。
+可以看到这是一次x级更新，在它之前的一个版本为1.0.3
+Part 1：2.1.4 Solitude Cyberpunk这是本次更新的名称，2.1.4 为版本号，Solitude为当前使用主题，Cyberpunk为视觉样式。
+Part 2：Version 2.1.4Updated on 2025.5.2这是本次更新的前置信息，Version后跟的是版本号，Updated on后跟的是更新时间。
 Part 3：
 统一博客视觉样式为“赛博朋克”
 更新左顶部栏文字与图标，右顶部栏图片
