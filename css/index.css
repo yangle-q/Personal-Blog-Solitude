@@ -10978,10 +10978,10 @@ div#banners .bannerText {
   background: var(--efu-card-bg);
 }
 [data-theme=dark] {
-  --efu-theme: #32cd32;
-  --efu-theme-op: rgba(50,205,50,0.137);
-  --efu-theme-op-deep: rgba(50,205,50,0.867);
-  --efu-theme-none: rgba(50,205,50,0);
+  --efu-theme: #81d8cf;
+  --efu-theme-op: rgba(129,216,207,0.137);
+  --efu-theme-op-deep: rgba(129,216,207,0.867);
+  --efu-theme-none: rgba(129,216,207,0);
   --efu-blue: #0084ff;
   --efu-red: #ff3842;
   --efu-pink: #d44040;
