@@ -2,8 +2,8 @@
 <search>
   <entry>
     <title>Part 2. Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church</title>
-    <url>/2025/HenryVIII/</url>
-    <content><![CDATA[Before You ReadBefore You ReadOrigin of this ArticleIf you wanna know why I write this article, please read the article below:    站内链接                                                  A Brief Biography and Interesting Facts of Three Most Famous English Monarches in their Time and Life. Part 1, Introduction            2025.6.1                    
+    <url>//post/henryviii/</url>
+    <content><![CDATA[Before You ReadBefore You ReadOrigin of this ArticleIf you wanna know why I write this article, please read the article below:    引用站外链接                                                  A Brief Biography and Interesting Facts of Three Most Famous English Monarches in their Time and Life. Part 1, Introduction            2025.6.1                    
 The Gallery of this ArticleFor the convenience of browsing, I gather all the photoes in this article and classified them by topics below:
 
 
@@ -198,14 +198,14 @@ Others
   </entry>
   <entry>
     <title>Part 1. Introduction</title>
-    <url>/2025/Introduction/</url>
+    <url>//post/introduction/</url>
     <content><![CDATA[Introduction to this seriesOnce We talked about those Monarchs of the Great Britain, there were always some of them that had to be mentioned time by time. In fact, these three monarchs are perhaps be the most famous and the most long-influence monarchs of Britain. And of the enormous influence of Britian, their names were also well-knowned all about the world. Anybody, as long as they mentioned their names anytime, anyhow, anywhere, almost everybody shall immediately know who they are. And the names of these three monarchs are: Henry Ⅷ, ElizabethⅠ, and Queen Victoria. Today, by this series ‘A Brief Biography and Interesting Facts of Three Most Famous English Monarches in their Time and Life‘ on my blog, I want to take you back to the world of those English Monarchs’.
 The cause for me to write this series is about my English studies. I just ended the study of a book called ‘Great English Monarchs and Their Times‘ in the Black Cat series, and my English teacher requested me of write a short summary to this book. But when I reviewed the whole book, I found I had a lot of questions about that. For example, it was mentioned in this book the ‘Henry’s break with Rome’, but I have never found an explanation for that. So I started to search. But as deep as I searched, I found there were a lot of things interesting that were ignored by the book, which is just a simple short introduction to these monarchs. So I decided to write these things by myself. But I had to say first, in this article it could include some ideas of myself, and maybe not the fact. But I’ll do my best to make my article believable, and close the fact of real history, which may could never be proved.
 But absolutely, as the title said, this article is just a brief biography of these monarchs, because if you want to research the whole lives of them, I believe it can make a giant book for each monarchs including everything from what he ate for breakfast to who he met at night. But I can’t do that. And I may ignore something willfully to what I’m not interested in too, such as who was been chosen to be the Archbishop of Canterbury. If you are interested in that, you can search for them yourselves.
 As the last thing before we get start, there are some important facts we need to learn. Anybody, as long as it’s a human, it will almost undoubtly be influenced by the time and the environment it’ve got, even if you and me. so, it is very important to understand their time before understand they themselves. But the monarchs were special. Their influence decided they could not only be the joiner of the time, but also the builder of it. It is an interesting fact, and makes it more harder to explain their links to the time. Each of these three monarchs were all symbolled a period of England, like the most famous Victoria period. And they themselves were in a greater period — or perhaps you would like to call them the ‘process of the world — too. Henry Ⅷ and ElizabethⅠlived in the Ranaissance, and Queen Victoria lived in the industrial revolution. The environment of the time made a big deal to their success.
 OK, after all of these, let’s come back to the world of these three monarchs’ together with me.
 Continue to read
-    站内链接
+    引用站外链接
     
         
           
@@ -227,7 +227,7 @@ Continue to read
   </entry>
   <entry>
     <title>Solitude魔改记录（持续更新）</title>
-    <url>/2025/Solitude%E9%AD%94%E6%94%B9%E8%AE%B0%E5%BD%95/</url>
+    <url>//post/solitude-reinventing/</url>
     <content><![CDATA[前言这篇文章其实主要就是作为一个记录使用啦，顺便分享一下怎么魔改，其实我也在这上面踩了一个大坑的，所以我就想所有看到我这篇文章的人不要和我一样浪费那么多时间精力，所以教程会写得尽可能详细一点，大佬们不要瞧不起我哦！如果你感兴趣我是怎么踩坑的的话，可以看看原文-踩坑这一部分~
 Tip：如果不小心把文件改坏了不知道怎么改回来的话可以去 Solitude 的 GitHub 仓库下载一份原文件替换上去哦！
 
@@ -244,11 +244,11 @@ Tip：如果不小心把文件改坏了不知道怎么改回来的话可以去 S
     fetch('https://api.github.com/repos/everfu/hexo-theme-solitude')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-yt8up3o2o').innerText = data.name;
-        document.querySelector('.desc-yt8up3o2o').innerText = data.description;
-        document.querySelector('.star-yt8up3o2o').innerText = data.stargazers_count;
-        document.querySelector('.fork-yt8up3o2o').innerText = data.forks_count;
-        document.querySelector('.lang-yt8up3o2o').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-05f25ti9w').innerText = data.name;
+        document.querySelector('.desc-05f25ti9w').innerText = data.description;
+        document.querySelector('.star-05f25ti9w').innerText = data.stargazers_count;
+        document.querySelector('.fork-05f25ti9w').innerText = data.forks_count;
+        document.querySelector('.lang-05f25ti9w').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   
   
@@ -561,8 +561,8 @@ Git 没装插件（我去找了，没找到css的插件）
   </entry>
   <entry>
     <title>Markdown 格式详解与 Solitude 主题 Front Matter 使用说明</title>
-    <url>/2025/Markdown%E6%A0%BC%E5%BC%8F%E8%AF%A6%E8%A7%A3%E4%B8%8ESolitudeFrontMatter%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</url>
-    <content><![CDATA[前言Markdown 格式是在（至少是 Hexo 框架下的）个人博客里写作最基本甚至在很多主题下唯一需要掌握的语法了（当然在 Solitude 主题下不是，尤其是如果你要魔改的话），网上的教程也非常多，那为什么我还要写这么一篇文章呢？主要还是因为 Solitude 主题有外挂标签这个功能。目前已经有两位大佬都写过外挂标签的使用指南了，但是他们的文章是主要+补充的结构，这就导致我在写文章的时候需要同时参考他们俩的文章再加一篇常规的 Markdown 格式的教程。所以我就想，**为什么不干脆自己写一篇全面的教程呢？**这样我要写文章的时候甚至不用打开浏览器就能直接看到了，而且还能水一篇文章（事实证明不行，写这个东西累的要命）而且还可能会对大家有帮助。所以，这篇文章就出来啦！
+    <url>//post/markdown/</url>
+    <content><![CDATA[前言Markdown 格式是在（至少是 Hexo 框架下的）个人博客里写作最基本甚至在很多主题下唯一需要掌握的语法了（当然在 Solitude 主题下不是，尤其是如果你要魔改的话），网上的教程也非常多，那为什么我还要写这么一篇文章呢？主要还是因为 Solitude 主题有外挂标签这个功能。目前已经有两位大佬都写过外挂标签的使用指南了，但是他们的文章是主要+补充的结构，这就导致我在写文章的时候需要同时参考他们俩的文章再加一篇常规的 Markdown 格式的教程。所以我就想， **为什么不干脆自己写一篇全面的教程呢？**这样我要写文章的时候甚至不用打开浏览器就能直接看到了，而且还能水一篇文章（事实证明不行，写这个东西累的要命）而且还可能会对大家有帮助。所以，这篇文章就出来啦！
 本文分为四个部分： Markdown 简介，Markdown 格式详解，Solitude 主题 Front Matter 使用说明，Solitude 主题内置&amp;外挂标签使用说明。其中 Solitude 主题 Front Matter 使用说明和 Solitude 主题内置&amp;外挂标签使用说明是  Solitude主题独有的，其他主题请自行摸索。我还提供了在线 Markdown 编辑器，供那些懒得学 Markdown 的人使用，在这里你可以像编辑 Word 文档一样编辑文本，编辑器会自动加入 Markdown 格式。当然，还是学学比较好，毕竟技多不压身嘛！
 另外再多插一嘴，我本来是想把上面四个部分合在一篇文章里面的，但是写好前面三个部分之后我发现光是这些就已经1124行了，再往下写下去到时候看的时候不方便，所以说我就分成两篇啦！不是我水了两篇文章哦！
 OK，坐好扶稳，我们准备发车喽！
@@ -572,7 +572,6 @@ Markdown 格式的文档与 Word 之类的文档不同。在 Word 中你需要�
  Markdown 语法的首要设计目标是尽可能易读。基于这个目标, Markdown 格式的文档能够以纯文本形式原样发布，而不会看起来像被填满了标签或格式化指令。 —— John Gruber
 
 一旦你习惯了 Markdown 格式语法，你会发现它甚至在日常的纸面书写中都非常有用。 Markdown 还有一个好处，你可以轻松地仅通过键盘来标记格式，而不用通过鼠标操作从而中断输入，这在高速的文本输入中尤其有用。
-Markdown 的创建者编写的原始指南
 Markdown 可以用来写啥？1. 写网站这个不用多说了吧？我们写博客文章，页面什么的得用到它，要知道 Markdown 就是为互联网而生的！
 2. 写文本文件虽然 Markdown 的功能没有 Word 那么多，但写写作业、信件什么的还是够用哒。用 Markdown 写好内容后，就可以使用 Markdown 文档创作工具来导出为 PDF 或 HTML 格式啦！有了 PDF，就可以打印、发邮件或者传上网啦
 3. 记笔记Markdown 简直是最适合原来记笔记的标记语言了！虽然 Evernote和 OneNote现在还不能直接用Markdown格式创建编辑，都是毕竟还是有一些替代方法的嘛
@@ -1071,7 +1070,7 @@ Front Matter简介Front Matter 是位于 HTML&#x2F;Markdown 文件顶部的 YAML
 ---title: Hello Worlddate: 2013/7/13 20:46:25---
 &quot;title&quot;: &quot;Hello World&quot;,&quot;date&quot;: &quot;2013/7/13 20:46:25&quot;;;;
 Solitude 主题 Front Matter 使用说明在显示为不同类型（文章、页面、特色页面）的 Markdown 文件中 Front Matter 所包含的内容是不同的。下面是在这三种Markdown 文件中 Front Matter 包含的内容。
-文章页面特色页面（即刻、工具箱、我的装备、豆瓣页（音乐、图书、游戏））---title:date:updated:tags:categories:permalink:comment:cover:katex:reprint:locate:sticky:------title:date:updated:type:comment:desc:cover:katex:aside:------leftend:rightend:rightbtn:rightbtnlink:---
+文章页面特色页面（即刻、工具箱、我的装备、豆瓣页（音乐、图书、游戏））---title:date:updated:tags:categories:permalink:comment:cover:katex:reprint:locate:sticky:ai_test:------title:date:updated:type:comment:desc:cover:katex:aside:------leftend:rightend:rightbtn:rightbtnlink:---
 
 以下为各值代表的内容以及默认值：
 
@@ -1225,6 +1224,13 @@ sticky
 
 
 
+ai_test
+文字
+可选
+ai 框里面输入的文本
+
+
+
 分类和标签的说明只有文章支持分类和标签。 分类按顺序应用于文章，从而形成分类和子分类的层次结构。 标签是在相同的层次结构上定义的，因此它们的出现顺序不重要。
 示例
 categories:  - Sports  - Baseballtags:  - Injury  - Fight  - Shocking
@@ -1375,7 +1381,7 @@ TXT 格式
   </entry>
   <entry>
     <title>使用Vercel部署博客</title>
-    <url>/2025/%E4%BD%BF%E7%94%A8Vercel%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2/</url>
+    <url>//post/vercel/</url>
     <content><![CDATA[前言之前我在建站备忘录这篇文章里面说过，我现在在用的静态网站托管方案是CloudFlare Pages，因为我的域名是托管在CloudFlare的。我当时还在文章里大言不惭地说:
 
 当然也有人说Cloudfrare会比较慢， 但是我觉得还好啊。虽然Clondflare主机在洛杉矶，但是我感觉我的网站也不比其他人的慢，基本上十秒钟之内能加载完首屏，可能是因为我文章比较少吧。再说每次打开我的网站数据都要跑到对面的美国去转一圈这件事我感觉还是挺浪漫的。还有一点Cloudflare改DNS的速度是真的快，它说最多需要48小时，但有两次我改完后不到2分钟网址就可以访问了，这一点我还是挺惊讶的。
@@ -1474,8 +1480,9 @@ Vercel加速（2025.5.29更新）Vercel用了一段时间之后感觉还是有�
         
     
 
-我的个人博客可以通过以下几个地址访问：
+我的个人博客可以通过以下地址访问：
 https://blog.lemonstar.me （主域名）
+https://star-lake.world （跳转到blog.lemonstar.me）
 https://blog.star-lake.world 
 https://star-lake.world （跳转到blog.star-lake.world）
 https://personal-blog-solitude.pages.dev
@@ -1497,7 +1504,7 @@ http://localhost:4000/ （其实是玩梗啦）
   </entry>
   <entry>
     <title>如何注册免费域名并托管到CloudFlare</title>
-    <url>/2025/%E5%A6%82%E4%BD%95%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D%E5%B9%B6%E6%89%98%E7%AE%A1%E5%88%B0CloudFlare/</url>
+    <url>//post/free-domain/</url>
     <content><![CDATA[前言大家应该都知道吧，我们的个人博客一般来说都是要用域名来访问的，但是这个域名从哪里来呢？最常规的方式当然就是去买啦。通过什么渠道这个我就不用说了吧，只要别去淘宝买就行。然后呢流程也非常的简单，毕竟是让你花钱的事嘛，各大经销商们也绝对不会让这件事很复杂，最好是一步到位，你选中之后一冲动动手一点啪的一下这个域名就属于你了（虽然最多只能属于你十年，过了之后就得重新交钱，毕竟这个东西是用一个少一个的嘛。）但是就像我在为什么我们还在做个人博客？这篇文章里面提到的，这种方式有一个很大的问题，那就是：它要钱啊，而且要的钱还是一年一年递增的，那这对于我们白嫖党来说就非常不友好了是吧（不是）
 所以说有什么办法可以不用花钱呢？我那篇文章里面提到了两种方法：一、用 CloudFlare Github 这种 pages 服务商默认的二级域名，二、用其他平台提供的免费二级域名。
 如果你嫌麻烦，那你用 pages 服务商提供的默认二级域名当然也完全可以，比如说中文网字计划就用的是 Netlify 的二级域名。但是这种域名有两个问题：第一个就是它的访问速度可能不是那么理想，第二就是有些平台，比如说 Vercel 和 CloudFlare Workers，他们的域名有可能在中国大陆被墙了（CloudFlare Pages 不会）。所以说这个时候就要用第二种方法了，就是：找那些免费提供二级域名的平台注册一个二级域名。
@@ -1603,7 +1610,7 @@ OK，那现在我们就返回到首页，在搜索框下面有一个按钮写着
   </entry>
   <entry>
     <title>建站备忘录</title>
-    <url>/2025/%E5%BB%BA%E7%AB%99%E5%A4%87%E5%BF%98%E5%BD%95/</url>
+    <url>//post/establishment-of-the-site/</url>
     <content><![CDATA[前言欢迎来到星湖碧境哟！我是 Meteorite 流星，这里是我的个人博客，我会在这里分享一点我随手写的东西，记录一下生活，说不定每次出去玩之后回来还写一些游记什么之类的，反正就是我在互联网上的一块自留地啦(ゝ∀･)
 这一篇文章算是建完站之后的一些记录叭，想说的东西还蛮多哒，可能会比较长，我文章也写得不好，希望大家多多包容哦！
 搭建过程起源这个网站其实是我的第二个个人博客啦，我去年5月份在北京玩的时候刷B站看到UP主@小宇Boi的视频超详细！0成本搭建个人网站！！【建议收藏】就心血来潮跟着他搭过一个。其实我很早就想要有自己的一个网站啦，但是由于我技术不好，连ZION这种无代码开发开台都操作不了，所以最后只能不了了之了。这次正好有教程，我立马就搭了一个。但是搭完之后那个网站基本上只配置了个Async主题就没做其他的了，因为小宇Boi没教(￣▽￣)*，评论友链这些最基本的东西都没搞，域名用的也还是Github分配的，文章更是到今年3月份才更了第一篇，所以说我那个网站现在就处于一个与世隔绝的状态。本来我4月份连发了两篇长文之后我想给这个博客换个主题换个域名的，但我这人有点完美主义，我想着如果要换主题还不如从头再来重新建一个呢，于是这个博客就诞生辣(づ′▽&#96;)づ
@@ -1654,7 +1661,7 @@ OK，那现在我们就返回到首页，在搜索框下面有一个按钮写着
   </entry>
   <entry>
     <title>我们为什么还在做个人博客？</title>
-    <url>/2025/%E6%88%91%E4%BB%AC%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%98%E5%9C%A8%E5%81%9A%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%9F/</url>
+    <url>//post/why-we-do-this</url>
     <content><![CDATA[说明前前前言本文所阐述的仅为博主个人观点，不代表个人博客圈共识，仅供参考。本文约6430字，阅读时间约21分钟，如果对长篇大论不感兴趣的话请直接跳到最后一段看我对于这个问题的最终答案(算是吧σ(´∀｀*))
 
 前言最近逛了很多个人博客，也在各个博客群里面潜水了好一阵子，发现很多博主，最开始的时候都和去年的我一样，建完站后都要面对一个问题，那就是： 
@@ -1676,7 +1683,7 @@ OK，那现在我们就返回到首页，在搜索框下面有一个按钮写着
 帮助别人最后我觉得是帮助到别人。虽然因为鉴于个人博客这个平台的特殊性，你在个人博客上的文章影响面注定是不广的（当然你也可以同时在各种平台更新，之前也讲过）但是能够帮助到别人依旧是一件很美妙的事情。 有些好的文章别人看完后甚至能影响他的一生。我希望我的文章能成为这样的文章，至少是让看了之后很哇塞的文章，能给你带来一种新的思路。当然现在我的文章显然还没有到这个境界，我的影响力也不够，但是哪怕我能帮到一个人我都是非常开心的。 
 缺点解决办法那前面说的缺点怎么解决呢？毕竟对于一些人来说这几点确实是他们的硬伤。不过别急，其实这些缺点也都挺好解决的，我们来一条一条说。你想要放视频？ 其实大部分主题都是支持放视频到帖子里的。比如说我用的Solitude主题就支持插入B站、Youtube还有本地的视频。你写的东西没有人看？ 你可以同时在知乎或者微信公众号上更啊，事实上很多博主也是这么做的。信息获取不便利？ 好吧这确实是个人博客的一个大问题，这一点我也不太懂，不知道别的博主有什么解决办法。或者RSS订阅也是一种不错的选择？不想花钱？ 其实有很多方法让你不用花钱的。个人博客花钱的地方主要就三个，一个是域名，一个是服务器，还有一个是SSL证书。 域名可以用Clondflare Pages 或者Github Pages 提供的二级域名嘛，我的第一个个人博客最开始就是用的Github Pages 提供的二级域名，或者现在也有很多免费的二级域名提供商，他们提供的域名是那种可以当一级域名托管到Clondflare上的，比如说us.kg，我博客就有一篇教程教你怎么注册（看下面）。服务器也可以不买，直接把网站托管到Github上搭配Github Pages 或者Cloudflare Pages也可以实现一样的功能，就是性能可能没有那么好，文章一多容易卡。SSL证书也完全可以不用买的，阿里云腾讯云这些提供商都有白嫖的办法，如果用Cloudflare的话它甚至默认给你送，Github Pages更是强制性的，想取消都不行。所以说如果你不想花钱对这些性能要求不高的话这些东西也够用了，当然如果经济能力够想买个域名和服务器的话更好（SSL证书是真的没必要），但不买也有白嫖的方法就是了。
 
-    站内链接
+    引用站外链接
     
         
           
@@ -1713,14 +1720,14 @@ OK，那现在我们就返回到首页，在搜索框下面有一个按钮写着
   </entry>
   <entry>
     <title>【关于博客】近况公告 25#1</title>
-    <url>/2025/%E8%BF%91%E5%86%B5%E5%85%AC%E5%91%8A/</url>
+    <url>//post/recent-update-1/</url>
     <content><![CDATA[正文最近回了趟上海，又去杭州宁波常熟等地走了一圈，本来想写一篇详细的游记的，但是玩的地方太杂了，只能勉强整理出来一个简报啦（别催已经开始写啦(^u^)）
-这次出去也是状况频发（我就没有一次出去玩不状况频发的）本来路上想一直更博客的，但是中间又是硬盘线坏了又是电脑充电线丢了，导致我别说更博客了，就连电脑都没摸过几下。这不一回来就迫不及待的开始折腾博客了。
+这次出去也是状况频发（我就没有一次出去玩不状况频发的）本来路上想一边玩一边更博客的，但是中间又是硬盘线坏了又是电脑充电线丢了，导致我别说更博客了，就连电脑都没摸过几下。这不一回来就迫不及待的开始折腾博客了。
 这个月说服我妈新给我买了两个域名，一个是lemonstar.me,一个是hellofrom.cn。hellofrom.cn还没想好弄什么，可能可以做一个请求转发代理，就像叶泯希哥哥的一样的，但是前提是我会做。lemonstar.me买回来就是为了把我的博客迁到这个域名上面来的。之前那个域名star-lake.world写出来是好看，但是有一个很大的问题那就是：输起来太不方便了！不信你现在输输看嘛，STAR还好，都在同一边，LAKE和WORLD基本上就是一个字母在最左边就是一个字母在最右边了，输的时候感觉手在跳塔朗泰拉舞（哈迷乱入）而且后缀是之前见都没见过的.world，基本上把注册域名的时候不该犯的错误全犯了一遍（捂脸逃）。lemonstar.me我觉得就非常好，还可可爱爱的是不是？我还发现了一个网站https://lemonstar.de ，和我的域名只差一个字母，好像是一个测星座运势的网站，有机会一定要和他申请交换友链，太好玩了d(d＇∀＇)
 为了匹配这个域名我决定把我的网站也搞可爱风一点，我本来是想把背景换成一个柠檬和一杯橙汁的，如果你切换到 dark mode 背景图片就会变成绿色的，黄柠檬也会变成绿柠檬。但是我找了好久也没找到我满意的，我自己也不会P，我就干脆换成二次元风格的啦，就是你现在看到的这样(≧∀≦)ゞ
 不多说了直接上对比图！
 本次更新内容
-3.4.13 Solitude ACGNVersion 3.4.13Updated on 2025.6.29域名lemonstar.me重定向到blog.lemonstar.me更新音乐胶囊里面的歌曲为“secret base ～君がくれたもの～”个人简介页面信息更新一下全站文章封面更新Umami 数据统计域名由blog.star-lake.world换到blog.lemonstar.me更换即刻短文、最近评论、留言板页面顶部图片深色模式配色改为#64b6ac
+3.4.13 Solitude ACGNVersion 3.4.13Updated on 2025.6.29域名lemonstar.me重定向到blog.lemonstar.me更新音乐胶囊里面的歌曲为“secret base ～君がくれたもの～”个人简介页面信息更新一下全站文章封面更新Umami 数据统计域名由blog.star-lake.world换到blog.lemonstar.me更换即刻短文、最近评论、留言板页面顶部图片深色模式配色改为#64b6ac所有网页链接改了一下全站文章加上 AI 摘要
 
 3.4.12 Solitude otakuVersion 3.4.12Updated on 2025.6.26更换视觉样式为“二次元”更改网站图标更换背景图片更新左顶部栏文字，删除图标，右顶部栏图片与文字改变网站配色：浅色模式#81d8cf，深色模式#fcd337更换加载图片更换头像网站改名为“柠檬星”
 
@@ -1757,6 +1764,92 @@ OK，那现在我们就返回到首页，在搜索框下面有一个按钮写着
         <tag>建站记录</tag>
         <tag>近况公告</tag>
         <tag>关于博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>长三角旅行手记 【游记系列 No.1】</title>
+    <url>//post/changsanjiao/</url>
+    <content><![CDATA[前言前几天去长三角一带玩了一下，今天总算是整理出来一篇旅行手记了，也和大家分享一下。如果你问我为什么我中考还有时间出来玩，额……你别管我就是有时间怎么滴（逃･*･:≡(　ε:)）
+DAY 1. 2025.6.18 余姚早上我和我爸从武夷山出发，坐火车到杭州东站转车到余姚北，我在火车上还搞了会儿博客(´∀ ˋ)
+下午到达余姚北站，先去了我爸到余姚最想去的地方：王阳明故居（我爸就喜欢看这个我有什么办法╮(╯∀╰)╭）
+var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imgm=L.tileLayer.chinaProvider('GaoDe.Satellite.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imga=L.tileLayer.chinaProvider('GaoDe.Satellite.Annotion',{maxZoom:20,minZoom:1,attribution:'高德地图'});var normalMap=L.tileLayer.chinaProvider('Google.Normal.Map',{maxZoom:20,minZoom:1,attribution:'Google Maps'}),satelliteMap=L.tileLayer.chinaProvider('Google.Satellite.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'});routeMap=L.tileLayer.chinaProvider('Google.Satellite.Annotion',{maxZoom:21,minZoom:1});var normalMap=L.tileLayer.chinaProvider('Google.Normal.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'}),satelliteMap=L.tileLayer.chinaProvider('Google.Satellite.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'}),routeMap=L.tileLayer.chinaProvider('Google.Satellite.Annotion',{maxZoom:21,minZoom:1,attribution:'Google Maps'});var normalm1=L.tileLayer.chinaProvider('Geoq.Normal.Map',{maxZoom:21,minZoom:1,attribution:'GeoQ'});var normal=L.layerGroup([normalm]),image=L.layerGroup([imgm,imga]);var baseLayers={"高德地图":normal,"智图地图":normalm1,"谷歌地图":normalMap,"高德卫星地图":imgm,"谷歌卫星地图":satelliteMap,"高德卫星标注":image,"谷歌卫星标注":routeMap};var mymap=L.map('map-121.1500000-30.050000',{center:[30.050000,121.1500000],zoom:15,layers:[normal],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:'放大',zoomOutTitle:'缩小'}).addTo(mymap);var marker = L.marker(['30.050000','121.1500000']).addTo(mymap);marker.bindPopup("王阳明故居").openPopup();
+
+晚饭在阳明古街选了一个多小时（为什么都这么贵啊啊）最后将近七点钟终于吃上饭了。
+吃完晚饭我们就回酒店啦(ゝ∀･)
+DAY 2. 2025.6.19 余姚、宁波上午打车去看了河姆渡遗址。
+var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imgm=L.tileLayer.chinaProvider('GaoDe.Satellite.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imga=L.tileLayer.chinaProvider('GaoDe.Satellite.Annotion',{maxZoom:20,minZoom:1,attribution:'高德地图'});var normalMap=L.tileLayer.chinaProvider('Google.Normal.Map',{maxZoom:20,minZoom:1,attribution:'Google Maps'}),satelliteMap=L.tileLayer.chinaProvider('Google.Satellite.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'});routeMap=L.tileLayer.chinaProvider('Google.Satellite.Annotion',{maxZoom:21,minZoom:1});var normalMap=L.tileLayer.chinaProvider('Google.Normal.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'}),satelliteMap=L.tileLayer.chinaProvider('Google.Satellite.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'}),routeMap=L.tileLayer.chinaProvider('Google.Satellite.Annotion',{maxZoom:21,minZoom:1,attribution:'Google Maps'});var normalm1=L.tileLayer.chinaProvider('Geoq.Normal.Map',{maxZoom:21,minZoom:1,attribution:'GeoQ'});var normal=L.layerGroup([normalm]),image=L.layerGroup([imgm,imga]);var baseLayers={"高德地图":normal,"智图地图":normalm1,"谷歌地图":normalMap,"高德卫星地图":imgm,"谷歌卫星地图":satelliteMap,"高德卫星标注":image,"谷歌卫星标注":routeMap};var mymap=L.map('map-121.350000-29.960000',{center:[29.960000,121.350000],zoom:15,layers:[normal],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:'放大',zoomOutTitle:'缩小'}).addTo(mymap);var marker = L.marker(['29.960000','121.350000']).addTo(mymap);marker.bindPopup("河姆渡遗址").openPopup();
+
+河姆渡相比于其他遗址来说还是比较好看的一个啦，至少有房子，有柱子，博物馆也挺好看的，就是外面好热∑(￣□￣;)
+
+然后又去了名人馆。OK又是我不感兴趣的一个，但是跟我爸出来就是这样啦
+不过里面说舜是他们那边的人？
+
+下午打车去了我爸这次出来最重要的一个目的地：方太总部。他这次出来主要就是为了来参加方太旗下的一个杭湾书院办的峰会的
+var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imgm=L.tileLayer.chinaProvider('GaoDe.Satellite.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imga=L.tileLayer.chinaProvider('GaoDe.Satellite.Annotion',{maxZoom:20,minZoom:1,attribution:'高德地图'});var normalMap=L.tileLayer.chinaProvider('Google.Normal.Map',{maxZoom:20,minZoom:1,attribution:'Google Maps'}),satelliteMap=L.tileLayer.chinaProvider('Google.Satellite.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'});routeMap=L.tileLayer.chinaProvider('Google.Satellite.Annotion',{maxZoom:21,minZoom:1});var normalMap=L.tileLayer.chinaProvider('Google.Normal.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'}),satelliteMap=L.tileLayer.chinaProvider('Google.Satellite.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'}),routeMap=L.tileLayer.chinaProvider('Google.Satellite.Annotion',{maxZoom:21,minZoom:1,attribution:'Google Maps'});var normalm1=L.tileLayer.chinaProvider('Geoq.Normal.Map',{maxZoom:21,minZoom:1,attribution:'GeoQ'});var normal=L.layerGroup([normalm]),image=L.layerGroup([imgm,imga]);var baseLayers={"高德地图":normal,"智图地图":normalm1,"谷歌地图":normalMap,"高德卫星地图":imgm,"谷歌卫星地图":satelliteMap,"高德卫星标注":image,"谷歌卫星标注":routeMap};var mymap=L.map('map-121.220000-30.340000',{center:[30.340000,121.220000],zoom:15,layers:[normal],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:'放大',zoomOutTitle:'缩小'}).addTo(mymap);var marker = L.marker(['30.340000','121.220000']).addTo(mymap);marker.bindPopup("方太理想城").openPopup();
+
+到了之后已经五点多了，我们先去看了方太的展厅。说实话我对方太的产品不是很感兴趣，主要是设计风格我不太喜欢，黑不溜秋的。不过我在体验冰箱的时候把它们演示用的瓶子打地上了｡ﾟ(ﾟ´ω&#96;ﾟ)ﾟ｡（幸好没碎）（捂脸逃(&#x2F;ω＼)）
+
+在园区里面偶遇小猫~😻
+
+晚上去体验了他们的员工餐（是真难吃）然后入住方太为我们安排的幸福里酒店，挺高档的，大厅里全面全是香水的味道。
+
+我爸说他有一个聚会拉我去参加，那我当然坚持不去啦。我们回酒店房间之后酒店的工作人员把我们的行李送了上来，结果我的硬盘线被她搞断了！
+至于有什么影响吗，嗯……我更不了博客了。我本来还想路上有时间更新一下博客的。为什么我更不了博客了呢？因为我的博客文件在硬盘里面啊。那为什么我不把文件存在电脑里面呢？额……怎么说呢，我家里面有三台电脑，我本来是想我出去带哪台电脑我就把硬盘插到哪台电脑上更博客的，但是事实证明我一般只用一台电脑……
+DAY 3 2025.6.20 宁波今天我得跟着我爸去参加杭湾书院的那个峰会呜呜，无聊的要命，给你们看看我的座位叭（痛失网名( ´•̥̥̥ω•̥̥̥&#96; )）
+
+午饭是吃的他们杭湾书院的学员出去创业搞得餐馆的盒饭，出乎意料还挺好吃的(≧∀≦)
+
+中午吃完饭有一个义卖活动，我去买了点东西
+
+晚上吃完饭去方太总部转了转，拍了几张照片（多图预警）
+
+DAY 4 2025.6.21 常熟、上海今天可真够忙的，早上吃完饭就从方太的酒店打车去了苏州的常熟，结果把电脑充电线忘在酒店里面了（好好好我在添麻烦这一块是真的优秀•_ゝ•）
+我们预约了常熟世界联合学院的探校，我爸说好了要带我来看看的，我好久之前就想来了。中午先去找了我之前的同学吃饭还有YXT吃饭，他最近去希腊了，还看见了支持巴勒斯坦的游行和不知道哪逃出来的难民了呢！(ﾉ&gt;ω&lt;)ﾉ他说他也想跟着游行队伍走的，但是他妈不让。我还一次国没出过呢，我一直劝我爸带我去伦敦东京玩，但是我爸不想去。不过今年8月份我要去一次香港，大家可以等等我去香港的旅行手记哦ლ(╹◡╹ლ)
+吃完饭他妈妈带我们去了常熟世界联合学院。这所学校在上海的国际学校家长那里可以说是鼎鼎有名，被誉为 “中国唯一一所真正的国际学校”，我就是从今天见到的那个同学那边知道的。他明年准备考进去，我也是想和他一起进去的，但是据说那所学校超级难进，只有2%的录取率，而且学费很贵，虽然说有助学金啦。我爸就是被我劝来看看这所学校的。
+var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imgm=L.tileLayer.chinaProvider('GaoDe.Satellite.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imga=L.tileLayer.chinaProvider('GaoDe.Satellite.Annotion',{maxZoom:20,minZoom:1,attribution:'高德地图'});var normalMap=L.tileLayer.chinaProvider('Google.Normal.Map',{maxZoom:20,minZoom:1,attribution:'Google Maps'}),satelliteMap=L.tileLayer.chinaProvider('Google.Satellite.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'});routeMap=L.tileLayer.chinaProvider('Google.Satellite.Annotion',{maxZoom:21,minZoom:1});var normalMap=L.tileLayer.chinaProvider('Google.Normal.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'}),satelliteMap=L.tileLayer.chinaProvider('Google.Satellite.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'}),routeMap=L.tileLayer.chinaProvider('Google.Satellite.Annotion',{maxZoom:21,minZoom:1,attribution:'Google Maps'});var normalm1=L.tileLayer.chinaProvider('Geoq.Normal.Map',{maxZoom:21,minZoom:1,attribution:'GeoQ'});var normal=L.layerGroup([normalm]),image=L.layerGroup([imgm,imga]);var baseLayers={"高德地图":normal,"智图地图":normalm1,"谷歌地图":normalMap,"高德卫星地图":imgm,"谷歌卫星地图":satelliteMap,"高德卫星标注":image,"谷歌卫星标注":routeMap};var mymap=L.map('map-120.740000-31.600000',{center:[31.600000,120.740000],zoom:15,layers:[normal],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:'放大',zoomOutTitle:'缩小'}).addTo(mymap);var marker = L.marker(['31.600000','120.740000']).addTo(mymap);marker.bindPopup("常熟世界联合学院").openPopup();
+
+
+里面整体环境还很不错，很有苏州江南一带的味道，而且他自己就占了一座岛，据说还是市政府给填出来的。反正我看了是觉得很喜欢，我爸那边嘛……我看希望不大_(:3 ⌒ﾞ)_
+!教室
+看完学校之后我们就打车回上海了（为什么感觉我爸一路上全都是打车走的）上海我也去我也有将近一年没回来了，为什么呢？还不是我爸那该死的开书院的理想……
+我在酒店和我弟汇合了，我妈也是够好玩的，订酒店就定在我们家小区的对面。
+我们晚餐是和我哥一起在一家土耳其餐厅吃的，味道还不错，就是吃的东西都不知道是啥，我们还一边吃一边猜这是用啥做的
+
+DAY 5 2025.6.22 上海今天下大雨……然后我又偏偏约了同学出来玩……所以说就很噩梦了(´・ω・&#96;)
+早上我刚醒我弟就把手机拿给我说群里面LX已经开始骂我怎么还不起床了，我一看他们怎么七点就开始聊天了。我们约的是10：50到，迟到的人要给每个人买一杯奶茶。
+从我家坐地铁过去去静安要一个多小时（上海坐高铁到杭州都只要58分钟）还好12号线不用转车就能到。GZR甚至九点半就到了（这是多不想买奶茶啊……）我那时候还在找地铁口呢。不是GZR九点半商场还没开门呢你去干嘛啊喂(д) ﾟﾟ
+var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imgm=L.tileLayer.chinaProvider('GaoDe.Satellite.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imga=L.tileLayer.chinaProvider('GaoDe.Satellite.Annotion',{maxZoom:20,minZoom:1,attribution:'高德地图'});var normalMap=L.tileLayer.chinaProvider('Google.Normal.Map',{maxZoom:20,minZoom:1,attribution:'Google Maps'}),satelliteMap=L.tileLayer.chinaProvider('Google.Satellite.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'});routeMap=L.tileLayer.chinaProvider('Google.Satellite.Annotion',{maxZoom:21,minZoom:1});var normalMap=L.tileLayer.chinaProvider('Google.Normal.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'}),satelliteMap=L.tileLayer.chinaProvider('Google.Satellite.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'}),routeMap=L.tileLayer.chinaProvider('Google.Satellite.Annotion',{maxZoom:21,minZoom:1,attribution:'Google Maps'});var normalm1=L.tileLayer.chinaProvider('Geoq.Normal.Map',{maxZoom:21,minZoom:1,attribution:'GeoQ'});var normal=L.layerGroup([normalm]),image=L.layerGroup([imgm,imga]);var baseLayers={"高德地图":normal,"智图地图":normalm1,"谷歌地图":normalMap,"高德卫星地图":imgm,"谷歌卫星地图":satelliteMap,"高德卫星标注":image,"谷歌卫星标注":routeMap};var mymap=L.map('map-121.470000-31.240000',{center:[31.240000,121.470000],zoom:15,layers:[normal],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:'放大',zoomOutTitle:'缩小'}).addTo(mymap);var marker = L.marker(['31.240000','121.470000']).addTo(mymap);marker.bindPopup("上海静安大悦城").openPopup();
+
+我快到站了才发现我和LX坐的是同一趟地铁。我们是去玩密室逃脱的，这还是我和GZR第一次玩呢。整个感觉其实还行，虽然我和GZR都被抓住了。（人家还是第一次嘛）恐怖还是挺恐怖的，但是幸好有一对情侣和我们一起玩，大哥哥大姐姐人超级好的，一直保护着我。（有一个人可以依赖的感觉真好）ヽ( ^ω^ ゞ )
+我单线任务就没出过几个，有一次我们要拿的东西甚至在NPC手上（不是谁想出来的我下次一定打死他ヽ(#&#96;Д´)ﾉ）。第一次出单线的时候我真的一点头绪都没有，本来想跟对讲机说话的，结果按的时候按成音量键了。到最后那边的工作人员都不耐烦了：“肯定是没有灯的呀，开着灯怎么还有什么难度嘛”ก็ʕ•͡ᴥ•ʔ ก้
+
+下午没什么好说的，LX和GZR要上课，我送他们去那边之后就自己找了个商场看华为和苹果最新出的东西去了。（最近想新买个电脑，如果你们问我现在用的是啥的话，ThinkPad E450……）
+DAY 6 2025.6.23 上海、杭州今天就主要是陪我爸我妈去处理各种事情，我上午去办了护照和港澳通行证、来往台湾通行证，顺便说一下我是福建户口的，现在只有福建户口可以去跟团去台湾嘻嘻（(∩^o^)⊃━☆ﾟ.*･｡）港澳是8月底就准备去的，外国嘛目前还在跟我爸商量，他对国外的的东西不感兴趣，反正我是可想去了。或者说我可以跟我哥去？今年不是大阪世博会嘛，不知道我哥今年会不会去日本，我是超级想去日本圣地巡礼的ε٩(๑&gt; ₃ &lt;)۶з
+下午我们回了一趟我们家（现在出租给别人了）去拿东西，我已经有七年没回来了，谁懂回家的感觉真好，要不是我们家出租给别人了我可以在家宅一周
+我们在小区又里面碰到了我们家另一个房子的租客，那个房子之前是我妈当办公室的，我们去年暑假还回去住过，今年好像租给一个法国了。我们碰到的是他的老婆还有儿子，那个小孩长得就像一个洋娃娃一样（不就是洋娃娃吗……(・ω・)）鼻子感觉像是塑料做的（无贬义），据说还是住进我们房子之后才出生的呢！那个人碰到我们还没认出来，还是我妈叫住他的。
+然后我们就启程去杭州了。到酒店之后我因为电脑没电了手机又没啥好玩的，居然看起球赛了Σ(°Д°;！我都不敢相信我居然会看球赛。那场比赛好像是女足和哪个国家的球队一场热身赛，讲真的这这几年电视上也就只有比赛好看了，其他的电视台要不就是在播广告要不就是在放电视剧，无聊的要命。呜呜我的电脑啊，你知道对于我来说没有电脑有多难受吗( ´•̥̥̥ω•̥̥̥&#96; )
+DAY 7 2025.6.23 杭州今天上午就是在杭州玩，去看了西湖，我们在苏堤上走了一圈。天气有点小雨，不过这样更好，“晴西湖不如雨西湖”嘛(ゝ∀･)
+var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imgm=L.tileLayer.chinaProvider('GaoDe.Satellite.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imga=L.tileLayer.chinaProvider('GaoDe.Satellite.Annotion',{maxZoom:20,minZoom:1,attribution:'高德地图'});var normalMap=L.tileLayer.chinaProvider('Google.Normal.Map',{maxZoom:20,minZoom:1,attribution:'Google Maps'}),satelliteMap=L.tileLayer.chinaProvider('Google.Satellite.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'});routeMap=L.tileLayer.chinaProvider('Google.Satellite.Annotion',{maxZoom:21,minZoom:1});var normalMap=L.tileLayer.chinaProvider('Google.Normal.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'}),satelliteMap=L.tileLayer.chinaProvider('Google.Satellite.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'}),routeMap=L.tileLayer.chinaProvider('Google.Satellite.Annotion',{maxZoom:21,minZoom:1,attribution:'Google Maps'});var normalm1=L.tileLayer.chinaProvider('Geoq.Normal.Map',{maxZoom:21,minZoom:1,attribution:'GeoQ'});var normal=L.layerGroup([normalm]),image=L.layerGroup([imgm,imga]);var baseLayers={"高德地图":normal,"智图地图":normalm1,"谷歌地图":normalMap,"高德卫星地图":imgm,"谷歌卫星地图":satelliteMap,"高德卫星标注":image,"谷歌卫星标注":routeMap};var mymap=L.map('map-120.120000-30.22000000',{center:[30.22000000,120.120000],zoom:15,layers:[normal],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:'放大',zoomOutTitle:'缩小'}).addTo(mymap);var marker = L.marker(['30.22000000','120.120000']).addTo(mymap);marker.bindPopup("西湖").openPopup();
+
+唯一的问题就是不能骑车上去，我们是骑共享单车到的西湖，高德地图骑车线路里面还有一条“环西湖骑行路线”呢，结果一看，0个人骑过，再一看底下的评论：“整条路一大半都是禁行路段你叫我们怎么骑啊”，笑死我了(^ρ^)&#x2F;
+不过有一说一西湖还是超级好看的，不多说了直接上图！
+还碰到了小松鼠~
+这次因为时间比较紧，我手里面也没多少钱，所以也没弄条船划划。我看知乎上说在西湖上玩最惬意的方式就是租条船在上面躺一天了，想去哪都可以自己划，下次一定要来试一下( ﾒ∀・)
+我们从苏堤上走下来之后本来还想去影视飓风的公司看一下的，但是在网上找了半天都没找到他公司具体在哪个位置，所以说只能不了了之了ヾ(◎´・ω・｀)ノ
+下午就坐火车回武夷山啦~
+至此，本次旅程宣告结束！
+后记这次出去玩我还是很满意的，除了22号那天下雨我鞋都整个泡水里了。密室逃脱哪一部分真的特别感谢那两个大哥哥大姐姐，虽然说我们后面是绝对见不到了(._.&#96;)
+下次出去玩估计得等8月底了，这会是我人生中第一次出境噢！港澳一定会有很多好玩的，等着我更新哦！
+]]></content>
+      <categories>
+        <category>游记</category>
+      </categories>
+      <tags>
+        <tag>长三角</tag>
+        <tag>上海</tag>
+        <tag>常熟</tag>
+        <tag>宁波</tag>
+        <tag>杭州</tag>
       </tags>
   </entry>
   <entry>
@@ -1897,11 +1990,11 @@ OK，那现在我们就返回到首页，在搜索框下面有一个按钮写着
     fetch('https://api.github.com/repos/Yangle-q/Personal-Blog-Solitude')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-4do1zsraq').innerText = data.name;
-        document.querySelector('.desc-4do1zsraq').innerText = data.description;
-        document.querySelector('.star-4do1zsraq').innerText = data.stargazers_count;
-        document.querySelector('.fork-4do1zsraq').innerText = data.forks_count;
-        document.querySelector('.lang-4do1zsraq').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-4afgoouf0').innerText = data.name;
+        document.querySelector('.desc-4afgoouf0').innerText = data.description;
+        document.querySelector('.star-4afgoouf0').innerText = data.stargazers_count;
+        document.querySelector('.fork-4afgoouf0').innerText = data.forks_count;
+        document.querySelector('.lang-4afgoouf0').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   
   
@@ -1933,11 +2026,11 @@ GitHub仓库：
     fetch('https://api.github.com/repos/Yangle-q-2/Personal-Blog-Solitude-Cyberpunk')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-cvq5zdk9h').innerText = data.name;
-        document.querySelector('.desc-cvq5zdk9h').innerText = data.description;
-        document.querySelector('.star-cvq5zdk9h').innerText = data.stargazers_count;
-        document.querySelector('.fork-cvq5zdk9h').innerText = data.forks_count;
-        document.querySelector('.lang-cvq5zdk9h').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-asaam443r').innerText = data.name;
+        document.querySelector('.desc-asaam443r').innerText = data.description;
+        document.querySelector('.star-asaam443r').innerText = data.stargazers_count;
+        document.querySelector('.fork-asaam443r').innerText = data.forks_count;
+        document.querySelector('.lang-asaam443r').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   
   
@@ -1960,7 +2053,7 @@ blog.star-lake.world
     
 或阅读文章
 
-    站内链接
+    引用站外链接
     
         
           
@@ -1973,12 +2066,14 @@ blog.star-lake.world
     
 
 
-建站大事记全部全站更新文章发布/更新新功能购买域名
-3.4.13 Solitude ACGNVersion 3.4.13Updated on 2025.6.29域名lemonstar.me重定向到blog.lemonstar.me更新音乐胶囊里面的歌曲为“secret base ～君がくれたもの～”个人简介页面信息更新一下全站文章封面更新Umami 数据统计域名由blog.star-lake.world换到blog.lemonstar.me更换即刻短文、最近评论、留言板页面顶部图片深色模式配色改为#64b6ac
+建站大事记全部全站更新文章发布/更新新功能其他
+No.9 Article UpdateArticle No.9Updated on 2025.6.18更新文章“【关于博客】近况公告 25#1”删除重写
+
+3.4.13 Solitude ACGNVersion 3.4.13Updated on 2025.6.29域名lemonstar.me重定向到blog.lemonstar.me更新音乐胶囊里面的歌曲为“secret base ～君がくれたもの～”个人简介页面信息更新一下全站文章封面更新Umami 数据统计域名由blog.star-lake.world换到blog.lemonstar.me更换即刻短文、最近评论、留言板页面顶部图片深色模式配色改为#64b6ac所有网页链接改了一下全站文章加上 AI 摘要
 
 3.4.12 Solitude ACGNVersion 3.4.12Updated on 2025.6.26网站改名为“柠檬星”更换视觉样式为“二次元”更改网站图标更换背景图片更新左顶部栏文字，删除图标，右顶部栏图片与文字改变网站配色：浅色模式#81d8cf，深色模式#fcd337更换加载图片更换头像正式启用域名blog.lemonstar.me
 
-No.10 Article PublishArticle No.10Published on 2025.6.10发表文章“【关于博客】近况公告 25#1”
+no.9 Article PublishArticle no.9Published on 2025.6.10发表文章“【关于博客】近况公告 25#1”
 
 2.3.11 Solitude CyberpunkVersion 2.3.11Updated on 2025.6.16添加版权声明评论区添加评论协议
 
@@ -1992,13 +2087,11 @@ No.4 Article UpdateArticle No.4Updated on 2025.6.16更新文章“Solitude魔改
 
 No.6 Article UpdateArticle No.6Updated on 2025.6.16更新文章“Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church”把图库挪到了一个独立的页面
 
-No.9 Article PublishArticle No.9Published on 2025.6.10发表文章“如何注册免费域名并托管到CloudFlare”
+no.8 Article PublishArticle no.8Published on 2025.6.10发表文章“如何注册免费域名并托管到CloudFlare”
 
 No.2 Article UpdateArticle No.2Updated on 2025.6.9更新文章“我们为什么还在做个人博客？”优化了阅读体验
 
 DomainDomainBought on 2025.6.7购买域名“lemonstar.me，hellofrom.cn”
-
-No.8 Article PublishArticle No.8Published on 2025.6.7发表文章“利用 Zoho WorkDrive 生成下载链接”
 
 No.7 Article UpdateArticle No.7Updated on 2025.6.8更新文章“Markdown 格式详解与 Solitude 主题 Front Matter 使用说明”新加了“下载源码”一段
 
@@ -2063,7 +2156,7 @@ Version 1.0.2, New Function 1Version 1.0.2New Function 1Created on 2025.4.25新�
 0.0.1 Hexo DefaultVersion 0.0.1Created on 2025.4.13正式创建星湖蔚境博客
 
 DomainDomainBought on 2025.4.13购买域名“star-lake.world”
-3.4.13 Solitude ACGNVersion 3.4.13Updated on 2025.6.29域名lemonstar.me重定向到blog.lemonstar.me更新音乐胶囊里面的歌曲为“secret base ～君がくれたもの～”个人简介页面信息更新一下全站文章封面更新Umami 数据统计域名由blog.star-lake.world换到blog.lemonstar.me更换即刻短文、最近评论、留言板页面顶部图片深色模式配色改为#64b6ac
+3.4.13 Solitude ACGNVersion 3.4.13Updated on 2025.6.29域名lemonstar.me重定向到blog.lemonstar.me更新音乐胶囊里面的歌曲为“secret base ～君がくれたもの～”个人简介页面信息更新一下全站文章封面更新Umami 数据统计域名由blog.star-lake.world换到blog.lemonstar.me更换即刻短文、最近评论、留言板页面顶部图片深色模式配色改为#64b6ac所有网页链接改了一下全站文章加上 AI 摘要
 
 3.4.12 Solitude otakuVersion 3.4.12Updated on 2025.6.26更换视觉样式为“二次元”更改网站图标更换背景图片更新左顶部栏文字，删除图标，右顶部栏图片与文字改变网站配色：浅色模式#81d8cf，深色模式#fcd337更换加载图片更换头像网站改名为“柠檬星”
 
@@ -2093,8 +2186,9 @@ DomainDomainBought on 2025.4.13购买域名“star-lake.world”
 
 0.0.1 Hexo DefaultVersion 0.0.1Created on 2025.4.13正式创建星湖蔚境博客
 
-No.9 Article PublishArticle No.9Published on 2025.6.10发表文章“【关于博客】近况公告 25#1”
+No.9 Article UpdateArticle No.9Updated on 2025.6.18更新文章“【关于博客】近况公告 25#1”删除重写
 
+no.9 Article PublishArticle no.9Published on 2025.6.10发表文章“【关于博客】近况公告 25#1”
 
 No.2 Article UpdateArticle No.2Updated on 2025.6.18更新文章“我们为什么还在做个人博客？”修改了一些文字，添加了一个指向我的文章“如何注册免费域名并托管到CloudFlare”的外挂标签
 
@@ -2104,13 +2198,9 @@ No.4 Article UpdateArticle No.4Updated on 2025.6.16更新文章“Solitude魔改
 
 No.6 Article UpdateArticle No.6Updated on 2025.6.16更新文章“Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church”把图库挪到了一个独立的页面
 
-No.9 Article PublishArticle No.9Published on 2025.6.10发表文章“如何注册免费域名并托管到CloudFlare”
+no.8 Article PublishArticle no.8Published on 2025.6.10发表文章“如何注册免费域名并托管到CloudFlare”
 
 No.2 Article UpdateArticle No.2Updated on 2025.6.9更新文章“我们为什么还在做个人博客？”优化了阅读体验
-
-DomainDomainBought on 2025.6.7购买域名“lemonstar.me，hellofrom.cn”
-
-No.8 Article PublishArticle No.8Published on 2025.6.7发表文章“利用 Zoho WorkDrive 生成下载链接”
 
 No.7 Article UpdateArticle No.7Updated on 2025.6.8更新文章“Markdown 格式详解与 Solitude 主题 Front Matter 使用说明”新加了“下载源码”一段
 
@@ -2130,9 +2220,21 @@ No.5 Article PublishArticle No.5Published on 2025.6.1发表文章“A Brief Biog
 
 No.3 Article UpdateArticle No.3Updated on 2025.6.1更新文章“从 CloudFlare Pages 转到 Vercel”新加了手动配置一段
 
-2.3.10 Solitude CyberpunkVersion 2.3.10Updated on 2025.6.1全站字体改成“霞鹜文楷”删除日历、那年今日、来访者卡片更换背景图
-
 No.4 Article PublishArticle No.4Published on 2025.5.31发表文章“Solitude魔改记录”
+
+No.3 Article UpdateArticle No.3Updated on 2025.5.29更新文章“从 CloudFlare Pages 转到 Vercel”修改了一些表达新加了Vercel加速一段
+
+No.3 Article UpdateArticle No.3Updated on 2025.5.22更新文章“从 CloudFlare Pages 转到 Vercel”修改了一些表达新加了在这里硬塞进去一个Vercel简介和参考文章两段新加了一张图片优化了阅读体验
+
+No.3 Article PublishArticle No.3Published on 2025.5.19发表文章“从 CloudFlare Pages 转到 Vercel”
+
+No.2 Article PublishArticle No.2Published on 2025.5.18发表文章“我们为什么还在做个人博客？”(看完文章约需用时21分钟，请谨慎阅读（๑ • ‿ • ๑ ）)
+
+No.1 Article UpdateArticle No.1Updated on 2025.5.12更新文章“建站备忘录”加上了颜文字(⸝⸝•̀֊•́⸝⸝)
+
+No.1 Article UpdateArticle No.1Updated on 2025.5.10更新文章“建站备忘录”修改了一些表达
+
+No.1 Article PublishArticle No.1Published on 2025.4.27发表文章“建站备忘录”
 
 Version 1.0.3, New Function 2Version 1.0.3New Function 2Created on 2025.5.1Twikoo开通邮箱回复提醒
 
@@ -2633,11 +2735,11 @@ CloudFlare官网：https://www.cloudflare.com/zh-cn/
     fetch('https://api.github.com/repos/2dust/v2rayN')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-ovdpv303q').innerText = data.name;
-        document.querySelector('.desc-ovdpv303q').innerText = data.description;
-        document.querySelector('.star-ovdpv303q').innerText = data.stargazers_count;
-        document.querySelector('.fork-ovdpv303q').innerText = data.forks_count;
-        document.querySelector('.lang-ovdpv303q').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-qa0knr34y').innerText = data.name;
+        document.querySelector('.desc-qa0knr34y').innerText = data.description;
+        document.querySelector('.star-qa0knr34y').innerText = data.stargazers_count;
+        document.querySelector('.fork-qa0knr34y').innerText = data.forks_count;
+        document.querySelector('.lang-qa0knr34y').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   
   
@@ -2655,11 +2757,11 @@ CloudFlare官网：https://www.cloudflare.com/zh-cn/
     fetch('https://api.github.com/repos/2dust/v2rayNG')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-fgwa9hd71').innerText = data.name;
-        document.querySelector('.desc-fgwa9hd71').innerText = data.description;
-        document.querySelector('.star-fgwa9hd71').innerText = data.stargazers_count;
-        document.querySelector('.fork-fgwa9hd71').innerText = data.forks_count;
-        document.querySelector('.lang-fgwa9hd71').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-9isjf7no4').innerText = data.name;
+        document.querySelector('.desc-9isjf7no4').innerText = data.description;
+        document.querySelector('.star-9isjf7no4').innerText = data.stargazers_count;
+        document.querySelector('.fork-9isjf7no4').innerText = data.forks_count;
+        document.querySelector('.lang-9isjf7no4').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   
   
@@ -2712,7 +2814,7 @@ Worker 代码
 绑定域名然后我们再看上面“域和路由”这一栏，这里我们就可以看到这个 Worker 默认绑定的域名了，但是呢这个域名现在被中国墙了，需要 Vpn 才能进（有点讽刺），所以我们要绑定一下我们自己的域名。
 这个域名如果大家自己有的话当然最好，如果没有的话可以看看我这篇文章，免费获取一个二级的域名。
 
-    站内链接
+    引用站外链接
     
         
           
@@ -3382,12 +3484,192 @@ function cardTimes() {
 
   
   
+  JSPROXY
+  使用CloudFlare Worker和GitHub开源代码一分钟搞定jsproxy
+  
+  
+  
+  
+
+  
+  
   MY ACCOUNTS
   我的账号列表
   
   
   
   
+]]></content>
+  </entry>
+  <entry>
+    <title>使用CloudFlare Worker和GitHub开源代码一分钟搞定jsproxy</title>
+    <url>/jsproxy/index.html</url>
+    <content><![CDATA[起源之前叶泯希哥哥帮我搞Umami数据统计（详见文章建站备忘录）的时候在我的Umami地址前面加了一个他自己的域名然后就能用了，我当时没看懂那个是什么，后来我才发现那是一个https请求转发代理，直接在后面加上你想要访问的域名就可以直接访问那些被墙的网站了。虽然我已经有VPN了，但是有这样一个东西它！不！酷！嘛！而且根本不需要在你要用的那个电脑上配置任何东西啊！访问一个网址就能用啊！所以说我马上决定：我也要有这个东西！
+但是这个请求转发代理一看就很难啊，怎么搞呢？我在叶泯希哥哥的请求转发代理那边找到了一点线索。他在他那个代理的首页写：“该服务不收取任何费用，使用开源代码创建。”嘻嘻，那不就好办了嘛，开源代码一看就是在GitHub上的呀！于是我就去网上搜“https请求转发代理”，找到了这两篇文章：
+
+    引用站外链接
+    
+        
+          
+        
+        
+            两种方案手把手教你多种服务器使用tinyproxy搭建http代理
+            糖~豆豆 - 博客园
+        
+        
+     
+
+
+    引用站外链接
+    
+        
+          
+        
+        
+            推荐一款轻量级 HTTP_HTTPS 代理 TinyProxy
+            腾讯云开发者社区
+        
+        
+     
+
+tinyproxy GitHub仓库：
+
+  
+  
+  
+    
+    
+    
+    
+  
+  
+  
+    fetch('https://api.github.com/repos/tinyproxy/tinyproxy')
+      .then(res => res.json())
+      .then(data => {
+        document.querySelector('.name-7b3z2lqyx').innerText = data.name;
+        document.querySelector('.desc-7b3z2lqyx').innerText = data.description;
+        document.querySelector('.star-7b3z2lqyx').innerText = data.stargazers_count;
+        document.querySelector('.fork-7b3z2lqyx').innerText = data.forks_count;
+        document.querySelector('.lang-7b3z2lqyx').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+    });
+  
+  
+
+这两个是用tinyproxy实现的请求转发，我去叶泯希哥哥那里看了下，他用的应该也是这个，因为tinyproxy官网和叶泯希哥哥那个页面风格挺像的。但是tinyproxy有三个问题：第一，他需要服务器，要花钱买。第二，太麻烦了。第三，我不会啊！
+于是我想到，之前有很多类似的可以在服务器部署的东西我看的教程都是用CloudFlare Worker搞的，那这个东西它会不会也有CloudFlare Worker版的呢？于是我就去网上搜了下“使用CloudFlare Worker部署tinyproxy”，结果是什么呢？嘿嘿你猜的没错，结果是：有！但是用的是另一个请求转发代理服务，也是GitHub上面的（GitHub真是个好东西啊），叫jsproxy。
+
+    引用站外链接
+    
+        
+          
+        
+        
+            一分钟教程：利用cloudflare worker搭建在线代理—-jsproxy
+            CSDN博客
+        
+        
+     
+
+
+    引用站外链接
+    
+        
+          
+        
+        
+            使用CloudFlare Worker 免费部署 JSProxy 服务
+            腾讯云开发者社区
+        
+        
+     
+
+jsproxy GitHub仓库：
+
+  
+  
+  
+    
+    
+    
+    
+  
+  
+  
+    fetch('https://api.github.com/repos/EtherDream/jsproxy')
+      .then(res => res.json())
+      .then(data => {
+        document.querySelector('.name-3jrpn7mqi').innerText = data.name;
+        document.querySelector('.desc-3jrpn7mqi').innerText = data.description;
+        document.querySelector('.star-3jrpn7mqi').innerText = data.stargazers_count;
+        document.querySelector('.fork-3jrpn7mqi').innerText = data.forks_count;
+        document.querySelector('.lang-3jrpn7mqi').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+    });
+  
+  
+
+我从看到这两篇文章到部署完成前后花了不到五分钟，如果CloudFlare反应速度再快一点的话我绝对可以一分钟搞完的，OK上教程！
+教程
+注册一个CloudFlare账号（已有请忽略） 
+    引用站外链接
+    
+        
+          
+        
+        
+            CloudFlare 官网
+            CloudFlare
+        
+        
+    
+创建一个CloudFlare Worker 账号主页 → 计算（Workers） → 创建 → 从Hello World开始 → 部署 → 编辑代码
+复制代码到CloudFlare Worker 打开这个页面 → 复制代码 → 粘贴到CloudFlare Worker → 点击部署 → 返回 → 继续处理项目
+绑定自定义域名如果没有自己的域名的可以看看我这篇文章获取一个免费域名
+    引用站外链接
+    
+        
+          
+        
+        
+            如何申请免费域名并托管到CloudFlare
+            2025.6.11
+        
+        
+    
+设置 → 域和路由 → 添加 → 自定义域 → 输入域名 → 添加域
+
+OK然后访问你绑定的域名就大功告成啦！别问我为什么不截屏，懒……
+还有因为CloudFlare的免费流量每天有100,000请求的额度，你一个人理论上是用不完的，但是如果分享给太多人了的话就不好说了。
+自定义主页
+Fork 仓库 fork一份jsproxy仓库到自己名下（记得取消“Copy the master branch only”） 
+  
+  
+  
+    
+    
+    
+    
+  
+  
+  
+    fetch('https://api.github.com/repos/EtherDream/jsproxy')
+      .then(res => res.json())
+      .then(data => {
+        document.querySelector('.name-v94t8bnne').innerText = data.name;
+        document.querySelector('.desc-v94t8bnne').innerText = data.description;
+        document.querySelector('.star-v94t8bnne').innerText = data.stargazers_count;
+        document.querySelector('.fork-v94t8bnne').innerText = data.forks_count;
+        document.querySelector('.lang-v94t8bnne').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+    });
+  
+  
+ 切换到 gh-pages 分支
+编辑文件 编辑文件404.html，assets&#x2F;indexmd_v3.html
+启用 GitHub Pages 仓库 Settings → Pages → 选择 gh-pages 分支作为源 → Save 访问 https://你的用户名.github.io/你的仓库名检查是否生效
+修改 Worker 代码 修改 Worker 代码中的 ASSET_URL 部分 const ASSET_URL = &#x27;https://你的用户名.github.io/jsproxy&#x27;; // 替换为你的 Pages 地址
+ 点击部署
+
+然后就好啦！
 ]]></content>
   </entry>
 </search>
