@@ -1795,7 +1795,7 @@ var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,a
 
 我爸说他有一个聚会拉我去参加，那我当然坚持不去啦。我们回酒店房间之后酒店的工作人员把我们的行李送了上来，结果我的硬盘线被她搞断了！
 至于有什么影响吗，嗯……我更不了博客了。我本来还想路上有时间更新一下博客的。为什么我更不了博客了呢？因为我的博客文件在硬盘里面啊。那为什么我不把文件存在电脑里面呢？额……怎么说呢，我家里面有三台电脑，我本来是想我出去带哪台电脑我就把硬盘插到哪台电脑上更博客的，但是事实证明我一般只用一台电脑……
-DAY 3 2025.6.20 宁波今天我得跟着我爸去参加杭湾书院的那个峰会呜呜，无聊的要命，给你们看看我的座位叭（痛失网名( ´•̥̥̥ω•̥̥̥&#96; )）
+DAY 3 2025.6.20 宁波今天我得跟着我爸去参加杭湾书院的那个峰会呜呜，无聊的要命
 
 午饭是吃的他们杭湾书院的学员出去创业搞得餐馆的盒饭，出乎意料还挺好吃的(≧∀≦)
 
@@ -1807,7 +1807,6 @@ DAY 4 2025.6.21 常熟、上海今天可真够忙的，早上吃完饭就从方�
 我们预约了常熟世界联合学院的探校，我爸说好了要带我来看看的，我好久之前就想来了。中午先去找了我之前的同学吃饭还有YXT吃饭，他最近去希腊了，还看见了支持巴勒斯坦的游行和不知道哪逃出来的难民了呢！(ﾉ&gt;ω&lt;)ﾉ他说他也想跟着游行队伍走的，但是他妈不让。我还一次国没出过呢，我一直劝我爸带我去伦敦东京玩，但是我爸不想去。不过今年8月份我要去一次香港，大家可以等等我去香港的旅行手记哦ლ(╹◡╹ლ)
 吃完饭他妈妈带我们去了常熟世界联合学院。这所学校在上海的国际学校家长那里可以说是鼎鼎有名，被誉为 “中国唯一一所真正的国际学校”，我就是从今天见到的那个同学那边知道的。他明年准备考进去，我也是想和他一起进去的，但是据说那所学校超级难进，只有2%的录取率，而且学费很贵，虽然说有助学金啦。我爸就是被我劝来看看这所学校的。
 var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imgm=L.tileLayer.chinaProvider('GaoDe.Satellite.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imga=L.tileLayer.chinaProvider('GaoDe.Satellite.Annotion',{maxZoom:20,minZoom:1,attribution:'高德地图'});var normalMap=L.tileLayer.chinaProvider('Google.Normal.Map',{maxZoom:20,minZoom:1,attribution:'Google Maps'}),satelliteMap=L.tileLayer.chinaProvider('Google.Satellite.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'});routeMap=L.tileLayer.chinaProvider('Google.Satellite.Annotion',{maxZoom:21,minZoom:1});var normalMap=L.tileLayer.chinaProvider('Google.Normal.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'}),satelliteMap=L.tileLayer.chinaProvider('Google.Satellite.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'}),routeMap=L.tileLayer.chinaProvider('Google.Satellite.Annotion',{maxZoom:21,minZoom:1,attribution:'Google Maps'});var normalm1=L.tileLayer.chinaProvider('Geoq.Normal.Map',{maxZoom:21,minZoom:1,attribution:'GeoQ'});var normal=L.layerGroup([normalm]),image=L.layerGroup([imgm,imga]);var baseLayers={"高德地图":normal,"智图地图":normalm1,"谷歌地图":normalMap,"高德卫星地图":imgm,"谷歌卫星地图":satelliteMap,"高德卫星标注":image,"谷歌卫星标注":routeMap};var mymap=L.map('map-120.740000-31.600000',{center:[31.600000,120.740000],zoom:15,layers:[normal],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:'放大',zoomOutTitle:'缩小'}).addTo(mymap);var marker = L.marker(['31.600000','120.740000']).addTo(mymap);marker.bindPopup("常熟世界联合学院").openPopup();
-
 
 里面整体环境还很不错，很有苏州江南一带的味道，而且他自己就占了一座岛，据说还是市政府给填出来的。反正我看了是觉得很喜欢，我爸那边嘛……我看希望不大_(:3 ⌒ﾞ)_
 !教室
@@ -1845,11 +1844,8 @@ var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,a
         <category>游记</category>
       </categories>
       <tags>
-        <tag>长三角</tag>
-        <tag>上海</tag>
-        <tag>常熟</tag>
-        <tag>宁波</tag>
-        <tag>杭州</tag>
+        <tag>日常</tag>
+        <tag>旅行</tag>
       </tags>
   </entry>
   <entry>
@@ -1990,11 +1986,11 @@ var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,a
     fetch('https://api.github.com/repos/Yangle-q/Personal-Blog-Solitude')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-4afgoouf0').innerText = data.name;
-        document.querySelector('.desc-4afgoouf0').innerText = data.description;
-        document.querySelector('.star-4afgoouf0').innerText = data.stargazers_count;
-        document.querySelector('.fork-4afgoouf0').innerText = data.forks_count;
-        document.querySelector('.lang-4afgoouf0').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-sr1hfd74e').innerText = data.name;
+        document.querySelector('.desc-sr1hfd74e').innerText = data.description;
+        document.querySelector('.star-sr1hfd74e').innerText = data.stargazers_count;
+        document.querySelector('.fork-sr1hfd74e').innerText = data.forks_count;
+        document.querySelector('.lang-sr1hfd74e').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   
   
@@ -2026,11 +2022,11 @@ GitHub仓库：
     fetch('https://api.github.com/repos/Yangle-q-2/Personal-Blog-Solitude-Cyberpunk')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-asaam443r').innerText = data.name;
-        document.querySelector('.desc-asaam443r').innerText = data.description;
-        document.querySelector('.star-asaam443r').innerText = data.stargazers_count;
-        document.querySelector('.fork-asaam443r').innerText = data.forks_count;
-        document.querySelector('.lang-asaam443r').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-0p7ir7e1w').innerText = data.name;
+        document.querySelector('.desc-0p7ir7e1w').innerText = data.description;
+        document.querySelector('.star-0p7ir7e1w').innerText = data.stargazers_count;
+        document.querySelector('.fork-0p7ir7e1w').innerText = data.forks_count;
+        document.querySelector('.lang-0p7ir7e1w').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   
   
@@ -2067,6 +2063,8 @@ blog.star-lake.world
 
 
 建站大事记全部全站更新文章发布/更新新功能其他
+no.10 Article PublishArticle no.10Published on 2025.7.1发表文章“长三角旅行手记 【游记系列 No.1】”
+
 No.9 Article UpdateArticle No.9Updated on 2025.6.18更新文章“【关于博客】近况公告 25#1”删除重写
 
 3.4.13 Solitude ACGNVersion 3.4.13Updated on 2025.6.29域名lemonstar.me重定向到blog.lemonstar.me更新音乐胶囊里面的歌曲为“secret base ～君がくれたもの～”个人简介页面信息更新一下全站文章封面更新Umami 数据统计域名由blog.star-lake.world换到blog.lemonstar.me更换即刻短文、最近评论、留言板页面顶部图片深色模式配色改为#64b6ac所有网页链接改了一下全站文章加上 AI 摘要
@@ -2375,7 +2373,7 @@ Part 3
 AAivenyangle
 阿里云杨乐
 BBilibili
-CCloudFlareyangle.q@outlook.com
+CCloudFlareyangle.q@outlook.comcharacter.aiyangle-q
 DDeepseek13381962051
 Duolingo
 钉钉yangleqy
