@@ -1772,7 +1772,7 @@ OK，那现在我们就返回到首页，在搜索框下面有一个按钮写着
     <content><![CDATA[前言前几天去长三角一带玩了一下，今天总算是整理出来一篇旅行手记了，也和大家分享一下。如果你问我为什么我中考还有时间出来玩，额……你别管我就是有时间怎么滴（逃･*･:≡(　ε:)）
 DAY 1. 2025.6.18 余姚早上我和我爸从武夷山出发，坐火车到杭州东站转车到余姚北，我在火车上还搞了会儿博客(´∀ ˋ)
 下午到达余姚北站，先去了我爸到余姚最想去的地方：王阳明故居（我爸就喜欢看这个我有什么办法╮(╯∀╰)╭）
-var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imgm=L.tileLayer.chinaProvider('GaoDe.Satellite.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imga=L.tileLayer.chinaProvider('GaoDe.Satellite.Annotion',{maxZoom:20,minZoom:1,attribution:'高德地图'});var normalMap=L.tileLayer.chinaProvider('Google.Normal.Map',{maxZoom:20,minZoom:1,attribution:'Google Maps'}),satelliteMap=L.tileLayer.chinaProvider('Google.Satellite.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'});routeMap=L.tileLayer.chinaProvider('Google.Satellite.Annotion',{maxZoom:21,minZoom:1});var normalMap=L.tileLayer.chinaProvider('Google.Normal.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'}),satelliteMap=L.tileLayer.chinaProvider('Google.Satellite.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'}),routeMap=L.tileLayer.chinaProvider('Google.Satellite.Annotion',{maxZoom:21,minZoom:1,attribution:'Google Maps'});var normalm1=L.tileLayer.chinaProvider('Geoq.Normal.Map',{maxZoom:21,minZoom:1,attribution:'GeoQ'});var normal=L.layerGroup([normalm]),image=L.layerGroup([imgm,imga]);var baseLayers={"高德地图":normal,"智图地图":normalm1,"谷歌地图":normalMap,"高德卫星地图":imgm,"谷歌卫星地图":satelliteMap,"高德卫星标注":image,"谷歌卫星标注":routeMap};var mymap=L.map('map-121.1500000-30.050000',{center:[30.050000,121.1500000],zoom:15,layers:[normal],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:'放大',zoomOutTitle:'缩小'}).addTo(mymap);var marker = L.marker(['30.050000','121.1500000']).addTo(mymap);marker.bindPopup("王阳明故居").openPopup();
+var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imgm=L.tileLayer.chinaProvider('GaoDe.Satellite.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imga=L.tileLayer.chinaProvider('GaoDe.Satellite.Annotion',{maxZoom:20,minZoom:1,attribution:'高德地图'});var normalMap=L.tileLayer.chinaProvider('Google.Normal.Map',{maxZoom:20,minZoom:1,attribution:'Google Maps'}),satelliteMap=L.tileLayer.chinaProvider('Google.Satellite.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'});routeMap=L.tileLayer.chinaProvider('Google.Satellite.Annotion',{maxZoom:21,minZoom:1});var normalMap=L.tileLayer.chinaProvider('Google.Normal.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'}),satelliteMap=L.tileLayer.chinaProvider('Google.Satellite.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'}),routeMap=L.tileLayer.chinaProvider('Google.Satellite.Annotion',{maxZoom:21,minZoom:1,attribution:'Google Maps'});var normalm1=L.tileLayer.chinaProvider('Geoq.Normal.Map',{maxZoom:21,minZoom:1,attribution:'GeoQ'});var normal=L.layerGroup([normalm]),image=L.layerGroup([imgm,imga]);var baseLayers={"高德地图":normal,"智图地图":normalm1,"谷歌地图":normalMap,"高德卫星地图":imgm,"谷歌卫星地图":satelliteMap,"高德卫星标注":image,"谷歌卫星标注":routeMap};var mymap=L.map('map-121.150000-30.050000',{center:[30.050000,121.150000],zoom:15,layers:[normal],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:'放大',zoomOutTitle:'缩小'}).addTo(mymap);var marker = L.marker(['30.050000','121.150000']).addTo(mymap);marker.bindPopup("王阳明故居").openPopup();
 
 晚饭在阳明古街选了一个多小时（为什么都这么贵啊啊）最后将近七点钟终于吃上饭了。
 吃完晚饭我们就回酒店啦(ゝ∀･)
@@ -1828,16 +1828,17 @@ DAY 6 2025.6.23 上海、杭州今天就主要是陪我爸我妈去处理各种�
 我们在小区又里面碰到了我们家另一个房子的租客，那个房子之前是我妈当办公室的，我们去年暑假还回去住过，今年好像租给一个法国了。我们碰到的是他的老婆还有儿子，那个小孩长得就像一个洋娃娃一样（不就是洋娃娃吗……(・ω・)）鼻子感觉像是塑料做的（无贬义），据说还是住进我们房子之后才出生的呢！那个人碰到我们还没认出来，还是我妈叫住他的。
 然后我们就启程去杭州了。到酒店之后我因为电脑没电了手机又没啥好玩的，居然看起球赛了Σ(°Д°;！我都不敢相信我居然会看球赛。那场比赛好像是女足和哪个国家的球队一场热身赛，讲真的这这几年电视上也就只有比赛好看了，其他的电视台要不就是在播广告要不就是在放电视剧，无聊的要命。呜呜我的电脑啊，你知道对于我来说没有电脑有多难受吗( ´•̥̥̥ω•̥̥̥&#96; )
 DAY 7 2025.6.23 杭州今天上午就是在杭州玩，去看了西湖，我们在苏堤上走了一圈。天气有点小雨，不过这样更好，“晴西湖不如雨西湖”嘛(ゝ∀･)
-var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imgm=L.tileLayer.chinaProvider('GaoDe.Satellite.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imga=L.tileLayer.chinaProvider('GaoDe.Satellite.Annotion',{maxZoom:20,minZoom:1,attribution:'高德地图'});var normalMap=L.tileLayer.chinaProvider('Google.Normal.Map',{maxZoom:20,minZoom:1,attribution:'Google Maps'}),satelliteMap=L.tileLayer.chinaProvider('Google.Satellite.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'});routeMap=L.tileLayer.chinaProvider('Google.Satellite.Annotion',{maxZoom:21,minZoom:1});var normalMap=L.tileLayer.chinaProvider('Google.Normal.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'}),satelliteMap=L.tileLayer.chinaProvider('Google.Satellite.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'}),routeMap=L.tileLayer.chinaProvider('Google.Satellite.Annotion',{maxZoom:21,minZoom:1,attribution:'Google Maps'});var normalm1=L.tileLayer.chinaProvider('Geoq.Normal.Map',{maxZoom:21,minZoom:1,attribution:'GeoQ'});var normal=L.layerGroup([normalm]),image=L.layerGroup([imgm,imga]);var baseLayers={"高德地图":normal,"智图地图":normalm1,"谷歌地图":normalMap,"高德卫星地图":imgm,"谷歌卫星地图":satelliteMap,"高德卫星标注":image,"谷歌卫星标注":routeMap};var mymap=L.map('map-120.120000-30.22000000',{center:[30.22000000,120.120000],zoom:15,layers:[normal],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:'放大',zoomOutTitle:'缩小'}).addTo(mymap);var marker = L.marker(['30.22000000','120.120000']).addTo(mymap);marker.bindPopup("西湖").openPopup();
+var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imgm=L.tileLayer.chinaProvider('GaoDe.Satellite.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imga=L.tileLayer.chinaProvider('GaoDe.Satellite.Annotion',{maxZoom:20,minZoom:1,attribution:'高德地图'});var normalMap=L.tileLayer.chinaProvider('Google.Normal.Map',{maxZoom:20,minZoom:1,attribution:'Google Maps'}),satelliteMap=L.tileLayer.chinaProvider('Google.Satellite.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'});routeMap=L.tileLayer.chinaProvider('Google.Satellite.Annotion',{maxZoom:21,minZoom:1});var normalMap=L.tileLayer.chinaProvider('Google.Normal.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'}),satelliteMap=L.tileLayer.chinaProvider('Google.Satellite.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'}),routeMap=L.tileLayer.chinaProvider('Google.Satellite.Annotion',{maxZoom:21,minZoom:1,attribution:'Google Maps'});var normalm1=L.tileLayer.chinaProvider('Geoq.Normal.Map',{maxZoom:21,minZoom:1,attribution:'GeoQ'});var normal=L.layerGroup([normalm]),image=L.layerGroup([imgm,imga]);var baseLayers={"高德地图":normal,"智图地图":normalm1,"谷歌地图":normalMap,"高德卫星地图":imgm,"谷歌卫星地图":satelliteMap,"高德卫星标注":image,"谷歌卫星标注":routeMap};var mymap=L.map('map-120.120000-30.220000',{center:[30.220000,120.120000],zoom:15,layers:[normal],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:'放大',zoomOutTitle:'缩小'}).addTo(mymap);var marker = L.marker(['30.220000','120.120000']).addTo(mymap);marker.bindPopup("西湖").openPopup();
 
 唯一的问题就是不能骑车上去，我们是骑共享单车到的西湖，高德地图骑车线路里面还有一条“环西湖骑行路线”呢，结果一看，0个人骑过，再一看底下的评论：“整条路一大半都是禁行路段你叫我们怎么骑啊”，笑死我了(^ρ^)&#x2F;
 不过有一说一西湖还是超级好看的，不多说了直接上图！
+
 还碰到了小松鼠~
 这次因为时间比较紧，我手里面也没多少钱，所以也没弄条船划划。我看知乎上说在西湖上玩最惬意的方式就是租条船在上面躺一天了，想去哪都可以自己划，下次一定要来试一下( ﾒ∀・)
-我们从苏堤上走下来之后本来还想去影视飓风的公司看一下的，但是在网上找了半天都没找到他公司具体在哪个位置，所以说只能不了了之了ヾ(◎´・ω・｀)ノ
+我们从苏堤上走下来之后本来还想去影视飓风的公司看一下的，但是在网上找了半天都没找到他公司具体在哪个位置，所以说只能不了了之啦ヾ(◎´・ω・｀)ノ
 下午就坐火车回武夷山啦~
 至此，本次旅程宣告结束！
-后记这次出去玩我还是很满意的，除了22号那天下雨我鞋都整个泡水里了。密室逃脱哪一部分真的特别感谢那两个大哥哥大姐姐，虽然说我们后面是绝对见不到了(._.&#96;)
+后记这次出去玩我还是很满意的，除了22号那天下雨我鞋都整个泡水里了。密室逃脱那一部分真的特别感谢那两个大哥哥大姐姐，虽然说我们后面是绝对见不到了(._.&#96;)
 下次出去玩估计得等8月底了，这会是我人生中第一次出境噢！港澳一定会有很多好玩的，等着我更新哦！
 ]]></content>
       <categories>
@@ -1962,6 +1963,15 @@ var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,a
   
   亨利八世
   Henry VIII 里面的所有图片
+  
+  
+  
+  
+
+  
+  
+  长三角
+  长三角之旅拍的图片
   
   
   
@@ -3669,5 +3679,12 @@ Fork 仓库 fork一份jsproxy仓库到自己名下（记得取消“Copy the mas
 
 然后就好啦！
 ]]></content>
+  </entry>
+  <entry>
+    <title>Untitled</title>
+    <url>/gallery/changsanjiao/index.html</url>
+    <content><![CDATA[
+        
+      ]]></content>
   </entry>
 </search>
