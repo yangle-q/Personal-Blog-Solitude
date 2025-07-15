@@ -1482,7 +1482,6 @@ Vercel加速（2025.5.29更新）Vercel用了一段时间之后感觉还是有�
 
 我的个人博客可以通过以下地址访问：
 https://blog.lemonstar.me （主域名）
-https://star-lake.world （跳转到blog.lemonstar.me）
 https://blog.star-lake.world 
 https://star-lake.world （跳转到blog.star-lake.world）
 https://personal-blog-solitude.pages.dev
@@ -1809,7 +1808,7 @@ DAY 4 2025.6.21 常熟、上海今天可真够忙的，早上吃完饭就从方�
 var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imgm=L.tileLayer.chinaProvider('GaoDe.Satellite.Map',{maxZoom:20,minZoom:1,attribution:'高德地图'});var imga=L.tileLayer.chinaProvider('GaoDe.Satellite.Annotion',{maxZoom:20,minZoom:1,attribution:'高德地图'});var normalMap=L.tileLayer.chinaProvider('Google.Normal.Map',{maxZoom:20,minZoom:1,attribution:'Google Maps'}),satelliteMap=L.tileLayer.chinaProvider('Google.Satellite.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'});routeMap=L.tileLayer.chinaProvider('Google.Satellite.Annotion',{maxZoom:21,minZoom:1});var normalMap=L.tileLayer.chinaProvider('Google.Normal.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'}),satelliteMap=L.tileLayer.chinaProvider('Google.Satellite.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'}),routeMap=L.tileLayer.chinaProvider('Google.Satellite.Annotion',{maxZoom:21,minZoom:1,attribution:'Google Maps'});var normalm1=L.tileLayer.chinaProvider('Geoq.Normal.Map',{maxZoom:21,minZoom:1,attribution:'GeoQ'});var normal=L.layerGroup([normalm]),image=L.layerGroup([imgm,imga]);var baseLayers={"高德地图":normal,"智图地图":normalm1,"谷歌地图":normalMap,"高德卫星地图":imgm,"谷歌卫星地图":satelliteMap,"高德卫星标注":image,"谷歌卫星标注":routeMap};var mymap=L.map('map-120.740000-31.600000',{center:[31.600000,120.740000],zoom:15,layers:[normal],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:'放大',zoomOutTitle:'缩小'}).addTo(mymap);var marker = L.marker(['31.600000','120.740000']).addTo(mymap);marker.bindPopup("常熟世界联合学院").openPopup();
 
 里面整体环境还很不错，很有苏州江南一带的味道，而且他自己就占了一座岛，据说还是市政府给填出来的。反正我看了是觉得很喜欢，我爸那边嘛……我看希望不大_(:3 ⌒ﾞ)_
-!教室
+
 看完学校之后我们就打车回上海了（为什么感觉我爸一路上全都是打车走的）上海我也去我也有将近一年没回来了，为什么呢？还不是我爸那该死的开书院的理想……
 我在酒店和我弟汇合了，我妈也是够好玩的，订酒店就定在我们家小区的对面。
 我们晚餐是和我哥一起在一家土耳其餐厅吃的，味道还不错，就是吃的东西都不知道是啥，我们还一边吃一边猜这是用啥做的
@@ -1996,11 +1995,11 @@ var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,a
     fetch('https://api.github.com/repos/Yangle-q/Personal-Blog-Solitude')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-sr1hfd74e').innerText = data.name;
-        document.querySelector('.desc-sr1hfd74e').innerText = data.description;
-        document.querySelector('.star-sr1hfd74e').innerText = data.stargazers_count;
-        document.querySelector('.fork-sr1hfd74e').innerText = data.forks_count;
-        document.querySelector('.lang-sr1hfd74e').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-u5gni6dnh').innerText = data.name;
+        document.querySelector('.desc-u5gni6dnh').innerText = data.description;
+        document.querySelector('.star-u5gni6dnh').innerText = data.stargazers_count;
+        document.querySelector('.fork-u5gni6dnh').innerText = data.forks_count;
+        document.querySelector('.lang-u5gni6dnh').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   
   
@@ -2032,11 +2031,11 @@ GitHub仓库：
     fetch('https://api.github.com/repos/Yangle-q-2/Personal-Blog-Solitude-Cyberpunk')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-0p7ir7e1w').innerText = data.name;
-        document.querySelector('.desc-0p7ir7e1w').innerText = data.description;
-        document.querySelector('.star-0p7ir7e1w').innerText = data.stargazers_count;
-        document.querySelector('.fork-0p7ir7e1w').innerText = data.forks_count;
-        document.querySelector('.lang-0p7ir7e1w').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-4alhghj7b').innerText = data.name;
+        document.querySelector('.desc-4alhghj7b').innerText = data.description;
+        document.querySelector('.star-4alhghj7b').innerText = data.stargazers_count;
+        document.querySelector('.fork-4alhghj7b').innerText = data.forks_count;
+        document.querySelector('.lang-4alhghj7b').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   
   
@@ -2073,11 +2072,13 @@ blog.star-lake.world
 
 
 建站大事记全部全站更新文章发布/更新新功能其他
+3.4.14 Solitude ACGNVersion 3.4.14Updated on 2025.7.15hometop 加主页板块Left Box 加HelloFrom.cn
+
 no.10 Article PublishArticle no.10Published on 2025.7.1发表文章“长三角旅行手记 【游记系列 No.1】”
 
 No.9 Article UpdateArticle No.9Updated on 2025.6.18更新文章“【关于博客】近况公告 25#1”删除重写
 
-3.4.13 Solitude ACGNVersion 3.4.13Updated on 2025.6.29域名lemonstar.me重定向到blog.lemonstar.me更新音乐胶囊里面的歌曲为“secret base ～君がくれたもの～”个人简介页面信息更新一下全站文章封面更新Umami 数据统计域名由blog.star-lake.world换到blog.lemonstar.me更换即刻短文、最近评论、留言板页面顶部图片深色模式配色改为#64b6ac所有网页链接改了一下全站文章加上 AI 摘要
+3.4.13 Solitude ACGNVersion 3.4.13Updated on 2025.6.29域名lemonstar.me重定向到blog.lemonstar.me更新音乐胶囊里面的歌曲为“secret base ～君がくれたもの～”个人简介页面信息更新一下全站文章封面更新Umami 数据统计域名由blog.star-lake.world换到blog.lemonstar.me更换即刻短文、最近评论、留言板页面顶部图片深色模式配色改为#64b6ac，浅色模式配色改为#f1c40f所有网页链接改了一下全站文章加上 AI 摘要
 
 3.4.12 Solitude ACGNVersion 3.4.12Updated on 2025.6.26网站改名为“柠檬星”更换视觉样式为“二次元”更改网站图标更换背景图片更新左顶部栏文字，删除图标，右顶部栏图片与文字改变网站配色：浅色模式#81d8cf，深色模式#fcd337更换加载图片更换头像正式启用域名blog.lemonstar.me
 
@@ -2193,6 +2194,8 @@ DomainDomainBought on 2025.4.13购买域名“star-lake.world”
 0.0.2 Solitude DefaultVersion 0.0.2Updated on 2025.4.13开始使用Solitude主题
 
 0.0.1 Hexo DefaultVersion 0.0.1Created on 2025.4.13正式创建星湖蔚境博客
+
+no.10 Article PublishArticle no.10Published on 2025.7.1发表文章“长三角旅行手记 【游记系列 No.1】”
 
 No.9 Article UpdateArticle No.9Updated on 2025.6.18更新文章“【关于博客】近况公告 25#1”删除重写
 
@@ -2335,7 +2338,7 @@ Part 3
 不完善的隐私保护对用户的隐私造成了侵害、泄漏
 
 本站友链是本着友链信任原则添加的，如果你发现其中包含违反中华人民共和国法律的内容，请及时联系和举报，该友链将会尽快被删除。如果因为从本页跳转给您造成了损失，我对此深表歉意，并且建议您如果发现存在问题请及时在本页面进行回复，或通过邮箱联系我，我会尽快处理。
-– 本站站长 Meteorite我的邮箱：meteorite@star-lake.world2025年4月21日
+– 本站站长 Meteorite我的邮箱：yangle.q@outlook.com2025年4月21日
 
 单向友链声明本站单向友链声明：本站单向友链为博主自行添加，并会在上方标示“单向”字样。
 本站单向友链的情况有：
@@ -2380,18 +2383,16 @@ Part 3
     <content><![CDATA[说明这里收集了我所有的账号，防止我记不住。
 如果我的账号是公开的话我就会放我的账号的链接，如果不是的话就放那个软件&#x2F;网站的官网。
 另：这个页面不对外公开。
-AAivenyangle
-阿里云杨乐
-BBilibili
-CCloudFlareyangle.q@outlook.comcharacter.aiyangle-q
-DDeepseek13381962051
-Duolingo
-钉钉yangleqy
+A| 平台名 | 平台网址 | 我的账号名 ||————|————|| Aiven | https://aiven.io/ | yangle || 阿里云 | https://www.aliyun.com/ | 杨乐 |
+B| 平台名 | 平台网址 | 我的账号名 ||————|————|| Bilibili | https://bilibili.com | Yangle-Q |
+C| 平台名 | 平台网址 | 我的账号名 ||————|————|| CloudFlare | https://www.cloudflare.com | yangle.q@outlook.com || character.ai | https://character.ai/ | yangle-q |
+D| 平台名 | 平台网址 | 我的账号名 ||————|————|| Deepseek | https://www.deepseek.com/ | 13381962051 || Duolingo | https://www.duolingo.com | Qingyun || 钉钉 | https://www.dingtalk.com/ | yangleqy |
 DigitalPlat Freedomainsnothingnoway
 豆瓣
 DreamStudioyangle.q@outlook.com
 EEdx（MOOC）YangLe_ChrisK_QingYun
 Ewishwellyangle
+ebay https://www.ebay.com/ 乐 杨
 GGithubGithub-2
 Google（Gmail）Qingyun
 国家中小学智慧教育平台TryEveryThing
@@ -2406,29 +2407,32 @@ MMicrosoft（Windows,Edge,Outlook,Bing）杨 乐
 MongoDB乐
 NNetlify乐 杨
 PPostimgyangle.q@outlook.com
-pixabay
+pixabay 杨乐Yangle https://pixabay.com/users/%E6%9D%A8%E4%B9%90yangle-43498627/
 QQQ3978716397
 Quora
 全历史
+英语趣配音 https://www.qupeiyin.com/ 醉翁之意不在酒
 R热铁盒yangle-qscixyvfi
 Runway
 SSteamyangle.q
 T腾讯会议乐~
+todesk 乐~
 UUWC 常熟世界联合学院杨乐
 VVercel
 W微信YangLe_QingYun
 WeTab杨乐 CHRIS KEVIN
 WPS
-网易云音乐
+网易云音乐 QingYun-Le https://music.163.com/#/user/home?id=8288280139
 XX
+晞云https://www.lightxi.com/ 13381962051
 YYoutube
 yousician
-有道词典
+有道词典 https://fanyi.youdao.com/ Try EveryThing 
 有道云笔记LegeYang
 有道智慧学习
 Z知乎
 Zoho WorkDrive杨乐
-致美化
+致美化 QINGYUN https://zhutix.com/user/1424373
 #16 Personalities
 自建网站账号Emailsyangle.q@outlook.com
 Yangle-Qingyun@outlook.com
@@ -2743,11 +2747,11 @@ CloudFlare官网：https://www.cloudflare.com/zh-cn/
     fetch('https://api.github.com/repos/2dust/v2rayN')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-qa0knr34y').innerText = data.name;
-        document.querySelector('.desc-qa0knr34y').innerText = data.description;
-        document.querySelector('.star-qa0knr34y').innerText = data.stargazers_count;
-        document.querySelector('.fork-qa0knr34y').innerText = data.forks_count;
-        document.querySelector('.lang-qa0knr34y').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-pmx4t7w0v').innerText = data.name;
+        document.querySelector('.desc-pmx4t7w0v').innerText = data.description;
+        document.querySelector('.star-pmx4t7w0v').innerText = data.stargazers_count;
+        document.querySelector('.fork-pmx4t7w0v').innerText = data.forks_count;
+        document.querySelector('.lang-pmx4t7w0v').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   
   
@@ -2765,11 +2769,11 @@ CloudFlare官网：https://www.cloudflare.com/zh-cn/
     fetch('https://api.github.com/repos/2dust/v2rayNG')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-9isjf7no4').innerText = data.name;
-        document.querySelector('.desc-9isjf7no4').innerText = data.description;
-        document.querySelector('.star-9isjf7no4').innerText = data.stargazers_count;
-        document.querySelector('.fork-9isjf7no4').innerText = data.forks_count;
-        document.querySelector('.lang-9isjf7no4').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-ca56fw7nz').innerText = data.name;
+        document.querySelector('.desc-ca56fw7nz').innerText = data.description;
+        document.querySelector('.star-ca56fw7nz').innerText = data.stargazers_count;
+        document.querySelector('.fork-ca56fw7nz').innerText = data.forks_count;
+        document.querySelector('.lang-ca56fw7nz').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   
   
@@ -2793,22 +2797,9 @@ Linux 版
 
 我们点“编辑代码”。进入下面这个页面
 
-这里有两种代码，一种是明文版的，一种是加密版的，我推荐如果你人是在中国大陆的话，尽量使用加密版的，如果不成功再换到明文版。（加密版已于2025.6.11被原作者删除）
-
-    引用站外链接
-    
-        
-          
-        
-        
-            Worker 代码
-            github.com
-        
-        
-    
-
-因为如果把这个代码放在页面上的话这个页面会非常卡，所以说我给的链接是到GitHub复制代码。直接点击右上角 “raw” 标识旁边的复制图标就可以了。如果你打不开 GitHub 的话请点击下面的按钮下载 txt 文件，然后复制里面的代码。
-Worker 代码
+这里有两种代码，一种是明文版的，一种是加密版的，我推荐如果你人是在中国大陆的话，尽量使用加密版的，如果不成功再换到明文版。如果把这个代码放在页面上的话这个页面会非常卡，所以说请点击下面的按钮下载 txt 文件，然后复制里面的代码。
+加密版
+明文版
 
 回到编辑代码页面，把左边原来的代码全选删掉，粘贴上刚刚复制的明文&#x2F;加密代码。
 
@@ -2950,23 +2941,12 @@ OK 现在回到主界面，点击“”，再点击更新当前组订阅
 故障排除如果碰到报错，可以试试以下几个解决方法：
 
 检查&#x2F;更换网络
-
 通过代理更新全部订阅
-
 重新部署一遍 CloudFlare Worker
-
-将 CloudFlare Worker 的代码换成以下代码（老版）试试：
- 加密版
- 明文版
-
 更换绑定的域名
-
 重新下载软件或选择不同版本
-
 更换 CloudFlare 账号
-
 换一台电脑试试看
-
 
 亲身经历如果遇到以下报错则基本可以确定是网络的问题：
 
