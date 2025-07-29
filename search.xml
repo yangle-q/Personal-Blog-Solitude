@@ -197,369 +197,6 @@ Others
       </tags>
   </entry>
   <entry>
-    <title>Part 1. Introduction</title>
-    <url>//post/introduction/</url>
-    <content><![CDATA[Introduction to this seriesOnce We talked about those Monarchs of the Great Britain, there were always some of them that had to be mentioned time by time. In fact, these three monarchs are perhaps be the most famous and the most long-influence monarchs of Britain. And of the enormous influence of Britian, their names were also well-knowned all about the world. Anybody, as long as they mentioned their names anytime, anyhow, anywhere, almost everybody shall immediately know who they are. And the names of these three monarchs are: Henry Ⅷ, ElizabethⅠ, and Queen Victoria. Today, by this series ‘A Brief Biography and Interesting Facts of Three Most Famous English Monarches in their Time and Life‘ on my blog, I want to take you back to the world of those English Monarchs’.
-The cause for me to write this series is about my English studies. I just ended the study of a book called ‘Great English Monarchs and Their Times‘ in the Black Cat series, and my English teacher requested me of write a short summary to this book. But when I reviewed the whole book, I found I had a lot of questions about that. For example, it was mentioned in this book the ‘Henry’s break with Rome’, but I have never found an explanation for that. So I started to search. But as deep as I searched, I found there were a lot of things interesting that were ignored by the book, which is just a simple short introduction to these monarchs. So I decided to write these things by myself. But I had to say first, in this article it could include some ideas of myself, and maybe not the fact. But I’ll do my best to make my article believable, and close the fact of real history, which may could never be proved.
-But absolutely, as the title said, this article is just a brief biography of these monarchs, because if you want to research the whole lives of them, I believe it can make a giant book for each monarchs including everything from what he ate for breakfast to who he met at night. But I can’t do that. And I may ignore something willfully to what I’m not interested in too, such as who was been chosen to be the Archbishop of Canterbury. If you are interested in that, you can search for them yourselves.
-As the last thing before we get start, there are some important facts we need to learn. Anybody, as long as it’s a human, it will almost undoubtly be influenced by the time and the environment it’ve got, even if you and me. so, it is very important to understand their time before understand they themselves. But the monarchs were special. Their influence decided they could not only be the joiner of the time, but also the builder of it. It is an interesting fact, and makes it more harder to explain their links to the time. Each of these three monarchs were all symbolled a period of England, like the most famous Victoria period. And they themselves were in a greater period — or perhaps you would like to call them the ‘process of the world — too. Henry Ⅷ and ElizabethⅠlived in the Ranaissance, and Queen Victoria lived in the industrial revolution. The environment of the time made a big deal to their success.
-OK, after all of these, let’s come back to the world of these three monarchs’ together with me.
-Continue to read
-    引用站外链接
-    
-        
-          
-        
-        
-            A Brief Biography and Interesting Facts of three Most Famous English Monarchs in Their Time and Life. Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church
-            2025.6.1
-        
-        
-    ]]></content>
-      <categories>
-        <category>英国帝王简传</category>
-      </categories>
-      <tags>
-        <tag>历史</tag>
-        <tag>英文</tag>
-        <tag>英国</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Solitude魔改记录（持续更新）</title>
-    <url>//post/solitude-reinventing/</url>
-    <content><![CDATA[前言这篇文章其实主要就是作为一个记录使用啦，顺便分享一下怎么魔改，其实我也在这上面踩了一个大坑的，所以我就想所有看到我这篇文章的人不要和我一样浪费那么多时间精力，所以教程会写得尽可能详细一点，大佬们不要瞧不起我哦！如果你感兴趣我是怎么踩坑的的话，可以看看原文-踩坑这一部分~
-Tip：如果不小心把文件改坏了不知道怎么改回来的话可以去 Solitude 的 GitHub 仓库下载一份原文件替换上去哦！
-
-  
-  
-  
-    
-    
-    
-    
-  
-  
-  
-    fetch('https://api.github.com/repos/everfu/hexo-theme-solitude')
-      .then(res => res.json())
-      .then(data => {
-        document.querySelector('.name-05f25ti9w').innerText = data.name;
-        document.querySelector('.desc-05f25ti9w').innerText = data.description;
-        document.querySelector('.star-05f25ti9w').innerText = data.stargazers_count;
-        document.querySelector('.fork-05f25ti9w').innerText = data.forks_count;
-        document.querySelector('.lang-05f25ti9w').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
-    });
-  
-  
-
-更新-记录原文-踩坑CSS&#x2F;JS引入效果教程参考这是前置准备工作，后面所有基于CSS&#x2F;JS的魔改都要依靠它的！一定要先准备好噢！
-创建文件夹：
- 找到里面有 _post 文件夹的那个 source 文件夹（blog&#x2F;source，不是blog&#x2F;themes&#x2F;solitude&#x2F;source），在里面创建 js 和 css 文件夹。
-
-创建css&#x2F;js文件：
- 在 css 文件夹里面创建 custom.css 文件，在 js 文件夹里面创建 custom.js 文件。（这个文件也可以是其他名字，只要后缀名是 .css&#x2F;.js 就行。）
-
-引入css&#x2F;js：
- 在主题配置文件（不是站点的）里面的扩展部分中引入（Solitude 主题是在第770行左右）。
- css 文件在 head 引入，js 文件在 bottom 里引入。有的 js 要求在 head 引入，不然无法生效。
- # --------------------------- start ---------------------------# Extend# 扩展extends:  # Insert in head  # 插入到 head  head:    - &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/custom.css&quot;&gt;  # Insert in body      # 插入到 body  body:    - &lt;script defer pjax src=&quot;/js/custom.js&quot;&gt;&lt;/script&gt;# --------------------------- end ---------------------------
-
- 引入多个文件可以直接往下复制粘贴多添加一行然后改一下文件名就行。
-
-
-    引用站外链接
-    
-        
-          
-        
-        
-            如何添加 CSS/JS？
-            冰火之砺
-        
-        
-    
-
-更换全站显示字体效果教程参考默认的字体（苹方）效果：
-
-月星楷的效果：
-
-霞鹜文楷的效果：
-
-打开网站：
- 打开以下网站：
- 
- 引用站外链接
- 
-     
-       
-     
-     
-         中文网字计划
-         提供便捷实用的全字符集中文渲染方案
-     
-     
- 
-
-选择字体：
- 找一个你喜欢的字体，进入详情页，下滑找到“通过链接嵌入”部分，复制以 &lt;link rel=&#39;stylesheet&#39; 开头的链接。
-
-引入拓展：
- 在主题配置文件（不是站点的）里面的扩展部分的 head 中引入（Solitude 主题是在第770行左右）。
- # Extend# 扩展extends:  # Insert in head  # 插入到 head  head:    - &lt;link rel=&#x27;stylesheet&#x27; href=&#x27;https://chinese-fonts-cdn.deno.dev/packages/lywkpmydb/dist/LXGWWenKaiScreen/result.css&#x27; /&gt;
-修改字体：
-复制“通过链接嵌入”部分下面“限定字体使用区域”里面 font-family 的数值，在主题配置文件的（不是站点的）里面的字体部分的 font-family 中引入（Solitude 主题是在第370行左右）。
- # Font# 字体font:  font-size: 16px  code-font-size: 16px  # Global font  # 全局字体  font-family: &quot;LXGW Bright SemiLight,PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif&quot;  # Code font  # 代码字体  code-font-family: &#x27;LXGW Bright SemiLight，&quot;monospace&quot;, monospace&#x27;
-
-    引用站外链接
-    
-        
-          
-        
-        
-            solitude｜自定义站点字体
-            ❖星港◎Star☆
-        
-        
-    
-
-H1，H2标题宽度修改效果教程参考修改之前：
-
-
-修改之后：
-
-打开文件：
- 打开 themes&#x2F;solitude&#x2F;source&#x2F;css&#x2F;_layout 目录下面的 article-container.styl 文件，记得先备份一份噢！
-
-替换代码：
- 把第181行至189行替换为以下代码：
- h1  font-size 1.5rem  line-height 1.3  padding-top 1rem  padding-bottom 1remh2  font-size 1.3rem  line-height 1.3  border-top 1px dashed var(--efu-theme-op)  padding-top 1rem  padding-bottom 1rem
-
-    引用站外链接
-    
-        
-          
-        
-        
-            关于本站｜Solitude主题魔改内容
-            ❖星港◎Star☆
-        
-        
-    
-
-添加评论协议效果教程参考在评论区右上角就可以看到啦！
-打开文件：
- 打开 themes&#x2F;solitude&#x2F;layout&#x2F;includes&#x2F;widgets&#x2F;third-party&#x2F;comments 目录下面的 comment.pug 文件，记得先备份一份哦！
-
-替换代码：
- 在第32行后回车，添加以下代码：
- a.plxycss(href=&quot;/comment/&quot;)    i.solitude.fas.fa-file-lines    span &amp;nbsp;评论协议
-
-⚠️ 注意： 正确的格式应该是这样的（·代表空格）：
-
-
-········a.plxycss(href&#x3D;”&#x2F;comment&#x2F;“)（前面八个空格）············i.solitude.fas.fa-file-lines（前面十二个空格）············span &amp;nbsp;评论协议（前面十二个空格）
-
-
-添加 css 格式：
- 在 custom.css 文件中（参见CSS&#x2F;JS引入）添加以下代码：
- /* 评论协议样式 */a.plxycss &#123;  float: right;  font-weight: bold;  font-size: 20px;&#125;
-添加协议条款：
-  运行hexo n page comment，在生成的 index.md 文件中添加协议条款。
-  如果你不知道写什么的话可以参照本站的评论协议模板（我用的是@叶泯希哥哥的）
-  &lt;h1 style=&quot;text-align:center;&quot;&gt;评论协议&lt;/h1&gt;&lt;p style=&quot;text-align:right&quot;&gt;协议最新更新时间为：2025-06-17&lt;/p&gt;-----用户发言前，请认真阅读本条例。一经发言，即视为同意接受本条例；如不同意，请勿发言。## 一、制定本条例的目的本条例的目的在于为用户提供文明、理性、友善、高质量的信息分享和公共讨论的网络交流空间。评论服务，是指通过运营网络互动传播平台，供用户对本网站传播的各类信息发表评论意见的服务。## 二、用户使用评论服务的规范用户使用评论服务，不得逾越法律法规、社会主义制度、国家利益、公民合法权益、社会公共秩序、道德风尚和信息真实性“七条底线”；应尊重其他用户合法权益及公民个人隐私，尊重社会公序良俗，遵守国家法律法规。上文提及的国家法律法规，包括但不限于：&lt;strong&gt;《全国人民代表大会常务委员会关于维护互联网安全的决定》《全国人民代表大会常务委员会关于加强网络信息保护的决定》《最高人民法院最高人民检察院关于办理利用信息网络实施诽谤等刑事案件适用法律若干问题的解释》《互联网信息服务管理办法》《互联网新闻信息服务管理规定》以及《未成年人保护法》&lt;/strong&gt;等。## 三、用户身份信息的真实性用户应当通过真实身份信息使用本网站的评论服务。对用户发表的评论，我们保留相应的管理权利。## 四、用户评论内容的规范用户在评论平台发表言论时，不得含有以下内容：1. 反对宪法确定的基本原则的；2. 危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的；3. 损害国家荣誉和利益的；4. 煽动民族仇恨、民族歧视，破坏民族团结的；5. 煽动地域歧视、地域仇恨的；6. 煽动非法集会、结社、游行、示威、聚众扰乱社会秩序的；7. 破坏国家宗教政策，宣扬邪教和迷信的；8. 侮辱和歧视性别、年龄、种族、出身、国别、性取向、生理缺陷的；9. 散布谣言，扰乱社会秩序、破坏社会稳定的；10. 散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的；11. 侮辱或诽谤他人，侵害他人合法权益的12. 对他人进行暴力恐吓、威胁，实施人肉搜索的；13. 未获得未满18周岁未成年人法定监护人的书面同意，传播该未成年人的隐私信息的；14. 散布污言秽语，损坏社会公序良俗的；15. 侵犯他人知识产权的；16. 散布非法商业广告，或类似的商业招揽信息；17. 使用本网站常用语言文字以外的其他语言文字评论的；18. 与所评论的信息毫无关系的；19. 所发表的信息毫无意义的，或刻意使用字符组合以逃避技术审核的；20. 法律、法规和规章禁止传播的其他信息。## 五、违反承诺的处理措施对违反上述承诺的用户，我们有权拒绝发布、删除评论、短期直至永久禁止发言等管理措施。同时，对涉嫌违法犯罪的言论将保存在案、并向有关政府部门如实报告。## 六、举报不法传播活动我们欢迎用户举报各类不法传播活动和违法有害信息，以共同维护文明、有价值的评论环境。## 七、违反承诺的法律责任若用户违反承诺、发布侵害第三人合法权益的信息而导致本网站被判决向被侵权人赔偿，我们保留依法向该用户追偿的权利。## 八、用户提交内容的使用权利用户提交的任何内容，本网站有权在世界范围内，利用媒体、已知或未知的技术，永久、免费、独家、再授权使用，包括复制、修改、改编、出版、翻译、创作衍生作品等。
-
-    引用站外链接
-    
-        
-          
-        
-        
-            主题魔改——Solitude主题
-            叶泯希
-        
-        
-    
-
-
-    引用站外链接
-    
-        
-          
-        
-        
-            评论协议
-            叶泯希
-        
-        
-    
-
-添加网站运行时间效果教程参考在页脚那里哦！
-新建文件：
- 在blog&#x2F;source&#x2F;js文件夹（就是放自定义js的那个）新建 jz.min.js 文件。
-
-输入内容：
- 在文件中输入以下内容：
- document.addEventListener(&quot;DOMContentLoaded&quot;,(function()&#123;const startTime=new Date(&quot;2025-04-13T00:00:00Z&quot;);function padZero(num)&#123;return num&lt;10?&quot;0&quot;+num:String(num)&#125;function calculateElapsedTime(start)&#123;const elapsedMilliseconds=new Date-start,totalSeconds=Math.floor(elapsedMilliseconds/1e3);return&#123;days:Math.floor(totalSeconds/86400),hours:Math.floor(totalSeconds%86400/3600),minutes:padZero(Math.floor(totalSeconds%3600/60)),seconds:padZero(totalSeconds%60)&#125;&#125;function updateDisplay()&#123;const&#123;days:days,hours:hours,minutes:minutes,seconds:seconds&#125;=calculateElapsedTime(startTime),runtimeElement=document.getElementById(&quot;runtime&quot;);runtimeElement&amp;&amp;(runtimeElement.textContent=`本站已萌萌哒运行$&#123;days&#125; 天 $&#123;hours&#125; 小时 $&#123;minutes&#125; 分 $&#123;seconds&#125; 秒啦~`),requestAnimationFrame(updateDisplay)&#125;updateDisplay()&#125;));
-
- 可以修改代码中以下的内容：
- Date(&quot;2025-04-13T00:00:00Z&quot;);`本站已萌萌哒运行$&#123;days&#125; 天 $&#123;hours&#125; 小时 $&#123;minutes&#125; 分 $&#123;seconds&#125; 秒啦~`
-
-引入js：
- 在主题配置文件（不是站点的）里面的扩展部分的bottom 里引入（Solitude 主题是在第770行左右）。
- # --------------------------- start ---------------------------# Extend# 扩展extends:  # Insert in body      # 插入到 body  body:    - &lt;script defer pjax src=&quot;/js/jz.min.js&quot;&gt;&lt;/script&gt;# --------------------------- end ---------------------------
-
-在配置文件中添加：
- 在主题配置文件（不是站点的）里面的页脚部分的页脚信息文字里添加以下信息（Solitude 主题是在第580行左右）：
-   # 页脚信息文字links:   - name: &lt;span id=&quot;runtime&quot;&gt;&lt;/span&gt;     url: /info/ # 链接可以自定义
-
-    引用站外链接
-    
-        
-          
-        
-        
-            主题魔改——Solitude主题
-            叶泯希
-        
-        
-    
-
-未添加成功的教程就是记录一下我的小小遗憾啦~顺便做个备份，到时候技术进步了再来试试😝（主要是主题不一样不知道怎么改js）
-
-    引用站外链接
-    
-        
-          
-        
-        
-            博客背景切换-页面版
-            Leonus
-        
-        
-     
-
-    引用站外链接
-    
-        
-          
-        
-        
-            给主题侧边栏添加倒计时
-            梦爱吃鱼
-        
-        
-    前言众所周知啊，Solitude主题留给我们魔改的空间还是蛮大的，因为要是不改的话原生solitude就一股半成品的味道（有可能是因为看多了大佬们的博客觉得原生的solitude很土？）而且很多哥哥们都在自己博客里面放出来了各种教程，怎么说，看完了有点心动了捏
-于是!我又拿出了我的祖传看家本领，那就是:翻!家!
-其实我在网站还没上线的时候就已经把青桔哥哥的博客翻了一遍了，他的博客里面超级多魔改的教程的，我本来是想先把这些搞完一部分再上线的，但是因为我当时自定义css没弄明白（后面会说），所以就没搞。前天终于把这个自定义css搞好了，所以说我终于能开始我的魔改之路啦！
-OK，废话不多说，开搞!
-自定义Css&#x2F;js这个地方真的是我的噩梦，因为我刚开始看青桔哥哥的教程的时候我看的是后面字体，日历那几篇，青桔哥哥正好没有写怎么引入css。他之前每篇文章都会写的，后面几篇估计是觉得我们都知道了就没有写，然后呢我又没有看他前面的几篇文章，所以说我截至到前天为止都还一直不知道自定义css居然是要引入的！
-当然这也不能怪青桔哥哥啦，谁叫我自己没有认真把他的博客翻个底朝天的（是不是有一点不礼貌(≧∀≦)ゞ）
-我刚开始的时候甚至都不知道自定义css要放在哪里，我还以为是放在solitude文件夹的sourse文件夹里面呢，因为blog文件夹下面不是有两个sourse文件夹嘛，一个在blog下面，一个在blog&#x2F;themes&#x2F;solitude文件夹下面，然后solitude文件夹下面的那个sourse文件夹里面又分了css，js，img三个文件夹，我就以为自定义css文件和blog&#x2F;themes&#x2F;soitude&#x2F;sourse&#x2F;css文件夹里面的其他css文件放在一起就好了，solitude主题会自动引用的（当时我也不知道这个东西要引入啊）。然后我不放心我还问了一下星港哥哥，他说只要放在sourse文件夹里面就行了，然后我就非常确信这个东西就是放在这的了。
-
-
-还是⟪论翻家翻到底的重要性⟫，星港哥哥博客里面也有写css文件放在哪你干嘛自己不看奥，也是醉了。
-你绝对想不出来我为了解决这个问题想了多少种可能出问题的情况，实际上我也记不住有多少了，反正我能想起来的就有这么多
-
-我是在本地看的，到时候部署到网站上看就好了（然而并没有）
-css文件写错了（我真的一个字一个字看过了，没写错，我发誓）
-自定义字体的css引用的字体文件太大了（不过确实挺大的，10.7MB呢）
-配置文件写错了（但是我把备份的配置文件换过来也一样）
-博客的文件夹里面反正就是有一个文件错了（我也不知道是哪个，所以我重新从头开始又搞了一个博客出来结果还是一样）
-我的Solutude是从Gitee克隆的（但是我换了种方式之后也没用）
-因为我的博客文件存在硬盘里（这个倒还真没试过把文件放到本地）
-Git 没装插件（我去找了，没找到css的插件）
-没清除coocies（清完了也没用）
-浏览器的问题（用360浏览器也还是一样）
-那就是我电脑上Git的问题（我换了台电脑也还是一样）
-
-反正我各种办法都试过了，花了我保守估计得整整四五个小时，整得我都有一段时间都不想碰博客了，就是没想到去翻大佬们的博客（不是说好是祖传技能的吗）
-
-然后后来我是上周三(今天周日)闲着没事翻Marice哥哥的博客的时候看到他在2023年写的一篇文章（他当时应该和我现在差不多大吧）如何自定义js&#x2F;css之后才知道，原来这个东西是要放在blog的sourse文件夹下面的耶（终于看到了啊，真受不了了）。然后呢我去试，git页面终于有反应了，反馈了一个WARN说尝试创建xxx.css文件，但是那个已经存在了，于是我又去解决这个问题去了，其实那个东西完全可以不用管他的（星港哥哥都说了那个东西没什么大问题了你还要搞它干嘛）
-到最后我又搞了一个小时还是没有搞好，我悬着的心终于死掉了。我想我干脆直接找叶泯希哥哥叫他帮我弄一下吧，然后第二天晚上我问了几个类似于css文件到底放哪这种我已经知道了的问题的时候准备说出“我给你十块钱你帮我远程看一下呗”的时候，他突然给我发了一张图片说css要这样引入，我才知道原来还要引入啊（不是Marice哥哥文章里面清清楚楚的写着怎么引入css你是没长眼睛吗）
-反正最后终于是搞好啦，讲真的真不容易啊，主要是主题文档里面压根对这个一个字都没提（你看看又在找借口了）不管怎么样终于搞好啦，要不然默认的这个苹方字体我真的是看腻了，总之非常非常谢谢叶泯希和Marice两位哥哥啦！
-
-自定义侧边栏卡片日历、那年今日、来访者卡片这几个卡片是我早就羡慕了，那么现在css搞好了，肯定要第一个把这几个加上啦！
-来，3、2、1，上教程！
-
-    引用站外链接
-    
-        
-          
-        
-        
-            Solitude创建日历卡片
-            青桔气球
-        
-        
-    
-
-
-    引用站外链接
-    
-        
-          
-        
-        
-            Solitude添加那年今日卡片
-            青桔气球
-        
-        
-    
-
-
-    引用站外链接
-    
-        
-          
-        
-        
-            Solitude添加来访者卡片
-            青桔气球
-        
-        
-    
-
-但是我发现了一个大问题。我明明css和js引入都是正确的啊，那年今日和来访者卡片里面的内容它就是显示不出来，我还以为是我这次又翻车了呢，但是日历那一块就是好好的呀（除了有亿点点错位）
-
-结果我一看Marice新出的一篇文章才知道，原来青桔哥哥太久没更新，api失效了！
-我赶紧去星港哥哥青桔哥哥的博客里面看看，他们的卡片也显示不出来，呼，那我就放心了。但是日历那个又是怎么回事啊！！！我在群里面问了也没有人回我呜呜呜
-算啦，到时候再说吧，我到时候再找找其他大佬还有没有写这些侧边栏卡片的教程的，但是那个来访者卡片我是真的喜欢啊！在星港哥哥的博客里面看到的时候一眼就心动了。（青桔哥哥快点更新啊！！）
-自定义字体这个字体也算是我的噩梦之一了，我前面也写了我搞css到时候第一个就是搞的这个字体，毕竟字体是一个博客的灵魂嘛，字体不对劲整个博客也好看不到哪里去。css弄好之后我本来是想通过css引入ttf格式的文件自定义字体的，但是这个东西我已经对它有心理阴影了，所以我就换了一种方式，就是直接通过extends引入。
-我是在叶泯希哥哥的博客上先看到这个方法的，但是叶泯希哥哥只给了小米字体的链接，我换上去试了试，感觉和我的博客不太搭，所以我又翻了翻，找到了星港哥哥有一篇教程
-
-    引用站外链接
-    
-        
-          
-        
-        
-            solitude｜自定义站点字体
-            ❖星港◎Star☆
-        
-        
-    
-
-我就按照他的教程用中文网字计划提供的公共字体搞辣，我本来是想用月星楷的，但是我用上去之后发现这款字体太复古了，也和我的博客配不上，所以我现在用的是霞鹜文楷。
-
-
-用上新字体是不是好看多啦？至于在哪里看霞鹜文楷的效果嘛……你现在看的这些字不都是嘛
-这个字体看起来舒服多了，甚至我现在看我写的那篇六千多字的随笔我们为什么还在做个人博客？都看得不那么累了，之前我是真的会晕字的（不是那篇文章我是怎么写出来的我自己都看不下去，太~长了）
-结语这篇文章是持续更新的，所以我也不知道它什么时候又会跑最上面去啦。现在你看到的这些文字是在2025年5月31号写的，后面更新我都会标更新日期哒
-还有，提前剧透一下，我的一篇大制作很快明后天就能上线啦（不会是像那篇文章一样的长篇大论啦！我发誓我以后绝对不会再写那种文章了），这篇文章据说和其他的文章都非常不一样，而且绝对图文并茂，甚至还会有视频呢！大家可以期待一下哦！]]></content>
-      <categories>
-        <category>记录</category>
-        <category>教程</category>
-        <category>持续更新</category>
-      </categories>
-      <tags>
-        <tag>个人博客</tag>
-        <tag>建站记录</tag>
-        <tag>魔改</tag>
-        <tag>Solitude</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Markdown 格式详解与 Solitude 主题 Front Matter 使用说明</title>
     <url>//post/markdown/</url>
     <content><![CDATA[前言Markdown 格式是在（至少是 Hexo 框架下的）个人博客里写作最基本甚至在很多主题下唯一需要掌握的语法了（当然在 Solitude 主题下不是，尤其是如果你要魔改的话），网上的教程也非常多，那为什么我还要写这么一篇文章呢？主要还是因为 Solitude 主题有外挂标签这个功能。目前已经有两位大佬都写过外挂标签的使用指南了，但是他们的文章是主要+补充的结构，这就导致我在写文章的时候需要同时参考他们俩的文章再加一篇常规的 Markdown 格式的教程。所以我就想， **为什么不干脆自己写一篇全面的教程呢？**这样我要写文章的时候甚至不用打开浏览器就能直接看到了，而且还能水一篇文章（事实证明不行，写这个东西累的要命）而且还可能会对大家有帮助。所以，这篇文章就出来啦！
@@ -837,11 +474,11 @@ https\://bilibili.comno\@thankyou.com`https://bilibili.com``no@thankyou.com`
 输出：Markdown 格式
 
 图片普通图片要添加图像，请使用英文感叹号 (!), 然后在方括号增加说明文本，图片链接放在圆括号里。
-![上海-外滩](https://i.postimg.cc/15C1qj5K/Shanghai-4.jpg)
+![上海-外滩](https://cdn.jsdelivr.net/gh/yangle-q/picx-images-hosting@master/china-7094961_1280.webp)
 输出：
 
 链接图片给图片增加链接，请普通图片链接括在方括号中，然后将要跳转的地址添加在圆括号中。
-[![使用Vercel部署博客](https://i.postimg.cc/1RpFt74G/Canvas-Ruom-6.webp)](/2025/使用Vercel部署博客)
+[![使用Vercel部署博客](https://cdn.jsdelivr.net/gh/yangle-q/picx-images-hosting@master/Canvas-Ruom-4.webp)](/post/solitude-reinventing)
 输出：
 
 表格可以使用竖线 | 和连字符 - 创建表。 连字符用于创建每列的标题，而竖线用于分隔每列。 必须在表格前包含空白行，以便其正确呈现。
@@ -980,7 +617,7 @@ Markdown 内嵌 HTML 标签对于 Markdown 涵盖范围之外的标签，都可�
 这是另一个可见的段落。
 
 调整图片大小Markdown 不能指定图片尺寸，但可以用 HTML 设定宽高。双引号内加图片链接。
-&lt;img src=&quot;https://i.postimg.cc/76VWy55N/cat-3.jpg&quot; width=&quot;200&quot; height=&quot;100&quot;&gt;
+&lt;img src=&quot;https://cdn.jsdelivr.net/gh/yangle-q/picx-images-hosting@master/cat-323262_1280.webp&quot; width=&quot;200&quot; height=&quot;100&quot;&gt;
 输出：图片将以 200x100 像素显示。
 
 表格格式Markdown 不能直接在表格中换行或插入列表，但可以用 HTML 解决：
@@ -1374,9 +1011,374 @@ TXT 格式
         <category>教程</category>
       </categories>
       <tags>
-        <tag>Solitude</tag>
         <tag>写作</tag>
         <tag>Markdown</tag>
+        <tag>Solitude</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Part 1. Introduction</title>
+    <url>//post/introduction/</url>
+    <content><![CDATA[Introduction to this seriesOnce We talked about those Monarchs of the Great Britain, there were always some of them that had to be mentioned time by time. In fact, these three monarchs are perhaps be the most famous and the most long-influence monarchs of Britain. And of the enormous influence of Britian, their names were also well-knowned all about the world. Anybody, as long as they mentioned their names anytime, anyhow, anywhere, almost everybody shall immediately know who they are. And the names of these three monarchs are: Henry Ⅷ, ElizabethⅠ, and Queen Victoria. Today, by this series ‘A Brief Biography and Interesting Facts of Three Most Famous English Monarches in their Time and Life‘ on my blog, I want to take you back to the world of those English Monarchs’.
+The cause for me to write this series is about my English studies. I just ended the study of a book called ‘Great English Monarchs and Their Times‘ in the Black Cat series, and my English teacher requested me of write a short summary to this book. But when I reviewed the whole book, I found I had a lot of questions about that. For example, it was mentioned in this book the ‘Henry’s break with Rome’, but I have never found an explanation for that. So I started to search. But as deep as I searched, I found there were a lot of things interesting that were ignored by the book, which is just a simple short introduction to these monarchs. So I decided to write these things by myself. But I had to say first, in this article it could include some ideas of myself, and maybe not the fact. But I’ll do my best to make my article believable, and close the fact of real history, which may could never be proved.
+But absolutely, as the title said, this article is just a brief biography of these monarchs, because if you want to research the whole lives of them, I believe it can make a giant book for each monarchs including everything from what he ate for breakfast to who he met at night. But I can’t do that. And I may ignore something willfully to what I’m not interested in too, such as who was been chosen to be the Archbishop of Canterbury. If you are interested in that, you can search for them yourselves.
+As the last thing before we get start, there are some important facts we need to learn. Anybody, as long as it’s a human, it will almost undoubtly be influenced by the time and the environment it’ve got, even if you and me. so, it is very important to understand their time before understand they themselves. But the monarchs were special. Their influence decided they could not only be the joiner of the time, but also the builder of it. It is an interesting fact, and makes it more harder to explain their links to the time. Each of these three monarchs were all symbolled a period of England, like the most famous Victoria period. And they themselves were in a greater period — or perhaps you would like to call them the ‘process of the world — too. Henry Ⅷ and ElizabethⅠlived in the Ranaissance, and Queen Victoria lived in the industrial revolution. The environment of the time made a big deal to their success.
+OK, after all of these, let’s come back to the world of these three monarchs’ together with me.
+Continue to read
+    引用站外链接
+    
+        
+          
+        
+        
+            A Brief Biography and Interesting Facts of three Most Famous English Monarchs in Their Time and Life. Part 2, Henry Ⅷ：The Defender of the Faith Who was Evicted from the Church
+            2025.6.1
+        
+        
+    ]]></content>
+      <categories>
+        <category>英国帝王简传</category>
+      </categories>
+      <tags>
+        <tag>历史</tag>
+        <tag>英文</tag>
+        <tag>英国</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Solitude魔改记录（持续更新）</title>
+    <url>//post/solitude-reinventing/</url>
+    <content><![CDATA[前言这篇文章其实主要就是作为一个记录使用啦，顺便分享一下怎么魔改，其实我也在这上面踩了一个大坑的，所以我就想所有看到我这篇文章的人不要和我一样浪费那么多时间精力，所以教程会写得尽可能详细一点，大佬们不要瞧不起我哦！如果你感兴趣我是怎么踩坑的的话，可以看看原文-踩坑这一部分~
+Tip：如果不小心把文件改坏了不知道怎么改回来的话可以去 Solitude 的 GitHub 仓库下载一份原文件替换上去哦！
+
+  
+  
+  
+    
+    
+    
+    
+  
+  
+  
+    fetch('https://api.github.com/repos/everfu/hexo-theme-solitude')
+      .then(res => res.json())
+      .then(data => {
+        document.querySelector('.name-gkwjoglzp').innerText = data.name;
+        document.querySelector('.desc-gkwjoglzp').innerText = data.description;
+        document.querySelector('.star-gkwjoglzp').innerText = data.stargazers_count;
+        document.querySelector('.fork-gkwjoglzp').innerText = data.forks_count;
+        document.querySelector('.lang-gkwjoglzp').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+    });
+  
+  
+
+更新-记录原文-踩坑CSS&#x2F;JS引入效果教程参考这是前置准备工作，后面所有基于CSS&#x2F;JS的魔改都要依靠它的！一定要先准备好噢！
+创建文件夹：
+ 找到里面有 _post 文件夹的那个 source 文件夹（blog&#x2F;source，不是blog&#x2F;themes&#x2F;solitude&#x2F;source），在里面创建 js 和 css 文件夹。
+
+创建css&#x2F;js文件：
+ 在 css 文件夹里面创建 custom.css 文件，在 js 文件夹里面创建 custom.js 文件。（这个文件也可以是其他名字，只要后缀名是 .css&#x2F;.js 就行。）
+
+引入css&#x2F;js：
+ 在主题配置文件（不是站点的）里面的扩展部分中引入（Solitude 主题是在第770行左右）。
+ css 文件在 head 引入，js 文件在 bottom 里引入。有的 js 要求在 head 引入，不然无法生效。
+ # --------------------------- start ---------------------------# Extend# 扩展extends:  # Insert in head  # 插入到 head  head:    - &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/custom.css&quot;&gt;  # Insert in body      # 插入到 body  body:    - &lt;script defer pjax src=&quot;/js/custom.js&quot;&gt;&lt;/script&gt;# --------------------------- end ---------------------------
+
+ 引入多个文件可以直接往下复制粘贴多添加一行然后改一下文件名就行。
+
+
+    引用站外链接
+    
+        
+          
+        
+        
+            如何添加 CSS/JS？
+            冰火之砺
+        
+        
+    
+
+更换全站显示字体效果教程参考默认的字体（苹方）效果：
+
+Mi-sans 的效果：
+
+月星楷的效果：
+
+霞鹜文楷的效果：
+
+打开网站：
+ 打开以下网站：
+ 
+ 引用站外链接
+ 
+     
+       
+     
+     
+         中文网字计划
+         提供便捷实用的全字符集中文渲染方案
+     
+     
+ 
+
+选择字体：
+ 找一个你喜欢的字体，进入详情页，下滑找到“通过链接嵌入”部分，复制以 &lt;link rel=&#39;stylesheet&#39; 开头的链接。
+
+引入拓展：
+ 在主题配置文件（不是站点的）里面的扩展部分的 head 中引入（Solitude 主题是在第770行左右）。
+ # Extend# 扩展extends:  # Insert in head  # 插入到 head  head:    - &lt;link rel=&#x27;stylesheet&#x27; href=&#x27;https://chinese-fonts-cdn.deno.dev/packages/lywkpmydb/dist/LXGWWenKaiScreen/result.css&#x27; /&gt;
+修改字体：
+复制“通过链接嵌入”部分下面“限定字体使用区域”里面 font-family 的数值，在主题配置文件的（不是站点的）里面的字体部分的 font-family 中引入（Solitude 主题是在第370行左右）。
+ # Font# 字体font:  font-size: 16px  code-font-size: 16px  # Global font  # 全局字体  font-family: &quot;LXGW Bright SemiLight,PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif&quot;  # Code font  # 代码字体  code-font-family: &#x27;LXGW Bright SemiLight，&quot;monospace&quot;, monospace&#x27;
+
+    引用站外链接
+    
+        
+          
+        
+        
+            solitude｜自定义站点字体
+            ❖星港◎Star☆
+        
+        
+    
+
+H1，H2标题宽度修改效果教程参考修改之前：
+
+
+修改之后：
+
+打开文件：
+ 打开 themes&#x2F;solitude&#x2F;source&#x2F;css&#x2F;_layout 目录下面的 article-container.styl 文件，记得先备份一份噢！
+
+替换代码：
+ 把第181行至189行替换为以下代码：
+ h1  font-size 1.5rem  line-height 1.3  padding-top 1rem  padding-bottom 1remh2  font-size 1.3rem  line-height 1.3  border-top 1px dashed var(--efu-theme-op)  padding-top 1rem  padding-bottom 1rem
+
+    引用站外链接
+    
+        
+          
+        
+        
+            关于本站｜Solitude主题魔改内容
+            ❖星港◎Star☆
+        
+        
+    
+
+添加评论协议效果教程参考在评论区右上角就可以看到啦！
+打开文件：
+ 打开 themes&#x2F;solitude&#x2F;layout&#x2F;includes&#x2F;widgets&#x2F;third-party&#x2F;comments 目录下面的 comment.pug 文件，记得先备份一份哦！
+
+替换代码：
+ 在第32行后回车，添加以下代码：
+ a.plxycss(href=&quot;/comment/&quot;)    i.solitude.fas.fa-file-lines    span &amp;nbsp;评论协议
+
+⚠️ 注意： 正确的格式应该是这样的（·代表空格）：
+
+
+········a.plxycss(href&#x3D;”&#x2F;comment&#x2F;“)（前面八个空格）············i.solitude.fas.fa-file-lines（前面十二个空格）············span &amp;nbsp;评论协议（前面十二个空格）
+
+
+添加 css 格式：
+ 在 custom.css 文件中（参见CSS&#x2F;JS引入）添加以下代码：
+ /* 评论协议样式 */a.plxycss &#123;  float: right;  font-weight: bold;  font-size: 20px;&#125;
+添加协议条款：
+  运行hexo n page comment，在生成的 index.md 文件中添加协议条款。
+  如果你不知道写什么的话可以参照本站的评论协议模板（我用的是@叶泯希哥哥的）
+  &lt;h1 style=&quot;text-align:center;&quot;&gt;评论协议&lt;/h1&gt;&lt;p style=&quot;text-align:right&quot;&gt;协议最新更新时间为：2025-06-17&lt;/p&gt;-----用户发言前，请认真阅读本条例。一经发言，即视为同意接受本条例；如不同意，请勿发言。## 一、制定本条例的目的本条例的目的在于为用户提供文明、理性、友善、高质量的信息分享和公共讨论的网络交流空间。评论服务，是指通过运营网络互动传播平台，供用户对本网站传播的各类信息发表评论意见的服务。## 二、用户使用评论服务的规范用户使用评论服务，不得逾越法律法规、社会主义制度、国家利益、公民合法权益、社会公共秩序、道德风尚和信息真实性“七条底线”；应尊重其他用户合法权益及公民个人隐私，尊重社会公序良俗，遵守国家法律法规。上文提及的国家法律法规，包括但不限于：&lt;strong&gt;《全国人民代表大会常务委员会关于维护互联网安全的决定》《全国人民代表大会常务委员会关于加强网络信息保护的决定》《最高人民法院最高人民检察院关于办理利用信息网络实施诽谤等刑事案件适用法律若干问题的解释》《互联网信息服务管理办法》《互联网新闻信息服务管理规定》以及《未成年人保护法》&lt;/strong&gt;等。## 三、用户身份信息的真实性用户应当通过真实身份信息使用本网站的评论服务。对用户发表的评论，我们保留相应的管理权利。## 四、用户评论内容的规范用户在评论平台发表言论时，不得含有以下内容：1. 反对宪法确定的基本原则的；2. 危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的；3. 损害国家荣誉和利益的；4. 煽动民族仇恨、民族歧视，破坏民族团结的；5. 煽动地域歧视、地域仇恨的；6. 煽动非法集会、结社、游行、示威、聚众扰乱社会秩序的；7. 破坏国家宗教政策，宣扬邪教和迷信的；8. 侮辱和歧视性别、年龄、种族、出身、国别、性取向、生理缺陷的；9. 散布谣言，扰乱社会秩序、破坏社会稳定的；10. 散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的；11. 侮辱或诽谤他人，侵害他人合法权益的12. 对他人进行暴力恐吓、威胁，实施人肉搜索的；13. 未获得未满18周岁未成年人法定监护人的书面同意，传播该未成年人的隐私信息的；14. 散布污言秽语，损坏社会公序良俗的；15. 侵犯他人知识产权的；16. 散布非法商业广告，或类似的商业招揽信息；17. 使用本网站常用语言文字以外的其他语言文字评论的；18. 与所评论的信息毫无关系的；19. 所发表的信息毫无意义的，或刻意使用字符组合以逃避技术审核的；20. 法律、法规和规章禁止传播的其他信息。## 五、违反承诺的处理措施对违反上述承诺的用户，我们有权拒绝发布、删除评论、短期直至永久禁止发言等管理措施。同时，对涉嫌违法犯罪的言论将保存在案、并向有关政府部门如实报告。## 六、举报不法传播活动我们欢迎用户举报各类不法传播活动和违法有害信息，以共同维护文明、有价值的评论环境。## 七、违反承诺的法律责任若用户违反承诺、发布侵害第三人合法权益的信息而导致本网站被判决向被侵权人赔偿，我们保留依法向该用户追偿的权利。## 八、用户提交内容的使用权利用户提交的任何内容，本网站有权在世界范围内，利用媒体、已知或未知的技术，永久、免费、独家、再授权使用，包括复制、修改、改编、出版、翻译、创作衍生作品等。
+
+    引用站外链接
+    
+        
+          
+        
+        
+            主题魔改——Solitude主题
+            叶泯希
+        
+        
+    
+
+
+    引用站外链接
+    
+        
+          
+        
+        
+            评论协议
+            叶泯希
+        
+        
+    
+
+添加网站运行时间效果教程参考在页脚那里哦！
+新建文件：
+ 在blog&#x2F;source&#x2F;js文件夹（就是放自定义js的那个）新建 jz.min.js 文件。
+
+输入内容：
+ 在文件中输入以下内容：
+ document.addEventListener(&quot;DOMContentLoaded&quot;,(function()&#123;const startTime=new Date(&quot;2025-04-13T00:00:00Z&quot;);function padZero(num)&#123;return num&lt;10?&quot;0&quot;+num:String(num)&#125;function calculateElapsedTime(start)&#123;const elapsedMilliseconds=new Date-start,totalSeconds=Math.floor(elapsedMilliseconds/1e3);return&#123;days:Math.floor(totalSeconds/86400),hours:Math.floor(totalSeconds%86400/3600),minutes:padZero(Math.floor(totalSeconds%3600/60)),seconds:padZero(totalSeconds%60)&#125;&#125;function updateDisplay()&#123;const&#123;days:days,hours:hours,minutes:minutes,seconds:seconds&#125;=calculateElapsedTime(startTime),runtimeElement=document.getElementById(&quot;runtime&quot;);runtimeElement&amp;&amp;(runtimeElement.textContent=`本站已萌萌哒运行$&#123;days&#125; 天 $&#123;hours&#125; 小时 $&#123;minutes&#125; 分 $&#123;seconds&#125; 秒啦~`),requestAnimationFrame(updateDisplay)&#125;updateDisplay()&#125;));
+
+ 可以修改代码中以下的内容：
+ Date(&quot;2025-04-13T00:00:00Z&quot;);`本站已萌萌哒运行$&#123;days&#125; 天 $&#123;hours&#125; 小时 $&#123;minutes&#125; 分 $&#123;seconds&#125; 秒啦~`
+
+引入js：
+ 在主题配置文件（不是站点的）里面的扩展部分的bottom 里引入（Solitude 主题是在第770行左右）。
+ # --------------------------- start ---------------------------# Extend# 扩展extends:  # Insert in body      # 插入到 body  body:    - &lt;script defer pjax src=&quot;/js/jz.min.js&quot;&gt;&lt;/script&gt;# --------------------------- end ---------------------------
+
+在配置文件中添加：
+ 在主题配置文件（不是站点的）里面的页脚部分的页脚信息文字里添加以下信息（Solitude 主题是在第580行左右）：
+   # 页脚信息文字links:   - name: &lt;span id=&quot;runtime&quot;&gt;&lt;/span&gt;     url: /info/ # 链接可以自定义
+
+    引用站外链接
+    
+        
+          
+        
+        
+            主题魔改——Solitude主题
+            叶泯希
+        
+        
+    
+
+未添加成功的教程就是记录一下我的小小遗憾啦~顺便做个备份，到时候技术进步了再来试试😝（主要是主题不一样不知道怎么改js）
+
+    引用站外链接
+    
+        
+          
+        
+        
+            博客背景切换-页面版
+            Leonus
+        
+        
+     
+
+    引用站外链接
+    
+        
+          
+        
+        
+            给主题侧边栏添加倒计时
+            梦爱吃鱼
+        
+        
+    前言众所周知啊，Solitude主题留给我们魔改的空间还是蛮大的，因为要是不改的话原生solitude就一股半成品的味道（有可能是因为看多了大佬们的博客觉得原生的solitude很土？）而且很多哥哥们都在自己博客里面放出来了各种教程，怎么说，看完了有点心动了捏
+于是!我又拿出了我的祖传看家本领，那就是:翻!家!
+其实我在网站还没上线的时候就已经把青桔哥哥的博客翻了一遍了，他的博客里面超级多魔改的教程的，我本来是想先把这些搞完一部分再上线的，但是因为我当时自定义css没弄明白（后面会说），所以就没搞。前天终于把这个自定义css搞好了，所以说我终于能开始我的魔改之路啦！
+OK，废话不多说，开搞!
+自定义Css&#x2F;js这个地方真的是我的噩梦，因为我刚开始看青桔哥哥的教程的时候我看的是后面字体，日历那几篇，青桔哥哥正好没有写怎么引入css。他之前每篇文章都会写的，后面几篇估计是觉得我们都知道了就没有写，然后呢我又没有看他前面的几篇文章，所以说我截至到前天为止都还一直不知道自定义css居然是要引入的！
+当然这也不能怪青桔哥哥啦，谁叫我自己没有认真把他的博客翻个底朝天的（是不是有一点不礼貌(≧∀≦)ゞ）
+我刚开始的时候甚至都不知道自定义css要放在哪里，我还以为是放在solitude文件夹的sourse文件夹里面呢，因为blog文件夹下面不是有两个sourse文件夹嘛，一个在blog下面，一个在blog&#x2F;themes&#x2F;solitude文件夹下面，然后solitude文件夹下面的那个sourse文件夹里面又分了css，js，img三个文件夹，我就以为自定义css文件和blog&#x2F;themes&#x2F;soitude&#x2F;sourse&#x2F;css文件夹里面的其他css文件放在一起就好了，solitude主题会自动引用的（当时我也不知道这个东西要引入啊）。然后我不放心我还问了一下星港哥哥，他说只要放在sourse文件夹里面就行了，然后我就非常确信这个东西就是放在这的了。
+
+
+还是⟪论翻家翻到底的重要性⟫，星港哥哥博客里面也有写css文件放在哪你干嘛自己不看奥，也是醉了。
+你绝对想不出来我为了解决这个问题想了多少种可能出问题的情况，实际上我也记不住有多少了，反正我能想起来的就有这么多
+
+我是在本地看的，到时候部署到网站上看就好了（然而并没有）
+css文件写错了（我真的一个字一个字看过了，没写错，我发誓）
+自定义字体的css引用的字体文件太大了（不过确实挺大的，10.7MB呢）
+配置文件写错了（但是我把备份的配置文件换过来也一样）
+博客的文件夹里面反正就是有一个文件错了（我也不知道是哪个，所以我重新从头开始又搞了一个博客出来结果还是一样）
+我的Solutude是从Gitee克隆的（但是我换了种方式之后也没用）
+因为我的博客文件存在硬盘里（这个倒还真没试过把文件放到本地）
+Git 没装插件（我去找了，没找到css的插件）
+没清除coocies（清完了也没用）
+浏览器的问题（用360浏览器也还是一样）
+那就是我电脑上Git的问题（我换了台电脑也还是一样）
+
+反正我各种办法都试过了，花了我保守估计得整整四五个小时，整得我都有一段时间都不想碰博客了，就是没想到去翻大佬们的博客（不是说好是祖传技能的吗）
+
+然后后来我是上周三(今天周日)闲着没事翻Marice哥哥的博客的时候看到他在2023年写的一篇文章（他当时应该和我现在差不多大吧）如何自定义js&#x2F;css之后才知道，原来这个东西是要放在blog的sourse文件夹下面的耶（终于看到了啊，真受不了了）。然后呢我去试，git页面终于有反应了，反馈了一个WARN说尝试创建xxx.css文件，但是那个已经存在了，于是我又去解决这个问题去了，其实那个东西完全可以不用管他的（星港哥哥都说了那个东西没什么大问题了你还要搞它干嘛）
+到最后我又搞了一个小时还是没有搞好，我悬着的心终于死掉了。我想我干脆直接找叶泯希哥哥叫他帮我弄一下吧，然后第二天晚上我问了几个类似于css文件到底放哪这种我已经知道了的问题的时候准备说出“我给你十块钱你帮我远程看一下呗”的时候，他突然给我发了一张图片说css要这样引入，我才知道原来还要引入啊（不是Marice哥哥文章里面清清楚楚的写着怎么引入css你是没长眼睛吗）
+反正最后终于是搞好啦，讲真的真不容易啊，主要是主题文档里面压根对这个一个字都没提（你看看又在找借口了）不管怎么样终于搞好啦，要不然默认的这个苹方字体我真的是看腻了，总之非常非常谢谢叶泯希和Marice两位哥哥啦！
+
+自定义侧边栏卡片日历、那年今日、来访者卡片这几个卡片是我早就羡慕了，那么现在css搞好了，肯定要第一个把这几个加上啦！
+来，3、2、1，上教程！
+
+    引用站外链接
+    
+        
+          
+        
+        
+            Solitude创建日历卡片
+            青桔气球
+        
+        
+    
+
+
+    引用站外链接
+    
+        
+          
+        
+        
+            Solitude添加那年今日卡片
+            青桔气球
+        
+        
+    
+
+
+    引用站外链接
+    
+        
+          
+        
+        
+            Solitude添加来访者卡片
+            青桔气球
+        
+        
+    
+
+但是我发现了一个大问题。我明明css和js引入都是正确的啊，那年今日和来访者卡片里面的内容它就是显示不出来，我还以为是我这次又翻车了呢，但是日历那一块就是好好的呀（除了有亿点点错位）
+
+结果我一看Marice新出的一篇文章才知道，原来青桔哥哥太久没更新，api失效了！
+我赶紧去星港哥哥青桔哥哥的博客里面看看，他们的卡片也显示不出来，呼，那我就放心了。但是日历那个又是怎么回事啊！！！我在群里面问了也没有人回我呜呜呜
+算啦，到时候再说吧，我到时候再找找其他大佬还有没有写这些侧边栏卡片的教程的，但是那个来访者卡片我是真的喜欢啊！在星港哥哥的博客里面看到的时候一眼就心动了。（青桔哥哥快点更新啊！！）
+自定义字体这个字体也算是我的噩梦之一了，我前面也写了我搞css到时候第一个就是搞的这个字体，毕竟字体是一个博客的灵魂嘛，字体不对劲整个博客也好看不到哪里去。css弄好之后我本来是想通过css引入ttf格式的文件自定义字体的，但是这个东西我已经对它有心理阴影了，所以我就换了一种方式，就是直接通过extends引入。
+我是在叶泯希哥哥的博客上先看到这个方法的，但是叶泯希哥哥只给了小米字体的链接，我换上去试了试，感觉和我的博客不太搭，所以我又翻了翻，找到了星港哥哥有一篇教程
+
+    引用站外链接
+    
+        
+          
+        
+        
+            solitude｜自定义站点字体
+            ❖星港◎Star☆
+        
+        
+    
+
+我就按照他的教程用中文网字计划提供的公共字体搞辣，我本来是想用月星楷的，但是我用上去之后发现这款字体太复古了，也和我的博客配不上，所以我现在用的是霞鹜文楷。
+
+
+用上新字体是不是好看多啦？至于在哪里看霞鹜文楷的效果嘛……你现在看的这些字不都是嘛
+这个字体看起来舒服多了，甚至我现在看我写的那篇六千多字的随笔我们为什么还在做个人博客？都看得不那么累了，之前我是真的会晕字的（不是那篇文章我是怎么写出来的我自己都看不下去，太~长了）
+结语这篇文章是持续更新的，所以我也不知道它什么时候又会跑最上面去啦。现在你看到的这些文字是在2025年5月31号写的，后面更新我都会标更新日期哒
+还有，提前剧透一下，我的一篇大制作很快明后天就能上线啦（不会是像那篇文章一样的长篇大论啦！我发誓我以后绝对不会再写那种文章了），这篇文章据说和其他的文章都非常不一样，而且绝对图文并茂，甚至还会有视频呢！大家可以期待一下哦！]]></content>
+      <categories>
+        <category>记录</category>
+        <category>教程</category>
+        <category>持续更新</category>
+      </categories>
+      <tags>
+        <tag>Solitude</tag>
+        <tag>个人博客</tag>
+        <tag>建站记录</tag>
+        <tag>魔改</tag>
       </tags>
   </entry>
   <entry>
@@ -1430,11 +1432,9 @@ Vercel有什么特点？
         
     
 这个就是我的账户了，可以看到我现在只有部署Umami和Waline。
-安装 hexo-cli安装直接在git bash里运行npm install hexo-cli -g。
-检查输入hexo -v检查，出现的信息和我差不多就算成功。
-创建项目点击右上角 Add New 中的 Project 按钮，进入新建项目页面然后选择左边的Github仓库，我的就是Personal-Blog-Solitude，点击Import。
+创建项目点击右上角 Add New 中的 Project 按钮，进入新建项目页面，然后选择左边的Github仓库，我的就是Personal-Blog-Solitude，点击Import。
 部署这里没什么好改的，直接点Deploy。出现以下页面即代表成功。点Continue to Dashboard进入配置页面。
-自定义域名这里可以看到Vercel自动给我分配了三个三级域名，分别是https://personal-blog-solitude.vercel.apphttps://personal-blog-solitude-yangle-qs-projects.vercel.apphttps://personal-blog-solitude-git-gh-pages-yangle-qs-projects.vercel.app这三个域名既长又难记，而且最主要的是在国内还被墙了，所以我们要自定义一个域名。点击上面导航栏的Settings，然后点击左侧栏里面的Domains，进入页面管理页面。点击Add Domain，进入新增域名页面，在框里输入你的域名，我这边就是blog.star-lake.world，（这里我输成bolg.star-lake.world了后来才发现）点击Add Domain，进入访问方式选择页面。这里有两种选择，第一种是连接到一个工作平台（Connect to an environment） ，就是直接通过此域名访问你的网站。第二种是重定向（Redirect to Another Domain），就是让这个域名跳转到其他域名访问。你可以根据你的需要自己选，我在这里选择Connect to an environment。点击Save，进入配置DNS页面。这里选择Continue manually（手动配置）或者Continue automatically（自动配置）都可以，一般来说自动配置会更省力一些。
+自定义域名这里可以看到Vercel自动给我分配了三个三级域名，分别是https://personal-blog-solitude.vercel.apphttps://personal-blog-solitude-yangle-qs-projects.vercel.apphttps://personal-blog-solitude-git-gh-pages-yangle-qs-projects.vercel.app这三个域名既长又难记，而且最主要的是在国内还被墙了，所以我们要自定义一个域名。点击上面导航栏的Settings，然后点击左侧栏里面的Domains，进入域名管理页面。点击Add Domain，进入新增域名页面，在框里输入你的域名，我这边就是blog.star-lake.world，（这里我输成bolg.star-lake.world了后来才发现）点击Add Domain，进入访问方式选择页面。这里有两种选择，第一种是连接到一个工作平台（Connect to an environment） ，就是直接通过此域名访问你的网站。第二种是重定向（Redirect to Another Domain），就是让这个域名跳转到其他域名访问。你可以根据你的需要自己选，我在这里选择Connect to an environment。点击Save，进入配置DNS页面。这里选择Continue manually（手动配置）或者Continue automatically（自动配置）都可以，一般来说自动配置会更省力一些。
 配置DNS自动配置手动配置自动配置点击Continue automatically之后它会自动找到你的DNS服务商（我的就是CloudFlare）并自动添加DNS记录，你只要点击确认即可。这里正在检查DNS记录是否正确，一般需要一分钟左右，等到上面的状态显示变成Configured Correctly即可关闭。手动配置（2025.6.1更新）如果自动配置不成功的话就要手动配置了。点击Continue manually进入配置信息页面找到你的DNS服务商，我的就是CloudFlare，然后在DNS页面按照Vercel的指示添加一个CNAME记录注意：Vercel配置信息页面上的Proxy：Disabled代表不通过DNS服务商代理流量，操作时请根据DNS服务商的指示关闭“通过DNS服务商代理流量”（CloudFlare是代理状态下面的开关关掉。然后返回配置信息页面，点击I’ve added my records即可。
 
 大功告成！现在输入你绑定的新域名即可访问网站啦！ヾ(●゜▽゜●)♡
@@ -1523,9 +1523,7 @@ http://localhost:4000/ （其实是玩梗啦）
     
 
 
-进入以后就可以在搜索框里面搜到还有哪些域名是可以注册的了，比如我搜 noway，他提示我这个现在还没有人注册。
-
-OK，那现在我们就返回到首页，在搜索框下面有一个按钮写着“REGISTER A NEW DOMAIN”（注册一个新域名），我们点击一下，如果你还没有登入的话它就会自动进入登入账号页面
+首页搜索框下面有一个按钮写着“REGISTER A NEW DOMAIN”（注册一个新域名），我们点击一下，如果你还没有登入的话它就会自动进入登入账号页面
 
 进入登入账号页面之后我们往下拉，找到一个 sign up （注册）按钮，点击一下（如果已经有账号了请直接正常登入，但是既然你都来看我的教程了那大概率你就是还没有账号的，所以说我后面就不考虑你原来有账号的可能性了）
 
@@ -1734,7 +1732,7 @@ OK，那现在我们就返回到首页，在搜索框下面有一个按钮写着
 
 所有文章更新前更新后
 
-音乐空间更新前更新后
+音乐空间更新前更新后![](https://cdn.jsdelivr.net/gh/yangle-q/picx-images-hosting@master/Snipaste_2025-06-29_01-49-10.webp
 
 个人简介更新前更新后
 
@@ -1945,39 +1943,6 @@ var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,a
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>照片画廊</title>
-    <url>/gallery/index.html</url>
-    <content><![CDATA[
-
-  
-  
-  个人喜爱
-  有设计感的图片们
-  
-  
-  
-  
-
-  
-  
-  亨利八世
-  Henry VIII 里面的所有图片
-  
-  
-  
-  
-
-  
-  
-  长三角
-  长三角之旅拍的图片
-  
-  
-  
-  
-]]></content>
-  </entry>
-  <entry>
     <title>本站介绍</title>
     <url>/info/index.html</url>
     <content><![CDATA[本站使用：框架：Hexo主题：Solitude域名购买：阿里云域名管理：CloudFlare网站托管：Vercel网站仓库：GitHub评论系统：Waline评论系统：Twikoo访问统计：Umami图床：Postimage字体：霞鹜文楷
@@ -1995,11 +1960,11 @@ var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,a
     fetch('https://api.github.com/repos/Yangle-q/Personal-Blog-Solitude')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-u5gni6dnh').innerText = data.name;
-        document.querySelector('.desc-u5gni6dnh').innerText = data.description;
-        document.querySelector('.star-u5gni6dnh').innerText = data.stargazers_count;
-        document.querySelector('.fork-u5gni6dnh').innerText = data.forks_count;
-        document.querySelector('.lang-u5gni6dnh').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-72acphaah').innerText = data.name;
+        document.querySelector('.desc-72acphaah').innerText = data.description;
+        document.querySelector('.star-72acphaah').innerText = data.stargazers_count;
+        document.querySelector('.fork-72acphaah').innerText = data.forks_count;
+        document.querySelector('.lang-72acphaah').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   
   
@@ -2031,11 +1996,11 @@ GitHub仓库：
     fetch('https://api.github.com/repos/Yangle-q-2/Personal-Blog-Solitude-Cyberpunk')
       .then(res => res.json())
       .then(data => {
-        document.querySelector('.name-4alhghj7b').innerText = data.name;
-        document.querySelector('.desc-4alhghj7b').innerText = data.description;
-        document.querySelector('.star-4alhghj7b').innerText = data.stargazers_count;
-        document.querySelector('.fork-4alhghj7b').innerText = data.forks_count;
-        document.querySelector('.lang-4alhghj7b').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+        document.querySelector('.name-omom5z6za').innerText = data.name;
+        document.querySelector('.desc-omom5z6za').innerText = data.description;
+        document.querySelector('.star-omom5z6za').innerText = data.stargazers_count;
+        document.querySelector('.fork-omom5z6za').innerText = data.forks_count;
+        document.querySelector('.lang-omom5z6za').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
     });
   
   
@@ -2072,15 +2037,18 @@ blog.star-lake.world
 
 
 建站大事记全部全站更新文章发布/更新新功能其他
-3.4.14 Solitude ACGNVersion 3.4.14Updated on 2025.7.15hometop 加主页板块Left Box 加HelloFrom.cn
+3.4.15 Solitude ACGVersion 3.4.15Updated on 2025.7.28Twikoo评论提醒发件邮箱改为lemonstarblog@qq.com全站图床改为自建Left Box 加 Soliude 文档
+
+
+3.4.14 Solitude ACGVersion 3.4.14Updated on 2025.7.15hometop 加主页板块Left Box 加主页，HelloFrom.cn导航栏加主页按钮
 
 no.10 Article PublishArticle no.10Published on 2025.7.1发表文章“长三角旅行手记 【游记系列 No.1】”
 
 No.9 Article UpdateArticle No.9Updated on 2025.6.18更新文章“【关于博客】近况公告 25#1”删除重写
 
-3.4.13 Solitude ACGNVersion 3.4.13Updated on 2025.6.29域名lemonstar.me重定向到blog.lemonstar.me更新音乐胶囊里面的歌曲为“secret base ～君がくれたもの～”个人简介页面信息更新一下全站文章封面更新Umami 数据统计域名由blog.star-lake.world换到blog.lemonstar.me更换即刻短文、最近评论、留言板页面顶部图片深色模式配色改为#64b6ac，浅色模式配色改为#f1c40f所有网页链接改了一下全站文章加上 AI 摘要
+3.4.13 Solitude ACGVersion 3.4.13Updated on 2025.6.29域名lemonstar.me重定向到blog.lemonstar.me更新音乐胶囊里面的歌曲为“secret base ～君がくれたもの～”个人简介页面信息更新一下全站文章封面更新Umami 数据统计域名由blog.star-lake.world换到blog.lemonstar.me更换即刻短文、最近评论、留言板页面顶部图片深色模式配色改为#64b6ac，浅色模式配色改为#f1c40f所有网页链接改了一下全站文章加上 AI 摘要
 
-3.4.12 Solitude ACGNVersion 3.4.12Updated on 2025.6.26网站改名为“柠檬星”更换视觉样式为“二次元”更改网站图标更换背景图片更新左顶部栏文字，删除图标，右顶部栏图片与文字改变网站配色：浅色模式#81d8cf，深色模式#fcd337更换加载图片更换头像正式启用域名blog.lemonstar.me
+3.4.12 Solitude ACGVersion 3.4.12Updated on 2025.6.26网站改名为“柠檬星”更换视觉样式为“二次元”更改网站图标更换背景图片更新左顶部栏文字，删除图标，右顶部栏图片与文字改变网站配色：浅色模式#81d8cf，深色模式#fcd337更换加载图片更换头像正式启用域名blog.lemonstar.me
 
 no.9 Article PublishArticle no.9Published on 2025.6.10发表文章“【关于博客】近况公告 25#1”
 
@@ -2165,7 +2133,7 @@ Version 1.0.2, New Function 1Version 1.0.2New Function 1Created on 2025.4.25新�
 0.0.1 Hexo DefaultVersion 0.0.1Created on 2025.4.13正式创建星湖蔚境博客
 
 DomainDomainBought on 2025.4.13购买域名“star-lake.world”
-3.4.13 Solitude ACGNVersion 3.4.13Updated on 2025.6.29域名lemonstar.me重定向到blog.lemonstar.me更新音乐胶囊里面的歌曲为“secret base ～君がくれたもの～”个人简介页面信息更新一下全站文章封面更新Umami 数据统计域名由blog.star-lake.world换到blog.lemonstar.me更换即刻短文、最近评论、留言板页面顶部图片深色模式配色改为#64b6ac所有网页链接改了一下全站文章加上 AI 摘要
+3.4.13 Solitude ACGVersion 3.4.13Updated on 2025.6.29域名lemonstar.me重定向到blog.lemonstar.me更新音乐胶囊里面的歌曲为“secret base ～君がくれたもの～”个人简介页面信息更新一下全站文章封面更新Umami 数据统计域名由blog.star-lake.world换到blog.lemonstar.me更换即刻短文、最近评论、留言板页面顶部图片深色模式配色改为#64b6ac所有网页链接改了一下全站文章加上 AI 摘要
 
 3.4.12 Solitude otakuVersion 3.4.12Updated on 2025.6.26更换视觉样式为“二次元”更改网站图标更换背景图片更新左顶部栏文字，删除图标，右顶部栏图片与文字改变网站配色：浅色模式#81d8cf，深色模式#fcd337更换加载图片更换头像网站改名为“柠檬星”
 
@@ -2315,9 +2283,207 @@ Part 3
 这是本次更新的内容。]]></content>
   </entry>
   <entry>
-    <title>网站留言</title>
-    <url>/message/index.html</url>
-    <content><![CDATA[大家来这里畅所欲言吧~
+    <title>照片画廊</title>
+    <url>/gallery/index.html</url>
+    <content><![CDATA[
+
+  
+  
+  个人喜爱
+  有设计感的图片们
+  
+  
+  
+  
+
+  
+  
+  亨利八世
+  Henry VIII 里面的所有图片
+  
+  
+  
+  
+
+  
+  
+  长三角
+  长三角之旅拍的图片
+  
+  
+  
+  
+]]></content>
+  </entry>
+  <entry>
+    <title>使用CloudFlare Worker和GitHub开源代码一分钟搞定jsproxy</title>
+    <url>/jsproxy/index.html</url>
+    <content><![CDATA[起源之前叶泯希哥哥帮我搞Umami数据统计（详见文章建站备忘录）的时候在我的Umami地址前面加了一个他自己的域名然后就能用了，我当时没看懂那个是什么，后来我才发现那是一个https请求转发代理，直接在后面加上你想要访问的域名就可以直接访问那些被墙的网站了。虽然我已经有VPN了，但是有这样一个东西它！不！酷！嘛！而且根本不需要在你要用的那个电脑上配置任何东西啊！访问一个网址就能用啊！所以说我马上决定：我也要有这个东西！
+但是这个请求转发代理一看就很难啊，怎么搞呢？我在叶泯希哥哥的请求转发代理那边找到了一点线索。他在他那个代理的首页写：“该服务不收取任何费用，使用开源代码创建。”嘻嘻，那不就好办了嘛，开源代码一看就是在GitHub上的呀！于是我就去网上搜“https请求转发代理”，找到了这两篇文章：
+
+    引用站外链接
+    
+        
+          
+        
+        
+            两种方案手把手教你多种服务器使用tinyproxy搭建http代理
+            糖~豆豆 - 博客园
+        
+        
+     
+
+
+    引用站外链接
+    
+        
+          
+        
+        
+            推荐一款轻量级 HTTP_HTTPS 代理 TinyProxy
+            腾讯云开发者社区
+        
+        
+     
+
+tinyproxy GitHub仓库：
+
+  
+  
+  
+    
+    
+    
+    
+  
+  
+  
+    fetch('https://api.github.com/repos/tinyproxy/tinyproxy')
+      .then(res => res.json())
+      .then(data => {
+        document.querySelector('.name-0qndvg21n').innerText = data.name;
+        document.querySelector('.desc-0qndvg21n').innerText = data.description;
+        document.querySelector('.star-0qndvg21n').innerText = data.stargazers_count;
+        document.querySelector('.fork-0qndvg21n').innerText = data.forks_count;
+        document.querySelector('.lang-0qndvg21n').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+    });
+  
+  
+
+这两个是用tinyproxy实现的请求转发，我去叶泯希哥哥那里看了下，他用的应该也是这个，因为tinyproxy官网和叶泯希哥哥那个页面风格挺像的。但是tinyproxy有三个问题：第一，他需要服务器，要花钱买。第二，太麻烦了。第三，我不会啊！
+于是我想到，之前有很多类似的可以在服务器部署的东西我看的教程都是用CloudFlare Worker搞的，那这个东西它会不会也有CloudFlare Worker版的呢？于是我就去网上搜了下“使用CloudFlare Worker部署tinyproxy”，结果是什么呢？嘿嘿你猜的没错，结果是：有！但是用的是另一个请求转发代理服务，也是GitHub上面的（GitHub真是个好东西啊），叫jsproxy。
+
+    引用站外链接
+    
+        
+          
+        
+        
+            一分钟教程：利用cloudflare worker搭建在线代理—-jsproxy
+            CSDN博客
+        
+        
+     
+
+
+    引用站外链接
+    
+        
+          
+        
+        
+            使用CloudFlare Worker 免费部署 JSProxy 服务
+            腾讯云开发者社区
+        
+        
+     
+
+jsproxy GitHub仓库：
+
+  
+  
+  
+    
+    
+    
+    
+  
+  
+  
+    fetch('https://api.github.com/repos/EtherDream/jsproxy')
+      .then(res => res.json())
+      .then(data => {
+        document.querySelector('.name-fqrk0ew4v').innerText = data.name;
+        document.querySelector('.desc-fqrk0ew4v').innerText = data.description;
+        document.querySelector('.star-fqrk0ew4v').innerText = data.stargazers_count;
+        document.querySelector('.fork-fqrk0ew4v').innerText = data.forks_count;
+        document.querySelector('.lang-fqrk0ew4v').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+    });
+  
+  
+
+我从看到这两篇文章到部署完成前后花了不到五分钟，如果CloudFlare反应速度再快一点的话我绝对可以一分钟搞完的，OK上教程！
+教程
+注册一个CloudFlare账号（已有请忽略） 
+    引用站外链接
+    
+        
+          
+        
+        
+            CloudFlare 官网
+            CloudFlare
+        
+        
+    
+创建一个CloudFlare Worker 账号主页 → 计算（Workers） → 创建 → 从Hello World开始 → 部署 → 编辑代码
+复制代码到CloudFlare Worker 打开这个页面 → 复制代码 → 粘贴到CloudFlare Worker → 点击部署 → 返回 → 继续处理项目
+绑定自定义域名如果没有自己的域名的可以看看我这篇文章获取一个免费域名
+    引用站外链接
+    
+        
+          
+        
+        
+            如何申请免费域名并托管到CloudFlare
+            2025.6.11
+        
+        
+    
+设置 → 域和路由 → 添加 → 自定义域 → 输入域名 → 添加域
+
+OK然后访问你绑定的域名就大功告成啦！别问我为什么不截屏，懒……
+还有因为CloudFlare的免费流量每天有100,000请求的额度，你一个人理论上是用不完的，但是如果分享给太多人了的话就不好说了。
+自定义主页
+Fork 仓库 fork一份jsproxy仓库到自己名下（记得取消“Copy the master branch only”） 
+  
+  
+  
+    
+    
+    
+    
+  
+  
+  
+    fetch('https://api.github.com/repos/EtherDream/jsproxy')
+      .then(res => res.json())
+      .then(data => {
+        document.querySelector('.name-ve1mk713f').innerText = data.name;
+        document.querySelector('.desc-ve1mk713f').innerText = data.description;
+        document.querySelector('.star-ve1mk713f').innerText = data.stargazers_count;
+        document.querySelector('.fork-ve1mk713f').innerText = data.forks_count;
+        document.querySelector('.lang-ve1mk713f').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+    });
+  
+  
+ 切换到 gh-pages 分支
+编辑文件 编辑文件404.html，assets&#x2F;indexmd_v3.html
+启用 GitHub Pages 仓库 Settings → Pages → 选择 gh-pages 分支作为源 → Save 访问 https://你的用户名.github.io/你的仓库名检查是否生效
+修改 Worker 代码 修改 Worker 代码中的 ASSET_URL 部分 const ASSET_URL = &#x27;https://你的用户名.github.io/jsproxy&#x27;; // 替换为你的 Pages 地址
+ 点击部署
+
+然后就好啦！
 ]]></content>
   </entry>
   <entry>
@@ -2338,7 +2504,7 @@ Part 3
 不完善的隐私保护对用户的隐私造成了侵害、泄漏
 
 本站友链是本着友链信任原则添加的，如果你发现其中包含违反中华人民共和国法律的内容，请及时联系和举报，该友链将会尽快被删除。如果因为从本页跳转给您造成了损失，我对此深表歉意，并且建议您如果发现存在问题请及时在本页面进行回复，或通过邮箱联系我，我会尽快处理。
-– 本站站长 Meteorite我的邮箱：yangle.q@outlook.com2025年4月21日
+– 本站站长 Meteorite我的邮箱：i@lemonstar.me2025年4月21日
 
 单向友链声明本站单向友链声明：本站单向友链为博主自行添加，并会在上方标示“单向”字样。
 本站单向友链的情况有：
@@ -2367,15 +2533,15 @@ Part 3
 ]]></content>
   </entry>
   <entry>
+    <title>网站留言</title>
+    <url>/message/index.html</url>
+    <content><![CDATA[大家来这里畅所欲言吧~
+]]></content>
+  </entry>
+  <entry>
     <title>音乐空间</title>
     <url>/music/index.html</url>
     <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>不公开的页面/文章</title>
-    <url>/notpublic/index.html</url>
-    <content><![CDATA[提示：请在本网页的网址后面跟上正确的密码以访问不公开的页面&#x2F;文章。
-]]></content>
   </entry>
   <entry>
     <title>我滴账号们~</title>
@@ -2385,7 +2551,7 @@ Part 3
 另：这个页面不对外公开。
 A| 平台名 | 平台网址 | 我的账号名 ||————|————|| Aiven | https://aiven.io/ | yangle || 阿里云 | https://www.aliyun.com/ | 杨乐 |
 B| 平台名 | 平台网址 | 我的账号名 ||————|————|| Bilibili | https://bilibili.com | Yangle-Q |
-C| 平台名 | 平台网址 | 我的账号名 ||————|————|| CloudFlare | https://www.cloudflare.com | yangle.q@outlook.com || character.ai | https://character.ai/ | yangle-q |
+C| 平台名 | 平台网址 | 我的账号名 ||————|————|| CloudFlare | https://www.cloudflare.com | yangle.q@outlook.com || character.ai | https://character.ai/ | yangle-q || Claude | https://claude.ai/ | ylmeteorite |
 D| 平台名 | 平台网址 | 我的账号名 ||————|————|| Deepseek | https://www.deepseek.com/ | 13381962051 || Duolingo | https://www.duolingo.com | Qingyun || 钉钉 | https://www.dingtalk.com/ | yangleqy |
 DigitalPlat Freedomainsnothingnoway
 豆瓣
@@ -2396,7 +2562,6 @@ ebay https://www.ebay.com/ 乐 杨
 GGithubGithub-2
 Google（Gmail）Qingyun
 国家中小学智慧教育平台TryEveryThing
-gitee
 高德地图
 Iiconfont
 K扣子
@@ -2406,8 +2571,10 @@ LLeanCloudyangle-q
 MMicrosoft（Windows,Edge,Outlook,Bing）杨 乐
 MongoDB乐
 NNetlify乐 杨
+Oopenai 
 PPostimgyangle.q@outlook.com
 pixabay 杨乐Yangle https://pixabay.com/users/%E6%9D%A8%E4%B9%90yangle-43498627/
+pixiv yangle-q https://www.pixiv.net/users/118304581
 QQQ3978716397
 Quora
 全历史
@@ -2434,15 +2601,27 @@ Z知乎
 Zoho WorkDrive杨乐
 致美化 QINGYUN https://zhutix.com/user/1424373
 #16 Personalities
-自建网站账号Emailsyangle.q@outlook.com
+自建网站账号EmailsOutlook:yangle.q@outlook.com
 Yangle-Qingyun@outlook.com
-ylmeteorite@gmail.com
+QQ:3978716397@qq.com
+star-lake.world@qq.com
+Gmail:ylmeteorite@gmail.com
+Dingtalk:yangleqy@dingtalk.com
+Custom:meteorite@star-lake.world
+i@lemonstar.me
 Domains名下的域名lemonstar.me
+yoxo.top
 star-lake.world
 hellofrom.cn
 heythere.dpdns.org
 icesea.dpdns.org
 分配的二级域名]]></content>
+  </entry>
+  <entry>
+    <title>不公开的页面/文章</title>
+    <url>/notpublic/index.html</url>
+    <content><![CDATA[提示：请在本网页的网址后面跟上正确的密码以访问不公开的页面&#x2F;文章。
+]]></content>
   </entry>
   <entry>
     <title>最近评论</title>
@@ -2453,6 +2632,241 @@ icesea.dpdns.org
     <title>网站推荐</title>
     <url>/tlink/index.html</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Github 开源项目自建 VPN 超详细教程</title>
+    <url>/vpn/index.html</url>
+    <content><![CDATA[前言最近好多我之前的同学来问我怎么自己建VPN，果然我这个电脑达人的名声已经声名在外了（其实比很多我在博客圈接触到的大佬们还差得远啦，我今天还在知乎上看到一个初二就自己写代码开发网站的）那么今天，我就应邀来写写怎么用 Github 开源项目 V2ray 自己来建一个 VPN，且看且珍惜哦！
+这篇文章的资料来自一个 Youtube 博主做的一个视频，具体是谁我就不说了，这东西还是有点……你们都懂的。他在 Bilibili 上也有账号，但是这篇内容没有发布在B站上，国内又上不去 Youtube ，所以我把他的视频整理了一下，加上了一点我自己的东西。别看我是转载别人的，我也是自己又做了一遍才写的这篇文章的，安卓的那一部分也是我自己加的，所以说一定要多多支持噢！
+因为我之前都没有见到大佬们写这方面的文章，再加上我也不确定这个东西在中国大陆的合法性，所以我就不把它放在文章列表里面了，能看到这篇文章的一定都是有缘人，大家自己用就好啦！不要传播！不要传播！！不要传播！！！ 要是看的人太多了我是真有可能被关站的，而且我的域名是用我妈的实名认证的，到时候波及到她可就麻烦大了！
+OK，就啰嗦这么多，开始发车！
+准备账号这个我还是按照惯例不说了，都非常简单，一个 CloudFlare 账号就行了，在主页直接点免费开始使用。
+CloudFlare官网：https://www.cloudflare.com/zh-cn/
+注册好以后就会直接跳转到账号的控制面板。
+
+准备 V2ray如果知道怎么用 GitHub 的当然是到 GitHub 里面下载最好啦~下面是 V2rayN（电脑版）和 V2rayNG（Android版）的GitHub 仓库，记得点个 star 哦！
+
+  
+  
+  
+    
+    
+    
+    
+  
+  
+  
+    fetch('https://api.github.com/repos/2dust/v2rayN')
+      .then(res => res.json())
+      .then(data => {
+        document.querySelector('.name-pt1bz2jzo').innerText = data.name;
+        document.querySelector('.desc-pt1bz2jzo').innerText = data.description;
+        document.querySelector('.star-pt1bz2jzo').innerText = data.stargazers_count;
+        document.querySelector('.fork-pt1bz2jzo').innerText = data.forks_count;
+        document.querySelector('.lang-pt1bz2jzo').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+    });
+  
+  
+
+  
+  
+  
+    
+    
+    
+    
+  
+  
+  
+    fetch('https://api.github.com/repos/2dust/v2rayNG')
+      .then(res => res.json())
+      .then(data => {
+        document.querySelector('.name-r07pwiie0').innerText = data.name;
+        document.querySelector('.desc-r07pwiie0').innerText = data.description;
+        document.querySelector('.star-r07pwiie0').innerText = data.stargazers_count;
+        document.querySelector('.fork-r07pwiie0').innerText = data.forks_count;
+        document.querySelector('.lang-r07pwiie0').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+    });
+  
+  
+
+这是 V2ray 的官网：
+https://v2ray.tools/
+如果不会用或者打不开 GitHub 的我这里有一个来自官网的下载链接，大家可以放心下载~
+Windows 版
+Mac 版
+Android 版
+Linux 版
+
+创建 CloudFlare Worker接着我们回到刚刚 CloudFlare 账号的主页，左边栏往下滑，找到“计算（Workers）”，点击它进入 Workers 页面。
+
+点击右上角的“创建”按钮，进入下面这个页面
+
+选择“从hello world 开始”，就进到了部署页面。
+
+注意！这里什么也不要动，名字也不要改，以防万一牵扯到VPN上，我们直接点部署。
+部署成功之后它会自动跳转到以下页面：
+
+我们点“编辑代码”。进入下面这个页面
+
+这里有两种代码，一种是明文版的，一种是加密版的，我推荐如果你人是在中国大陆的话，尽量使用加密版的，如果不成功再换到明文版。如果把这个代码放在页面上的话这个页面会非常卡，所以说请点击下面的按钮下载 txt 文件，然后复制里面的代码。
+加密版
+明文版
+
+回到编辑代码页面，把左边原来的代码全选删掉，粘贴上刚刚复制的明文&#x2F;加密代码。
+
+然后点击“部署”。等到提示“新版本已保存”后，点左上角的返回键（不是浏览器的，是 CloudFlare 图标下面的那个），返回到项目页面。
+
+然后我们再点击上面的设置，进入设置页面。
+
+我们可以看到下面有一个“变量与机密”，点击“添加”。
+这里我们在“类型”里面选择“文本”，“变量名称”输入“PASSWORD”（一定要大写），值就输入你自己自定义的密码，点击“部署”。
+
+绑定域名然后我们再看上面“域和路由”这一栏，这里我们就可以看到这个 Worker 默认绑定的域名了，但是呢这个域名现在被中国墙了，需要 Vpn 才能进（有点讽刺），所以我们要绑定一下我们自己的域名。
+这个域名如果大家自己有的话当然最好，如果没有的话可以看看我这篇文章，免费获取一个二级的域名。
+
+    引用站外链接
+    
+        
+          
+        
+        
+            如何申请免费域名并托管到CloudFlare
+            2025.6.11
+        
+        
+    
+
+我们点击“添加”
+
+选择“自定义域”,在这里输入你希望绑定的域名，我就用我那篇文章里面注册的域名了。
+
+点击“添加域”，CloudFlare 会自动帮你添加一个 CNAME 记录。
+注意：输入的域名一定要绑定在 CloudFlare 你的账号下面，否则就不能绑定。
+现在就等 DNS 生效就行了，一般来说几分钟就能好，最多不会超过48小时。DNS 生效就可以访问这个域名啦！
+导入V2rayN&#x2F;NG现在我们在浏览器里面访问刚才绑定的那个域名，然后在域名的后面加一个斜杠/，再加上你的密码，就可以进入到订阅地址页面了。
+
+然后我们要把上面的“自适应订阅地址”输入到 V2rayN&#x2F;NG 里面。
+Windows 版Android 版Mac/Linux 版解压前面下载下来的 v2rayN 压缩包，运行里面的 v2rayN.exe 文件。
+
+
+复制刚刚的“自适应订阅地址”，点击 v2rayN 界面上的 + 号按钮，就会弹出来订阅分组设置界面。
+
+这里别名可以自定义，下面的“可选地址”一栏里填上刚刚复制的“自适应订阅地址”，点击确定。
+
+然后点击上面操作栏里面的“订阅分组”，点击更新全部订阅（不通过代理）
+
+然后就能够获取到 VPN 节点啦！
+安装前面下载下来的 Apk 安装包（这个不用教了吧？）
+打开软件，点击旁边的三条横线，再点击“设置”，就会进入设置界面。
+
+再设置界面往下划，找到“Language”一项，把它调成“中文”，这样就方便操作了。
+
+回到主界面，点击旁边的三条横线，再点击“订阅分组设置”，就会进入订阅分组设置界面。
+
+点击“+”。
+
+这里备注可以自定义，下面的“可选地址”一栏里填上刚刚复制的“自适应订阅地址”，点击“”。
+OK 现在回到主界面，点击“”，再点击更新当前组订阅
+
+然后就能够获取到 VPN 节点啦！由于博主家里面没有 Mac&#x2F;Linux 电脑，下载下来的压缩包我也没看懂，所以只能麻烦大家自己摸索啦~（面壁思过中
+不过我觉得应该和 Windows 版是差不多的叭😃
+2025.6.25：
+前两天去苹果店里面试了一下，结果……
+
+我对 Mac 不是很熟，请问这是可以绕开的吗？
+
+日常使用Windows 版Android 版测试 VPN 节点速度与可用性在节点列表上右键，选择“一键多线程测试延迟和速度”
+![测试延迟和速度]https://cdn.jsdelivr.net/gh/yangle-q/picx-images-hosting@master/Snipaste_2025-06-14_22-31-35.webp)
+然后如果节点测速显示“-1”说明这个节点无法使用，如果显示绿色表示速度不错，如果显示红色就表示速度比较低（但也受到网络的影响，如果换到好一点的网络的话测试结果会好得多，不一定是节点本身的问题。另外-1的好像也能用？）
+然后你就可以通过右键菜单里面的 按测试结果 &gt; 按测试结果移除无效 来移除不可用的节点。
+
+更换节点如果想要更换到速度更快的节点，在你想要更换到的节点上右键，选择“设为活动服务器”，删除该节点同理。
+
+关闭&#x2F;开启 VPN如果你想打开 VPN，可以在下面选择“自动配置系统代理”，反之，如果想关闭，可以在下面选择“清除系统代理”
+如果你用了另一个 VPN 的话请记得在下面选择“不改变系统代理”，以支持另一个 VPN 的运行。
+
+测速
+    引用站外链接
+    
+        
+          
+        
+        
+            测速工具
+            The Global Broadband Speed Test
+        
+        
+    测试 VPN 节点速度与可用性点击“”，再点击测试当前组配置Tcping&#x2F;真链接（应该都一样）。
+然后如果节点测速显示“-1”说明这个节点无法使用，如果显示绿色表示速度不错，如果显示红色就表示速度比较低（但也受到网络的影响，如果换到好一点的网络的话测试结果会好得多，不一定是节点本身的问题。另外-1的好像也能用？）
+如果你想移除-1的节点的话点击“移除当前组无效配置”就可以了。
+
+更换节点直接点击你想更换的节点（比 Windows 逻辑简单多了）
+关闭&#x2F;开启 VPN点击&#x2F;
+测速
+    引用站外链接
+    
+        
+          
+        
+        
+            测速工具
+            The Global Broadband Speed Test
+        
+        
+    
+
+优选节点如果你想要提升你的 VPN 节点的质量的话，就需要用到下面这两款IP优选工具啦！
+
+    引用站外链接
+    
+        
+          
+        
+        
+            ip优选工具
+            Cloudflare IP Batch Test Tool
+        
+        
+    
+
+
+    引用站外链接
+    
+        
+          
+        
+        
+            ip优选工具
+            全球主机监控 - 国内外VPS、云服务器的库存监控和优惠信息
+        
+        
+    
+
+注意：在打开这两个网页之前一定要关闭 VPN（选择“清除系统代理”），否则会显示 400 Bad Request 报错或者获取不到IP！
+进入以后就可以选择速度最快的IP使用啦！如果是第一个网站的话，需要手动测一下速，直接点击 Select All，再点击 Test Respond，最后点击下面的 Speed 就可以啦
+
+然后复制你选择的IP的地址，在一个无效的节点上右键，选择“编辑服务器”，然后在弹出的窗口里面把“地址”换成你选择的IP地址。
+
+
+如果测速完还是显示-1的话就把“端口”改成443或者80就可以了。
+故障排除如果碰到报错，可以试试以下几个解决方法：
+
+检查&#x2F;更换网络
+通过代理更新全部订阅
+重新部署一遍 CloudFlare Worker
+更换绑定的域名
+重新下载软件或选择不同版本
+更换 CloudFlare 账号
+换一台电脑试试看
+
+亲身经历如果遇到以下报错则基本可以确定是网络的问题：
+![报错](https://cdn.jsdelivr.net/gh/yangle-q/picx-images-hosting@master/Snipaste_2025-06-15_00-14-25.webp
+如果遇到以下报错则是绑定的域名的问题：
+
+后记这篇文章写作耗时一周，基本上每天只有晚上的几个小时拿来写，而且中间代码的原作者还更新了一次代码，删掉了加密版，我这边也是问题不断，CloudFlare Workers 一直报错，差点让我以为我原来的订阅分组也不能用了，幸亏最后查出来是网络和域名的问题。所以说你如果看完这篇文章成功搭建好了你自己的 VPN，那么看在我写得这么辛苦的情况下可以在下面留个言嘛？蟹蟹你们哦~
+另外，安卓版的预计在6月21号更新，Mac版嘛……等我有钱之前别想了！😝
+]]></content>
   </entry>
   <entry>
     <title></title>
@@ -2719,241 +3133,6 @@ a.plxycss {
   font-size: 20px;
 }
 
-]]></content>
-  </entry>
-  <entry>
-    <title>Github 开源项目自建 VPN 超详细教程</title>
-    <url>/vpn/index.html</url>
-    <content><![CDATA[前言最近好多我之前的同学来问我怎么自己建VPN，果然我这个电脑达人的名声已经声名在外了（其实比很多我在博客圈接触到的大佬们还差得远啦，我今天还在知乎上看到一个初二就自己写代码开发网站的）那么今天，我就应邀来写写怎么用 Github 开源项目 V2ray 自己来建一个 VPN，且看且珍惜哦！
-这篇文章的资料来自一个 Youtube 博主做的一个视频，具体是谁我就不说了，这东西还是有点……你们都懂的。他在 Bilibili 上也有账号，但是这篇内容没有发布在B站上，国内又上不去 Youtube ，所以我把他的视频整理了一下，加上了一点我自己的东西。别看我是转载别人的，我也是自己又做了一遍才写的这篇文章的，安卓的那一部分也是我自己加的，所以说一定要多多支持噢！
-因为我之前都没有见到大佬们写这方面的文章，再加上我也不确定这个东西在中国大陆的合法性，所以我就不把它放在文章列表里面了，能看到这篇文章的一定都是有缘人，大家自己用就好啦！不要传播！不要传播！！不要传播！！！ 要是看的人太多了我是真有可能被关站的，而且我的域名是用我妈的实名认证的，到时候波及到她可就麻烦大了！
-OK，就啰嗦这么多，开始发车！
-准备账号这个我还是按照惯例不说了，都非常简单，一个 CloudFlare 账号就行了，在主页直接点免费开始使用。
-CloudFlare官网：https://www.cloudflare.com/zh-cn/
-注册好以后就会直接跳转到账号的控制面板。
-
-准备 V2ray如果知道怎么用 GitHub 的当然是到 GitHub 里面下载最好啦~下面是 V2rayN（电脑版）和 V2rayNG（Android版）的GitHub 仓库，记得点个 star 哦！
-
-  
-  
-  
-    
-    
-    
-    
-  
-  
-  
-    fetch('https://api.github.com/repos/2dust/v2rayN')
-      .then(res => res.json())
-      .then(data => {
-        document.querySelector('.name-pmx4t7w0v').innerText = data.name;
-        document.querySelector('.desc-pmx4t7w0v').innerText = data.description;
-        document.querySelector('.star-pmx4t7w0v').innerText = data.stargazers_count;
-        document.querySelector('.fork-pmx4t7w0v').innerText = data.forks_count;
-        document.querySelector('.lang-pmx4t7w0v').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
-    });
-  
-  
-
-  
-  
-  
-    
-    
-    
-    
-  
-  
-  
-    fetch('https://api.github.com/repos/2dust/v2rayNG')
-      .then(res => res.json())
-      .then(data => {
-        document.querySelector('.name-ca56fw7nz').innerText = data.name;
-        document.querySelector('.desc-ca56fw7nz').innerText = data.description;
-        document.querySelector('.star-ca56fw7nz').innerText = data.stargazers_count;
-        document.querySelector('.fork-ca56fw7nz').innerText = data.forks_count;
-        document.querySelector('.lang-ca56fw7nz').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
-    });
-  
-  
-
-这是 V2ray 的官网：
-https://v2ray.tools/
-如果不会用或者打不开 GitHub 的我这里有一个来自官网的下载链接，大家可以放心下载~
-Windows 版
-Mac 版
-Android 版
-Linux 版
-
-创建 CloudFlare Worker接着我们回到刚刚 CloudFlare 账号的主页，左边栏往下滑，找到“计算（Workers）”，点击它进入 Workers 页面。
-
-点击右上角的“创建”按钮，进入下面这个页面
-
-选择“从hello world 开始”，就进到了部署页面。
-
-注意！这里什么也不要动，名字也不要改，如果你的名字牵扯到VPN上的话可能会有点麻烦的！我们直接点部署。
-部署成功之后它会自动跳转到以下页面：
-
-我们点“编辑代码”。进入下面这个页面
-
-这里有两种代码，一种是明文版的，一种是加密版的，我推荐如果你人是在中国大陆的话，尽量使用加密版的，如果不成功再换到明文版。如果把这个代码放在页面上的话这个页面会非常卡，所以说请点击下面的按钮下载 txt 文件，然后复制里面的代码。
-加密版
-明文版
-
-回到编辑代码页面，把左边原来的代码全选删掉，粘贴上刚刚复制的明文&#x2F;加密代码。
-
-然后点击“部署”。等到提示“新版本已保存”后，点左上角的返回键（不是浏览器的，是 CloudFlare 图标下面的那个），返回到项目页面。
-
-然后我们再点击上面的设置，进入设置页面。
-
-我们可以看到下面有一个“变量与机密”，点击“添加”。
-这里我们在“类型”里面选择“文本”，“变量名称”输入“PASSWORD”（一定要大写），值就输入你自己自定义的密码，点击“部署”。
-
-绑定域名然后我们再看上面“域和路由”这一栏，这里我们就可以看到这个 Worker 默认绑定的域名了，但是呢这个域名现在被中国墙了，需要 Vpn 才能进（有点讽刺），所以我们要绑定一下我们自己的域名。
-这个域名如果大家自己有的话当然最好，如果没有的话可以看看我这篇文章，免费获取一个二级的域名。
-
-    引用站外链接
-    
-        
-          
-        
-        
-            如何申请免费域名并托管到CloudFlare
-            2025.6.11
-        
-        
-    
-
-我们点击“添加”
-
-选择“自定义域”,在这里输入你希望绑定的域名，我就用我那篇文章里面注册的域名了。
-
-点击“添加域”，CloudFlare 会自动帮你添加一个 CNAME 记录。
-注意：输入的域名一定要绑定在 CloudFlare 你的账号下面，否则就不能绑定。
-现在就等 DNS 生效就行了，一般来说几分钟就能好，最多不会超过48小时。DNS 生效就可以访问这个域名啦！
-导入V2rayN&#x2F;NG现在我们在浏览器里面访问刚才绑定的那个域名，然后在域名的后面加一个斜杠/，再加上你的密码，就可以进入到订阅地址页面了。
-
-然后我们要把上面的“自适应订阅地址”输入到 V2rayN&#x2F;NG 里面。
-Windows 版Android 版Mac/Linux 版解压前面下载下来的 v2rayN 压缩包，运行里面的 v2rayN.exe 文件。
-
-
-复制刚刚的“自适应订阅地址”，点击 v2rayN 界面上的 + 号按钮，就会弹出来订阅分组设置界面。
-
-这里别名可以自定义，下面的“可选地址”一栏里填上刚刚复制的“自适应订阅地址”，点击确定。
-
-然后点击上面操作栏里面的“订阅分组”，点击更新全部订阅（不通过代理）
-
-然后就能够获取到 VPN 节点啦！
-安装前面下载下来的 Apk 安装包（这个不用教了吧？）
-打开软件，点击旁边的三条横线，再点击“设置”，就会进入设置界面。
-
-再设置界面往下划，找到“Language”一项，把它调成“中文”，这样就方便操作了。
-
-回到主界面，点击旁边的三条横线，再点击“订阅分组设置”，就会进入订阅分组设置界面。
-
-点击“+”。
-
-这里备注可以自定义，下面的“可选地址”一栏里填上刚刚复制的“自适应订阅地址”，点击“”。
-OK 现在回到主界面，点击“”，再点击更新当前组订阅
-
-然后就能够获取到 VPN 节点啦！由于博主家里面没有 Mac&#x2F;Linux 电脑，下载下来的压缩包我也没看懂，所以只能麻烦大家自己摸索啦~（面壁思过中
-不过我觉得应该和 Windows 版是差不多的叭😃
-2025.6.25：
-前两天去苹果店里面试了一下，结果……
-
-我对 Mac 不是很熟，请问这是可以绕开的吗？
-
-日常使用Windows 版Android 版测试 VPN 节点速度与可用性在节点列表上右键，选择“一键多线程测试延迟和速度”
-
-然后如果节点测速显示“-1”说明这个节点无法使用，如果显示绿色表示速度不错，如果显示红色就表示速度比较低（但也受到网络的影响，如果换到好一点的网络的话测试结果会好得多，不一定是节点本身的问题。另外-1的好像也能用？）
-然后你就可以通过右键菜单里面的 按测试结果 &gt; 按测试结果移除无效 来移除不可用的节点。
-
-更换节点如果想要更换到速度更快的节点，在你想要更换到的节点上右键，选择“设为活动服务器”，删除该节点同理。
-
-关闭&#x2F;开启 VPN如果你想打开 VPN，可以在下面选择“自动配置系统代理”，反之，如果想关闭，可以在下面选择“清除系统代理”
-如果你用了另一个 VPN 的话请记得在下面选择“不改变系统代理”，以支持另一个 VPN 的运行。
-
-测速
-    引用站外链接
-    
-        
-          
-        
-        
-            测速工具
-            The Global Broadband Speed Test
-        
-        
-    测试 VPN 节点速度与可用性点击“”，再点击测试当前组配置Tcping&#x2F;真链接（应该都一样）。
-然后如果节点测速显示“-1”说明这个节点无法使用，如果显示绿色表示速度不错，如果显示红色就表示速度比较低（但也受到网络的影响，如果换到好一点的网络的话测试结果会好得多，不一定是节点本身的问题。另外-1的好像也能用？）
-如果你想移除-1的节点的话点击“移除当前组无效配置”就可以了。
-
-更换节点直接点击你想更换的节点（比 Windows 逻辑简单多了）
-关闭&#x2F;开启 VPN点击&#x2F;
-测速
-    引用站外链接
-    
-        
-          
-        
-        
-            测速工具
-            The Global Broadband Speed Test
-        
-        
-    
-
-优选节点如果你想要提升你的 VPN 节点的质量的话，就需要用到下面这两款IP优选工具啦！
-
-    引用站外链接
-    
-        
-          
-        
-        
-            ip优选工具
-            Cloudflare IP Batch Test Tool
-        
-        
-    
-
-
-    引用站外链接
-    
-        
-          
-        
-        
-            ip优选工具
-            全球主机监控 - 国内外VPS、云服务器的库存监控和优惠信息
-        
-        
-    
-
-注意：在打开这两个网页之前一定要关闭 VPN（选择“清除系统代理”），否则会显示 400 Bad Request 报错或者获取不到IP！
-进入以后就可以选择速度最快的IP使用啦！如果是第一个网站的话，需要手动测一下速，直接点击 Select All，再点击 Test Respond，最后点击下面的 Speed 就可以啦
-
-然后复制你选择的IP的地址，在一个无效的节点上右键，选择“编辑服务器”，然后在弹出的窗口里面把“地址”换成你选择的IP地址。
-
-
-如果测速完还是显示-1的话就把“端口”改成443或者80就可以了。
-故障排除如果碰到报错，可以试试以下几个解决方法：
-
-检查&#x2F;更换网络
-通过代理更新全部订阅
-重新部署一遍 CloudFlare Worker
-更换绑定的域名
-重新下载软件或选择不同版本
-更换 CloudFlare 账号
-换一台电脑试试看
-
-亲身经历如果遇到以下报错则基本可以确定是网络的问题：
-
-如果遇到以下报错则是绑定的域名的问题：
-
-后记这篇文章写作耗时一周，基本上每天只有晚上的几个小时拿来写，而且中间代码的原作者还更新了一次代码，删掉了加密版，我这边也是问题不断，CloudFlare Workers 一直报错，差点让我以为我原来的订阅分组也不能用了，幸亏最后查出来是网络和域名的问题。所以说你如果看完这篇文章成功搭建好了你自己的 VPN，那么看在我写得这么辛苦的情况下可以在下面留个言嘛？蟹蟹你们哦~
-另外，安卓版的预计在6月21号更新，Mac版嘛……等我有钱之前别想了！😝
 ]]></content>
   </entry>
   <entry>
@@ -3444,6 +3623,13 @@ function cardTimes() {
       ]]></content>
   </entry>
   <entry>
+    <title>Untitled</title>
+    <url>/gallery/changsanjiao/index.html</url>
+    <content><![CDATA[
+        
+      ]]></content>
+  </entry>
+  <entry>
     <title>亨利八世</title>
     <url>/gallery/henryviii/index.html</url>
     <content><![CDATA[所有人像宫殿和城堡景象
@@ -3488,183 +3674,5 @@ function cardTimes() {
   
   
 ]]></content>
-  </entry>
-  <entry>
-    <title>使用CloudFlare Worker和GitHub开源代码一分钟搞定jsproxy</title>
-    <url>/jsproxy/index.html</url>
-    <content><![CDATA[起源之前叶泯希哥哥帮我搞Umami数据统计（详见文章建站备忘录）的时候在我的Umami地址前面加了一个他自己的域名然后就能用了，我当时没看懂那个是什么，后来我才发现那是一个https请求转发代理，直接在后面加上你想要访问的域名就可以直接访问那些被墙的网站了。虽然我已经有VPN了，但是有这样一个东西它！不！酷！嘛！而且根本不需要在你要用的那个电脑上配置任何东西啊！访问一个网址就能用啊！所以说我马上决定：我也要有这个东西！
-但是这个请求转发代理一看就很难啊，怎么搞呢？我在叶泯希哥哥的请求转发代理那边找到了一点线索。他在他那个代理的首页写：“该服务不收取任何费用，使用开源代码创建。”嘻嘻，那不就好办了嘛，开源代码一看就是在GitHub上的呀！于是我就去网上搜“https请求转发代理”，找到了这两篇文章：
-
-    引用站外链接
-    
-        
-          
-        
-        
-            两种方案手把手教你多种服务器使用tinyproxy搭建http代理
-            糖~豆豆 - 博客园
-        
-        
-     
-
-
-    引用站外链接
-    
-        
-          
-        
-        
-            推荐一款轻量级 HTTP_HTTPS 代理 TinyProxy
-            腾讯云开发者社区
-        
-        
-     
-
-tinyproxy GitHub仓库：
-
-  
-  
-  
-    
-    
-    
-    
-  
-  
-  
-    fetch('https://api.github.com/repos/tinyproxy/tinyproxy')
-      .then(res => res.json())
-      .then(data => {
-        document.querySelector('.name-7b3z2lqyx').innerText = data.name;
-        document.querySelector('.desc-7b3z2lqyx').innerText = data.description;
-        document.querySelector('.star-7b3z2lqyx').innerText = data.stargazers_count;
-        document.querySelector('.fork-7b3z2lqyx').innerText = data.forks_count;
-        document.querySelector('.lang-7b3z2lqyx').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
-    });
-  
-  
-
-这两个是用tinyproxy实现的请求转发，我去叶泯希哥哥那里看了下，他用的应该也是这个，因为tinyproxy官网和叶泯希哥哥那个页面风格挺像的。但是tinyproxy有三个问题：第一，他需要服务器，要花钱买。第二，太麻烦了。第三，我不会啊！
-于是我想到，之前有很多类似的可以在服务器部署的东西我看的教程都是用CloudFlare Worker搞的，那这个东西它会不会也有CloudFlare Worker版的呢？于是我就去网上搜了下“使用CloudFlare Worker部署tinyproxy”，结果是什么呢？嘿嘿你猜的没错，结果是：有！但是用的是另一个请求转发代理服务，也是GitHub上面的（GitHub真是个好东西啊），叫jsproxy。
-
-    引用站外链接
-    
-        
-          
-        
-        
-            一分钟教程：利用cloudflare worker搭建在线代理—-jsproxy
-            CSDN博客
-        
-        
-     
-
-
-    引用站外链接
-    
-        
-          
-        
-        
-            使用CloudFlare Worker 免费部署 JSProxy 服务
-            腾讯云开发者社区
-        
-        
-     
-
-jsproxy GitHub仓库：
-
-  
-  
-  
-    
-    
-    
-    
-  
-  
-  
-    fetch('https://api.github.com/repos/EtherDream/jsproxy')
-      .then(res => res.json())
-      .then(data => {
-        document.querySelector('.name-3jrpn7mqi').innerText = data.name;
-        document.querySelector('.desc-3jrpn7mqi').innerText = data.description;
-        document.querySelector('.star-3jrpn7mqi').innerText = data.stargazers_count;
-        document.querySelector('.fork-3jrpn7mqi').innerText = data.forks_count;
-        document.querySelector('.lang-3jrpn7mqi').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
-    });
-  
-  
-
-我从看到这两篇文章到部署完成前后花了不到五分钟，如果CloudFlare反应速度再快一点的话我绝对可以一分钟搞完的，OK上教程！
-教程
-注册一个CloudFlare账号（已有请忽略） 
-    引用站外链接
-    
-        
-          
-        
-        
-            CloudFlare 官网
-            CloudFlare
-        
-        
-    
-创建一个CloudFlare Worker 账号主页 → 计算（Workers） → 创建 → 从Hello World开始 → 部署 → 编辑代码
-复制代码到CloudFlare Worker 打开这个页面 → 复制代码 → 粘贴到CloudFlare Worker → 点击部署 → 返回 → 继续处理项目
-绑定自定义域名如果没有自己的域名的可以看看我这篇文章获取一个免费域名
-    引用站外链接
-    
-        
-          
-        
-        
-            如何申请免费域名并托管到CloudFlare
-            2025.6.11
-        
-        
-    
-设置 → 域和路由 → 添加 → 自定义域 → 输入域名 → 添加域
-
-OK然后访问你绑定的域名就大功告成啦！别问我为什么不截屏，懒……
-还有因为CloudFlare的免费流量每天有100,000请求的额度，你一个人理论上是用不完的，但是如果分享给太多人了的话就不好说了。
-自定义主页
-Fork 仓库 fork一份jsproxy仓库到自己名下（记得取消“Copy the master branch only”） 
-  
-  
-  
-    
-    
-    
-    
-  
-  
-  
-    fetch('https://api.github.com/repos/EtherDream/jsproxy')
-      .then(res => res.json())
-      .then(data => {
-        document.querySelector('.name-v94t8bnne').innerText = data.name;
-        document.querySelector('.desc-v94t8bnne').innerText = data.description;
-        document.querySelector('.star-v94t8bnne').innerText = data.stargazers_count;
-        document.querySelector('.fork-v94t8bnne').innerText = data.forks_count;
-        document.querySelector('.lang-v94t8bnne').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
-    });
-  
-  
- 切换到 gh-pages 分支
-编辑文件 编辑文件404.html，assets&#x2F;indexmd_v3.html
-启用 GitHub Pages 仓库 Settings → Pages → 选择 gh-pages 分支作为源 → Save 访问 https://你的用户名.github.io/你的仓库名检查是否生效
-修改 Worker 代码 修改 Worker 代码中的 ASSET_URL 部分 const ASSET_URL = &#x27;https://你的用户名.github.io/jsproxy&#x27;; // 替换为你的 Pages 地址
- 点击部署
-
-然后就好啦！
-]]></content>
-  </entry>
-  <entry>
-    <title>Untitled</title>
-    <url>/gallery/changsanjiao/index.html</url>
-    <content><![CDATA[
-        
-      ]]></content>
   </entry>
 </search>

@@ -10978,10 +10978,10 @@ div#banners .bannerText {
   background: var(--efu-card-bg);
 }
 [data-theme=dark] {
-  --efu-theme: #81d8cf;
-  --efu-theme-op: rgba(129,216,207,0.137);
-  --efu-theme-op-deep: rgba(129,216,207,0.867);
-  --efu-theme-none: rgba(129,216,207,0);
+  --efu-theme: #64b6ac;
+  --efu-theme-op: rgba(100,182,172,0.137);
+  --efu-theme-op-deep: rgba(100,182,172,0.867);
+  --efu-theme-none: rgba(100,182,172,0);
   --efu-blue: #0084ff;
   --efu-red: #ff3842;
   --efu-pink: #d44040;
@@ -11023,11 +11023,11 @@ div#banners .bannerText {
   --efu-hltools-bg: #454a50;
 }
 [data-theme=light] {
-  --efu-theme: #fcd337;
-  --efu-theme-op: rgba(252,211,55,0.137);
-  --efu-theme-op-deep: rgba(252,211,55,0.867);
+  --efu-theme: #f1c40f;
+  --efu-theme-op: rgba(241,196,15,0.137);
+  --efu-theme-op-deep: rgba(241,196,15,0.867);
   --efu-theme-op-light: rgba(66,89,239,0.051);
-  --efu-theme-none: rgba(252,211,55,0);
+  --efu-theme-none: rgba(241,196,15,0);
   --efu-blue: #425aef;
   --efu-red: #f04a63;
   --efu-pink: #ff7c7c;
