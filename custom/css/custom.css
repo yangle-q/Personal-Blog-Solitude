@@ -1,7 +1,7 @@
 /* Font */
 @font-face {
   font-family: 'LXGWWenKai-Light';        
-  src: url(/custom/font/LXGWWenKai-Light.ttf) format('woff');
+  src: url(/custom/font/LXGWWenKai-Light.woff) format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: block;
