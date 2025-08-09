@@ -2642,7 +2642,7 @@ body {
   background: var(--efu-background);
   color: var(--efu-fontcolor);
   font-size: 16px;
-  font-family: LXGW Bright SemiLight,PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
+  font-family: LXGWWenKai-Light, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
   line-height: 2;
   -webkit-tap-highlight-color: transparent;
   margin: 0;
@@ -2738,7 +2738,7 @@ code,
 kbd,
 samp,
 pre {
-  font-family: LXGW Bright SemiLight，"monospace", monospace;
+  font-family: LXGWWenKaiMono-Light，"monospace", monospace;
   font-size: 16px;
 }
 small {
@@ -7055,7 +7055,7 @@ span.tagsPageCount {
   padding: 0.5rem;
   text-align: center;
   font-size: 14px;
-  font-family: LXGW Bright SemiLight,PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
+  font-family: LXGWWenKai-Light, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
 }
 @media screen and (max-width: 768px) {
   #body-wrap.error #error-wrap .error-content .error-info {
@@ -8917,7 +8917,7 @@ body[data-type=music] #nav-music {
   margin-right: auto;
   width: 100%;
   font-size: 36px;
-  font-family: LXGW Bright SemiLight,PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
+  font-family: LXGWWenKai-Light, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
   line-height: 1.06;
   letter-spacing: -0.02em;
   color: var(--efu-fontcolor);
@@ -12651,7 +12651,7 @@ figure.highlight .code-expand-btn:not(.expand-done) ~ pre {
 .tk-content code,
 .tk-content kbd,
 .tk-content samp {
-  font-family: LXGW Bright SemiLight，"monospace", monospace;
+  font-family: LXGWWenKaiMono-Light，"monospace", monospace;
 }
 .tk-content pre {
   background: var(--efu-secondbg);
