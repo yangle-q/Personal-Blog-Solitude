@@ -3,7 +3,7 @@
  let ipLocation; // 确保 ipLocation 在全局范围内定义
 
 // 进行 fetch 请求
-fetch('https://api.nsmao.net/api/ip/query?key=你的key') //申请key:https://api.nsmao.net
+fetch('https://api.nsmao.net/api/ip/query?key=gc6TEriwaawWhE996zfZgfqltb') //申请key:https://api.nsmao.net
 .then(response => {
 if (!response.ok) {
 throw new Error('Network response was not ok');
@@ -40,7 +40,7 @@ console.error('ipLocation data is not available.');
 return;
 }
 
- let dist = getDistance(121.413921, 31.089290, ipLocation.data.lng, ipLocation.data.lat); // 修改自己的经度（121.413921）纬度（31.089290）
+ let dist = getDistance(117.96, 27.66, ipLocation.data.lng, ipLocation.data.lat); // 修改自己的经度（121.413921）纬度（31.089290）
  let pos = ipLocation.data.country;
  let ip = ipLocation.ip;
  let posdesc;
@@ -419,7 +419,7 @@ function cardTimes() {
     lunarMon = chineseLunar.format(lunarDate, "M");
     lunarDay = chineseLunar.format(lunarDate, "d");
 
-    const newYearDate = new Date("2026/02/17 00:00:00");
+    const newYearDate = new Date("2026/08/07 00:00:00");
     const daysUntilNewYear = Math.floor(
       (newYearDate - now) / 1e3 / 60 / 60 / 24
     );
@@ -487,7 +487,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const month = `${myDate.getMonth() + 1}`.padStart(2, "0");
     const day = `${myDate.getDate()}`.padStart(2, "0");
     const formattedDate = `${month}${day}`;
-    const historyDataUrl = `https://api.76.al/api/history/query?key=你的key`; //请到:https://api.76.al申请
+    const historyDataUrl = `https://v2.xxapi.cn/api/history`; //请到:https://api.76.al申请
 
     try {
       const response = await fetch(historyDataUrl);
