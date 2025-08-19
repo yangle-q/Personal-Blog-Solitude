@@ -981,3 +981,45 @@ window.onkeydown = (e) => {
 document.addEventListener("copy", () => {
   utils.snackbarShow(GLOBAL_CONFIG.lang.copy.success, false, 3000);
 });
+
+const initCodeBlocks = (container) => {
+  const { highlight } = GLOBAL_CONFIG;
+  if (!highlight?.limit) return;
+  const limit = highlight.limit;
+  const syntax = highlight.syntax || 'prismjs';
+  const selector = syntax === 'highlight.js' 
+    ? 'figure.highlight' 
+    : 'pre[class*="language-"]';
+  container.querySelectorAll(selector).forEach(item => {
+    item.style.maxHeight = `${limit}px`;
+    item.style.overflow = 'hidden';
+    if (item.scrollHeight > limit + 30 && !item.querySelector('.code-expand-btn')) {
+      const btn = document.createElement('div');
+      btn.className = 'code-expand-btn';
+      btn.innerHTML = '<i class="solitude fas fa-angles-down"></i>';
+      btn.onclick = () => {
+        item.style.maxHeight = 'none';
+        btn.remove();
+      };
+      syntax === 'highlight.js'
+        ? item.querySelector('table').appendChild(btn)
+        : item.parentNode.insertBefore(btn, item.nextSibling);
+    }
+  });
+};
+document.addEventListener('pjax:complete', () => {
+  initCodeBlocks(document);
+  document.addEventListener('click', handleTabClick);
+});
+const handleTabClick = (e) => {
+  const tab = e.target.closest('.nav-tabs [data-href]');
+  if (!tab) return;
+  const targetContent = document.querySelector(tab.getAttribute('data-href'));
+  targetContent.classList.add('active');
+  setTimeout(() => initCodeBlocks(targetContent), 50);
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  initCodeBlocks(document);
+  document.addEventListener('click', handleTabClick);
+});
