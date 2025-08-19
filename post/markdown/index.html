@@ -555,10 +555,10 @@ if (sco_keyboards) {
 <hr>
 <h4 id="网址和Email地址"><a href="#网址和Email地址" class="headerlink" title="网址和Email地址"></a>网址和Email地址</h4><p>使用尖括号可以很方便地把URL或者email地址变成可点击的链接。</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">&lt;https://bilibili.com&gt;</span></span><br><span class="line"><span class="language-xml">&lt;no@thankyou.com&gt;</span></span><br></pre></td></tr></table></figure>
-<p>输出：<br><a target="_blank" rel="noopener" href="https://bilibili.com/">https://bilibili.com</a><br><a href="mailto:&#110;&#x6f;&#64;&#x74;&#104;&#x61;&#x6e;&#107;&#x79;&#x6f;&#x75;&#46;&#x63;&#x6f;&#x6d;">no@thankyou.com</a></p>
+<p>输出：<br><a target="_blank" rel="noopener" href="https://bilibili.com/">https://bilibili.com</a><br><a href="mailto:&#x6e;&#x6f;&#64;&#x74;&#104;&#97;&#110;&#x6b;&#x79;&#x6f;&#117;&#x2e;&#x63;&#111;&#x6d;">no@thankyou.com</a></p>
 <p>或者直接输入URL或者email地址一般也可以直接点击。</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https://bilibili.com</span><br><span class="line">no@thankyou.com</span><br></pre></td></tr></table></figure>
-<p>输出：<br><a target="_blank" rel="noopener" href="https://bilibili.com/">https://bilibili.com</a><br><a href="mailto:&#110;&#111;&#x40;&#116;&#x68;&#97;&#x6e;&#107;&#121;&#111;&#x75;&#46;&#x63;&#111;&#x6d;">no@thankyou.com</a></p>
+<p>输出：<br><a target="_blank" rel="noopener" href="https://bilibili.com/">https://bilibili.com</a><br><a href="mailto:&#110;&#x6f;&#64;&#x74;&#104;&#97;&#x6e;&#x6b;&#x79;&#111;&#x75;&#46;&#x63;&#x6f;&#x6d;">no@thankyou.com</a></p>
 <p>如果您不希望自动链接URL，可以通过将URL表示为带反引号的代码或在https后的冒号与@前添加反斜杠 \ 来禁用点击跳转。</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">https\://bilibili.com</span><br><span class="line">no\@thankyou.com</span><br><span class="line"><span class="code">`https://bilibili.com`</span></span><br><span class="line"><span class="code">`no@thankyou.com`</span></span><br></pre></td></tr></table></figure>
 <p>输出：<br>https:&#x2F;&#x2F;bilibili.com<br>no@thankyou.com<br><code>https://bilibili.com</code><br><code>no@thankyou.com</code></p>
@@ -1000,6 +1000,13 @@ if (sco_keyboards) {
 <td>文字</td>
 <td>可选</td>
 <td>ai 框里面输入的文本</td>
+<td></td>
+</tr>
+<tr>
+<td>recommend</td>
+<td>true&#x2F;false</td>
+<td>可选</td>
+<td>首页推荐列表显不显示</td>
 <td></td>
 </tr>
 </tbody></table>
