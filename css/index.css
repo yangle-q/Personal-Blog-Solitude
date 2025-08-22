@@ -2976,14 +2976,14 @@ span.tags-punctuation i {
   opacity: 0.4;
   width: 100%;
   height: 100%;
-  background-image: url("/img/background-1.jpg");
+  background-image: url("/custom/img/background-1.jpg");
   background-size: cover;
   background-position: center;
   pointer-events: none;
   background-repeat: no-repeat;
 }
 [data-theme=dark] #global_bg {
-  background-image: url("/img/background-2.jpg");
+  background-image: url("/custom/img/background-2.jpg");
 }
 .article-container {
   overflow-wrap: break-word;
