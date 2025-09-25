@@ -40,7 +40,7 @@ console.error('ipLocation data is not available.');
 return;
 }
 
- let dist = getDistance(117.96, 27.66, ipLocation.data.lng, ipLocation.data.lat); // 修改自己的经度（121.413921）纬度（31.089290）
+ let dist = getDistance(121.367957,31.136833, ipLocation.data.lng, ipLocation.data.lat); // 修改自己的经度（121.413921）纬度（31.089290）
  let pos = ipLocation.data.country;
  let ip = ipLocation.ip;
  let posdesc;
