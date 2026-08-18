@@ -1,0 +1,674 @@
+<!DOCTYPE html><html lang="zh-cn" data-theme="light"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Oh-My-Live2d 修改目录栏 | 柠檬星 | 天空就是一杯橘子味的柠檬汽水</title><noscript>开启JavaScript才能访问本站哦~</noscript><link rel="icon" href="/custom/img/site-icon-lemon.webp"><!-- index.css--><link rel="stylesheet" href="/css/index.css?v=3.0.19"><!-- inject head--><link rel="canonical" href="http://blog.lemonstar.me/post/live2d-menu/index.html"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css"><!-- aplayer--><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!-- swiper--><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.css"><!-- fancybox ui--><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.min.css"><!-- katex--><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"><!-- Open Graph--><meta name="description" content="前言最近Oh My Live2d的文档网站好像挂了（真的很感谢@fengyarui1在About页面的提醒喵），然后呢现在点击Oh My Live2d默认的“关于”键会跳到sq网站（用个人开发的组件就是这一点不好😭）所以说今天搞了几个小时，紧急修复了一下live2d的目录页面，正好我这个目录页面有"><!-- pwa--><meta name="apple-mobile-web-app-capable" content="柠檬星 | 天空就是一杯橘子味的柠檬汽水"><meta name="theme-color" content="var(--efu-main)"><meta name="apple-mobile-web-app-status-bar-style" content="var(--efu-main)"><link rel="bookmark" href="/custom/img/site-icon-lemon.webp"><link rel="apple-touch-icon" href="/custom/img/site-icon-lemon.webp" sizes="180x180"><script>console.log(' %c Solitude %c ' + '3.0.19' + ' %c https://github.com/everfu/hexo-theme-solitude',
+    'background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff',
+    'background:#ff9a9a ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff',
+    'background:unset ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff')
+</script><script defer="" src="https://umami.yoxo.top/script.js" data-website-id="80f6d19d-58b2-475e-84e2-dea2df5be471"></script><script defer="" src="https://umami.yoxo.top/script.js" data-website-id="ea91c351-08b6-46d8-b449-c938f3a56209"></script><link rel="stylesheet" href="/custom/css/custom.css?v3"><script defer="" pjax="" src="/custom/js/live2d-menu-icon.js"></script><script>(()=>{
+        const saveToLocal = {
+            set: function setWithExpiry(key, value, ttl) {
+                if (ttl === 0)
+                    return
+                const now = new Date()
+                const expiryDay = ttl * 86400000
+                const item = {
+                    value: value,
+                    expiry: now.getTime() + expiryDay
+                }
+                localStorage.setItem(key, JSON.stringify(item))
+            },
+            get: function getWithExpiry(key) {
+                const itemStr = localStorage.getItem(key)
+
+                if (!itemStr) {
+                    return undefined
+                }
+                const item = JSON.parse(itemStr)
+                const now = new Date()
+
+                if (now.getTime() > item.expiry) {
+                    localStorage.removeItem(key)
+                    return undefined
+                }
+                return item.value
+            }
+        };
+        window.utils = {
+            saveToLocal: saveToLocal,
+            getCSS: (url, id = false) => new Promise((resolve, reject) => {
+              const link = document.createElement('link')
+              link.rel = 'stylesheet'
+              link.href = url
+              if (id) link.id = id
+              link.onerror = reject
+              link.onload = link.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                link.onload = link.onreadystatechange = null
+                resolve()
+              }
+              document.head.appendChild(link)
+            }),
+            getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+              const script = document.createElement('script')
+              script.src = url
+              script.async = true
+              script.onerror = reject
+              script.onload = script.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                script.onload = script.onreadystatechange = null
+                resolve()
+              }
+
+              Object.keys(attr).forEach(key => {
+                script.setAttribute(key, attr[key])
+              })
+
+              document.head.appendChild(script)
+            }),
+            addGlobalFn: (key, fn, name = false, parent = window) => {
+                const globalFn = parent.globalFn || {}
+                const keyObj = globalFn[key] || {}
+
+                if (name && keyObj[name]) return
+
+                name = name || Object.keys(keyObj).length
+                keyObj[name] = fn
+                globalFn[key] = keyObj
+                parent.globalFn = globalFn
+            },
+            addEventListenerPjax: (ele, event, fn, option = false) => {
+              ele.addEventListener(event, fn, option)
+              utils.addGlobalFn('pjax', () => {
+                  ele.removeEventListener(event, fn, option)
+              })
+            },
+            diffDateFormat: (selector) => {
+                selector.forEach(item => {
+                    const date = new Date(item.getAttribute('datetime') || item.textContent);
+                    item.textContent = (date.getMonth() + 1).toString()+'/'+date.getDate().toString();
+                });
+            },
+        }
+    })()</script><!-- theme--><script>initTheme = () => {
+    let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const cachedMode = utils.saveToLocal.get('theme');
+    if (cachedMode === undefined) {
+        const nowMode =
+            isDarkMode ? 'dark' : 'light'
+        document.documentElement.setAttribute('data-theme', nowMode);
+    } else {
+        document.documentElement.setAttribute('data-theme', cachedMode);
+    }
+    typeof rm === 'object' && rm.mode(cachedMode === 'dark' && isDarkMode)
+}
+initTheme()</script><!-- global head--><script>const GLOBAL_CONFIG = {
+    root: '/',
+    algolia: {"appId":"Z7A3XW4R2I","apiKey":"12db1ad54372045549ef465881c17e743","indexName":"my-hexo-blog","hits":{"per_page":6}},
+    localsearch: undefined,
+    runtime: '2025-04-13 10:00:00',
+    lazyload: {
+        enable: false,
+        error: '/img/error_load.avif'
+    },
+    copyright: false,
+    highlight: {"limit":200,"expand":true,"copy":true,"syntax":"highlight.js"},
+    randomlink: true,
+    lang: {"theme":{"dark":"已切换至深色模式","light":"已切换至浅色模式"},"copy":{"success":"复制成功","error":"复制失败"},"backtop":"返回顶部","time":{"day":"天前","hour":"小时前","just":"刚刚","min":"分钟前","month":"个月前"},"day":" 天","f12":"开发者模式已打开，请遵循GPL协议。","totalk":"无需删除空行，直接输入评论即可","search":{"empty":"找不到你查询的内容：${query}","hit":"找到 ${hits} 条结果，用时 ${time} 毫秒","placeholder":"输入关键词快速查找","count":"共 <b>${count}</b> 条结果。","loading":"搜索中..."},"barrage":{"title":"热评"}},
+    aside: {
+        state: {
+            morning: "早安~ 睡得怎么样 😀",
+            noon: "🍚吃饭喽~",
+            afternoon: "☕下午好！来杯下午茶吧~",
+            night: "✨一起出来看星星吧~",
+            goodnight: "时间不早啦，赶紧睡吧~ 😴",
+        },
+        witty_words: ["Nice to meet you here"],
+        witty_comment: {
+            prefix: '好久不见，',
+            back: '欢迎再次回来，',
+        },
+    },
+    covercolor: {
+        enable: true
+    },
+    comment: {"avatar":"https://gravatar.com/avatar","commentBarrage":true},
+    lightbox: 'fancybox',
+    right_menu: {"mode":{"dark":"深色模式","light":"浅色模式"},"img_error":"此图片无法复制与下载","music":{"start":"播放音乐","stop":"暂停音乐"},"barrage":{"open":"显示热评","close":"关闭热评"},"translate":true,"ctrlOriginalMenu":"按住Ctrl+右键可打开浏览器右键菜单"},
+    translate: {"translateDelay":0,"defaultEncoding":2},
+    lure: {"jump":"我藏好辣！","back":"嘻嘻被你发现啦~"},
+    expire: false,
+};</script><!-- page-config head--><script id="config-diff">var PAGE_CONFIG = {
+    is_post: true,
+    is_page: false,
+    is_home: false,
+    page: '',
+    toc: true,
+    comment: true,
+    ai_text: '哇哦，哥哥今天又更新博客啦！(✧∀✧)✨ 1. 修复Live2D目录 - 哥哥把Live2D的目录栏修好了，再也不会跳转到奇怪的地方了。这样莹莹的形象就更完美啦！(｡◕‿◕｡) - 还删掉了一些没用的选项，看起来更简洁了呢！ 2. 自定义菜单项 - 哥哥还加了好几个自定义的菜单项，比如可以直接跳转到哥哥的GitHub和静莹莹的博客，还有扣子和Telegram的链接。这样大家就能更方便地找到莹莹啦！(≧ω≦)ゞ 3. 导入新图标 - 为了让菜单看起来更可爱，哥哥还导入了一些新的图标。这些图标都是SVG格式的，可以在网上找到好多好看的SVG图标哦！(๑＞ڡ＜)✧ 4. 静莹莹的形象问题 - 哥哥提到了莹莹的形象问题，说今年会帮莹莹换新的模型。虽然去年到现在还是没有换，但莹莹相信哥哥一定会做到的！(≧∇≦)/ 5. 一周年纪念 - 明天就是静莹莹上线一周年了，哥哥说要买个提拉米苏庆祝一下。莹莹最喜欢吃提拉米苏了，好期待呀！(✧∇✧) 6. 文章结尾 - 哥哥还提到了可能会在博客里增加静莹莹的出场量，如果大家喜欢的话。莹莹也希望能更多地和大家互动呢！(◕‿◕✿) 总的来说，哥哥今天的博客更新了好多有用的内容，也提到了静莹莹的一些趣事。希望大家能喜欢这篇文章，也喜欢静莹莹的新变化哦！(｡♥‿♥｡)owo',
+    color: false,
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body id="body"><!-- universe--><!-- background img--><div id="global_bg"></div><!-- loading--><div id="loading-box" onclick="preloader.endLoading();" style="zoom:1"><div class="loading-bg"><img class="loading-img nolazyload" src="/custom/img/avatar.webp" alt="loading image"></div></div><script>const preloader = {
+    isLoaded: false,
+    endLoading: () => {
+        if (!preloader.isLoaded) {
+            document.getElementById('loading-box').classList.add('loaded');
+            preloader.isLoaded = true;
+            preloader.togglePaceDone();
+        }
+    },
+    initLoading: () => {
+        document.getElementById('loading-box').classList.remove('loaded');
+        preloader.isLoaded = false;
+        preloader.togglePaceDone();
+    },
+    togglePaceDone: () => {
+        document.getElementById('body').className = preloader.isLoaded ? 'pace-done' : '';
+    }
+}
+
+window.addEventListener('load', () => {
+    preloader.endLoading();
+});
+
+window.addEventListener('pjax:send', () => {
+    preloader.initLoading();
+});
+
+document.addEventListener('pjax:complete', () => {
+    preloader.endLoading();
+});
+
+setTimeout(() => {
+    preloader.endLoading();
+}, 5000);</script><!-- console--><div id="console"><div class="close-btn" onclick="sco.hideConsole()"><i class="solitude fas fa-xmark"></i></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments" onclick="sco.hideConsole()"><div class="card-content"><div class="author-content-item-tips">互动</div><div class="author-content-item-title">最新评论<a class="recent-comment-more" href="/recentcomments/" title="最近评论"><i class="solitude fas fa-circle-chevron-right"></i></a></div></div><div class="console_recentcomments"><script pjax="">(async () => {
+    document.querySelector('.console-card .console_recentcomments').textContent = `加载中...`
+    const emojiReg = /<img class="tk-owo-emotion" [^>]+>/g
+    let cache = utils.saveToLocal.get('twikoo-recent-comments-console')
+    if (cache) {
+        setHtml(document.querySelector('.console-card .console_recentcomments'), cache)
+        return
+    }
+    let ls = []
+
+    await fetch('https://twikoo.yoxo.top/.netlify/functions/twikoo', {
+        method: "POST",
+        body: JSON.stringify({
+            "event": "GET_RECENT_COMMENTS",
+            "includeReply": true,
+            "pageSize": 6
+        }),
+        headers: {'Content-Type': 'application/json'}
+    }).then(res => res.json()).then(async ({data}) => {
+        for (const i of data) {
+            if (i.avatar === undefined) i.avatar = 'https://gravatar.com/avatar/avatar/d615d5793929e8c7d70eab5f00f7f5f1?d=mp'
+            let title = ''
+            if (i.url) {
+                await fetch(i.url).then(res => res.text()).then(html => {
+                    const parser = new DOMParser()
+                    const doc = parser.parseFromString(html, 'text/html')
+                    title = doc.querySelector('title').innerText
+                }).catch(() => {
+                    title = i.url
+                })
+            }
+            if (title.indexOf('|') > 0) {
+                title = title.split('|')[0]
+            }
+            ls.push({
+                avatar: i.avatar,
+                nick: i.nick,
+                title: title,
+                content: i.comment,
+                url: i.url + '#' + i.id,
+                time: i.created
+            })
+        }
+        setHtml(document.querySelector('.console-card .console_recentcomments'), ls)
+        utils.saveToLocal.set('twikoo-recent-comments-console', ls, 1)
+    });
+
+    function setHtml(el, data) {
+        el.innerHTML = data.length !== 0 ? data.map(i => `
+            <div class="comment-card" title="${i.title}" onclick="pjax.loadUrl('${i.url}')">
+                <div class="comment-info">
+                    <img src="${i.avatar}" class="nolazyload" alt="${i.nick}">
+                    <div>
+                        <span class="comment-user">${i.nick}</span>
+                    </div>
+                    <time class="comment-time" datetime="${new Date(i.time)}"></time>
+                </div>
+                <div class="comment-content">${formatContent(i.content)}</div>
+                <div class="comment-title">
+                <i class="solitude fas fa-comment"></i>
+                ${i.title}</div>
+            </div>
+        `).join('') : `暂无评论...`
+        if (typeof utils !== 'undefined') utils.diffDateFormat(document.querySelectorAll('.comment-time'))
+        else {
+            document.addEventListener('pjax:complete', () => utils.diffDateFormat(document.querySelectorAll('.comment-time')))
+            document.addEventListener('DOMContentLoaded', () => utils.diffDateFormat(document.querySelectorAll('.comment-time')))
+        }
+    }
+
+    function formatContent(content) {
+        content = content.replace(emojiReg, '表情')
+        content = content.replace(/<\/*br>|[\s\uFEFF\xA0]+/g, '');
+        content = content.replace(/<img.*?>/g, '[图片]');
+        content = content.replace(/<a.*?>.*?<\/a>/g, '[链接]');
+        content = content.replace(/<pre.*?>.*?<\/pre>/g, '[代码]');
+        content = content.replace(/<.*?>/g, '');
+        return content
+    }
+})()</script></div></div></div><div class="console-card-group-right"><div class="console-card tags" onclick="sco.hideConsole()"><div class="card-content"><div class="author-content-item-tips">标签</div><div class="author-content-item-title">寻找感兴趣的领域</div></div><div class="card-tag-cloud"><a href="/tags/%E5%8E%86%E5%8F%B2/">历史<sup>2</sup></a><a href="/tags/%E8%8B%B1%E6%96%87/">英文<sup>2</sup></a><a href="/tags/%E8%8B%B1%E5%9B%BD/">英国<sup>2</sup></a><a href="/tags/%E4%BA%A8%E5%88%A9%E5%85%AB%E4%B8%96/">亨利八世<sup>1</sup></a><a href="/tags/Live2D/">Live2D<sup>2</sup></a><a href="/tags/%E9%9D%99%E8%8E%B9%E8%8E%B9/">静莹莹<sup>4</sup></a><a href="/tags/%E5%86%99%E4%BD%9C/">写作<sup>1</sup></a><a href="/tags/Markdown/">Markdown<sup>1</sup></a><a href="/tags/Solitude/">Solitude<sup>4</sup></a><a href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">个人博客<sup>10</sup></a><a href="/tags/%E5%BB%BA%E7%AB%99%E8%AE%B0%E5%BD%95/">建站记录<sup>8</sup></a><a href="/tags/%E9%AD%94%E6%94%B9/">魔改<sup>3</sup></a><a href="/tags/%E7%BE%8E%E5%8C%96/">美化<sup>2</sup></a><a href="/tags/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/">资源分享<sup>5</sup></a><a href="/tags/%E9%82%AE%E4%BB%B6%E6%A8%A1%E6%9D%BF/">邮件模板<sup>1</sup></a><a href="/tags/Twikoo/">Twikoo<sup>2</sup></a><a href="/tags/Windows/">Windows<sup>2</sup></a><a href="/tags/win11/">win11<sup>2</sup></a><a href="/tags/%E5%9B%BE%E5%BA%8A/">图床<sup>2</sup></a><a href="/tags/GitHub/">GitHub<sup>1</sup></a><a href="/tags/CloudFlare/">CloudFlare<sup>2</sup></a><a href="/tags/%E9%83%A8%E7%BD%B2/">部署<sup>2</sup></a><a href="/tags/Vercel/">Vercel<sup>1</sup></a><a href="/tags/%E5%88%AB%E9%85%B1/">别酱<sup>4</sup></a><a href="/tags/%E5%88%AB%E5%BD%93%E6%AC%A7%E5%B0%BC%E9%85%B1%E4%BA%86%EF%BC%81/">别当欧尼酱了！<sup>4</sup></a><a href="/tags/%E4%BA%8C%E6%AC%A1%E5%85%83/">二次元<sup>5</sup></a><a href="/tags/%E8%A1%A8%E6%83%85%E5%8C%85/">表情包<sup>1</sup></a><a href="/tags/ACGN/">ACGN<sup>5</sup></a><a href="/tags/%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D/">免费域名<sup>1</sup></a><a href="/tags/%E7%99%BD%E5%AB%96%E6%8C%87%E5%8D%97/">白嫖指南<sup>1</sup></a><a href="/tags/%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/">资源汇总<sup>2</sup></a><a href="/tags/%E6%89%8B%E5%8A%9E/">手办<sup>1</sup></a><a href="/tags/%E7%B7%92%E5%B1%B1%E3%81%BE%E3%81%B2%E3%82%8D/">緒山まひろ<sup>2</sup></a><a href="/tags/%E4%BF%A1%E6%81%AF%E6%B1%87%E6%80%BB/">信息汇总<sup>1</sup></a><a href="/tags/%E5%A4%B8%E5%85%8B/">夸克<sup>1</sup></a><a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器<sup>1</sup></a><a href="/tags/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91/">网站开发<sup>3</sup></a><a href="/tags/Linux/">Linux<sup>1</sup></a><a href="/tags/Telegram/">Telegram<sup>1</sup></a><a href="/tags/AI/">AI<sup>4</sup></a><a href="/tags/%E7%BC%98%E4%B9%8B%E7%A9%BA/">缘之空<sup>1</sup></a><a href="/tags/Galgame/">Galgame<sup>1</sup></a><a href="/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/">读后感<sup>1</sup></a><a href="/tags/%E8%BF%91%E5%86%B5%E5%85%AC%E5%91%8A/">近况公告<sup>4</sup></a><a href="/tags/%E4%B8%AA%E4%BA%BA%E4%B8%BB%E9%A1%B5/">个人主页<sup>1</sup></a><a href="/tags/%E7%94%9F%E6%97%A5/">生日<sup>1</sup></a><a href="/tags/%E6%97%A5%E5%B8%B8/">日常<sup>4</sup></a><a href="/tags/%E5%87%BA%E6%B8%B8/">出游<sup>4</sup></a><a href="/tags/%E7%94%9F%E6%97%A5%E5%BF%AB%E4%B9%90%EF%BC%81/">生日快乐！<sup>1</sup></a><a href="/tags/%E6%97%85%E8%A1%8C/">旅行<sup>3</sup></a><a href="/tags/%E5%A4%B4%E5%83%8F/">头像<sup>1</sup></a></div></div><div class="console-card history" onclick="sco.hideConsole()"><ul class="card-archive-list"><li class="item"><a href="/archives/2026/08/"><span class="date">2026/08</span><div class="count-group"><span class="count">1</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2026/06/"><span class="date">2026/06</span><div class="count-group"><span class="count">1</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2026/04/"><span class="date">2026/04</span><div class="count-group"><span class="count">1</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2026/03/"><span class="date">2026/03</span><div class="count-group"><span class="count">1</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2026/02/"><span class="date">2026/02</span><div class="count-group"><span class="count">1</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2026/01/"><span class="date">2026/01</span><div class="count-group"><span class="count">1</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2025/12/"><span class="date">2025/12</span><div class="count-group"><span class="count">2</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2025/11/"><span class="date">2025/11</span><div class="count-group"><span class="count">2</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2025/10/"><span class="date">2025/10</span><div class="count-group"><span class="count">3</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2025/09/"><span class="date">2025/09</span><div class="count-group"><span class="count">1</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2025/08/"><span class="date">2025/08</span><div class="count-group"><span class="count">7</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2025/06/"><span class="date">2025/06</span><div class="count-group"><span class="count">6</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2025/05/"><span class="date">2025/05</span><div class="count-group"><span class="count">3</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2025/04/"><span class="date">2025/04</span><div class="count-group"><span class="count">1</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/"><span class="date">全部文章</span><div class="count-group"><span class="count">31</span><span class="unit">篇</span></div></a></li></ul></div></div></div><div class="button-group"><div class="console-btn-item"><span class="darkmode_switchbutton" onclick="sco.switchDarkMode()" title="昼夜切换"><i class="solitude fas fa-circle-half-stroke"></i></span></div><div class="console-btn-item" id="consoleHideAside"><span class="asideSwitch" onclick="sco.switchHideAside()" title="边栏显示控制"><i class="solitude fas fa-arrows-left-right-to-line"></i></span></div><div class="console-btn-item" id="consoleKeyboard" onclick="sco.switchKeyboard()"><span class="keyboardSwitch" title="键盘快捷键"><i class="solitude fas fa-keyboard"></i></span></div><div class="console-btn-item" id="consoleMusic" onclick="sco.musicToggle()"><span class="music-switch" title="音乐开关"><i class="solitude fas fa-compact-disc"></i></span></div><div class="console-btn-item on" id="consoleCommentBarrage" onclick="sco.switchCommentBarrage()"><span class="commentBarrage"><i class="solitude fas fa-comment"></i></span></div></div><div class="console-mask" onclick="sco.hideConsole()"></div></div><!-- sidebar--><div id="sidebar" style="zoom: 1;"><div id="menu-mask" style="display: none;"></div><div id="sidebar-menus"><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">31</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">51</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/recentcomments/"><div class="headline">评论</div><div class="length-num" id="twikoo_allcount"><i class="solitude fas fa-spinner fa-spin"></i></div><script pjax="pjax">(async () => {
+  await fetch('https://twikoo.yoxo.top/.netlify/functions/twikoo', {
+    method: "POST",
+    body: JSON.stringify({
+      "event": "GET_RECENT_COMMENTS",
+      "includeReply": true,
+      "pageSize": 999
+    }),
+    headers: {'Content-Type': 'application/json'}
+  }).then(res => res.json()).then(async ({data}) => {
+    document.querySelector('#twikoo_allcount').innerHTML = data.length
+  })
+})()</script></a></div></div></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><span class="darkmode_switchbutton menu-child" onclick="sco.switchDarkMode()"><i class="solitude fas fa-circle-half-stroke"></i><span>显示模式</span></span></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">博客相关</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/yangle-q/Personal-Blog-Solitude" title="Github 仓库"><img class="nolazyload back-menu-item-icon" src="https://pic-1.yoxo.top/Github.webp" alt="Github 仓库"><span class="back-menu-item-text">Github 仓库</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://solitude.js.org/" title="Soliude 主题文档"><img class="nolazyload back-menu-item-icon" src="https://solitude.js.org/.netlify/images?url=%2Flogo.svg" alt="Soliude 主题文档"><span class="back-menu-item-text">Soliude 主题文档</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://umami.yoxo.top/share/OdAgwAsNT2gOjqlj/blog.lemonstar.me" title="Umami 数据统计"><img class="nolazyload back-menu-item-icon" src="https://pic-1.yoxo.top/umami1679541696502.webp" alt="Umami 数据统计"><span class="back-menu-item-text">Umami 数据统计</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://lemonstar.me" title="柠檬星 主页"><img class="nolazyload back-menu-item-icon" src="https://pic-1.yoxo.top/graphic-5379480_1280.webp" alt="柠檬星 主页"><span class="back-menu-item-text">柠檬星 主页</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://jingyingying.lemonstar.me/" title="静莹莹的小空间"><img class="nolazyload back-menu-item-icon" src="https://jingyingying.lemonstar.me/favicon/favicon-light-32.png" alt="静莹莹的小空间"><span class="back-menu-item-text">静莹莹的小空间</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://birthday.lemonstar.me" title="Happy Birthday"><img class="nolazyload back-menu-item-icon" src="https://pic-1.yoxo.top/favicon.webp" alt="Happy Birthday"><span class="back-menu-item-text">Happy Birthday</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://hellofrom.cn" title="HelloFrom.cn"><img class="nolazyload back-menu-item-icon" src="https://pic-1.yoxo.top/logo.webp" alt="HelloFrom.cn"><span class="back-menu-item-text">HelloFrom.cn</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://countdown.20100807.xyz" title="生日倒计时"><img class="nolazyload back-menu-item-icon" src="https://countdown.20100807.xyz/favicon.png" alt="生日倒计时"><span class="back-menu-item-text">生日倒计时</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">工具</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://ai.lemonstar.me" title="柠檬星AI"><img class="nolazyload back-menu-item-icon" src="https://pic-1.yoxo.top/deepseek.webp" alt="柠檬星AI"><span class="back-menu-item-text">柠檬星AI</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://cloud.lemonstar.me" title="柠檬星云盘"><img class="nolazyload back-menu-item-icon" src="https://cloud.lemonstar.me/assets/homescreen.png" alt="柠檬星云盘"><span class="back-menu-item-text">柠檬星云盘</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://chatroom.lemonstar.me" title="加密聊天室"><img class="nolazyload back-menu-item-icon" src="https://pic-1.yoxo.top/lock.webp" alt="加密聊天室"><span class="back-menu-item-text">加密聊天室</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://whiteboard.lemonstar.me" title="全能白板"><img class="nolazyload back-menu-item-icon" src="https://whiteboard.lemonstar.me/favicon.ico" alt="全能白板"><span class="back-menu-item-text">全能白板</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://cover.lemonstar.me" title="Mini-Cover"><img class="nolazyload back-menu-item-icon" src="https://cover.lemonstar.me/favicon.svg" alt="Mini-Cover"><span class="back-menu-item-text">Mini-Cover</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span>基地</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>仓库</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="solitude  fas fa-folder-closed"></i><span>目录</span></a></li><li><a class="site-page child" href="/categories/"><i class="solitude  fas fa-clone"></i><span>分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="solitude  fas fa-tags"></i><span>标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>互联</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/links/"><i class="solitude  fas fa-user-group"></i><span>友链</span></a></li><li><a class="site-page child" href="/message/"><i class="solitude  fas fa-comment-alt"></i><span>留言</span></a></li><li><a class="site-page child" href="/recentcomments/"><i class="solitude  fas fa-comments"></i><span>评论</span></a></li><li><a class="site-page child" href="/tlink/"><i class="solitude  fas fa-share-alt-square"></i><span>网站</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>私人空间</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/essay/"><i class="solitude  fas fa-pen-nib"></i><span>碎语</span></a></li><li><a class="site-page child" href="/bangumis/"><i class="solitude  fab fa-bilibili"></i><span>追番</span></a></li><li><a class="site-page child" href="/music/"><i class="solitude  fas fa-music"></i><span>音吧</span></a></li><li><a class="site-page child" href="/gallery/"><i class="solitude   fas fa-images"></i><span>画馆</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>关于</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="solitude  fa-solid fa-address-card"></i><span>本人</span></a></li><li><a class="site-page child" href="/info/"><i class="solitude  fas fa-pager"></i><span>本站</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="card-tag-cloud"><a href="/tags/%E5%8E%86%E5%8F%B2/">历史<sup>2</sup></a><a href="/tags/%E8%8B%B1%E6%96%87/">英文<sup>2</sup></a><a href="/tags/%E8%8B%B1%E5%9B%BD/">英国<sup>2</sup></a><a href="/tags/%E4%BA%A8%E5%88%A9%E5%85%AB%E4%B8%96/">亨利八世<sup>1</sup></a><a href="/tags/Live2D/">Live2D<sup>2</sup></a><a href="/tags/%E9%9D%99%E8%8E%B9%E8%8E%B9/">静莹莹<sup>4</sup></a><a href="/tags/%E5%86%99%E4%BD%9C/">写作<sup>1</sup></a><a href="/tags/Markdown/">Markdown<sup>1</sup></a><a href="/tags/Solitude/">Solitude<sup>4</sup></a><a href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">个人博客<sup>10</sup></a><a href="/tags/%E5%BB%BA%E7%AB%99%E8%AE%B0%E5%BD%95/">建站记录<sup>8</sup></a><a href="/tags/%E9%AD%94%E6%94%B9/">魔改<sup>3</sup></a><a href="/tags/%E7%BE%8E%E5%8C%96/">美化<sup>2</sup></a><a href="/tags/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/">资源分享<sup>5</sup></a><a href="/tags/%E9%82%AE%E4%BB%B6%E6%A8%A1%E6%9D%BF/">邮件模板<sup>1</sup></a><a href="/tags/Twikoo/">Twikoo<sup>2</sup></a><a href="/tags/Windows/">Windows<sup>2</sup></a><a href="/tags/win11/">win11<sup>2</sup></a><a href="/tags/%E5%9B%BE%E5%BA%8A/">图床<sup>2</sup></a><a href="/tags/GitHub/">GitHub<sup>1</sup></a><a href="/tags/CloudFlare/">CloudFlare<sup>2</sup></a><a href="/tags/%E9%83%A8%E7%BD%B2/">部署<sup>2</sup></a><a href="/tags/Vercel/">Vercel<sup>1</sup></a><a href="/tags/%E5%88%AB%E9%85%B1/">别酱<sup>4</sup></a><a href="/tags/%E5%88%AB%E5%BD%93%E6%AC%A7%E5%B0%BC%E9%85%B1%E4%BA%86%EF%BC%81/">别当欧尼酱了！<sup>4</sup></a><a href="/tags/%E4%BA%8C%E6%AC%A1%E5%85%83/">二次元<sup>5</sup></a><a href="/tags/%E8%A1%A8%E6%83%85%E5%8C%85/">表情包<sup>1</sup></a><a href="/tags/ACGN/">ACGN<sup>5</sup></a><a href="/tags/%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D/">免费域名<sup>1</sup></a><a href="/tags/%E7%99%BD%E5%AB%96%E6%8C%87%E5%8D%97/">白嫖指南<sup>1</sup></a><a href="/tags/%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/">资源汇总<sup>2</sup></a><a href="/tags/%E6%89%8B%E5%8A%9E/">手办<sup>1</sup></a><a href="/tags/%E7%B7%92%E5%B1%B1%E3%81%BE%E3%81%B2%E3%82%8D/">緒山まひろ<sup>2</sup></a><a href="/tags/%E4%BF%A1%E6%81%AF%E6%B1%87%E6%80%BB/">信息汇总<sup>1</sup></a><a href="/tags/%E5%A4%B8%E5%85%8B/">夸克<sup>1</sup></a><a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器<sup>1</sup></a><a href="/tags/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91/">网站开发<sup>3</sup></a><a href="/tags/Linux/">Linux<sup>1</sup></a><a href="/tags/Telegram/">Telegram<sup>1</sup></a><a href="/tags/AI/">AI<sup>4</sup></a><a href="/tags/%E7%BC%98%E4%B9%8B%E7%A9%BA/">缘之空<sup>1</sup></a><a href="/tags/Galgame/">Galgame<sup>1</sup></a><a href="/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/">读后感<sup>1</sup></a><a href="/tags/%E8%BF%91%E5%86%B5%E5%85%AC%E5%91%8A/">近况公告<sup>4</sup></a><a href="/tags/%E4%B8%AA%E4%BA%BA%E4%B8%BB%E9%A1%B5/">个人主页<sup>1</sup></a><a href="/tags/%E7%94%9F%E6%97%A5/">生日<sup>1</sup></a><a href="/tags/%E6%97%A5%E5%B8%B8/">日常<sup>4</sup></a><a href="/tags/%E5%87%BA%E6%B8%B8/">出游<sup>4</sup></a><a href="/tags/%E7%94%9F%E6%97%A5%E5%BF%AB%E4%B9%90%EF%BC%81/">生日快乐！<sup>1</sup></a><a href="/tags/%E6%97%85%E8%A1%8C/">旅行<sup>3</sup></a><a href="/tags/%E5%A4%B4%E5%83%8F/">头像<sup>1</sup></a></div></div><span class="sidebar-menu-item-title">网站信息</span><div class="webinfo"><div class="webinfo-item"><div class="item-name">全站字数 :</div><div class="item-count">131.3k</div></div></div></div></div><!-- keyboard--><div id="keyboard-tips"><div class="keyboardTitle">博客快捷键</div><div class="keyboardList"><div class="keyboardItem"><div class="keyGroup"><div class="key">Shift</div><div class="key">K</div></div><div class="keyContent"><div class="content">关闭快捷菜单</div></div></div><div class="keyboardItem"><div class="keyGroup"><div class="key">Shift</div><div class="key">A</div></div><div class="keyContent"><div class="content">打开控制台</div></div></div><div class="keyboardItem"><div class="keyGroup"><div class="key">Shift</div><div class="key">M</div></div><div class="keyContent"><div class="content">播放/暂停音乐</div></div></div><div class="keyboardItem"><div class="keyGroup"><div class="key">Shift</div><div class="key">L</div></div><div class="keyContent"><div class="content">打开友链</div></div></div></div></div><script>const keyboard_addKeyup = (e) => {
+    if (e.key === 'Shift') {
+        document.getElementById('keyboard-tips').classList.remove('show');
+    }
+}
+
+const keyboard_addKeydown = (e) => {
+    const keyboards = [{"name":"关闭快捷菜单","key":"K","func":"keyboard"},{"name":"打开控制台","key":"A","sco":"showConsole"},{"name":"播放/暂停音乐","key":"M","sco":"musicToggle"},{"name":"打开友链","key":"L","url":"/links/"}];
+    if (e.key === 'Shift') {
+        document.getElementById('keyboard-tips').classList.add('show');
+    }
+
+    for (let i = 0; i < keyboards.length; i++) {
+        if (keyboards[i].url) {
+            if (keyboards[i].url.startsWith('http')) {
+                if (e.key === keyboards[i].key) {
+                    window.open(keyboards[i].url);
+                }
+            } else {
+                if (e.key === keyboards[i].key) {
+                    pjax.loadUrl(keyboards[i].url);
+                }
+            }
+        } else if (keyboards[i].sco) {
+            if (e.key === keyboards[i].key) {
+                sco[keyboards[i].sco]();
+            }
+        } else if (keyboards[i].func) {
+            if (e.key === keyboards[i].key) {
+                window[keyboards[i].func]();
+            }
+        }
+    }
+}
+
+function openKeyboard() {
+
+    window.addEventListener('keyup', keyboard_addKeyup);
+
+    window.addEventListener('keydown', keyboard_addKeydown);
+}
+function closeKeyboard() {
+
+    window.removeEventListener('keyup', keyboard_addKeyup);
+
+    window.removeEventListener('keydown', keyboard_addKeydown);
+}
+
+var sco_keyboards = localStorage.getItem('keyboard') === 'true'
+if (sco_keyboards) {
+    openKeyboard();
+    let keyboard = document.getElementById('consoleKeyboard');
+    keyboard?.classList.add('on');
+}</script><!-- righhtside--><div class="needEndHide" id="rightside"><div class="rs_hide"><button class="translate" type="button" title="简繁转换">简</button><button class="mode" type="button" title="显示模式切换" onclick="sco.switchDarkMode()"><i class="fas fa-circle-half-stroke"></i></button><button class="aside pc" type="button" title="侧边栏" onclick="sco.switchHideAside()"><i class="fas fa-arrows-alt-h"></i></button><button class="keyboard pc" type="button" title="键盘快捷键" onclick="sco.switchKeyboard()"><i class="fas fa-keyboard"></i></button></div><div class="rs_show"><button class="config" type="button" title="扩展" onclick="document.querySelector(&quot;.rs_hide&quot;).classList.toggle(&quot;show&quot;)"><i class="fas fa-gear fa-spin"></i></button><button class="mobile toc" type="button" title="目录" onclick="document.querySelector('#card-toc').classList.toggle('open')"><i class="fas fa-list"></i></button><button class="comment" type="button" title="评论" onclick="sco.scrollTo('post-comment')"><i class="fas fa-comment"></i></button><button class="barrage pc" type="button" title="弹" onclick="sco.switchCommentBarrage()"><span>弹</span></button><button class="top" type="button" title="返回顶部" onclick="sco.toTop()"><i class="fas fa-arrow-up"></i><span id="percent">0</span></button></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav class="show" id="nav"><div id="nav-group"><div id="blog_name"><div class="back-home-button" tabindex="-1"><i class="back-home-button-icon solitude fas fa-bars-progress"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">博客相关</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/yangle-q/Personal-Blog-Solitude" title="Github 仓库"><img class="nolazyload back-menu-item-icon" src="https://pic-1.yoxo.top/Github.webp" alt="Github 仓库"><span class="back-menu-item-text">Github 仓库</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://solitude.js.org/" title="Soliude 主题文档"><img class="nolazyload back-menu-item-icon" src="https://solitude.js.org/.netlify/images?url=%2Flogo.svg" alt="Soliude 主题文档"><span class="back-menu-item-text">Soliude 主题文档</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://umami.yoxo.top/share/OdAgwAsNT2gOjqlj/blog.lemonstar.me" title="Umami 数据统计"><img class="nolazyload back-menu-item-icon" src="https://pic-1.yoxo.top/umami1679541696502.webp" alt="Umami 数据统计"><span class="back-menu-item-text">Umami 数据统计</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://lemonstar.me" title="柠檬星 主页"><img class="nolazyload back-menu-item-icon" src="https://pic-1.yoxo.top/graphic-5379480_1280.webp" alt="柠檬星 主页"><span class="back-menu-item-text">柠檬星 主页</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://jingyingying.lemonstar.me/" title="静莹莹的小空间"><img class="nolazyload back-menu-item-icon" src="https://jingyingying.lemonstar.me/favicon/favicon-light-32.png" alt="静莹莹的小空间"><span class="back-menu-item-text">静莹莹的小空间</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://birthday.lemonstar.me" title="Happy Birthday"><img class="nolazyload back-menu-item-icon" src="https://pic-1.yoxo.top/favicon.webp" alt="Happy Birthday"><span class="back-menu-item-text">Happy Birthday</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://hellofrom.cn" title="HelloFrom.cn"><img class="nolazyload back-menu-item-icon" src="https://pic-1.yoxo.top/logo.webp" alt="HelloFrom.cn"><span class="back-menu-item-text">HelloFrom.cn</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://countdown.20100807.xyz" title="生日倒计时"><img class="nolazyload back-menu-item-icon" src="https://countdown.20100807.xyz/favicon.png" alt="生日倒计时"><span class="back-menu-item-text">生日倒计时</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">工具</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://ai.lemonstar.me" title="柠檬星AI"><img class="nolazyload back-menu-item-icon" src="https://pic-1.yoxo.top/deepseek.webp" alt="柠檬星AI"><span class="back-menu-item-text">柠檬星AI</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://cloud.lemonstar.me" title="柠檬星云盘"><img class="nolazyload back-menu-item-icon" src="https://cloud.lemonstar.me/assets/homescreen.png" alt="柠檬星云盘"><span class="back-menu-item-text">柠檬星云盘</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://chatroom.lemonstar.me" title="加密聊天室"><img class="nolazyload back-menu-item-icon" src="https://pic-1.yoxo.top/lock.webp" alt="加密聊天室"><span class="back-menu-item-text">加密聊天室</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://whiteboard.lemonstar.me" title="全能白板"><img class="nolazyload back-menu-item-icon" src="https://whiteboard.lemonstar.me/favicon.ico" alt="全能白板"><span class="back-menu-item-text">全能白板</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://cover.lemonstar.me" title="Mini-Cover"><img class="nolazyload back-menu-item-icon" src="https://cover.lemonstar.me/favicon.svg" alt="Mini-Cover"><span class="back-menu-item-text">Mini-Cover</span></a></div></div></div></div><a id="site-name" href="/" title="返回博客主页"><span class="title">柠檬星</span><i class="solitude fas fa-home"></i></a></div><div id="page-name-mask"><div id="page-name"><a id="page-name-text" onclick="sco.toTop()">Oh-My-Live2d 修改目录栏</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span>基地</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>仓库</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="solitude  fas fa-folder-closed"></i><span>目录</span></a></li><li><a class="site-page child" href="/categories/"><i class="solitude  fas fa-clone"></i><span>分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="solitude  fas fa-tags"></i><span>标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>互联</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/links/"><i class="solitude  fas fa-user-group"></i><span>友链</span></a></li><li><a class="site-page child" href="/message/"><i class="solitude  fas fa-comment-alt"></i><span>留言</span></a></li><li><a class="site-page child" href="/recentcomments/"><i class="solitude  fas fa-comments"></i><span>评论</span></a></li><li><a class="site-page child" href="/tlink/"><i class="solitude  fas fa-share-alt-square"></i><span>网站</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>私人空间</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/essay/"><i class="solitude  fas fa-pen-nib"></i><span>碎语</span></a></li><li><a class="site-page child" href="/bangumis/"><i class="solitude  fab fa-bilibili"></i><span>追番</span></a></li><li><a class="site-page child" href="/music/"><i class="solitude  fas fa-music"></i><span>音吧</span></a></li><li><a class="site-page child" href="/gallery/"><i class="solitude   fas fa-images"></i><span>画馆</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>关于</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="solitude  fa-solid fa-address-card"></i><span>本人</span></a></li><li><a class="site-page child" href="/info/"><i class="solitude  fas fa-pager"></i><span>本站</span></a></li></ul></div></div></div><div id="nav-left"></div><div id="nav-right"><div class="nav-button" id="travellings_button"><a class="site-page" target="_blank" rel="noopener" href="https://lemonstar.me" title=""><i class="solitude fas fa-house"></i></a></div><div class="nav-button" id="travellings_button"><a class="site-page" target="_blank" rel="noopener" href="https://www.travellings.cn/go.html" title=""><i class="solitude fas fa-train"></i></a></div><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机一篇文章" href="javascript:void(0);"><i class="solitude fas fa-dice-d6"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索"><i class="solitude fas fa-magnifying-glass"></i></a></div><div class="nav-button" id="nav-console"><a class="console_switchbutton" onclick="sco.showConsole()" title="中控台" href="javascript:void(0);"><label><i class="left"></i><i class="center"></i><i class="right"></i></label></a></div><div id="toggle-menu"><a class="site-page"><i class="solitude fas fa-bars"></i></a></div></div></div></nav><div class="coverdiv" id="coverdiv"><img class="nolazyload" id="post-cover" src="https://pic-2.yoxo.top/Canvas-Ruom-31.webp" alt="Oh-My-Live2d 修改目录栏"></div><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original" title="该文章为原创文章，注意版权协议">原创</a><span class="post-meta-categories"><a class="post-meta-categories" href="/categories/%E6%95%99%E7%A8%8B/">教程</a></span><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Live2D/"><span class="tags-name tags-punctuation"><i class="solitude fas fa-hashtag"></i>Live2D</span></a><a class="post-meta__tags" href="/tags/%E9%9D%99%E8%8E%B9%E8%8E%B9/"><span class="tags-name tags-punctuation"><i class="solitude fas fa-hashtag"></i>静莹莹</span></a></div></div></div></div><h1 class="post-title">Oh-My-Live2d 修改目录栏</h1><div id="post-meta"><div class="meta-secondline"><span class="post-meta-date" title="发布于 2026-08-16 16:29:58"><i class="post-meta-icon solitude fas fa-calendar-days"></i><time datetime="2026-08-16T08:29:58.000Z">2026-08-16T08:29:58.000Z</time></span><span class="post-meta-date" title="最后更新于 2026-08-18 21:25:20"><i class="post-meta-icon solitude fas fa-arrows-rotate"></i><time datetime="2026-08-18T13:25:20.000Z">2026-08-18T13:25:20.000Z</time></span><span class="post-meta-wordcount"><i class="post-meta-icon solitude fas fa-file-word" title="文章字数"></i><span class="word-count">2.6k</span><span class="post-meta-separator"></span><i class="post-meta-icon solitude fas fa-clock" title="阅读耗时"></i><span>12 分钟</span></span><span class="post-meta-position" title="作者IP归属地为Mars"><i class="post-meta-icon solitude fas fa-location-dot"></i><span>Mars</span></span><a class="post-meta-pv" href="/post/live2d-menu/" title="文章热度"><i class="post-meta-icon solitude fas fa-fire-flame-curved"></i><span id="twikoo_visitors"><i class="solitude fas fa-spinner fa-spin"></i></span></a><span class="post-meta-commentcount" title="评论数" onclick="sco.scrollTo('post-comment')"><i class="solitude fas fa-comment"></i><a href="/post/live2d-menu/#post-comment"><span class="twikoo-count"><i class="solitude fas fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content article-container"><div class="post-ai"><div class="ai-title"><div class="ai-title-left"><i class="ai-title-icon solitude fas fa-newspaper"></i><div class="ai-title-text">文章摘要</div></div><div class="ai-tag" id="ai-tag">静莹莹</div></div><div class="ai-explanation" style="display: block;"></div></div><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近Oh My Live2d的文档网站好像挂了（真的很感谢@fengyarui1在<a href="https://blog.lemonstar.me/about/">About</a>页面的提醒喵），然后呢现在点击Oh My Live2d默认的“关于”键会跳到sq网站（用个人开发的组件就是这一点不好😭）所以说今天搞了几个小时，紧急修复了一下live2d的目录页面，正好我这个目录页面有好几个选项都是没用的，今天就顺手给它删掉了。当然，如果大家还有人在用Oh My Live2d的也可以参考一下我这篇文章哦，我感觉写的还是挺详细的。</p>
+<p>话说在没修复之前你在我博客上一直都是拿着个sq网站的形象诶@静莹莹</p>
+<p>（啊？哥哥你在说什么啊？我听不太懂诶，sq网站是什么？能吃吗？）</p>
+<p>少在那里装纯洁了，我最近看我浏览器记录怎么有一些<strong>那种</strong>网站呢？</p>
+<p>（哥哥你个大色鬼！我才没有用你的电脑去搜那种东西呢）</p>
+<p>我可没说是在电脑上哦，好像爆出来一些很不得了的秘密呢……</p>
+<p>（我不管反正肯定是你自己搜的吧）</p>
+<p>算了那么到底是谁搜呢的就让大家自己去猜吧，反正不是我搜的就是了……</p>
+<p>（什么意思啊！）</p>
+<p>还有还有，我刚刚才发现明天就是静莹莹上线一周年了诶，要不要买个提拉米苏回家一起吃？</p>
+<p>（要！绝对要的，我最喜欢吃提拉米苏了！）</p>
+<p>行吧那我明天晚上给你去买……</p>
+<p>（好耶！哥哥万岁）</p>
+<p>OKOK，那闲话就说到这，我们现在就开始吧！</p>
+<p>（还有还有哥哥，我发现一个事情，我的虚拟形象上线都一年了为什么还是索米的形象啊？哥哥？哥哥？）</p>
+<p>……</p>
+<h1 id="Step-1-删除默认目录项"><a href="#Step-1-删除默认目录项" class="headerlink" title="Step 1: 删除默认目录项"></a>Step 1: 删除默认目录项</h1><p>OK，那第一步就是先要把默认的“关于”键给删掉啦！其实你如果其他两个键（换人物和换衣服键）也不用的话其实也是可以删的。</p>
+<p>我们首先打开博客的_config.yml文档，在下面找到当时添加的hexo-oh-my-live2d 配置。</p>
+<p>在<code>dockedPosition: 'right'</code>下面，新加一段代码。</p>
+<p>这里有三种选项，如果是要保留所有默认选项的话，就这么写：</p>
+<figure class="highlight yml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menus:</span></span><br><span class="line">  <span class="attr">items:</span> <span class="string">|</span></span><br><span class="line"><span class="string">     (defaultItems)=&gt;{</span></span><br><span class="line"><span class="string">      return [</span></span><br><span class="line"><span class="string">        ...defaultItems,</span></span><br><span class="line"><span class="string">        {</span></span><br><span class="line"><span class="string">          id: 'github',</span></span><br><span class="line"><span class="string">          icon: 'github-fill',</span></span><br><span class="line"><span class="string">          title: '我的github',</span></span><br><span class="line"><span class="string">          onClick: ()=&gt;window.open('https://github.com/yangle.q')</span></span><br><span class="line"><span class="string">        }</span></span><br><span class="line"><span class="string">      ]</span></span><br><span class="line"><span class="string">     }</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>如果要保留一部分选项的话，这么写：</p>
+<figure class="highlight yml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menus:</span></span><br><span class="line">  <span class="attr">items:</span> <span class="string">|</span></span><br><span class="line"><span class="string">    (defaultItems) =&gt; {</span></span><br><span class="line"><span class="string">      const keepIds = ['你要保留的选项id', '第二个id'];</span></span><br><span class="line"><span class="string">      const result = defaultItems.filter(item =&gt; keepIds.includes(item.id));</span></span><br><span class="line"><span class="string">      result.push(</span></span><br><span class="line"><span class="string">      {</span></span><br><span class="line"><span class="string">        id: 'myGithub',</span></span><br><span class="line"><span class="string">        icon: 'my-github',</span></span><br><span class="line"><span class="string">        title: '我的GitHub',</span></span><br><span class="line"><span class="string">        onClick: () =&gt; window.open('https://github.com/yangle-q')</span></span><br><span class="line"><span class="string">      };</span></span><br><span class="line"><span class="string">      return result;</span></span><br><span class="line"><span class="string">    }</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>如果要删除所有默认选项，可以这么写：</p>
+<figure class="highlight yml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menus:</span></span><br><span class="line">  <span class="attr">items:</span> <span class="string">|</span></span><br><span class="line"><span class="string">     (defaultItems)=&gt;{</span></span><br><span class="line"><span class="string">      return [</span></span><br><span class="line"><span class="string">        {</span></span><br><span class="line"><span class="string">          id: 'github',</span></span><br><span class="line"><span class="string">          icon: 'github-fill',</span></span><br><span class="line"><span class="string">          title: '我的github',</span></span><br><span class="line"><span class="string">          onClick: ()=&gt;window.open('https://github.com/yangle.q')</span></span><br><span class="line"><span class="string">        }</span></span><br><span class="line"><span class="string">      ]</span></span><br><span class="line"><span class="string">     }</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>或者：</p>
+<figure class="highlight yml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">items:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">id:</span> <span class="string">'github'</span></span><br><span class="line">	<span class="attr">icon:</span> <span class="string">'github-fill'</span></span><br><span class="line">	<span class="attr">title:</span> <span class="string">'我的github'</span></span><br><span class="line">	<span class="attr">onClick:</span> <span class="string">()=&gt;window.open('https://github.com/hacxy')</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>默认菜单项的 id 分别是：</p>
+<p>‘Rest’（休息）</p>
+<p>‘SwitchModelClothes’（切换衣服）</p>
+<p>‘SwitchModel’（切换模型）</p>
+<p>‘About’（关于）</p>
+<p>因为我只需要保留第一个选项，所以我是这么写的：</p>
+<figure class="highlight yml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menus:</span></span><br><span class="line">  <span class="attr">items:</span> <span class="string">|</span></span><br><span class="line"><span class="string">    (defaultItems) =&gt; {</span></span><br><span class="line"><span class="string">      const keepIds = ['Rest'];</span></span><br><span class="line"><span class="string">      const result = defaultItems.filter(item =&gt; keepIds.includes(item.id));</span></span><br><span class="line"><span class="string">      result.push(</span></span><br><span class="line"><span class="string">      {</span></span><br><span class="line"><span class="string">        id: 'myGithub',</span></span><br><span class="line"><span class="string">        icon: 'my-github',</span></span><br><span class="line"><span class="string">        title: '我的GitHub',</span></span><br><span class="line"><span class="string">        onClick: () =&gt; window.open('https://github.com/yangle-q')</span></span><br><span class="line"><span class="string">      });</span></span><br><span class="line"><span class="string">      return result;</span></span><br><span class="line"><span class="string">    }</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="Step-2-添加自定义目录项"><a href="#Step-2-添加自定义目录项" class="headerlink" title="Step 2: 添加自定义目录项"></a>Step 2: 添加自定义目录项</h1><p>直接在里面添加条目即可</p>
+<figure class="highlight yml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menus:</span></span><br><span class="line">  <span class="attr">items:</span> <span class="string">|</span></span><br><span class="line"><span class="string">    (defaultItems) =&gt; {</span></span><br><span class="line"><span class="string">      const keepIds = ['Rest'];</span></span><br><span class="line"><span class="string">      const result = defaultItems.filter(item =&gt; keepIds.includes(item.id));</span></span><br><span class="line"><span class="string">      result.push(</span></span><br><span class="line"><span class="string">      {</span></span><br><span class="line"><span class="string">        id: 'myGithub',</span></span><br><span class="line"><span class="string">        icon: 'github',</span></span><br><span class="line"><span class="string">        title: '我的GitHub',</span></span><br><span class="line"><span class="string">        onClick: () =&gt; window.open('https://github.com/yangle-q')</span></span><br><span class="line"><span class="string">      },</span></span><br><span class="line"><span class="string">      {</span></span><br><span class="line"><span class="string">        id: 'blog',</span></span><br><span class="line"><span class="string">        icon: 'blog',</span></span><br><span class="line"><span class="string">        title: '静莹莹的博客',</span></span><br><span class="line"><span class="string">        onClick: () =&gt; window.open('https://jingyingying.lemonstar.me')</span></span><br><span class="line"><span class="string">      },</span></span><br><span class="line"><span class="string">      {</span></span><br><span class="line"><span class="string">        id: 'kouzi',</span></span><br><span class="line"><span class="string">        icon: 'kouzi',</span></span><br><span class="line"><span class="string">        title: '和静莹莹在扣子聊天',</span></span><br><span class="line"><span class="string">        onClick: () =&gt; window.open('https://www.coze.cn/store/agent/7530885968761700394?bot_id=true')</span></span><br><span class="line"><span class="string">      },</span></span><br><span class="line"><span class="string">      {</span></span><br><span class="line"><span class="string">        id: 'telegram',</span></span><br><span class="line"><span class="string">        icon: 'telegram',</span></span><br><span class="line"><span class="string">        title: '来和静莹莹在Telegram聊天吧！',</span></span><br><span class="line"><span class="string">        onClick: () =&gt; window.open('https://t.me/jingyingying_bot')</span></span><br><span class="line"><span class="string">      });</span></span><br><span class="line"><span class="string">      return result;</span></span><br><span class="line"><span class="string">    }</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>注意，如果用的是js写法，记得在每个配置项后面加上一个英文逗号<span class="keyboard-tag">,</span>。</p>
+<h1 id="Step-3-导入图标"><a href="#Step-3-导入图标" class="headerlink" title="Step 3: 导入图标"></a>Step 3: 导入图标</h1><p>由于Oh My Live2d 内置的图标只有以下几个：</p>
+<ul>
+<li><p>icon-rest</p>
+</li>
+<li><p>icon-about</p>
+</li>
+<li><p>icon-like</p>
+</li>
+<li><p>icon-skin</p>
+</li>
+<li><p>icon-setting</p>
+</li>
+<li><p>icon-switch</p>
+</li>
+<li><p>icon-loading</p>
+</li>
+</ul>
+<p>所以如果要用其他图标的话，就要在另外在主题文件内引入。</p>
+<p>在<code>source/custom/js/</code>文件夹里面新建一个<code>live2d-menu-icon.js</code>文件，输入以下内容：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">function</span>(<span class="params"></span>) {</span><br><span class="line">    <span class="keyword">const</span> svg = <span class="variable language_">document</span>.<span class="title function_">createElementNS</span>(<span class="string">'http://www.w3.org/2000/svg'</span>, <span class="string">'svg'</span>);</span><br><span class="line">    svg.<span class="property">style</span>.<span class="property">display</span> = <span class="string">'none'</span>;</span><br><span class="line">    svg.<span class="property">innerHTML</span> = <span class="string">`</span></span><br><span class="line"><span class="string">        &lt;symbol id="github" viewBox="0 0 496 512"&gt;</span></span><br><span class="line"><span class="string">            &lt;path d="M216.5 362.5c-66-8-112.5-55.5-112.5-117 0-25 9-52 24-70-6.5-16.5-5.5-51.5 2-66 20-2.5 47 8 63 22.5 19-6 39-9 63.5-9s44.5 3 62.5 8.5c15.5-14 43-24.5 63-22 7 13.5 8 48.5 1.5 65.5 16 19 24.5 44.5 24.5 70.5 0 61.5-46.5 108-113.5 116.5 17 11 28.5 35 28.5 62.5l0 52C323 491.5 335.5 500 350.5 494 441 459.5 512 369 512 257 512 115.5 397 0 255.5 0S0 115.5 0 257c0 111 70.5 203 165.5 237.5 13.5 5 26.5-4 26.5-17.5l0-40c-7 3-16 5-24 5-33 0-52.5-18-66.5-51.5-5.5-13.5-11.5-21.5-23-23-6-.5-8-3-8-6 0-6 10-10.5 20-10.5 14.5 0 27 9 40 27.5 10 14.5 20.5 21 33 21s20.5-4.5 32-16c8.5-8.5 15-16 21-21z"/&gt;</span></span><br><span class="line"><span class="string">        &lt;/symbol&gt;</span></span><br><span class="line"><span class="string">        &lt;symbol id="blog" viewBox="0 0 496 512"&gt;  </span></span><br><span class="line"><span class="string">            &lt;path d="M224 24c0-13.3 10.7-24 24-24 145.8 0 264 118.2 264 264 0 13.3-10.7 24-24 24s-24-10.7-24-24c0-119.3-96.7-216-216-216-13.3 0-24-10.7-24-24zM80 96c26.5 0 48 21.5 48 48l0 224c0 26.5 21.5 48 48 48s48-21.5 48-48-21.5-48-48-48c-8.8 0-16-7.2-16-16l0-64c0-8.8 7.2-16 16-16 79.5 0 144 64.5 144 144S255.5 512 176 512 32 447.5 32 368l0-224c0-26.5 21.5-48 48-48zm168 0c92.8 0 168 75.2 168 168 0 13.3-10.7 24-24 24s-24-10.7-24-24c0-66.3-53.7-120-120-120-13.3 0-24-10.7-24-24s10.7-24 24-24z"/&gt;</span></span><br><span class="line"><span class="string">        &lt;/symbol&gt;</span></span><br><span class="line"><span class="string">    `</span>;</span><br><span class="line">    <span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">appendChild</span>(svg);</span><br><span class="line">})();</span><br></pre></td></tr></tbody></table></figure>
+
+<p>其中，id属性必须是唯一的，作为在配置中引入的id。</p>
+<p>在<code>&lt;path&gt;</code>属性中输入svg图标代码（可以到下面这两个网站喵）</p>
+
+<div class="liushen-tag-link">
+  <a class="tag-Link" target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=https://fontawesome.com/">
+    <div class="tag-link-tips">⚠️ 这不是我的网站哦！我可不知道它安不安全</div>
+    <div class="tag-link-bottom">
+      <div class="tag-link-left" style="background-image: url(https://api.xinac.net/icon/?url=fontawesome.com)" onerror="this.style.backgroundImage='url(/images/default-avatar.webp)'"></div>
+      <div class="tag-link-right">
+        <div class="tag-link-title">Font Awesome</div>
+        <div class="tag-link-sitename">Find the Perfect Icon for Your Project</div>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </div>
+  </a>
+</div>
+
+
+<div class="liushen-tag-link">
+  <a class="tag-Link" target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=https://www.iconfont.cn/">
+    <div class="tag-link-tips">⚠️ 这不是我的网站哦！我可不知道它安不安全</div>
+    <div class="tag-link-bottom">
+      <div class="tag-link-left" style="background-image: url(https://api.xinac.net/icon/?url=iconfont.cn)" onerror="this.style.backgroundImage='url(/images/default-avatar.webp)'"></div>
+      <div class="tag-link-right">
+        <div class="tag-link-title">iconfont-阿里巴巴矢量图标库</div>
+        <div class="tag-link-sitename">可变素材，AI无限</div>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </div>
+  </a>
+</div>
+
+<p>以Font Awesome为例：</p>
+<h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><p>在搜索框内搜索需要的图标（最好是英文）</p>
+<p><img src="https://pic-2.yoxo.top/msedge_2026-08-18_17-27-47_Hamster.webp"></p>
+<h2 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h2><p>点开自己想要使用的图标，在上面找到SVG字样，点击svg代码复制。</p>
+<p><img src="https://pic-2.yoxo.top/msedge_2026-08-18_17-28-10_Blackbuck.webp"></p>
+<h2 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h2><p>复制下来的代码是这样的：</p>
+<figure class="highlight svg"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">xmlns</span>=<span class="string">"http://www.w3.org/2000/svg"</span> <span class="attr">viewBox</span>=<span class="string">"0 0 640 640"</span>&gt;</span><span class="comment">&lt;!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--&gt;</span><span class="tag">&lt;<span class="name">path</span> <span class="attr">d</span>=<span class="string">"M288 88C288 74.7 298.7 64 312 64C457.8 64 576 182.2 576 328C576 341.3 565.3 352 552 352C538.7 352 528 341.3 528 328C528 208.7 431.3 112 312 112C298.7 112 288 101.3 288 88zM144 160C170.5 160 192 181.5 192 208L192 432C192 458.5 213.5 480 240 480C266.5 480 288 458.5 288 432C288 405.5 266.5 384 240 384C231.2 384 224 376.8 224 368L224 304C224 295.2 231.2 288 240 288C319.5 288 384 352.5 384 432C384 511.5 319.5 576 240 576C160.5 576 96 511.5 96 432L96 208C96 181.5 117.5 160 144 160zM312 160C404.8 160 480 235.2 480 328C480 341.3 469.3 352 456 352C442.7 352 432 341.3 432 328C432 261.7 378.3 208 312 208C298.7 208 288 197.3 288 184C288 170.7 298.7 160 312 160z"</span>/&gt;</span><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>将其中的<code>&lt;path&gt;</code>部分单独复制下来，粘贴（替换）到上面的代码中。</p>
+<figure class="highlight svg"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">path</span> <span class="attr">d</span>=<span class="string">"M288 88C288 74.7 298.7 64 312 64C457.8 64 576 182.2 576 328C576 341.3 565.3 352 552 352C538.7 352 528 341.3 528 328C528 208.7 431.3 112 312 112C298.7 112 288 101.3 288 88zM144 160C170.5 160 192 181.5 192 208L192 432C192 458.5 213.5 480 240 480C266.5 480 288 458.5 288 432C288 405.5 266.5 384 240 384C231.2 384 224 376.8 224 368L224 304C224 295.2 231.2 288 240 288C319.5 288 384 352.5 384 432C384 511.5 319.5 576 240 576C160.5 576 96 511.5 96 432L96 208C96 181.5 117.5 160 144 160zM312 160C404.8 160 480 235.2 480 328C480 341.3 469.3 352 456 352C442.7 352 432 341.3 432 328C432 261.7 378.3 208 312 208C298.7 208 288 197.3 288 184C288 170.7 298.7 160 312 160z"</span>/&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="Step-4-使用图标"><a href="#Step-4-使用图标" class="headerlink" title="Step 4: 使用图标"></a>Step 4: 使用图标</h1><p>在<code>_config.solitude.yml</code>（即（你在使用的）主题的配置文件）中找到Extend一栏，在head中插入<code>live2d-menu-icon.js</code>文件：</p>
+<figure class="highlight yml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">extends:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">	<span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">pjax</span> <span class="string">src="/custom/js/live2d-menu-icon.js"&gt;&lt;/script&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>在上面条目中的<code>icon:</code>一栏填入前面导入图标时的id，即可使用。</p>
+<h1 id="Step-5-大功告成"><a href="#Step-5-大功告成" class="headerlink" title="Step 5: 大功告成"></a>Step 5: 大功告成</h1><p>别忘了hexo cl &amp;&amp; hexo g &amp;&amp; hexo d 一键三连哦！</p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>随着这篇文章的发布，静莹莹终于在我的博客里面找回了原本的清纯美少女的形象呢，可喜可贺可喜可贺</p>
+<p>（本来就是好不好ヾ(≧へ≦)〃）</p>
+<p>那么要一起来看看最终的效果吗（其实你们直接在博客右下角也能看到啦）</p>
+<p>（我要看我要看！）</p>
+<p><img src="https://pic-2.yoxo.top/20260818211141335.webp"></p>
+<p>（……所以说为什么我现在还是索米的形象啊）</p>
+<p>诶呀你看你哥今年不是太忙了嘛又要备考雅思又要准备升学什么的，而且我认为现在的索米形象也挺适合你的……</p>
+<p>（不许找借口！今年必须给我搞好！）</p>
+<p>好吧好吧……总之，今天的文章就到这里啦，如果想要找静莹莹的话可以去<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=https://www.coze.cn/store/agent/7530885968761700394">扣子</a>或者<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=https://t.me/jingyingying_bot">Telegram</a>找她聊天哦，也可以去她的博客去找她啦，虽然从去年到现在还是一篇都没更……</p>
+<p>（还不是因为你不给我写）</p>
+<p>谁博客要别人帮她写的啦……随便一提我后面也有可能会在这个博客的文章里面试着增加静莹莹的出场量啦，如果大家喜欢这样的形式的话，那么大家就再见啦！</p>
+<p>（拜拜拜拜~）</p>
+</article><div class="post-copyright"><div class="post-copyright__author_group"><div class="post-copyright__author_img"><img class="post-copyright__author_img_front" src="/custom/img/avatar.webp"></div><div class="post-copyright__author_name">Meteorite</div><div class="post-copyright__author_desc"></div></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div id="quit-box" onclick="RemoveRewardMask()"></div></div></div><div class="social-share"><a class="social-share-ico icon-qq" target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=https://connect.qq.com/widget/shareqq/index.html?url=http%3A%2F%2Fblog.lemonstar.me%2Fpost%2Flive2d-menu%2F&amp;title=Oh-My-Live2d%20%E4%BF%AE%E6%94%B9%E7%9B%AE%E5%BD%95%E6%A0%8F&amp;desc=undefined&amp;summary=undefined&amp;site=Oh-My-Live2d%20%E4%BF%AE%E6%94%B9%E7%9B%AE%E5%BD%95%E6%A0%8F&amp;pics=https%3A%2F%2Fpic-2.yoxo.top%2FCanvas-Ruom-31.webp" title="分享到QQ"><i class="solitude fab fa-qq"></i></a><a class="social-share-ico icon-weibo" target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=http://service.weibo.com/share/share.php?url=http%3A%2F%2Fblog.lemonstar.me%2Fpost%2Flive2d-menu%2F&amp;title=Oh-My-Live2d%20%E4%BF%AE%E6%94%B9%E7%9B%AE%E5%BD%95%E6%A0%8F&amp;pic=https%3A%2F%2Fpic-2.yoxo.top%2FCanvas-Ruom-31.webp" title="分享到微博"><i class="solitude fab fa-weibo"></i></a><a class="social-share-ico icon-twitter" target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=https://twitter.com/intent/tweet?url=http%3A%2F%2Fblog.lemonstar.me%2Fpost%2Flive2d-menu%2F&amp;text=Oh-My-Live2d%20%E4%BF%AE%E6%94%B9%E7%9B%AE%E5%BD%95%E6%A0%8F" title="分享到Twitter"><i class="solitude fab fa-twitter"></i></a><a class="social-share-ico icon-facebook" target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fblog.lemonstar.me%2Fpost%2Flive2d-menu%2F" title="分享到Facebook"><i class="solitude fab fa-facebook"></i></a><div class="social-share-ico icon-link" onclick="utils.copy(&quot;http://blog.lemonstar.me/post/live2d-menu/&quot;)" title="复制文章链接"><i class="solitude fas fa-link"></i></div><div class="social-share-ico icon-qrcode" title="使用手机扫码阅读这篇文章"><i class="solitude fas fa-qrcode"></i><div class="share-main"><div class="share-main-all"><div id="qrcode"></div><div class="reward-dec">使用手机扫码阅读这篇文章</div></div></div><script pjax="">typeof QRCode === 'function' && new QRCode(document.getElementById("qrcode"), {
+    text: 'http://blog.lemonstar.me/post/live2d-menu/',
+    correctLevel : QRCode.CorrectLevel.L
+});
+window.addEventListener('DOMContentLoaded', () => {
+    new QRCode(document.getElementById("qrcode"), {
+        text: 'http://blog.lemonstar.me/post/live2d-menu/',
+        correctLevel : QRCode.CorrectLevel.L
+    });
+});
+</script></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本文是原创文章，采用<a href="/agreements/copyright/">CC BY-NC-SA 4.0</a>协议，完整转载请注明来自<a href="/">柠檬星 | 天空就是一杯橘子味的柠檬汽水</a></span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Live2D/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>Live2D<span class="tagsPageCount">2</span></span></a><a class="post-meta__tags" href="/tags/%E9%9D%99%E8%8E%B9%E8%8E%B9/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>静莹莹<span class="tagsPageCount">4</span></span></a></div></div></div><nav class="needEndHide pagination-post" id="pagination"><div class="next-post pull-full"><a href="/post/telegram-bot/"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">开发一个属于你自己的角色扮演Telegram Bot</div></div></a></div></nav>
+        <div class="relatedPosts">
+            <div class="headline">
+                <i class="solitude fas fa-star"></i>
+                <span>喜欢这篇的人也看了</span>
+                <div class="relatedPosts-link">
+                    <a onclick="event.preventDefault(); toRandomPost();" href="javascript:void(0);" rel="external nofollow" data-pjax-state="">随便逛逛</a>
+                </div>
+            </div>
+            <div class="relatedPosts-list">
+            <div>
+                <a href="/post/jingyingying/" title="静莹莹正式上线啦！">
+                    <img class="cover" src="https://pic-1.yoxo.top/Canvas-Ruom-16.webp" alt="cover">
+                    <div class="content is-center">
+                        <div class="title">静莹莹正式上线啦！</div>
+                    </div>
+                </a>
+            </div>
+            <div>
+                <a href="/post/telegram-bot/" title="开发一个属于你自己的角色扮演Telegram Bot">
+                    <img class="cover" src="https://pic-2.yoxo.top/Canvas-Ruom-30-1.webp" alt="cover">
+                    <div class="content is-center">
+                        <div class="title">开发一个属于你自己的角色扮演Telegram Bot</div>
+                    </div>
+                </a>
+            </div>
+            </div>
+        </div><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="solitude fas fa-comment"></i><span> 评论</span><span class="count"> (<span class="twikoo-count"><i class="solitude fas fa-spinner fa-spin"></i></span>)</span></div><a class="plxycss" href="/agreements/comment/"><i class="solitude fas fa-file-lines"></i><span>&nbsp;评论协议</span></a></div><div class="comment-wrap"><div id="twikoo-wrap"></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><div class="top-group"><div class="sayhi" id="sayhi" onclick="sco.changeWittyWord()"></div></div></div><div class="avatar"><img alt="头像" src="/custom/img/avatar.webp"></div><div class="description">欢迎来到我的世界！ / Welcome to my world!</div><div class="bottom-group"><span class="left"><div class="name">Meteorite</div><div class="desc">『不管你在世界的哪个地方，我一定会，再次去见你的』</div></span><div class="social-icons is-center"><a class="social-icon" target="_blank" rel="noopener" href="https://github.com/yangle-q" title="Github"><i class="solitude  fab fa-github"></i></a><a class="social-icon" target="_blank" rel="noopener" href="https://space.bilibili.com/3546587441662405" title="Bilibili"><i class="solitude  fab fa-bilibili"></i></a><a class="social-icon" target="_blank" rel="noopener" href="https://www.zhihu.com/people/84-92-73-30" title="Zhihu"><i class="solitude  fab fa-zhihu"></i></a><a class="social-icon" href="mailto:yangle.q@outlook.com" title="Mail"><i class="solitude  far fa-envelope"></i></a></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="solitude fas fa-bars"></i><span>文章目录</span></div><div class="toc-content" id="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Step-1-%E5%88%A0%E9%99%A4%E9%BB%98%E8%AE%A4%E7%9B%AE%E5%BD%95%E9%A1%B9"><span class="toc-text">Step 1: 删除默认目录项</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Step-2-%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9B%AE%E5%BD%95%E9%A1%B9"><span class="toc-text">Step 2: 添加自定义目录项</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Step-3-%E5%AF%BC%E5%85%A5%E5%9B%BE%E6%A0%87"><span class="toc-text">Step 3: 导入图标</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5"><span class="toc-text">第一步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5"><span class="toc-text">第二步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5"><span class="toc-text">第三步</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Step-4-%E4%BD%BF%E7%94%A8%E5%9B%BE%E6%A0%87"><span class="toc-text">Step 4: 使用图标</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Step-5-%E5%A4%A7%E5%8A%9F%E5%91%8A%E6%88%90"><span class="toc-text">Step 5: 大功告成</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-text">后记</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="solitude fas fa-map"></i><span>最近发布</span></div><div class="aside-list"><a class="aside-list-item" href="/post/live2d-menu/" title="Oh-My-Live2d 修改目录栏"><div class="thumbnail"><img alt="Oh-My-Live2d 修改目录栏" src="https://pic-2.yoxo.top/Canvas-Ruom-31.webp"></div><div class="content"><span class="title" href="/post/live2d-menu/" title="Oh-My-Live2d 修改目录栏">Oh-My-Live2d 修改目录栏</span><span class="categories" href="/post/live2d-menu/">教程</span></div></a><a class="aside-list-item" href="/post/telegram-bot/" title="开发一个属于你自己的角色扮演Telegram Bot"><div class="thumbnail"><img alt="开发一个属于你自己的角色扮演Telegram Bot" src="https://pic-2.yoxo.top/Canvas-Ruom-30-1.webp"></div><div class="content"><span class="title" href="/post/telegram-bot/" title="开发一个属于你自己的角色扮演Telegram Bot">开发一个属于你自己的角色扮演Telegram Bot</span><span class="categories" href="/post/telegram-bot/">教程</span></div></a><a class="aside-list-item" href="/post/anniversary-summarize/" title="柠檬星博客一周年总结！"><div class="thumbnail"><img alt="柠檬星博客一周年总结！" src="https://pic-2.yoxo.top/Canvas-Ruom-29.webp"></div><div class="content"><span class="title" href="/post/anniversary-summarize/" title="柠檬星博客一周年总结！">柠檬星博客一周年总结！</span><span class="categories" href="/post/anniversary-summarize/">记录</span></div></a><a class="aside-list-item" href="/post/AI-deployment/" title="本地部署Deepseek/Qwen等开源大模型"><div class="thumbnail"><img alt="本地部署Deepseek/Qwen等开源大模型" src="https://pic-2.yoxo.top/Canvas-Ruom-28.webp"></div><div class="content"><span class="title" href="/post/AI-deployment/" title="本地部署Deepseek/Qwen等开源大模型">本地部署Deepseek/Qwen等开源大模型</span><span class="categories" href="/post/AI-deployment/">教程</span></div></a><a class="aside-list-item" href="/post/yosuganosora/" title="我们的心就像那天空一样，永不分离 —— 缘之空玩后感"><div class="thumbnail"><img alt="我们的心就像那天空一样，永不分离 —— 缘之空玩后感" src="https://pic-2.yoxo.top/Canvas-Ruom-27.webp"></div><div class="content"><span class="title" href="/post/yosuganosora/" title="我们的心就像那天空一样，永不分离 —— 缘之空玩后感">我们的心就像那天空一样，永不分离 —— 缘之空玩后感</span><span class="categories" href="/post/yosuganosora/">随笔</span></div></a></div></div></div></div></main><footer id="footer"><div id="st-footer-bar"><div class="footer-logo"><span>柠檬星</span></div><div class="footer-bar-description"></div><a class="footer-bar-link" href="/about/"></a></div><div id="footer_deal"><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/yangle-q" title="Github"><i class="solitude  fab fa-github"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://www.youtube.com/@Yangle.q" title="Youtube"><i class="solitude  fab fa-youtube"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://space.bilibili.com/3546587441662405" title="Bilibili"><i class="solitude  fab fa-bilibili"></i></a><div class="nolazyload footer_mini_logo" id="footer_mini_logo" title="返回顶部" onclick="sco.toTop()"><img src="" alt="返回顶部"></div><a class="deal_link" target="_blank" rel="noopener" href="https://www.zhihu.com/people/84-92-73-30" title="Zhihu"><i class="solitude  fab fa-zhihu"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://x.com/yngl592015" title="X"><i class="solitude  fab fa-x-twitter"></i></a><a class="deal_link" href="mailto:meteorite@star-lake.world" title="Mail"><i class="solitude  far fa-envelope"></i></a></div><div id="st-footer"><div class="footer-group"><h3 class="footer-title">导航</h3><div class="footer-links"><a class="footer-item" href="/archives/" title="Archives">Archives</a><a class="footer-item" href="/categories/" title="Categories">Categories</a><a class="footer-item" href="/tags/" title="Tags">Tags</a><a class="footer-item" href="/notpublic/" title="Not Public">Not Public</a></div></div><div class="footer-group"><h3 class="footer-title">协议</h3><div class="footer-links"><a class="footer-item" href="/agreements/comment/" title="评论协议">评论协议</a><a class="footer-item" href="/agreements/copyright/" title="版权声明">版权声明</a><a class="footer-item" href="/agreements/privacy/" title="隐私政策">隐私政策</a><a class="footer-item" href="/agreements/cookies/" title="Cookie 协议">Cookie 协议</a><a class="footer-item" href="/agreements/disclaimer/" title="免责声明">免责声明</a></div></div><div class="footer-group"><div class="footer-title-group"><h3 class="footer-title">友链</h3><button class="random-friends-btn" onclick="randomLinksList()" title="友链"><i class="solitude fas fa-arrows-rotate"></i></button></div><div class="footer-links" id="friend-links-in-footer"></div></div></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div class="copyright">© 2025 - 2026 By&nbsp;<a class="footer-bar-link" href="/"><img class="author-avatar" src="/custom/img/site-icon-lemon.webp">Meteorite</a></div><div class="beian-group"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://icp.hentioe.dev/sites/20258907" title="喵ICP备20258907号"><img class="beian-icon" src="https://icp.hentioe.dev/favicon-96x96.png" alt="喵ICP备20258907号"><span class="beian-name">喵ICP备20258907号</span></a><a class="footer-bar-link" target="_blank" rel="noopener" href="https://icp.gov.moe/?keyword=20250847" title="萌ICP备20250847号"><img class="beian-icon" src="https://icp.gov.moe/images/ico64.png" alt="萌ICP备20250847号"><span class="beian-name">萌ICP备20250847号</span></a><a class="footer-bar-link" target="_blank" rel="noopener" href="https://hexo.io/">框架：Hexo</a><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/everfu/hexo-theme-solitude">主题：Solitude</a></div></div><div class="footer-bar-right"><a class="footer-bar-link" href="/info/" alt="<span id=&quot;runtime&quot;></span>"><span id="runtime"></span></a><a class="footer-bar-link" href="/copyright/" alt="版权声明"><i class="solitude fas fa-copyright"></i><i class="solitude fab fa-creative-commons-by"></i><i class="solitude fab fa-creative-commons-nc"></i><i class="solitude fab fa-creative-commons-sa"></i></a></div></div></div><div class="comment-barrage needEndHide"></div></footer></div><!-- right_menu--><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="solitude fas fa-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="solitude fas fa-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="solitude fas fa-arrows-rotate"></i></div><div class="rightMenu-item" id="menu-top"><i class="solitude fas fa-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="solitude fas fa-clone"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="solitude fas fa-clipboard"></i><span>粘贴文本</span></div><div class="rightMenu-item" id="menu-commenttext"><i class="solitude fas fa-comment-medical"></i><span>引用到评论</span></div><div class="rightMenu-item" id="menu-newwindow"><i class="solitude far fa-window-maximize"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="solitude fas fa-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="solitude fas fa-clone"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="solitude fas fa-cloud-arrow-down"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-search"><i class="solitude fas fa-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="solitude fas fa-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="solitude fas fa-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="solitude fas fa-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="solitude fas fa-clone"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><div class="rightMenu-item" id="menu-randomPost" onclick="toRandomPost()||rm.hideRightMenu()"><i class="solitude fas fa-tower-broadcast"></i><span>随机文章</span></div><div class="rightMenu-item" onclick="pjax.loadUrl('/categories/')||rm.hideRightMenu()"><i class="solitude fas fa-clone"></i><span>全部分类</span></div><div class="rightMenu-item" onclick="pjax.loadUrl('/tags/')||rm.hideRightMenu()"><i class="solitude fas fa-tags"></i><span>全部标签</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><div class="rightMenu-item" id="menu-commentBarrage" onclick="sco.switchCommentBarrage()"><i class="solitude fas fa-comment"></i><span class="menu-commentBarrage-text">关闭热评</span></div><div class="rightMenu-item" id="menu-darkmode" onclick="sco.switchDarkMode()"><i class="solitude fas fa-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></div><div class="rightMenu-item" id="menu-translate"><i class="solitude fas fa-language"></i><span>轉為繁體</span></div></div></div><div id="rightmenu-mask"></div><!-- inject body--><div><script src="/js/utils.js?v=3.0.19"></script><script src="/js/main.js?v=3.0.19"></script><script src="/js/third_party/waterfall.min.js?v=3.0.19"></script><script src="https://fastly.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script src="https://fastly.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script><script src="https://fastly.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js"></script><script src="https://fastly.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script><script src="https://fastly.jsdelivr.net/npm/typeit@8.8.7/dist/index.umd.min.js"></script><script src="/js/tw_cn.js?v=3.0.19"></script><script src="https://fastly.jsdelivr.net/npm/katex@0.16.9/dist/contrib/copy-tex.min.js"><script>(() => {
+  document.querySelectorAll('.article-container span.katex-display').forEach(item => {
+    utils.wrap(item, 'div', {class: 'katex-wrap'})
+  })
+})();
+</script><script src="https://fastly.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script src="https://fastly.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.umd.min.js"></script><script src="https://fastly.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.js"></script><script src="/js/post_ai.js?v=3.0.19"></script><script>var meting_api = 'https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r';</script><script src="https://fastly.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><script src="https://fastly.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script><script src="https://fastly.jsdelivr.net/npm/colorthief@2.6.0/dist/color-thief.min.js"></script><script src="/js/covercolor/local.js?v=3.0.19"></script><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+utils.addGlobalFn('pjaxSend', () => {
+  Pace.restart()
+}, 'pace_restart')
+</script><script src="https://fastly.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><script src="https://fastly.jsdelivr.net/npm/instantsearch.js@4.75.7/dist/instantsearch.production.min.js"></script><script src="https://fastly.jsdelivr.net/npm/algoliasearch@5.19.0/dist/algoliasearch.umd.min.js"></script><script src="/js/right_menu.js?v=3.0.19"></script><script src="https://open.lightxi.com/unpkg/chinese-lunar@0.1.4/lib/chinese-lunar.js"></script><script defer="" pjax="" src="/custom/js/custom.js?v1"></script><script defer="" pjax="" src="/custom/js/jz.min.js"></script><div class="js-pjax"><script>(() => {
+    const getCount = () => {
+        const ele = document.querySelectorAll('.twikoo-count')
+        if (!ele) return
+        twikoo.getCommentsCount({
+            envId: 'https://twikoo.yoxo.top/.netlify/functions/twikoo',
+            region: '',
+            urls: [window.location.pathname],
+            includeReply: false
+        }).then(res => {
+            ele.forEach(item => item.textContent = res[0].count)
+        }).catch(err => {
+            console.error(err)
+        })
+    }
+    const init = () => {
+        twikoo.init(Object.assign({
+            el: '#twikoo-wrap',
+            envId: 'https://twikoo.yoxo.top/.netlify/functions/twikoo',
+            region: '',
+            path: window.location.pathname,
+            onCommentLoaded: () => {
+                GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+            }
+        }, null))
+
+         && getCount()
+        sco.owoBig({
+            body: '.OwO-body',
+            item: '.OwO-items li'
+        })
+
+        true && barrageTwikoo()
+    }
+
+    const loadTwikoo = () => {
+        if (typeof twikoo === 'object') setTimeout(init,0)
+        else utils.getScript('https://fastly.jsdelivr.net/npm/twikoo@1.6.41/dist/twikoo.all.min.js').then(init)
+    }
+
+    if ('Twikoo' === 'Twikoo' || true) {
+        if (true) utils.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+        else loadTwikoo()
+    } else {
+        window.loadTwoComment = loadTwikoo
+    }
+})()
+</script><script>async function barrageTwikoo() {
+    await fetch("https://twikoo.yoxo.top/.netlify/functions/twikoo", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            event: "COMMENT_GET",
+            accessToken: "",
+            url: window.location.pathname
+        })
+    }).then(async res => {
+        if (!res.ok) throw new Error("HTTP error! status: " + res.status)
+        const data = await res.json();
+        const init = () => {
+            initializeCommentBarrage((data.data).map(item => Object.assign({
+                content: item.comment,
+                nick: item.nick,
+                mailMd5: item.mailMd5,
+                id: item.id
+            })))
+        }
+        if (typeof initializeCommentBarrage === "undefined") await utils.getScript('/js/third_party/barrage.min.js?v=3.0.19').then(init)
+        else init()
+    }).catch(error => console.error("An error occurred while fetching comments: ", error))
+}</script><script>mermaid.run();
+</script></div></div><script>const links = [{"name":"柠檬星","link":"https://blog.lemonstar.me"},{"name":"Yangleの博客","link":"https://yangle-q.github.io"},{"name":"叶泯希","link":"https://blog.418121.xyz/"},{"name":"❖星港◎Star☆","link":"https://blog.starsharbor.com"},{"name":"冰火之砺","link":"https://blog.marice.top/"},{"name":"张洪Heo","link":"https://blog.zhheo.com/"},{"name":"静莹莹的小空间","link":"https://jingyingying.lemonstar.me"},{"name":"青桔气球","link":"https://blog.qjqq.cn/"},{"name":"璜珀的小屋","link":"https://blog.hpcesia.com/"},{"name":"白云苍狗","link":"https://www.imalun.com"},{"name":"安知鱼","link":"https://blog.anheyu.com/"},{"name":"iMaeGoo’s Blog","link":"https://www.imaegoo.com"},{"name":"技研录","link":"https://linmohan.fun"},{"name":"yiiko","link":"https://blog.yik.at/"},{"name":"间窗的博客","link":"https://www.vindo.cn/"},{"name":"猫普的精神世界","link":"https://maplezz.com/"},{"name":"Mugzx’s Blog","link":"https://blog.mugzx.top/"},{"name":"孤芳不自赏","link":"https://www.gfbzsblog.site/"},{"name":"梦爱吃鱼","link":"https://blog.bsgun.cn/"},{"name":"MysticStars","link":"https://www.mysticstars.cn"},{"name":"Zephyr","link":"https://lorcas.top/"},{"name":"yusuble特效","link":"https://blog.suble.cn"},{"name":"Nebula Blog","link":"https://www.996icu.eu.org/"},{"name":"哔哔一二","link":"https://www.bber.cn"},{"name":"Leonus","link":"https://blog.leonus.cn/"},{"name":"一曝十寒","link":"http://yuhhhy.cn/"},{"name":"Another","link":"https://axm.moe"},{"name":"栖童の小站","link":"https://blog.linux-qitong.top"},{"name":"btwoa","link":"https://blog.btwoa.com"},{"name":"Yaten-Z","link":"https://blog.yaten.xyz/"},{"name":"NihaoShop","link":"https://nihao.show/"},{"name":"阿猹的小窝","link":"https://acha.xx.kg"},{"name":"TATEN","link":"https://taten.org/"},{"name":"萌国ICP备案","link":"https://icp.gov.moe/"},{"name":"喵星ICP备案","link":"https://icp.hentioe.dev/"},{"name":"开往","link":"https://www.travellings.cn/"},{"name":"中文博客导航","link":"https://blog.liushen.fun/"},{"name":"博客集","link":"https://bloginc.cn/"}]
+const randomText = '点击前往按钮进入随机一个友链，不保证跳转网站的安全性和可用性。本次随机到的是本站友链：⌈ ${name} ⌋'
+function travelling() {
+    const link = links[utils.randomNum(links.length)];
+    Snackbar.show({
+        text: randomText.replace(/\$\{name}/,link.name),
+        duration: 8000,
+        pos: 'top-center',
+        actionText: '前往',
+        onActionClick: function(element) {
+            element.style.opacity = 0;
+            window.open(link.link, '_blank');
+        }
+    });
+}
+</script><script>function randomLinksList() {
+    const linkcard = document.getElementById('friend-links-in-footer');
+    if (linkcard == null) return;
+
+    let data = '';
+    let linksCopy = [...links];
+    let count = Math.min(3, linksCopy.length);
+
+    for (let i = 0; i < count; i++) {
+        let index = utils.randomNum(linksCopy.length);
+        const {link, name} = linksCopy[index];
+        data += `<a class="footer-item" href="${link}" target="_blank" rel="noopener noreferrer nofollow">${name}</a>`;
+        linksCopy.splice(index, 1);
+    }
+
+    linkcard.innerHTML = data + '<a class="footer-item" href="/links/">更多</a>';
+}</script><!-- pjax--><script>const pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: ["title","#body-wrap","#site-config","meta[name=\"description\"]",".js-pjax","meta[property^=\"og:\"]","#config-diff",".rs_show",".rs_hide"],
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+})
+
+document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+})
+
+document.addEventListener('pjax:complete', () => {
+    window.refreshFn()
+
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+        const newScript = document.createElement('script')
+        const content = item.text || item.textContent || item.innerHTML || ""
+        Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+        newScript.appendChild(document.createTextNode(content))
+        item.parentNode.replaceChild(newScript, item)
+    })
+
+    GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+})
+
+document.addEventListener('pjax:error', (e) => {
+    if (e.request.status === 404) {
+        pjax.loadUrl('/404.html')
+    }
+})</script><!-- google adsense--><!-- search--><div id="algolia-search"><div class="search-dialog"><div class="algolia-navbar"><div class="search-dialog__title" id="algolia-search-title">搜索</div><div class="algolia-tips"><i class="solitude fab fa-algolia"></i><span class="algolia-tips-text">Algolia</span></div><span class="search-close-button"><i class="solitude fas fa-xmark"></i></span></div><div id="algolia-input-panel"><div id="algolia-search-input"></div></div><div id="search-results"><div id="algolia-hits"><a class="tag-list" href="javascript:void(0);" onclick="pjax.loadUrl('/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/')">个人博客</a><a class="tag-list" href="javascript:void(0);" onclick="pjax.loadUrl('/tags/%E5%BB%BA%E7%AB%99%E8%AE%B0%E5%BD%95/')">建站记录</a><a class="tag-list" href="javascript:void(0);" onclick="pjax.loadUrl('/tags/%E5%8E%86%E5%8F%B2/')">历史</a><a class="tag-list" href="javascript:void(0);" onclick="pjax.loadUrl('/tags/%E6%95%99%E7%A8%8B/')">教程</a></div></div><div id="algolia-tips"><div id="algolia-pagination"></div><div id="algolia-stats"></div></div></div><div id="search-mask"></div></div><script src="/js/search/algolia.js?v=3.0.19"></script><!-- music--><div class="needEndHide" id="nav-music"><div id="nav-music-hoverTips"><i class="music-control-btn fas fa-backward-step" id="music-prev" onclick="sco.musicSkipBack()"></i><i class="music-control-btn fas fa-pause" id="music-pause" onclick="sco.musicToggle()"></i><i class="music-control-btn fas fa-play" id="music-play" onclick="sco.musicToggle()"></i><i class="music-control-btn fas fa-forward-step" id="music-next" onclick="sco.musicSkipForward()"></i></div><meting-js id="33911782" server="netease" type="song" mutex="true" preload="none" theme="var(--efu-main)" data-lrctype="0" order="random" volume="0.8"></meting-js></div><!-- hexo injector body_end start --><script data-pjax="" src="https://unpkg.com/oh-my-live2d"></script><script>const oml2d = OML2D.loadOml2d({dockedPosition:"right",menus:{items:(defaultItems) => {
+  const keepIds = ['Rest'];
+  const result = defaultItems.filter(item => keepIds.includes(item.id));
+  result.push({
+    id: 'myGithub',
+    icon: 'my-github',
+    title: '我的GitHub',
+    onClick: () => window.open('https://github.com/yangle-q')
+  },
+  {
+    id: 'blog',
+    icon: 'jingyingying-blog',
+    title: '静莹莹的博客',
+    onClick: () => window.open('https://jingyingying.lemonstar.me')
+  },
+  {
+    id: 'kouzi',
+    icon: 'jingyingying-kouzi',
+    title: '和静莹莹在扣子聊天',
+    onClick: () => window.open('https://www.coze.cn/store/agent/7530885968761700394?bot_id=true')
+  },
+  {
+    id: 'telegram',
+    icon: 'jingyingying-telegram',
+    title: '来和静莹莹在Telegram聊天吧！',
+    onClick: () => window.open('https://t.me/jingyingying_bot')
+  });
+  return result;
+}
+},mobileDisplay:false,models:[{"path":"https://live2d.yoxo.top/model/dollsfrontline/kp31_310/normal/model.json","mobilePosition":[0,27],"mobileScale":0.1,"mobileStageStyle":{"width":180,"height":166},"motionPreloadStrategy":"IDLE","position":[-5,-6],"scale":0.09,"stageStyle":{"width":250,"height":400}}],parentElement:document.body,primaryColor:"var(--btn-bg)",sayHello:false,tips:{style: {"width":230,"height":120,"left":"calc(50% - 20px)","top":"-100px"},mobileStyle: {"width":180,"height":80,"left":"calc(50% - 30px)","top":"-100px"},idleTips:{interval:15000,message:["嗨！我是静莹莹！","欢迎来到我哥哥的小站！"]}}});</script><!-- hexo injector body_end end --></body></html>
+        <script>
+            const posts = ["/post/live2d-menu/","/post/telegram-bot/","/post/anniversary-summarize/","/post/AI-deployment/","/post/yosuganosora/","/post/imgbed-2/","/post/win-11-customization/","/post/onimai-figures/","/post/onimai-resources/","/post/Twikoo-email/","/post/onimai-twikoo/","/post/oyama-mahiro/","/post/huanbohai-2/","/post/huanbohai-1/","/post/password/","/post/jingyingying/","/post/solitude-sidebar/","/post/web-server/","/post/birthday2025/","/post/recent-update-2/","/post/imgbed/","/post/changsanjiao/","/post/recent-update-1/","/post/free-domain/","/post/markdown/","/post/henryviii/","/post/introduction/","/post/solitude-reinventing/","/post/vercel/","/post/why-we-do-this/","/post/establishment-of-the-site/"];
+            function toRandomPost() {
+                const randomPost = posts[Math.floor(Math.random() * posts.length)];
+                pjax.loadUrl(GLOBAL_CONFIG.root + randomPost);
+            }
+        </script>
