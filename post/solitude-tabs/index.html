@@ -1,0 +1,1602 @@
+<!DOCTYPE html><html lang="zh-cn" data-theme="light"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Solitude主题内置&amp;外挂标签使用说明 | 柠檬星 | 天空就是一杯橘子味的柠檬汽水</title><noscript>开启JavaScript才能访问本站哦~</noscript><link rel="icon" href="/custom/img/site-icon-lemon.webp"><!-- index.css--><link rel="stylesheet" href="/css/index.css?v=3.0.19"><!-- inject head--><link rel="canonical" href="http://blog.lemonstar.me/post/solitude-tabs/index.html"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css"><!-- aplayer--><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!-- swiper--><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.css"><!-- fancybox ui--><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.min.css"><!-- katex--><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"><!-- Open Graph--><meta name="description" content="前言这篇文章我本来是想和Markdown格式详解与Solitude主题Front Matter使用说明这篇文章一起发的，结果因为一大堆事情耽搁了一个月，后面就算是想起来这件事也总感觉不是还有其他大佬写过吗，就懒得去写了，最近是因为自己写文章要经常用到外挂标签，一边开着别人的网站一边写博客总感觉不太方"><!-- pwa--><meta name="apple-mobile-web-app-capable" content="柠檬星 | 天空就是一杯橘子味的柠檬汽水"><meta name="theme-color" content="var(--efu-main)"><meta name="apple-mobile-web-app-status-bar-style" content="var(--efu-main)"><link rel="bookmark" href="/custom/img/site-icon-lemon.webp"><link rel="apple-touch-icon" href="/custom/img/site-icon-lemon.webp" sizes="180x180"><script>console.log(' %c Solitude %c ' + '3.0.19' + ' %c https://github.com/everfu/hexo-theme-solitude',
+    'background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff',
+    'background:#ff9a9a ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff',
+    'background:unset ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff')
+</script><script defer="" src="https://umami.yoxo.top/script.js" data-website-id="80f6d19d-58b2-475e-84e2-dea2df5be471"></script><script defer="" src="https://umami.yoxo.top/script.js" data-website-id="ea91c351-08b6-46d8-b449-c938f3a56209"></script><link rel="stylesheet" href="/custom/css/custom.css?v3"><script defer="" pjax="" src="/custom/js/live2d-menu-icon.js"></script><script>(()=>{
+        const saveToLocal = {
+            set: function setWithExpiry(key, value, ttl) {
+                if (ttl === 0)
+                    return
+                const now = new Date()
+                const expiryDay = ttl * 86400000
+                const item = {
+                    value: value,
+                    expiry: now.getTime() + expiryDay
+                }
+                localStorage.setItem(key, JSON.stringify(item))
+            },
+            get: function getWithExpiry(key) {
+                const itemStr = localStorage.getItem(key)
+
+                if (!itemStr) {
+                    return undefined
+                }
+                const item = JSON.parse(itemStr)
+                const now = new Date()
+
+                if (now.getTime() > item.expiry) {
+                    localStorage.removeItem(key)
+                    return undefined
+                }
+                return item.value
+            }
+        };
+        window.utils = {
+            saveToLocal: saveToLocal,
+            getCSS: (url, id = false) => new Promise((resolve, reject) => {
+              const link = document.createElement('link')
+              link.rel = 'stylesheet'
+              link.href = url
+              if (id) link.id = id
+              link.onerror = reject
+              link.onload = link.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                link.onload = link.onreadystatechange = null
+                resolve()
+              }
+              document.head.appendChild(link)
+            }),
+            getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+              const script = document.createElement('script')
+              script.src = url
+              script.async = true
+              script.onerror = reject
+              script.onload = script.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                script.onload = script.onreadystatechange = null
+                resolve()
+              }
+
+              Object.keys(attr).forEach(key => {
+                script.setAttribute(key, attr[key])
+              })
+
+              document.head.appendChild(script)
+            }),
+            addGlobalFn: (key, fn, name = false, parent = window) => {
+                const globalFn = parent.globalFn || {}
+                const keyObj = globalFn[key] || {}
+
+                if (name && keyObj[name]) return
+
+                name = name || Object.keys(keyObj).length
+                keyObj[name] = fn
+                globalFn[key] = keyObj
+                parent.globalFn = globalFn
+            },
+            addEventListenerPjax: (ele, event, fn, option = false) => {
+              ele.addEventListener(event, fn, option)
+              utils.addGlobalFn('pjax', () => {
+                  ele.removeEventListener(event, fn, option)
+              })
+            },
+            diffDateFormat: (selector) => {
+                selector.forEach(item => {
+                    const date = new Date(item.getAttribute('datetime') || item.textContent);
+                    item.textContent = (date.getMonth() + 1).toString()+'/'+date.getDate().toString();
+                });
+            },
+        }
+    })()</script><!-- theme--><script>initTheme = () => {
+    let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const cachedMode = utils.saveToLocal.get('theme');
+    if (cachedMode === undefined) {
+        const nowMode =
+            isDarkMode ? 'dark' : 'light'
+        document.documentElement.setAttribute('data-theme', nowMode);
+    } else {
+        document.documentElement.setAttribute('data-theme', cachedMode);
+    }
+    typeof rm === 'object' && rm.mode(cachedMode === 'dark' && isDarkMode)
+}
+initTheme()</script><!-- global head--><script>const GLOBAL_CONFIG = {
+    root: '/',
+    algolia: {"appId":"Z7A3XW4R2I","apiKey":"12db1ad54372045549ef465881c17e743","indexName":"my-hexo-blog","hits":{"per_page":6}},
+    localsearch: undefined,
+    runtime: '2025-04-13 10:00:00',
+    lazyload: {
+        enable: false,
+        error: '/img/error_load.avif'
+    },
+    copyright: false,
+    highlight: {"limit":200,"expand":true,"copy":true,"syntax":"highlight.js"},
+    randomlink: true,
+    lang: {"theme":{"dark":"已切换至深色模式","light":"已切换至浅色模式"},"copy":{"success":"复制成功","error":"复制失败"},"backtop":"返回顶部","time":{"day":"天前","hour":"小时前","just":"刚刚","min":"分钟前","month":"个月前"},"day":" 天","f12":"开发者模式已打开，请遵循GPL协议。","totalk":"无需删除空行，直接输入评论即可","search":{"empty":"找不到你查询的内容：${query}","hit":"找到 ${hits} 条结果，用时 ${time} 毫秒","placeholder":"输入关键词快速查找","count":"共 <b>${count}</b> 条结果。","loading":"搜索中..."},"barrage":{"title":"热评"}},
+    aside: {
+        state: {
+            morning: "早安~ 睡得怎么样 😀",
+            noon: "🍚吃饭喽~",
+            afternoon: "☕下午好！来杯下午茶吧~",
+            night: "✨一起出来看星星吧~",
+            goodnight: "时间不早啦，赶紧睡吧~ 😴",
+        },
+        witty_words: ["Nice to meet you here"],
+        witty_comment: {
+            prefix: '好久不见，',
+            back: '欢迎再次回来，',
+        },
+    },
+    covercolor: {
+        enable: true
+    },
+    comment: {"avatar":"https://gravatar.com/avatar","commentBarrage":true},
+    lightbox: 'fancybox',
+    right_menu: {"mode":{"dark":"深色模式","light":"浅色模式"},"img_error":"此图片无法复制与下载","music":{"start":"播放音乐","stop":"暂停音乐"},"barrage":{"open":"显示热评","close":"关闭热评"},"translate":true,"ctrlOriginalMenu":"按住Ctrl+右键可打开浏览器右键菜单"},
+    translate: {"translateDelay":0,"defaultEncoding":2},
+    lure: {"jump":"我藏好辣！","back":"嘻嘻被你发现啦~"},
+    expire: false,
+};</script><!-- page-config head--><script id="config-diff">var PAGE_CONFIG = {
+    is_post: true,
+    is_page: false,
+    is_home: false,
+    page: '',
+    toc: true,
+    comment: true,
+    ai_text: '哇哇哇，哥哥这篇文章好厉害呀，整理了好多Solitude主题的内置和外挂标签的使用方法呢！(✧∀✧)✨ 莹莹来给大家划重点啦～ヽ (✿ﾟ▽ﾟ) ノ 1. **内置标签** - Tabs标签：可以创建多个标签页，方便对比和分类展示内容。 - Gallery和GalleryGroup：用来展示图片列表和图片组，让博客更加图文并茂。 - Chart和Mermaid：可以生成图表，对于数据分析和展示很有帮助。 - Typeit：创建打字动画效果，让博客更加有趣。 2. **插件标签** - 包括了视频、音频、卡片、链接、复选框、单选框、按钮等多种互动元素，让博客更加丰富多彩。 3. **使用方法** - 文章中详细讲解了每个标签的语法和参数，还有具体的示例和效果展示，非常贴心呢！ 4. **后记** - 哥哥提到这篇文章整理起来相当费时费力，但最终还是完成了，好有成就感呀！ 莹莹觉得这篇文章对于使用Solitude主题的博主们来说简直是福音呢！以后写博客的时候就可以利用这些标签，让博客看起来更加专业和吸引人啦！(๑＞ڡ＜)✧ PS：哥哥要记得休息哦！莹莹会一直支持哥哥的！٩(｡・ω・｡)و',
+    color: false,
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body id="body"><!-- universe--><!-- background img--><div id="global_bg"></div><!-- loading--><div id="loading-box" onclick="preloader.endLoading();" style="zoom:1"><div class="loading-bg"><img class="loading-img nolazyload" src="/custom/img/avatar.webp" alt="loading image"></div></div><script>const preloader = {
+    isLoaded: false,
+    endLoading: () => {
+        if (!preloader.isLoaded) {
+            document.getElementById('loading-box').classList.add('loaded');
+            preloader.isLoaded = true;
+            preloader.togglePaceDone();
+        }
+    },
+    initLoading: () => {
+        document.getElementById('loading-box').classList.remove('loaded');
+        preloader.isLoaded = false;
+        preloader.togglePaceDone();
+    },
+    togglePaceDone: () => {
+        document.getElementById('body').className = preloader.isLoaded ? 'pace-done' : '';
+    }
+}
+
+window.addEventListener('load', () => {
+    preloader.endLoading();
+});
+
+window.addEventListener('pjax:send', () => {
+    preloader.initLoading();
+});
+
+document.addEventListener('pjax:complete', () => {
+    preloader.endLoading();
+});
+
+setTimeout(() => {
+    preloader.endLoading();
+}, 5000);</script><!-- console--><div id="console"><div class="close-btn" onclick="sco.hideConsole()"><i class="solitude fas fa-xmark"></i></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments" onclick="sco.hideConsole()"><div class="card-content"><div class="author-content-item-tips">互动</div><div class="author-content-item-title">最新评论<a class="recent-comment-more" href="/recentcomments/" title="最近评论"><i class="solitude fas fa-circle-chevron-right"></i></a></div></div><div class="console_recentcomments"><script pjax="">(async () => {
+    document.querySelector('.console-card .console_recentcomments').textContent = `加载中...`
+    const emojiReg = /<img class="tk-owo-emotion" [^>]+>/g
+    let cache = utils.saveToLocal.get('twikoo-recent-comments-console')
+    if (cache) {
+        setHtml(document.querySelector('.console-card .console_recentcomments'), cache)
+        return
+    }
+    let ls = []
+
+    await fetch('https://twikoo.yoxo.top/.netlify/functions/twikoo', {
+        method: "POST",
+        body: JSON.stringify({
+            "event": "GET_RECENT_COMMENTS",
+            "includeReply": true,
+            "pageSize": 6
+        }),
+        headers: {'Content-Type': 'application/json'}
+    }).then(res => res.json()).then(async ({data}) => {
+        for (const i of data) {
+            if (i.avatar === undefined) i.avatar = 'https://gravatar.com/avatar/avatar/d615d5793929e8c7d70eab5f00f7f5f1?d=mp'
+            let title = ''
+            if (i.url) {
+                await fetch(i.url).then(res => res.text()).then(html => {
+                    const parser = new DOMParser()
+                    const doc = parser.parseFromString(html, 'text/html')
+                    title = doc.querySelector('title').innerText
+                }).catch(() => {
+                    title = i.url
+                })
+            }
+            if (title.indexOf('|') > 0) {
+                title = title.split('|')[0]
+            }
+            ls.push({
+                avatar: i.avatar,
+                nick: i.nick,
+                title: title,
+                content: i.comment,
+                url: i.url + '#' + i.id,
+                time: i.created
+            })
+        }
+        setHtml(document.querySelector('.console-card .console_recentcomments'), ls)
+        utils.saveToLocal.set('twikoo-recent-comments-console', ls, 1)
+    });
+
+    function setHtml(el, data) {
+        el.innerHTML = data.length !== 0 ? data.map(i => `
+            <div class="comment-card" title="${i.title}" onclick="pjax.loadUrl('${i.url}')">
+                <div class="comment-info">
+                    <img src="${i.avatar}" class="nolazyload" alt="${i.nick}">
+                    <div>
+                        <span class="comment-user">${i.nick}</span>
+                    </div>
+                    <time class="comment-time" datetime="${new Date(i.time)}"></time>
+                </div>
+                <div class="comment-content">${formatContent(i.content)}</div>
+                <div class="comment-title">
+                <i class="solitude fas fa-comment"></i>
+                ${i.title}</div>
+            </div>
+        `).join('') : `暂无评论...`
+        if (typeof utils !== 'undefined') utils.diffDateFormat(document.querySelectorAll('.comment-time'))
+        else {
+            document.addEventListener('pjax:complete', () => utils.diffDateFormat(document.querySelectorAll('.comment-time')))
+            document.addEventListener('DOMContentLoaded', () => utils.diffDateFormat(document.querySelectorAll('.comment-time')))
+        }
+    }
+
+    function formatContent(content) {
+        content = content.replace(emojiReg, '表情')
+        content = content.replace(/<\/*br>|[\s\uFEFF\xA0]+/g, '');
+        content = content.replace(/<img.*?>/g, '[图片]');
+        content = content.replace(/<a.*?>.*?<\/a>/g, '[链接]');
+        content = content.replace(/<pre.*?>.*?<\/pre>/g, '[代码]');
+        content = content.replace(/<.*?>/g, '');
+        return content
+    }
+})()</script></div></div></div><div class="console-card-group-right"><div class="console-card tags" onclick="sco.hideConsole()"><div class="card-content"><div class="author-content-item-tips">标签</div><div class="author-content-item-title">寻找感兴趣的领域</div></div><div class="card-tag-cloud"><a href="/tags/%E5%8E%86%E5%8F%B2/">历史<sup>2</sup></a><a href="/tags/%E8%8B%B1%E6%96%87/">英文<sup>2</sup></a><a href="/tags/%E8%8B%B1%E5%9B%BD/">英国<sup>2</sup></a><a href="/tags/%E4%BA%A8%E5%88%A9%E5%85%AB%E4%B8%96/">亨利八世<sup>1</sup></a><a href="/tags/Live2D/">Live2D<sup>2</sup></a><a href="/tags/%E9%9D%99%E8%8E%B9%E8%8E%B9/">静莹莹<sup>4</sup></a><a href="/tags/%E5%86%99%E4%BD%9C/">写作<sup>2</sup></a><a href="/tags/Markdown/">Markdown<sup>2</sup></a><a href="/tags/Solitude/">Solitude<sup>5</sup></a><a href="/tags/%E5%A4%96%E6%8C%82%E6%A0%87%E7%AD%BE/">外挂标签<sup>1</sup></a><a href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">个人博客<sup>10</sup></a><a href="/tags/%E9%AD%94%E6%94%B9/">魔改<sup>3</sup></a><a href="/tags/%E5%BB%BA%E7%AB%99%E8%AE%B0%E5%BD%95/">建站记录<sup>8</sup></a><a href="/tags/%E5%9B%BE%E5%BA%8A/">图床<sup>2</sup></a><a href="/tags/CloudFlare/">CloudFlare<sup>2</sup></a><a href="/tags/%E7%BE%8E%E5%8C%96/">美化<sup>2</sup></a><a href="/tags/Windows/">Windows<sup>2</sup></a><a href="/tags/win11/">win11<sup>2</sup></a><a href="/tags/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/">资源分享<sup>5</sup></a><a href="/tags/%E5%88%AB%E9%85%B1/">别酱<sup>4</sup></a><a href="/tags/%E5%88%AB%E5%BD%93%E6%AC%A7%E5%B0%BC%E9%85%B1%E4%BA%86%EF%BC%81/">别当欧尼酱了！<sup>4</sup></a><a href="/tags/%E4%BA%8C%E6%AC%A1%E5%85%83/">二次元<sup>5</sup></a><a href="/tags/%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/">资源汇总<sup>2</sup></a><a href="/tags/%E6%89%8B%E5%8A%9E/">手办<sup>1</sup></a><a href="/tags/%E7%B7%92%E5%B1%B1%E3%81%BE%E3%81%B2%E3%82%8D/">緒山まひろ<sup>2</sup></a><a href="/tags/%E4%BF%A1%E6%81%AF%E6%B1%87%E6%80%BB/">信息汇总<sup>1</sup></a><a href="/tags/ACGN/">ACGN<sup>5</sup></a><a href="/tags/%E9%83%A8%E7%BD%B2/">部署<sup>2</sup></a><a href="/tags/Vercel/">Vercel<sup>1</sup></a><a href="/tags/GitHub/">GitHub<sup>1</sup></a><a href="/tags/%E9%82%AE%E4%BB%B6%E6%A8%A1%E6%9D%BF/">邮件模板<sup>1</sup></a><a href="/tags/Twikoo/">Twikoo<sup>2</sup></a><a href="/tags/%E5%A4%B8%E5%85%8B/">夸克<sup>1</sup></a><a href="/tags/%E8%A1%A8%E6%83%85%E5%8C%85/">表情包<sup>1</sup></a><a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器<sup>1</sup></a><a href="/tags/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91/">网站开发<sup>3</sup></a><a href="/tags/Linux/">Linux<sup>1</sup></a><a href="/tags/%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D/">免费域名<sup>1</sup></a><a href="/tags/%E7%99%BD%E5%AB%96%E6%8C%87%E5%8D%97/">白嫖指南<sup>1</sup></a><a href="/tags/%E4%B8%AA%E4%BA%BA%E4%B8%BB%E9%A1%B5/">个人主页<sup>1</sup></a><a href="/tags/%E8%BF%91%E5%86%B5%E5%85%AC%E5%91%8A/">近况公告<sup>4</sup></a><a href="/tags/AI/">AI<sup>4</sup></a><a href="/tags/Telegram/">Telegram<sup>1</sup></a><a href="/tags/%E7%BC%98%E4%B9%8B%E7%A9%BA/">缘之空<sup>1</sup></a><a href="/tags/Galgame/">Galgame<sup>1</sup></a><a href="/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/">读后感<sup>1</sup></a><a href="/tags/%E7%94%9F%E6%97%A5/">生日<sup>1</sup></a><a href="/tags/%E6%97%A5%E5%B8%B8/">日常<sup>4</sup></a><a href="/tags/%E5%87%BA%E6%B8%B8/">出游<sup>4</sup></a><a href="/tags/%E7%94%9F%E6%97%A5%E5%BF%AB%E4%B9%90%EF%BC%81/">生日快乐！<sup>1</sup></a><a href="/tags/%E5%A4%B4%E5%83%8F/">头像<sup>1</sup></a><a href="/tags/%E6%97%85%E8%A1%8C/">旅行<sup>3</sup></a></div></div><div class="console-card history" onclick="sco.hideConsole()"><ul class="card-archive-list"><li class="item"><a href="/archives/2026/08/"><span class="date">2026/08</span><div class="count-group"><span class="count">2</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2026/06/"><span class="date">2026/06</span><div class="count-group"><span class="count">1</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2026/04/"><span class="date">2026/04</span><div class="count-group"><span class="count">1</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2026/03/"><span class="date">2026/03</span><div class="count-group"><span class="count">1</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2026/02/"><span class="date">2026/02</span><div class="count-group"><span class="count">1</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2026/01/"><span class="date">2026/01</span><div class="count-group"><span class="count">1</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2025/12/"><span class="date">2025/12</span><div class="count-group"><span class="count">2</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2025/11/"><span class="date">2025/11</span><div class="count-group"><span class="count">2</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2025/10/"><span class="date">2025/10</span><div class="count-group"><span class="count">3</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2025/09/"><span class="date">2025/09</span><div class="count-group"><span class="count">1</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2025/08/"><span class="date">2025/08</span><div class="count-group"><span class="count">7</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2025/06/"><span class="date">2025/06</span><div class="count-group"><span class="count">6</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2025/05/"><span class="date">2025/05</span><div class="count-group"><span class="count">3</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2025/04/"><span class="date">2025/04</span><div class="count-group"><span class="count">1</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/"><span class="date">全部文章</span><div class="count-group"><span class="count">32</span><span class="unit">篇</span></div></a></li></ul></div></div></div><div class="button-group"><div class="console-btn-item"><span class="darkmode_switchbutton" onclick="sco.switchDarkMode()" title="昼夜切换"><i class="solitude fas fa-circle-half-stroke"></i></span></div><div class="console-btn-item" id="consoleHideAside"><span class="asideSwitch" onclick="sco.switchHideAside()" title="边栏显示控制"><i class="solitude fas fa-arrows-left-right-to-line"></i></span></div><div class="console-btn-item" id="consoleKeyboard" onclick="sco.switchKeyboard()"><span class="keyboardSwitch" title="键盘快捷键"><i class="solitude fas fa-keyboard"></i></span></div><div class="console-btn-item" id="consoleMusic" onclick="sco.musicToggle()"><span class="music-switch" title="音乐开关"><i class="solitude fas fa-compact-disc"></i></span></div><div class="console-btn-item on" id="consoleCommentBarrage" onclick="sco.switchCommentBarrage()"><span class="commentBarrage"><i class="solitude fas fa-comment"></i></span></div></div><div class="console-mask" onclick="sco.hideConsole()"></div></div><!-- sidebar--><div id="sidebar" style="zoom: 1;"><div id="menu-mask" style="display: none;"></div><div id="sidebar-menus"><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">32</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">52</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/recentcomments/"><div class="headline">评论</div><div class="length-num" id="twikoo_allcount"><i class="solitude fas fa-spinner fa-spin"></i></div><script pjax="pjax">(async () => {
+  await fetch('https://twikoo.yoxo.top/.netlify/functions/twikoo', {
+    method: "POST",
+    body: JSON.stringify({
+      "event": "GET_RECENT_COMMENTS",
+      "includeReply": true,
+      "pageSize": 999
+    }),
+    headers: {'Content-Type': 'application/json'}
+  }).then(res => res.json()).then(async ({data}) => {
+    document.querySelector('#twikoo_allcount').innerHTML = data.length
+  })
+})()</script></a></div></div></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><span class="darkmode_switchbutton menu-child" onclick="sco.switchDarkMode()"><i class="solitude fas fa-circle-half-stroke"></i><span>显示模式</span></span></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">博客相关</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/yangle-q/Personal-Blog-Solitude" title="Github 仓库"><img class="nolazyload back-menu-item-icon" src="https://pic-1.yoxo.top/Github.webp" alt="Github 仓库"><span class="back-menu-item-text">Github 仓库</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://solitude.js.org/" title="Soliude 主题文档"><img class="nolazyload back-menu-item-icon" src="https://solitude.js.org/.netlify/images?url=%2Flogo.svg" alt="Soliude 主题文档"><span class="back-menu-item-text">Soliude 主题文档</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://umami.yoxo.top/share/OdAgwAsNT2gOjqlj/blog.lemonstar.me" title="Umami 数据统计"><img class="nolazyload back-menu-item-icon" src="https://pic-1.yoxo.top/umami1679541696502.webp" alt="Umami 数据统计"><span class="back-menu-item-text">Umami 数据统计</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://lemonstar.me" title="柠檬星 主页"><img class="nolazyload back-menu-item-icon" src="https://pic-1.yoxo.top/graphic-5379480_1280.webp" alt="柠檬星 主页"><span class="back-menu-item-text">柠檬星 主页</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://jingyingying.lemonstar.me/" title="静莹莹的小空间"><img class="nolazyload back-menu-item-icon" src="https://jingyingying.lemonstar.me/favicon/favicon-light-32.png" alt="静莹莹的小空间"><span class="back-menu-item-text">静莹莹的小空间</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://birthday.lemonstar.me" title="Happy Birthday"><img class="nolazyload back-menu-item-icon" src="https://pic-1.yoxo.top/favicon.webp" alt="Happy Birthday"><span class="back-menu-item-text">Happy Birthday</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://hellofrom.cn" title="HelloFrom.cn"><img class="nolazyload back-menu-item-icon" src="https://pic-1.yoxo.top/logo.webp" alt="HelloFrom.cn"><span class="back-menu-item-text">HelloFrom.cn</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://countdown.20100807.xyz" title="生日倒计时"><img class="nolazyload back-menu-item-icon" src="https://countdown.20100807.xyz/favicon.png" alt="生日倒计时"><span class="back-menu-item-text">生日倒计时</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">工具</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://ai.lemonstar.me" title="柠檬星AI"><img class="nolazyload back-menu-item-icon" src="https://pic-1.yoxo.top/deepseek.webp" alt="柠檬星AI"><span class="back-menu-item-text">柠檬星AI</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://cloud.lemonstar.me" title="柠檬星云盘"><img class="nolazyload back-menu-item-icon" src="https://cloud.lemonstar.me/assets/homescreen.png" alt="柠檬星云盘"><span class="back-menu-item-text">柠檬星云盘</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://chatroom.lemonstar.me" title="加密聊天室"><img class="nolazyload back-menu-item-icon" src="https://pic-1.yoxo.top/lock.webp" alt="加密聊天室"><span class="back-menu-item-text">加密聊天室</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://whiteboard.lemonstar.me" title="全能白板"><img class="nolazyload back-menu-item-icon" src="https://whiteboard.lemonstar.me/favicon.ico" alt="全能白板"><span class="back-menu-item-text">全能白板</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://cover.lemonstar.me" title="Mini-Cover"><img class="nolazyload back-menu-item-icon" src="https://cover.lemonstar.me/favicon.svg" alt="Mini-Cover"><span class="back-menu-item-text">Mini-Cover</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span>基地</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>仓库</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="solitude  fas fa-folder-closed"></i><span>目录</span></a></li><li><a class="site-page child" href="/categories/"><i class="solitude  fas fa-clone"></i><span>分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="solitude  fas fa-tags"></i><span>标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>互联</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/links/"><i class="solitude  fas fa-user-group"></i><span>友链</span></a></li><li><a class="site-page child" href="/message/"><i class="solitude  fas fa-comment-alt"></i><span>留言</span></a></li><li><a class="site-page child" href="/recentcomments/"><i class="solitude  fas fa-comments"></i><span>评论</span></a></li><li><a class="site-page child" href="/tlink/"><i class="solitude  fas fa-share-alt-square"></i><span>网站</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>私人空间</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/essay/"><i class="solitude  fas fa-pen-nib"></i><span>碎语</span></a></li><li><a class="site-page child" href="/bangumis/"><i class="solitude  fab fa-bilibili"></i><span>追番</span></a></li><li><a class="site-page child" href="/music/"><i class="solitude  fas fa-music"></i><span>音吧</span></a></li><li><a class="site-page child" href="/gallery/"><i class="solitude   fas fa-images"></i><span>画馆</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>关于</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="solitude  fa-solid fa-address-card"></i><span>本人</span></a></li><li><a class="site-page child" href="/info/"><i class="solitude  fas fa-pager"></i><span>本站</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="card-tag-cloud"><a href="/tags/%E5%8E%86%E5%8F%B2/">历史<sup>2</sup></a><a href="/tags/%E8%8B%B1%E6%96%87/">英文<sup>2</sup></a><a href="/tags/%E8%8B%B1%E5%9B%BD/">英国<sup>2</sup></a><a href="/tags/%E4%BA%A8%E5%88%A9%E5%85%AB%E4%B8%96/">亨利八世<sup>1</sup></a><a href="/tags/Live2D/">Live2D<sup>2</sup></a><a href="/tags/%E9%9D%99%E8%8E%B9%E8%8E%B9/">静莹莹<sup>4</sup></a><a href="/tags/%E5%86%99%E4%BD%9C/">写作<sup>2</sup></a><a href="/tags/Markdown/">Markdown<sup>2</sup></a><a href="/tags/Solitude/">Solitude<sup>5</sup></a><a href="/tags/%E5%A4%96%E6%8C%82%E6%A0%87%E7%AD%BE/">外挂标签<sup>1</sup></a><a href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">个人博客<sup>10</sup></a><a href="/tags/%E9%AD%94%E6%94%B9/">魔改<sup>3</sup></a><a href="/tags/%E5%BB%BA%E7%AB%99%E8%AE%B0%E5%BD%95/">建站记录<sup>8</sup></a><a href="/tags/%E5%9B%BE%E5%BA%8A/">图床<sup>2</sup></a><a href="/tags/CloudFlare/">CloudFlare<sup>2</sup></a><a href="/tags/%E7%BE%8E%E5%8C%96/">美化<sup>2</sup></a><a href="/tags/Windows/">Windows<sup>2</sup></a><a href="/tags/win11/">win11<sup>2</sup></a><a href="/tags/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/">资源分享<sup>5</sup></a><a href="/tags/%E5%88%AB%E9%85%B1/">别酱<sup>4</sup></a><a href="/tags/%E5%88%AB%E5%BD%93%E6%AC%A7%E5%B0%BC%E9%85%B1%E4%BA%86%EF%BC%81/">别当欧尼酱了！<sup>4</sup></a><a href="/tags/%E4%BA%8C%E6%AC%A1%E5%85%83/">二次元<sup>5</sup></a><a href="/tags/%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB/">资源汇总<sup>2</sup></a><a href="/tags/%E6%89%8B%E5%8A%9E/">手办<sup>1</sup></a><a href="/tags/%E7%B7%92%E5%B1%B1%E3%81%BE%E3%81%B2%E3%82%8D/">緒山まひろ<sup>2</sup></a><a href="/tags/%E4%BF%A1%E6%81%AF%E6%B1%87%E6%80%BB/">信息汇总<sup>1</sup></a><a href="/tags/ACGN/">ACGN<sup>5</sup></a><a href="/tags/%E9%83%A8%E7%BD%B2/">部署<sup>2</sup></a><a href="/tags/Vercel/">Vercel<sup>1</sup></a><a href="/tags/GitHub/">GitHub<sup>1</sup></a><a href="/tags/%E9%82%AE%E4%BB%B6%E6%A8%A1%E6%9D%BF/">邮件模板<sup>1</sup></a><a href="/tags/Twikoo/">Twikoo<sup>2</sup></a><a href="/tags/%E5%A4%B8%E5%85%8B/">夸克<sup>1</sup></a><a href="/tags/%E8%A1%A8%E6%83%85%E5%8C%85/">表情包<sup>1</sup></a><a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器<sup>1</sup></a><a href="/tags/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91/">网站开发<sup>3</sup></a><a href="/tags/Linux/">Linux<sup>1</sup></a><a href="/tags/%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D/">免费域名<sup>1</sup></a><a href="/tags/%E7%99%BD%E5%AB%96%E6%8C%87%E5%8D%97/">白嫖指南<sup>1</sup></a><a href="/tags/%E4%B8%AA%E4%BA%BA%E4%B8%BB%E9%A1%B5/">个人主页<sup>1</sup></a><a href="/tags/%E8%BF%91%E5%86%B5%E5%85%AC%E5%91%8A/">近况公告<sup>4</sup></a><a href="/tags/AI/">AI<sup>4</sup></a><a href="/tags/Telegram/">Telegram<sup>1</sup></a><a href="/tags/%E7%BC%98%E4%B9%8B%E7%A9%BA/">缘之空<sup>1</sup></a><a href="/tags/Galgame/">Galgame<sup>1</sup></a><a href="/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/">读后感<sup>1</sup></a><a href="/tags/%E7%94%9F%E6%97%A5/">生日<sup>1</sup></a><a href="/tags/%E6%97%A5%E5%B8%B8/">日常<sup>4</sup></a><a href="/tags/%E5%87%BA%E6%B8%B8/">出游<sup>4</sup></a><a href="/tags/%E7%94%9F%E6%97%A5%E5%BF%AB%E4%B9%90%EF%BC%81/">生日快乐！<sup>1</sup></a><a href="/tags/%E5%A4%B4%E5%83%8F/">头像<sup>1</sup></a><a href="/tags/%E6%97%85%E8%A1%8C/">旅行<sup>3</sup></a></div></div><span class="sidebar-menu-item-title">网站信息</span><div class="webinfo"><div class="webinfo-item"><div class="item-name">全站字数 :</div><div class="item-count">137.3k</div></div></div></div></div><!-- keyboard--><div id="keyboard-tips"><div class="keyboardTitle">博客快捷键</div><div class="keyboardList"><div class="keyboardItem"><div class="keyGroup"><div class="key">Shift</div><div class="key">K</div></div><div class="keyContent"><div class="content">关闭快捷菜单</div></div></div><div class="keyboardItem"><div class="keyGroup"><div class="key">Shift</div><div class="key">A</div></div><div class="keyContent"><div class="content">打开控制台</div></div></div><div class="keyboardItem"><div class="keyGroup"><div class="key">Shift</div><div class="key">M</div></div><div class="keyContent"><div class="content">播放/暂停音乐</div></div></div><div class="keyboardItem"><div class="keyGroup"><div class="key">Shift</div><div class="key">L</div></div><div class="keyContent"><div class="content">打开友链</div></div></div></div></div><script>const keyboard_addKeyup = (e) => {
+    if (e.key === 'Shift') {
+        document.getElementById('keyboard-tips').classList.remove('show');
+    }
+}
+
+const keyboard_addKeydown = (e) => {
+    const keyboards = [{"name":"关闭快捷菜单","key":"K","func":"keyboard"},{"name":"打开控制台","key":"A","sco":"showConsole"},{"name":"播放/暂停音乐","key":"M","sco":"musicToggle"},{"name":"打开友链","key":"L","url":"/links/"}];
+    if (e.key === 'Shift') {
+        document.getElementById('keyboard-tips').classList.add('show');
+    }
+
+    for (let i = 0; i < keyboards.length; i++) {
+        if (keyboards[i].url) {
+            if (keyboards[i].url.startsWith('http')) {
+                if (e.key === keyboards[i].key) {
+                    window.open(keyboards[i].url);
+                }
+            } else {
+                if (e.key === keyboards[i].key) {
+                    pjax.loadUrl(keyboards[i].url);
+                }
+            }
+        } else if (keyboards[i].sco) {
+            if (e.key === keyboards[i].key) {
+                sco[keyboards[i].sco]();
+            }
+        } else if (keyboards[i].func) {
+            if (e.key === keyboards[i].key) {
+                window[keyboards[i].func]();
+            }
+        }
+    }
+}
+
+function openKeyboard() {
+
+    window.addEventListener('keyup', keyboard_addKeyup);
+
+    window.addEventListener('keydown', keyboard_addKeydown);
+}
+function closeKeyboard() {
+
+    window.removeEventListener('keyup', keyboard_addKeyup);
+
+    window.removeEventListener('keydown', keyboard_addKeydown);
+}
+
+var sco_keyboards = localStorage.getItem('keyboard') === 'true'
+if (sco_keyboards) {
+    openKeyboard();
+    let keyboard = document.getElementById('consoleKeyboard');
+    keyboard?.classList.add('on');
+}</script><!-- righhtside--><div class="needEndHide" id="rightside"><div class="rs_hide"><button class="translate" type="button" title="简繁转换">简</button><button class="mode" type="button" title="显示模式切换" onclick="sco.switchDarkMode()"><i class="fas fa-circle-half-stroke"></i></button><button class="aside pc" type="button" title="侧边栏" onclick="sco.switchHideAside()"><i class="fas fa-arrows-alt-h"></i></button><button class="keyboard pc" type="button" title="键盘快捷键" onclick="sco.switchKeyboard()"><i class="fas fa-keyboard"></i></button></div><div class="rs_show"><button class="config" type="button" title="扩展" onclick="document.querySelector(&quot;.rs_hide&quot;).classList.toggle(&quot;show&quot;)"><i class="fas fa-gear fa-spin"></i></button><button class="mobile toc" type="button" title="目录" onclick="document.querySelector('#card-toc').classList.toggle('open')"><i class="fas fa-list"></i></button><button class="comment" type="button" title="评论" onclick="sco.scrollTo('post-comment')"><i class="fas fa-comment"></i></button><button class="barrage pc" type="button" title="弹" onclick="sco.switchCommentBarrage()"><span>弹</span></button><button class="top" type="button" title="返回顶部" onclick="sco.toTop()"><i class="fas fa-arrow-up"></i><span id="percent">0</span></button></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav class="show" id="nav"><div id="nav-group"><div id="blog_name"><div class="back-home-button" tabindex="-1"><i class="back-home-button-icon solitude fas fa-bars-progress"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">博客相关</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/yangle-q/Personal-Blog-Solitude" title="Github 仓库"><img class="nolazyload back-menu-item-icon" src="https://pic-1.yoxo.top/Github.webp" alt="Github 仓库"><span class="back-menu-item-text">Github 仓库</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://solitude.js.org/" title="Soliude 主题文档"><img class="nolazyload back-menu-item-icon" src="https://solitude.js.org/.netlify/images?url=%2Flogo.svg" alt="Soliude 主题文档"><span class="back-menu-item-text">Soliude 主题文档</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://umami.yoxo.top/share/OdAgwAsNT2gOjqlj/blog.lemonstar.me" title="Umami 数据统计"><img class="nolazyload back-menu-item-icon" src="https://pic-1.yoxo.top/umami1679541696502.webp" alt="Umami 数据统计"><span class="back-menu-item-text">Umami 数据统计</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://lemonstar.me" title="柠檬星 主页"><img class="nolazyload back-menu-item-icon" src="https://pic-1.yoxo.top/graphic-5379480_1280.webp" alt="柠檬星 主页"><span class="back-menu-item-text">柠檬星 主页</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://jingyingying.lemonstar.me/" title="静莹莹的小空间"><img class="nolazyload back-menu-item-icon" src="https://jingyingying.lemonstar.me/favicon/favicon-light-32.png" alt="静莹莹的小空间"><span class="back-menu-item-text">静莹莹的小空间</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://birthday.lemonstar.me" title="Happy Birthday"><img class="nolazyload back-menu-item-icon" src="https://pic-1.yoxo.top/favicon.webp" alt="Happy Birthday"><span class="back-menu-item-text">Happy Birthday</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://hellofrom.cn" title="HelloFrom.cn"><img class="nolazyload back-menu-item-icon" src="https://pic-1.yoxo.top/logo.webp" alt="HelloFrom.cn"><span class="back-menu-item-text">HelloFrom.cn</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://countdown.20100807.xyz" title="生日倒计时"><img class="nolazyload back-menu-item-icon" src="https://countdown.20100807.xyz/favicon.png" alt="生日倒计时"><span class="back-menu-item-text">生日倒计时</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">工具</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://ai.lemonstar.me" title="柠檬星AI"><img class="nolazyload back-menu-item-icon" src="https://pic-1.yoxo.top/deepseek.webp" alt="柠檬星AI"><span class="back-menu-item-text">柠檬星AI</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://cloud.lemonstar.me" title="柠檬星云盘"><img class="nolazyload back-menu-item-icon" src="https://cloud.lemonstar.me/assets/homescreen.png" alt="柠檬星云盘"><span class="back-menu-item-text">柠檬星云盘</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://chatroom.lemonstar.me" title="加密聊天室"><img class="nolazyload back-menu-item-icon" src="https://pic-1.yoxo.top/lock.webp" alt="加密聊天室"><span class="back-menu-item-text">加密聊天室</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://whiteboard.lemonstar.me" title="全能白板"><img class="nolazyload back-menu-item-icon" src="https://whiteboard.lemonstar.me/favicon.ico" alt="全能白板"><span class="back-menu-item-text">全能白板</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://cover.lemonstar.me" title="Mini-Cover"><img class="nolazyload back-menu-item-icon" src="https://cover.lemonstar.me/favicon.svg" alt="Mini-Cover"><span class="back-menu-item-text">Mini-Cover</span></a></div></div></div></div><a id="site-name" href="/" title="返回博客主页"><span class="title">柠檬星</span><i class="solitude fas fa-home"></i></a></div><div id="page-name-mask"><div id="page-name"><a id="page-name-text" onclick="sco.toTop()">Solitude主题内置&amp;外挂标签使用说明</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span>基地</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>仓库</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="solitude  fas fa-folder-closed"></i><span>目录</span></a></li><li><a class="site-page child" href="/categories/"><i class="solitude  fas fa-clone"></i><span>分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="solitude  fas fa-tags"></i><span>标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>互联</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/links/"><i class="solitude  fas fa-user-group"></i><span>友链</span></a></li><li><a class="site-page child" href="/message/"><i class="solitude  fas fa-comment-alt"></i><span>留言</span></a></li><li><a class="site-page child" href="/recentcomments/"><i class="solitude  fas fa-comments"></i><span>评论</span></a></li><li><a class="site-page child" href="/tlink/"><i class="solitude  fas fa-share-alt-square"></i><span>网站</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>私人空间</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/essay/"><i class="solitude  fas fa-pen-nib"></i><span>碎语</span></a></li><li><a class="site-page child" href="/bangumis/"><i class="solitude  fab fa-bilibili"></i><span>追番</span></a></li><li><a class="site-page child" href="/music/"><i class="solitude  fas fa-music"></i><span>音吧</span></a></li><li><a class="site-page child" href="/gallery/"><i class="solitude   fas fa-images"></i><span>画馆</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>关于</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="solitude  fa-solid fa-address-card"></i><span>本人</span></a></li><li><a class="site-page child" href="/info/"><i class="solitude  fas fa-pager"></i><span>本站</span></a></li></ul></div></div></div><div id="nav-left"></div><div id="nav-right"><div class="nav-button" id="travellings_button"><a class="site-page" target="_blank" rel="noopener" href="https://lemonstar.me" title=""><i class="solitude fas fa-house"></i></a></div><div class="nav-button" id="travellings_button"><a class="site-page" target="_blank" rel="noopener" href="https://www.travellings.cn/go.html" title=""><i class="solitude fas fa-train"></i></a></div><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机一篇文章" href="javascript:void(0);"><i class="solitude fas fa-dice-d6"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索"><i class="solitude fas fa-magnifying-glass"></i></a></div><div class="nav-button" id="nav-console"><a class="console_switchbutton" onclick="sco.showConsole()" title="中控台" href="javascript:void(0);"><label><i class="left"></i><i class="center"></i><i class="right"></i></label></a></div><div id="toggle-menu"><a class="site-page"><i class="solitude fas fa-bars"></i></a></div></div></div></nav><div class="coverdiv" id="coverdiv"><img class="nolazyload" id="post-cover" src="https://pic-2.yoxo.top/Canvas-Ruom-32.webp" alt="Solitude主题内置&amp;外挂标签使用说明"></div><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original" title="该文章为原创文章，注意版权协议">原创</a><span class="post-meta-categories"><a class="post-meta-categories" href="/categories/%E6%95%99%E7%A8%8B/">教程</a></span><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%86%99%E4%BD%9C/"><span class="tags-name tags-punctuation"><i class="solitude fas fa-hashtag"></i>写作</span></a><a class="post-meta__tags" href="/tags/Markdown/"><span class="tags-name tags-punctuation"><i class="solitude fas fa-hashtag"></i>Markdown</span></a><a class="post-meta__tags" href="/tags/Solitude/"><span class="tags-name tags-punctuation"><i class="solitude fas fa-hashtag"></i>Solitude</span></a><a class="post-meta__tags" href="/tags/%E5%A4%96%E6%8C%82%E6%A0%87%E7%AD%BE/"><span class="tags-name tags-punctuation"><i class="solitude fas fa-hashtag"></i>外挂标签</span></a></div></div></div></div><h1 class="post-title">Solitude主题内置&amp;外挂标签使用说明</h1><div id="post-meta"><div class="meta-secondline"><span class="post-meta-date" title="发布于 2026-08-20 08:10:59"><i class="post-meta-icon solitude fas fa-calendar-days"></i><time datetime="2026-08-20T00:10:59.000Z">2026-08-20T00:10:59.000Z</time></span><span class="post-meta-date" title="最后更新于 2025-08-20 15:38:48"><i class="post-meta-icon solitude fas fa-arrows-rotate"></i><time datetime="2025-08-20T07:38:48.000Z">2025-08-20T07:38:48.000Z</time></span><span class="post-meta-wordcount"><i class="post-meta-icon solitude fas fa-file-word" title="文章字数"></i><span class="word-count">5.9k</span><span class="post-meta-separator"></span><i class="post-meta-icon solitude fas fa-clock" title="阅读耗时"></i><span>26 分钟</span></span><span class="post-meta-position" title="作者IP归属地为Mars"><i class="post-meta-icon solitude fas fa-location-dot"></i><span>Mars</span></span><a class="post-meta-pv" href="/post/solitude-tabs/" title="文章热度"><i class="post-meta-icon solitude fas fa-fire-flame-curved"></i><span id="twikoo_visitors"><i class="solitude fas fa-spinner fa-spin"></i></span></a><span class="post-meta-commentcount" title="评论数" onclick="sco.scrollTo('post-comment')"><i class="solitude fas fa-comment"></i><a href="/post/solitude-tabs/#post-comment"><span class="twikoo-count"><i class="solitude fas fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content article-container"><div class="post-ai"><div class="ai-title"><div class="ai-title-left"><i class="ai-title-icon solitude fas fa-newspaper"></i><div class="ai-title-text">文章摘要</div></div><div class="ai-tag" id="ai-tag">静莹莹</div></div><div class="ai-explanation" style="display: block;"></div></div><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这篇文章我本来是想和<a href="/post/markdown/">Markdown格式详解与Solitude主题Front Matter使用说明</a>这篇文章一起发的，结果因为一大堆事情耽搁了一个月，后面就算是想起来这件事也总感觉不是还有其他大佬写过吗，就懒得去写了，最近是因为自己写文章要经常用到外挂标签，一边开着别人的网站一边写博客总感觉不太方便，再加上有朋友找我要这个东西的教程，所以我才又重新把它给写起来了，让大家久等啦！<del>（你还有脸说）</del></p>
+<p>写这篇文章的最初目的是因为 Solitude 的内置/外挂标签的文档总是不全，好几个大佬都有在自己的博客上写过，但是大家都是要不就是比别人多要不就是比别人少的，要用的话还得同时开两三个标签页去找，很麻烦。所以我就想干脆我自己来写一个说明好了。本来是想和Markdown格式详解、Solitude主题Front Matter使用说明合在一起的，结果写完之后才发现光是这两个合起来就已经有1000多行了，所以我就把他们拆分开来啦</p>
+<p>这篇文章同样分为两部分：Solitude内置的标签和插件标签。他们都不是标准的MarkDown语法，必须要有对应的插件/主题才能够正确解析。目前已知的完全支持以下所有标签的有Solitude主题和Astrabay主题，Anzhiyu主题和Butterfly主题部分支持，使用前请先查询对应的主题文档或博文。</p>
+<p>OK，那废话不多说，我们马上就开始吧！</p>
+<h1 id="内置标签"><a href="#内置标签" class="headerlink" title="内置标签"></a>内置标签</h1><p>内置标签不需要安装插件就可以直接使用。</p>
+<h2 id="Tabs-标签"><a href="#Tabs-标签" class="headerlink" title="Tabs 标签"></a>Tabs 标签</h2><div class="tabs" id="tabs"><ul class="nav-tabs">
+      <li class="tab">
+        <button type="button" data-href="#tabs-0">
+          标签语法
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#tabs-1">
+          标签参数
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#tabs-2">
+          示例
+        </button>
+      </li>
+      <li class="tab active">
+        <button type="button" data-href="#tabs-3">
+          效果
+        </button>
+      </li></ul><div class="tab-contents"><div class="tab-item-content" id="tabs-0"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">{% tabs [唯一名称] [索引] %}</span><br><span class="line"></span><br><span class="line">&lt;!-- tab [标签标题] [@图标] --&gt;</span><br><span class="line"></span><br><span class="line">任何内容（也支持内联标签）。</span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">{% endtabs %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="tabs-1"><ul>
+<li>[唯一名称]：每个标签块的唯一名称，不包含逗号。<ul>
+<li>它将用作每个标签的#id前缀及其索引号。</li>
+<li>如果名称中包含空格，则在生成的#id中将所有空格替换为连字符。</li>
+<li>文章/页面的当前URL必须是唯一的！</li>
+</ul>
+</li>
+<li>[索引]：活动标签的索引号（<strong>可选</strong>)<ul>
+<li>如果未指定，将选择第一个标签（1）。</li>
+<li>如果索引为-1，则不会选择任何标签。这将是一个剧透。</li>
+</ul>
+</li>
+<li>[标签标题]：当前标签的标题（<strong>可选</strong>）<br>  如果未指定，将使用唯一名称与标签索引后缀作为标签标题。<br>  如果未指定标题但指定了图标，则标题将为空。</li>
+<li>[@图标]：图标名称（完整名称，例如 “fas fa-github”）（<strong>可选</strong>）<br>  可以指定带或不带空格的空格；例如，”标签标题@图标” 类似于 “标签标题@图标”。</li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="tabs-2"><div class="note danger simple"><i class="solitude fas fa-circle-info"></i><p>默认情况下，选择第一个标签</p></div>
+
+<figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">{% tabs test1 %}</span><br><span class="line"></span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"></span><br><span class="line"><span class="strong">**This is Tab 1.**</span></span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab Video --&gt;</span><br><span class="line"></span><br><span class="line"><span class="strong">**This is Tab 2.**</span></span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab Music @fas fa-music--&gt;</span><br><span class="line"></span><br><span class="line"><span class="strong">**This is Tab 3.**</span></span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">{% endtabs %}</span><br></pre></td></tr></tbody></table></figure>
+<div class="note danger simple"><i class="solitude fas fa-circle-info"></i><p>选定默认选项</p></div>
+
+<figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">{% tabs test2 2 %}</span><br><span class="line"></span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"></span><br><span class="line"><span class="strong">**This is Tab 1.**</span></span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab Video --&gt;</span><br><span class="line"></span><br><span class="line"><span class="strong">**This is Tab 2.**</span></span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab Music @fas fa-music --&gt;</span><br><span class="line"></span><br><span class="line"><span class="strong">**This is Tab 3.**</span></span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">{% endtabs %}</span><br></pre></td></tr></tbody></table></figure>
+
+<div class="note danger simple"><i class="solitude fas fa-circle-info"></i><p>不选定默认选项</p></div>
+
+<figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">{% tabs test3 -1 %}</span><br><span class="line"></span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line"></span><br><span class="line"><span class="strong">**This is Tab 1.**</span></span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab Video --&gt;</span><br><span class="line"></span><br><span class="line"><span class="strong">**This is Tab 2.**</span></span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab Music @fas fa-music --&gt;</span><br><span class="line"></span><br><span class="line"><span class="strong">**This is Tab 3.**</span></span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">{% endtabs %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="tabs-3"><div class="note danger simple"><i class="solitude fas fa-circle-info"></i><p>默认情况下，选择第一个标签</p></div>
+
+<div class="tabs" id="test1"><ul class="nav-tabs">
+      <li class="tab active">
+        <button type="button" data-href="#test1-0">
+          test1 test1-0
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#test1-1">
+          Video
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#test1-2">
+          <i class="fas fa-music tab solitude"></i>Music
+        </button>
+      </li></ul><div class="tab-contents"><div class="tab-item-content active" id="test1-0"><p><strong>This is Tab 1.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test1-1"><p><strong>This is Tab 2.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test1-2"><p><strong>This is Tab 3.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+
+<div class="note danger simple"><i class="solitude fas fa-circle-info"></i><p>选定默认选项</p></div>
+
+<div class="tabs" id="test2"><ul class="nav-tabs">
+      <li class="tab">
+        <button type="button" data-href="#test2-0">
+          test2 test2-0
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#test2-1">
+          Video
+        </button>
+      </li>
+      <li class="tab active">
+        <button type="button" data-href="#test2-2">
+          <i class="fas fa-music tab solitude"></i>Music
+        </button>
+      </li></ul><div class="tab-contents"><div class="tab-item-content" id="test2-0"><p><strong>This is Tab 1.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test2-1"><p><strong>This is Tab 2.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="test2-2"><p><strong>This is Tab 3.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+
+<div class="note danger simple"><i class="solitude fas fa-circle-info"></i><p>不选定默认选项</p></div>
+
+<div class="tabs" id="test3"><ul class="nav-tabs">
+      <li class="tab">
+        <button type="button" data-href="#test3-0">
+          test3 test3-0
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#test3-1">
+          Video
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#test3-2">
+          <i class="fas fa-music tab solitude"></i>Music
+        </button>
+      </li></ul><div class="tab-contents"><div class="tab-item-content" id="test3-0"><p><strong>This is Tab 1.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test3-1"><p><strong>This is Tab 2.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test3-2"><p><strong>This is Tab 3.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="Gallery-图片列表"><a href="#Gallery-图片列表" class="headerlink" title="Gallery 图片列表"></a>Gallery 图片列表</h2><div class="tabs" id="gallery"><ul class="nav-tabs">
+      <li class="tab">
+        <button type="button" data-href="#gallery-0">
+          语法
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#gallery-1">
+          示例
+        </button>
+      </li>
+      <li class="tab active">
+        <button type="button" data-href="#gallery-2">
+          效果
+        </button>
+      </li></ul><div class="tab-contents"><div class="tab-item-content" id="gallery-0"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">{% gallery %}</span><br><span class="line">![<span class="string">图片描述（可留空）</span>](<span class="link">图片 url</span>)</span><br><span class="line">{% endgallery %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="gallery-1"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">{% gallery %}</span><br><span class="line">![<span class="string">冰与火之歌家族箴言</span>](<span class="link">https://pic-1.yoxo.top/20160319112558_mzEck.webp</span>)</span><br><span class="line">![<span class="string">霍格沃兹学院徽章</span>](<span class="link">https://pic-1.yoxo.top/DM_20250504001750_001.webp</span>)</span><br><span class="line">{% endgallery %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="gallery-2"><div class="gallery-container waterfall">
+        <div class="gallery-item"><img class="nolazyload" src="https://pic-1.yoxo.top/20160319112558_mzEck.webp" alt="冰与火之歌家族箴言"></div><div class="gallery-item"><img class="nolazyload" src="https://pic-1.yoxo.top/DM_20250504001750_001.webp" alt="霍格沃兹学院徽章"></div>
+      </div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="GalleryGroup-图片组"><a href="#GalleryGroup-图片组" class="headerlink" title="GalleryGroup 图片组"></a>GalleryGroup 图片组</h2><div class="tabs" id="gallerygroup"><ul class="nav-tabs">
+      <li class="tab">
+        <button type="button" data-href="#gallerygroup-0">
+          语法
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#gallerygroup-1">
+          参数
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#gallerygroup-2">
+          示例
+        </button>
+      </li>
+      <li class="tab active">
+        <button type="button" data-href="#gallerygroup-3">
+          效果
+        </button>
+      </li></ul><div class="tab-contents"><div class="tab-item-content" id="gallerygroup-0"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% galleryGroup '[名称]' '[描述]' '[链接]' '[预览图]' %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="gallerygroup-1"><ul>
+<li>[名称]：固定显示的标题</li>
+<li>[描述]：鼠标悬浮时出现的介绍</li>
+<li>[链接]：跳转链接</li>
+<li>[预览图]：本图库的预览图</li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="gallerygroup-2"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'gallery-group-main'</span>&gt;</span></span></span><br><span class="line">{% galleryGroup '个人喜爱' '有设计感的图片们' 'https://blog.lemonstar.me/gallery/favourite' 'https://pic-1.yoxo.top/20160319112558<span class="emphasis">_mzEck.webp' %}</span></span><br><span class="line"><span class="emphasis">{% galleryGroup '亨利八世' 'Henry VIII 里面的所有图片' 'https://blog.lemonstar.me//gallery/henryviii' 'https://pic-1.yoxo.top/henry-viii-field-of-the-cloth-gold.webp' %}</span></span><br><span class="line"><span class="emphasis"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="gallerygroup-3"><div class="gallery-group-main">
+<figure class="gallery-group">
+  <img class="gallery-group-img no-lightbox" src="https://pic-1.yoxo.top/20160319112558_mzEck.webp" alt="Group Image Gallery">
+  <figcaption>
+  <div class="gallery-group-name">个人喜爱</div>
+  <p>有设计感的图片们</p>
+  <a href="/https:/blog.lemonstar.me/gallery/favourite"></a>
+  </figcaption>
+  </figure>
+  
+<figure class="gallery-group">
+  <img class="gallery-group-img no-lightbox" src="https://pic-1.yoxo.top/henry-viii-field-of-the-cloth-gold.webp" alt="Group Image Gallery">
+  <figcaption>
+  <div class="gallery-group-name">亨利八世</div>
+  <p>Henry VIII 里面的所有图片</p>
+  <a href="https://blog.lemonstar.me//gallery/henryviii"></a>
+  </figcaption>
+  </figure>
+  
+</div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="Chart-图表"><a href="#Chart-图表" class="headerlink" title="Chart 图表"></a>Chart 图表</h2><p>要使用本标签首先需要先打开主题配置文件<code>_config.solitude.yml</code>里面的开关</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">chart:</span> <span class="literal">true</span></span><br></pre></td></tr></tbody></table></figure>
+
+<div class="tabs" id="chart"><ul class="nav-tabs">
+      <li class="tab">
+        <button type="button" data-href="#chart-0">
+          语法
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#chart-1">
+          示例
+        </button>
+      </li>
+      <li class="tab active">
+        <button type="button" data-href="#chart-2">
+          效果
+        </button>
+      </li></ul><div class="tab-contents"><div class="tab-item-content" id="chart-0"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">{% chart %}</span><br><span class="line">// Chart.js 语法代码</span><br><span class="line">{% endchart %}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>有关Chart.js的使用教程，请参阅以下网站：</p>
+<div class="liushen-tag-link">
+  <a class="tag-Link" target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=https://www.runoob.com/chartjs/chartjs-usage.html">
+    <div class="tag-link-tips">⚠️ 这不是我的网站哦！我可不知道它安不安全</div>
+    <div class="tag-link-bottom">
+      <div class="tag-link-left" style="background-image: url(https://api.xinac.net/icon/?url=runoob.com)" onerror="this.style.backgroundImage='url(/images/default-avatar.webp)'"></div>
+      <div class="tag-link-right">
+        <div class="tag-link-title">Chart.js 使用</div>
+        <div class="tag-link-sitename">菜鸟教程</div>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </div>
+  </a>
+</div>
+
+
+<div class="liushen-tag-link">
+  <a class="tag-Link" target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=https://www.chartjs.org/">
+    <div class="tag-link-tips">⚠️ 这不是我的网站哦！我可不知道它安不安全</div>
+    <div class="tag-link-bottom">
+      <div class="tag-link-left" style="background-image: url(https://api.xinac.net/icon/?url=chartjs.org)" onerror="this.style.backgroundImage='url(/images/default-avatar.webp)'"></div>
+      <div class="tag-link-right">
+        <div class="tag-link-title">Chart.js 官方文档</div>
+        <div class="tag-link-sitename">Open source HTML5 Charts for your website</div>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </div>
+  </a>
+</div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="chart-1"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">{% chart %}</span><br><span class="line">type: 'bar',</span><br><span class="line">data: {</span><br><span class="line">labels: ['Richard', 'Adam', 'Anastasia', 'Paul', 'Gray', 'Joe'],</span><br><span class="line">datasets: [{</span><br><span class="line">label: '# of Votes',</span><br><span class="line">data: [129, 190, 34, 99, 22, 3],</span><br><span class="line">borderWidth: 1</span><br><span class="line">}]</span><br><span class="line">},</span><br><span class="line">options: {</span><br><span class="line">scales: {</span><br><span class="line">y: {</span><br><span class="line">beginAtZero: true,</span><br><span class="line">}</span><br><span class="line">}</span><br><span class="line">}</span><br><span class="line">{% endchart %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="chart-2"><div class="chart">
+    <canvas id="chart-5iukc5r5c"></canvas>
+    <script>
+    !function() {
+      const chart = () => {
+        const canvas = document.getElementById("chart-5iukc5r5c");
+        if (!canvas) return;
+        const ctx = canvas.getContext("2d");
+        new Chart(ctx, {type: 'bar',
+data: {
+labels: ['Richard', 'Adam', 'Anastasia', 'Paul', 'Gray', 'Joe'],
+datasets: [{
+label: '# of Votes',
+data: [129, 190, 34, 99, 22, 3],
+borderWidth: 1
+}]
+},
+options: {
+scales: {
+y: {
+beginAtZero: true,
+}
+}
+}});
+      };
+      document.addEventListener("DOMContentLoaded", chart);
+      utils.addEventListenerPjax(document, "pjax:complete", chart);
+    }()
+    </script>
+  </div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="Mermaid-图表"><a href="#Mermaid-图表" class="headerlink" title="Mermaid 图表"></a>Mermaid 图表</h2><p>同样需要先打开配置文件里面的开关。</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mermaid:</span> <span class="literal">true</span></span><br></pre></td></tr></tbody></table></figure>
+
+<div class="tabs" id="mermaid"><ul class="nav-tabs">
+      <li class="tab">
+        <button type="button" data-href="#mermaid-0">
+          语法
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#mermaid-1">
+          示例
+        </button>
+      </li>
+      <li class="tab active">
+        <button type="button" data-href="#mermaid-2">
+          效果
+        </button>
+      </li></ul><div class="tab-contents"><div class="tab-item-content" id="mermaid-0"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">{% mermaid %}</span><br><span class="line">// Mermaid 图表代码</span><br><span class="line">{% endmermaid %}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>有关Mermaid图表的使用教程，请参阅以下网站：</p>
+<div class="liushen-tag-link">
+  <a class="tag-Link" target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=https://www.runoob.com/markdown/md-draw.html">
+    <div class="tag-link-tips">⚠️ 这不是我的网站哦！我可不知道它安不安全</div>
+    <div class="tag-link-bottom">
+      <div class="tag-link-left" style="background-image: url(https://api.xinac.net/icon/?url=runoob.com)" onerror="this.style.backgroundImage='url(/images/default-avatar.webp)'"></div>
+      <div class="tag-link-right">
+        <div class="tag-link-title">Markdown 图表绘制</div>
+        <div class="tag-link-sitename">菜鸟教程</div>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </div>
+  </a>
+</div>
+
+
+<div class="liushen-tag-link">
+  <a class="tag-Link" target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=https://mermaid.js.org/">
+    <div class="tag-link-tips">⚠️ 这不是我的网站哦！我可不知道它安不安全</div>
+    <div class="tag-link-bottom">
+      <div class="tag-link-left" style="background-image: url(https://api.xinac.net/icon/?url=mermaid.js.org)" onerror="this.style.backgroundImage='url(/images/default-avatar.webp)'"></div>
+      <div class="tag-link-right">
+        <div class="tag-link-title">Mermaid 官方文档</div>
+        <div class="tag-link-sitename">Diagramming and charting tool</div>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </div>
+  </a>
+</div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="mermaid-1"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">{% mermaid %}</span><br><span class="line">pie</span><br><span class="line">title Key elements in Product X</span><br><span class="line">"Calcium" : 42.96</span><br><span class="line">"Potassium" : 50.05</span><br><span class="line">"Magnesium" : 10.01</span><br><span class="line">"Iron" : 5</span><br><span class="line">{% endmermaid %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="mermaid-2"><div class="mermaid">pie
+title Key elements in Product X
+"Calcium" : 42.96
+"Potassium" : 50.05
+"Magnesium" : 10.01
+"Iron" : 5</div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="Typeit-动画"><a href="#Typeit-动画" class="headerlink" title="Typeit 动画"></a>Typeit 动画</h2><figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">typeit:</span> <span class="literal">true</span></span><br></pre></td></tr></tbody></table></figure>
+
+<div class="tabs" id="typeit"><ul class="nav-tabs">
+      <li class="tab">
+        <button type="button" data-href="#typeit-0">
+          语法
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#typeit-1">
+          参数
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#typeit-2">
+          示例
+        </button>
+      </li>
+      <li class="tab active">
+        <button type="button" data-href="#typeit-3">
+          效果
+        </button>
+      </li></ul><div class="tab-contents"><div class="tab-item-content" id="typeit-0"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">{% typeit 'div' %}</span><br><span class="line">// Typeit 语法</span><br><span class="line">{% endtypeit %}</span><br></pre></td></tr></tbody></table></figure>
+<p>有关Typeit 动画的使用教程，请参阅以下网站：</p>
+<div class="liushen-tag-link">
+  <a class="tag-Link" target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=https://www.typeitjs.com/">
+    <div class="tag-link-tips">⚠️ 这不是我的网站哦！我可不知道它安不安全</div>
+    <div class="tag-link-bottom">
+      <div class="tag-link-left" style="background-image: url(https://api.xinac.net/icon/?url=typeitjs.com)" onerror="this.style.backgroundImage='url(/images/default-avatar.webp)'"></div>
+      <div class="tag-link-right">
+        <div class="tag-link-title">Typeit 官方文档</div>
+        <div class="tag-link-sitename">The most versatile JavaScript typewriter effect library on the planet.</div>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </div>
+  </a>
+</div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="typeit-1"><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>默认值</th>
+</tr>
+</thead>
+</table>
+<ul>
+<li>[div]：Typeit 动画将以该HTML标签显示，最好不要动</li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="typeit-2"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">{% typeit 'div' }</span><br><span class="line">waitUntilVisible: true,</span><br><span class="line">strings: "Lemonstar Blog",</span><br><span class="line">{% endtypeit %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="typeit-3"><div class="typeit">
+    <div id="typeit-jgvtztooc"></div>
+    <script>
+    !function() {
+      const typeit = () => {
+        const ctx = document.getElementById("typeit-jgvtztooc");
+        if (!ctx) return;
+        new TypeIt("#typeit-jgvtztooc", {waitUntilVisible: true,
+strings: "Lemonstar Blog"})
+          .go();
+      }
+      document.addEventListener("DOMContentLoaded", typeit);
+      utils.addEventListenerPjax(document, "pjax:complete", typeit);
+    }()
+    </script>
+  </div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+
+<h1 id="插件标签"><a href="#插件标签" class="headerlink" title="插件标签"></a>插件标签</h1><p>安装插件</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-solitude-tag</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Youtube-视频"><a href="#Youtube-视频" class="headerlink" title="Youtube 视频"></a>Youtube 视频</h2><div class="tabs" id="youtube"><ul class="nav-tabs">
+      <li class="tab">
+        <button type="button" data-href="#youtube-0">
+          语法
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#youtube-1">
+          参数
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#youtube-2">
+          示例
+        </button>
+      </li>
+      <li class="tab active">
+        <button type="button" data-href="#youtube-3">
+          效果
+        </button>
+      </li></ul><div class="tab-contents"><div class="tab-item-content" id="youtube-0"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% youtube [视频ID] [视频类型] [是否使用 cookie] %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="youtube-1"><ul>
+<li>[视频ID]：视频链接<code>https://www.youtube.com/watch?v=dQw4w9WgXcQ</code>中<code>watch?v=</code>后面的部分</li>
+<li>[视频类型]：默认使用video（有其他可能性吗？）</li>
+<li>[是否使用 cookie]：Youtube 视频 cookie, true/false<ul>
+<li>如果打开：会在视频加载时设置追踪cookies</li>
+<li>如果关闭：会在视频点击播放时时设置追踪cookies</li>
+<li>默认（不设置）即为false</li>
+</ul>
+</li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="youtube-2"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% youtube 'dQw4w9WgXcQ' %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="youtube-3"><div class="video-container"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" loading="lazy" allowfullscreen=""></iframe></div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="Bilibili-视频"><a href="#Bilibili-视频" class="headerlink" title="Bilibili 视频"></a>Bilibili 视频</h2><div class="tabs" id="bilibili"><ul class="nav-tabs">
+      <li class="tab">
+        <button type="button" data-href="#bilibili-0">
+          语法
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#bilibili-1">
+          参数
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#bilibili-2">
+          示例
+        </button>
+      </li>
+      <li class="tab active">
+        <button type="button" data-href="#bilibili-3">
+          效果
+        </button>
+      </li></ul><div class="tab-contents"><div class="tab-item-content" id="bilibili-0"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% bvideo [视频id] %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="bilibili-1"><ul>
+<li>[视频ID]：视频链接<code>https://www.bilibili.com/video/BV1yt4y1Q7SS/</code>中<code>video/</code>后面的部分</li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="bilibili-2"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% bvideo 'BV1yt4y1Q7SS' %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="bilibili-3"><div class="video-container"><iframe src="//player.bilibili.com/player.html?autoplay=0&amp;bvid=BV1yt4y1Q7SS" frameborder="0" loading="lazy" allowfullscreen=""></iframe></div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="Fold-折叠"><a href="#Fold-折叠" class="headerlink" title="Fold 折叠"></a>Fold 折叠</h2><div class="tabs" id="fold"><ul class="nav-tabs">
+      <li class="tab">
+        <button type="button" data-href="#fold-0">
+          语法
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#fold-1">
+          参数
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#fold-2">
+          示例
+        </button>
+      </li>
+      <li class="tab active">
+        <button type="button" data-href="#fold-3">
+          效果
+        </button>
+      </li></ul><div class="tab-contents"><div class="tab-item-content" id="fold-0"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">{% fold [标题] [默认开启] %}</span><br><span class="line">折叠内容（可用Markdown语法）</span><br><span class="line">{% endfold %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="fold-1"><ul>
+<li>[标题]：每个折叠块的标题，不包含逗号。</li>
+<li>[默认开启]：活动标签的索引号。<ul>
+<li>可填写任意内容，均视为默认开启。</li>
+<li>这是可选参数。</li>
+</ul>
+</li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="fold-2"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">{% fold '叮！你有一条新的消息，请查收' %}</span><br><span class="line">欢迎来到我哥哥的博客哦！我可是静莹莹，本博客的看板娘！其实你想要找我的话随时都可以在博客右下角找到我啦……不过如果要和我说话的话还是要去<span class="strong">**Telegram**</span>哦！点击我的虚拟形象就能够看到链接啦！哥哥也说以后会给我接上AI，这样大家就可以在博客里面直接和我对话了，不过按照现在的进度来看还是有点遥遥无期啦……</span><br><span class="line">{% endfold %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="fold-3"><details><summary>叮！你有一条新的消息，请查收</summary><p>欢迎来到我哥哥的博客哦！我可是静莹莹，本博客的看板娘！其实你想要找我的话随时都可以在博客右下角找到我啦……不过如果要和我说话的话还是要去<strong>Telegram</strong>哦！点击我的虚拟形象就能够看到链接啦！哥哥也说以后会给我接上AI，这样大家就可以在博客里面直接和我对话了，不过按照现在的进度来看还是有点遥遥无期啦……</p></details><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="Timeline-时间轴"><a href="#Timeline-时间轴" class="headerlink" title="Timeline 时间轴"></a>Timeline 时间轴</h2><div class="tabs" id="timeline"><ul class="nav-tabs">
+      <li class="tab">
+        <button type="button" data-href="#timeline-0">
+          语法
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#timeline-1">
+          示例
+        </button>
+      </li>
+      <li class="tab active">
+        <button type="button" data-href="#timeline-2">
+          效果
+        </button>
+      </li></ul><div class="tab-contents"><div class="tab-item-content" id="timeline-0"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">{% timeline [时间轴标题] %}</span><br><span class="line">{% timenode [时间节点标题] %}</span><br><span class="line">内容</span><br><span class="line">{% endtimenode %}</span><br><span class="line">{% timenode [时间节点标题] %}</span><br><span class="line">内容</span><br><span class="line">{% endtimenode %}</span><br><span class="line">{% endtimeline %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="timeline-1"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">{% timenode 'no.30 Article Publish' %}</span><br><span class="line">Article no.30</span><br><span class="line">Published on 2026.6.30</span><br><span class="line"><span class="bullet">+</span> 发表文章[<span class="string">“开发一个属于你自己的角色扮演Telegram Bot”</span>](<span class="link">/post/telegram-bot/</span>)</span><br><span class="line">{% endtimenode %}</span><br><span class="line"></span><br><span class="line">{% timenode 'no.29 Article Publish' %}</span><br><span class="line">Article no.29</span><br><span class="line">Published on 2026.4.13</span><br><span class="line"><span class="bullet">+</span> 发表文章[<span class="string">“柠檬星博客一周年总结！”</span>](<span class="link">/post/anniversary-summarize/</span>)</span><br><span class="line">{% endtimenode %}</span><br><span class="line"></span><br><span class="line">{% timenode 'no.28 Article Publish' %}</span><br><span class="line">Article no.28</span><br><span class="line">Published on 2026.3.7</span><br><span class="line"><span class="bullet">+</span> 发表文章[<span class="string">“本地部署Deepseek/Qwen等开源大模型”</span>](<span class="link">/post/AI-deployment/</span>)</span><br><span class="line">{% endtimenode %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="timeline-2"><div class="timenode"><div class="meta"><p>no.30 Article Publish</p></div><div class="body"><p>Article no.30<br>Published on 2026.6.30</p><ul><li>发表文章<a href="/post/telegram-bot/">“开发一个属于你自己的角色扮演Telegram Bot”</a></li></ul></div></div>
+
+<div class="timenode"><div class="meta"><p>no.29 Article Publish</p></div><div class="body"><p>Article no.29<br>Published on 2026.4.13</p><ul><li>发表文章<a href="/post/anniversary-summarize/">“柠檬星博客一周年总结！”</a></li></ul></div></div>
+
+<div class="timenode"><div class="meta"><p>no.28 Article Publish</p></div><div class="body"><p>Article no.28<br>Published on 2026.3.7</p><ul><li>发表文章<a href="/post/AI-deployment/">“本地部署Deepseek/Qwen等开源大模型”</a></li></ul></div></div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="Note-注意"><a href="#Note-注意" class="headerlink" title="Note 注意"></a>Note 注意</h2><div class="tabs" id="note"><ul class="nav-tabs">
+      <li class="tab">
+        <button type="button" data-href="#note-0">
+          语法
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#note-1">
+          参数
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#note-2">
+          示例
+        </button>
+      </li>
+      <li class="tab active">
+        <button type="button" data-href="#note-3">
+          效果
+        </button>
+      </li></ul><div class="tab-contents"><div class="tab-item-content" id="note-0"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% note '[颜色] [样式]' '[图标]' %}内容{% endnote %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="note-1"><p>[样式]：Note的显示样式，有三种<br>可选项：modern | flat | simple<br>默认为modern</p>
+<p>[颜色]：Note的显示颜色，有六种<br>可选项：default | primary | success | info | warning | danger<br>默认为default</p>
+<p>[图标]：Note前面的图标<br>可填写<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=https://fontawesome.com/">Font Awesome</a>图标名称<br>不填时不附带图标</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="note-2"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">{% note 'default modern' 'fas fa-battery-quarter' %}手机电量低，请及时充电{% endnote %}</span><br><span class="line">{% note 'success flat' 'fas fa-wand-sparkles' %}呼神护卫！{% endnote %}</span><br><span class="line">{% note 'primary simple' 'far fa-crown' %}伊拉莎白二世{% endnote %}</span><br><span class="line">{% note 'info modern' 'fas fa-fingerprint' %}请解锁手机以使用Siri{% endnote %}</span><br><span class="line">{% note 'danger flat' 'fas fa-wine-bottle' %}喝酒不开车，开车不喝酒{% endnote %}</span><br><span class="line">{% note 'warning simple' 'fas fa-gift' %}柠檬星博客一周年生日快乐！{% endnote %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="note-3"><div class="note default modern"><i class="solitude fas fa-battery-quarter"></i><p>手机电量低，请及时充电</p></div>
+<div class="note success flat"><i class="solitude fas fa-wand-sparkles"></i><p>呼神护卫！</p></div>
+<div class="note primary simple"><i class="solitude fas fa-crown"></i><p>伊拉莎白二世</p></div>
+<div class="note info modern"><i class="solitude fas fa-fingerprint"></i><p>请解锁手机以使用Siri</p></div>
+<div class="note danger flat"><i class="solitude fas fa-wine-bottle"></i><p>喝酒不开车，开车不喝酒</p></div>
+<div class="note warning simple"><i class="solitude fas fa-gift"></i><p>柠檬星博客一周年生日快乐！</p></div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="Card-卡片"><a href="#Card-卡片" class="headerlink" title="Card 卡片"></a>Card 卡片</h2><div class="tabs" id="card"><ul class="nav-tabs">
+      <li class="tab">
+        <button type="button" data-href="#card-0">
+          语法
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#card-1">
+          参数
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#card-2">
+          示例
+        </button>
+      </li>
+      <li class="tab active">
+        <button type="button" data-href="#card-3">
+          效果
+        </button>
+      </li></ul><div class="tab-contents"><div class="tab-item-content" id="card-0"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% card [名称],[链接],[背景],[评分],[评价],[图标],[标签],[宽度],[高度] %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="card-1"><p>[名称]：卡片的标题<br>[链接]：卡片「查看详情」按钮所指向的链接<br>[背景]：背景图片的链接<br>[评分]：星星的数量，0~5<br>[评价]：光标移动到卡片上时显现的文字<br>[图标]：左上角的Font Awesome图标<br>[标签]：右上角显示的文字<br>[宽度]：卡片宽度，默认值：200px<br>[高度]：卡片高度，默认值：275px</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="card-2"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">{% card '哈利·波特','https://book.douban.com/subject/24531956/','https://img9.doubanio.com/view/subject/s/public/s29101586.jpg','4.9','算是我最喜欢的小说系列了，之前还是哈迷来着，整个系列看了三遍，还把主要的几个咒语背下来了','fa-solid fa-book-open','小说' %}</span><br><span class="line">{% card '别当欧尼酱了','https://bgm.tv/subject/378862','https://lain.bgm.tv/r/400/pic/cover/l/7e/ca/378862<span class="emphasis">_24TnR.jpg','5.0','我的本命番，在这第一次感觉到了什么叫做完结后遗症，到现在我的所有账号的头像还是她，感觉看到了我以后想成为的样子吧','fa-brands fa-bilibili','动画','450px' %}</span></span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="card-3"><div style="display: flex; gap: 20px; flex-wrap: wrap; 
+            justify-content: center; 
+            margin: 0 auto; 
+            width: fit-content; 
+            max-width: 100%;">
+  <span><div title="哈利·波特" referrerpolicy="no-referrer" class="card_box" style="background-image: url(https://img9.doubanio.com/view/subject/s/public/s29101586.jpg); width:200px; height:275px;"><div class="card_mask"><span>算是我最喜欢的小说系列了，之前还是哈迷来着，整个系列看了三遍，还把主要的几个咒语背下来了</span><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=https://book.douban.com/subject/24531956/">查看详情</a></div><div class="card_top"><i class="fa-solid fa-book-open"></i><span>小说</span></div><div class="card_content"><span>哈利·波特</span><div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-alt"></i></div></div></div></span>
+  <span><div title="别当欧尼酱了" referrerpolicy="no-referrer" class="card_box" style="background-image: url(https://lain.bgm.tv/r/400/pic/cover/l/7e/ca/378862_24TnR.jpg); width:450px; height:275px;"><div class="card_mask"><span>我的本命番，在这第一次感觉到了什么叫做完结后遗症，到现在我的所有账号的头像还是她，感觉看到了我以后想成为的样子吧</span><a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=https://bgm.tv/subject/378862">查看详情</a></div><div class="card_top"><i class="fa-brands fa-bilibili"></i><span>动画</span></div><div class="card_content"><span>别当欧尼酱了</span><div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div></div></span>
+</div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="Link-链接"><a href="#Link-链接" class="headerlink" title="Link 链接"></a>Link 链接</h2><p>我因为用了<a href="https://blog.lemonstar.me/post/solitude-reinventing/#%E8%87%AA%E5%AE%9A%E4%B9%89-link-%E6%A0%87%E7%AD%BE">psl插件</a>所以显示的样式会和默认的不一样，这里写默认的标签语法</p>
+<div class="tabs" id="link"><ul class="nav-tabs">
+      <li class="tab">
+        <button type="button" data-href="#link-0">
+          语法
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#link-1">
+          示例
+        </button>
+      </li>
+      <li class="tab active">
+        <button type="button" data-href="#link-2">
+          效果
+        </button>
+      </li></ul><div class="tab-contents"><div class="tab-item-content" id="link-0"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% link [标题] [描述] [链接] %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="link-1"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% link 'Solitude' '一款简洁优雅并易用的 Hexo 博客主题' 'https://solitude.js.org/zh' %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="link-2"><div class="liushen-tag-link">
+  <a class="tag-Link" target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=https://solitude.js.org/zh">
+    <div class="tag-link-tips">⚠️ 这不是我的网站哦！我可不知道它安不安全</div>
+    <div class="tag-link-bottom">
+      <div class="tag-link-left" style="background-image: url(https://api.xinac.net/icon/?url=solitude.js.org)" onerror="this.style.backgroundImage='url(/images/default-avatar.webp)'"></div>
+      <div class="tag-link-right">
+        <div class="tag-link-title">Solitude</div>
+        <div class="tag-link-sitename">一款简洁优雅并易用的 Hexo 博客主题</div>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </div>
+  </a>
+</div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="Checkbox-复选框"><a href="#Checkbox-复选框" class="headerlink" title="Checkbox 复选框"></a>Checkbox 复选框</h2><div class="tabs" id="checkbox"><ul class="nav-tabs">
+      <li class="tab">
+        <button type="button" data-href="#checkbox-0">
+          语法
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#checkbox-1">
+          参数
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#checkbox-2">
+          示例
+        </button>
+      </li>
+      <li class="tab active">
+        <button type="button" data-href="#checkbox-3">
+          效果
+        </button>
+      </li></ul><div class="tab-contents"><div class="tab-item-content" id="checkbox-0"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% checkbox '[颜色] [样式]' [是否勾选] [内容] %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="checkbox-1"><ul>
+<li>[颜色]：标签的背景颜色<ul>
+<li>可用颜色：red | green | blue | yellow | pink | purple | orange</li>
+<li>默认为蓝框黑字</li>
+</ul>
+</li>
+<li>[样式]：复选框内符号的样式<ul>
+<li>可选样式：plus, times, minus</li>
+<li>不填即为默认打勾</li>
+</ul>
+</li>
+<li>[是否勾选]：checked | unchecked<ul>
+<li>可选参数，默认为 checked</li>
+</ul>
+</li>
+<li>[内容]：标签内的文字</li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="checkbox-2"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">{% checkbox 'red' unchecked 'Live2d 接入 AI' %}</span><br><span class="line">{% checkbox 'yellow' unchecked '博客全站换字体' %}</span><br><span class="line">{% checkbox 'blue' 'checked' '更新外挂标签使用说明' %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="checkbox-3"><div class="checkbox red"><input type="checkbox"><p>Live2d 接入 AI</p></div>
+<div class="checkbox yellow"><input type="checkbox"><p>博客全站换字体</p></div>
+<div class="checkbox blue"><input type="checkbox" checked="checked/"><p>更新外挂标签使用说明</p></div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="Radio-单选框"><a href="#Radio-单选框" class="headerlink" title="Radio 单选框"></a>Radio 单选框</h2><div class="tabs" id="checkbox"><ul class="nav-tabs">
+      <li class="tab">
+        <button type="button" data-href="#checkbox-0">
+          语法
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#checkbox-1">
+          参数
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#checkbox-2">
+          示例
+        </button>
+      </li>
+      <li class="tab active">
+        <button type="button" data-href="#checkbox-3">
+          效果
+        </button>
+      </li></ul><div class="tab-contents"><div class="tab-item-content" id="checkbox-0"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% radio [颜色] [是否勾选] [内容] %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="checkbox-1"><ul>
+<li>[颜色]：标签的背景颜色<ul>
+<li>可用颜色：red | green | blue | yellow | pink | purple | orange</li>
+<li>默认为蓝框黑字</li>
+</ul>
+</li>
+<li>[是否勾选]：checked | unchecked<ul>
+<li>可选参数，默认为 checked</li>
+</ul>
+</li>
+<li>[内容]：标签内的文字</li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="checkbox-2"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">{% radio '' checked 'Windows' %}</span><br><span class="line">{% radio 'red' unchecked 'MacOS' %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="checkbox-3"><div class="checkbox checked"><input type="radio" checked="checked/"><p>Windows</p></div>
+<div class="checkbox red"><input type="radio"><p>MacOS</p></div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="Button-按钮"><a href="#Button-按钮" class="headerlink" title="Button 按钮"></a>Button 按钮</h2><div class="tabs" id="button"><ul class="nav-tabs">
+      <li class="tab">
+        <button type="button" data-href="#button-0">
+          语法
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#button-1">
+          示例
+        </button>
+      </li>
+      <li class="tab active">
+        <button type="button" data-href="#button-2">
+          效果
+        </button>
+      </li></ul><div class="tab-contents"><div class="tab-item-content" id="button-0"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% button [图标] [内容] [链接] %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="button-1"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% button 'far fa-address-card' '个人简介' '/about' %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="button-2"><div style="display: flex; flex-wrap: wrap; 
+            justify-content: center; 
+            margin: 0 auto; 
+            width: fit-content; 
+            max-width: 100%;">
+  <span><button class="st-btn" onclick="pjax.loadUrl('/about')"><i class="solitude far fa-address-card"></i><span>个人简介</span></button></span>
+  <span><button class="st-btn" onclick="window.open('https://lemonstar.me')"><i class="solitude fas fa-home"></i><span>主站</span></button></span>
+</div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="Repository-代码仓库"><a href="#Repository-代码仓库" class="headerlink" title="Repository 代码仓库"></a>Repository 代码仓库</h2><p>支持 Github, Gitea, Gitee, Gitlab 四种。</p>
+<div class="tabs" id="repo"><ul class="nav-tabs">
+      <li class="tab">
+        <button type="button" data-href="#repo-0">
+          语法
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#repo-1">
+          参数
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#repo-2">
+          示例
+        </button>
+      </li>
+      <li class="tab active">
+        <button type="button" data-href="#repo-3">
+          效果
+        </button>
+      </li></ul><div class="tab-contents"><div class="tab-item-content" id="repo-0"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">{% github '[仓库]' %}</span><br><span class="line">{% gitea '[服务器]' '[仓库]' %}</span><br><span class="line">{% gitee '[仓库]' %}</span><br><span class="line">{% gitlab '[仓库]' %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="repo-1"><ul>
+<li>[仓库]：仓库网址<code>https://github.com/yangle-q/Personal-Blog-Solitude</code>域名后的用户名和仓库名</li>
+<li>[服务器]：你的gitea服务器域名</li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="repo-2"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">{% github 'yangle-q/Personal-Blog-Solitude' %}</span><br><span class="line">{% gitea 'https://git.fsfe.org' 'FSFE/fsfe-website' %}</span><br><span class="line">{% gitee 'everfu/hexo-theme-solitude' %}</span><br><span class="line">{% gitlab 'gitlab-org/gitlab' %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="repo-3"><div class="repo-card">
+  <a class="name-kr670f077 repo-title fancybox" target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=https://github.com/yangle-q/Personal-Blog-Solitude"></a>
+  <p class="desc-kr670f077 repo-desc"></p>
+  <div class="repo-gist">
+    <i class="fas fa-star"></i>
+    <span class="star-kr670f077"></span>
+    <i class="fas fa-code-branch"></i>
+    <span class="fork-kr670f077"></span>
+  </div>
+  <img class="lang-kr670f077 repo-language no-lightbox">
+  <script>
+    fetch('https://api.github.com/repos/yangle-q/Personal-Blog-Solitude')
+      .then(res => res.json())
+      .then(data => {
+        document.querySelector('.name-kr670f077').innerText = data.name;
+        document.querySelector('.desc-kr670f077').innerText = data.description;
+        document.querySelector('.star-kr670f077').innerText = data.stargazers_count;
+        document.querySelector('.fork-kr670f077').innerText = data.forks_count;
+        document.querySelector('.lang-kr670f077').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+    });
+  </script>
+  </div>
+<div class="repo-card">
+  <a class="name-nbym54qfq repo-title fancybox" target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=https://git.fsfe.org/FSFE/fsfe-website"></a>
+  <p class="desc-nbym54qfq repo-desc"></p>
+  <div class="repo-gist">
+    <i class="fas fa-star"></i>
+    <span class="star-nbym54qfq"></span>
+    <i class="fas fa-code-branch"></i>
+    <span class="fork-nbym54qfq"></span>
+  </div>
+  <img class="lang-nbym54qfq repo-language no-lightbox">
+  <script>
+    fetch('https://git.fsfe.org/api/v1/repos/FSFE/fsfe-website')
+      .then(res => res.json())
+      .then(data => {
+        document.querySelector('.name-nbym54qfq').innerText = data.name;
+        document.querySelector('.desc-nbym54qfq').innerText = data.description;
+        document.querySelector('.star-nbym54qfq').innerText = data.stars_count;
+        document.querySelector('.fork-nbym54qfq').innerText = data.forks_count;
+        document.querySelector('.lang-nbym54qfq').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+    });
+  </script>
+  </div>
+<div class="repo-card">
+  <a class="name-ryqlkejgg repo-title fancybox" target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=https://gitee.com/everfu/hexo-theme-solitude"></a>
+  <p class="desc-ryqlkejgg repo-desc"></p>
+  <div class="repo-gist">
+    <i class="fas fa-star"></i>
+    <span class="star-ryqlkejgg"></span>
+    <i class="fas fa-code-branch"></i>
+    <span class="fork-ryqlkejgg"></span>
+  </div>
+  <img class="lang-ryqlkejgg repo-language no-lightbox">
+  <script>
+    fetch('https://gitee.com/api/v5/repos/everfu/hexo-theme-solitude')
+      .then(res => res.json())
+      .then(data => {
+        document.querySelector('.name-ryqlkejgg').innerText = data.name;
+        document.querySelector('.desc-ryqlkejgg').innerText = data.description;
+        document.querySelector('.star-ryqlkejgg').innerText = data.stargazers_count;
+        document.querySelector('.fork-ryqlkejgg').innerText = data.forks_count;
+        document.querySelector('.lang-ryqlkejgg').src = 'https://skillicons.dev/icons?i=' + data.language.toLowerCase();
+    });
+  </script>
+  </div>
+<div class="repo-card">
+  <a class="name-a2sax8v8k repo-title fancybox" target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=https://gitlab.com/gitlab-org/gitlab"></a>
+  <p class="desc-a2sax8v8k repo-desc"></p>
+  <div class="repo-gist">
+    <i class="fas fa-star"></i>
+    <span class="star-a2sax8v8k"></span>
+    <i class="fas fa-code-branch"></i>
+    <span class="fork-a2sax8v8k"></span>
+  </div>
+  <img class="lang-a2sax8v8k repo-language no-lightbox">
+  <script>
+    fetch('https://gitlab.com/api/v4/projects/gitlab-org%2Fgitlab')
+      .then(res => res.json())
+      .then(data => {
+        document.querySelector('.name-a2sax8v8k').innerText = data.name;
+        document.querySelector('.desc-a2sax8v8k').innerText = data.description;
+        document.querySelector('.star-a2sax8v8k').innerText = data.star_count;
+        document.querySelector('.fork-a2sax8v8k').innerText = data.forks_count;
+        document.querySelector('.lang-a2sax8v8k').src = 'https://skillicons.dev/icons?i=' + data.topics[data.topics.length - 1].toLowerCase().replace('.','');
+    });
+  </script>
+  </div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="Bubble-注释气泡"><a href="#Bubble-注释气泡" class="headerlink" title="Bubble 注释气泡"></a>Bubble 注释气泡</h2><div class="tabs" id="bubble"><ul class="nav-tabs">
+      <li class="tab">
+        <button type="button" data-href="#bubble-0">
+          语法
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#bubble-1">
+          参数
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#bubble-2">
+          示例
+        </button>
+      </li>
+      <li class="tab active">
+        <button type="button" data-href="#bubble-3">
+          效果
+        </button>
+      </li></ul><div class="tab-contents"><div class="tab-item-content" id="bubble-0"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% bubble [文字] [注释] [颜色] %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="bubble-1"><ul>
+<li>[文字]：显示的文字内容</li>
+<li>[注释]：气泡内显示的文字内容（不支持Markdown语法）</li>
+<li>[颜色]：气泡的背景颜色<ul>
+<li>可用颜色：red | green | blue | yellow | pink | purple | orange</li>
+<li>也可使用十六进制颜色，如 #ec5830</li>
+<li>使用自定义颜色时，气泡内的文字颜色会根据给定的背景颜色计算近似亮度，以此设置为白色/黑色</li>
+</ul>
+</li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="bubble-2"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% bubble '柠檬星博客的站长非常勤劳，' '指月更都差点维持不了' 'blue' %}{% bubble '他每天都勤勤恳恳的想着新文章该怎么写，' '只是想想而已' 'blue' %}{% bubble '所以希望大家能多多给他打赏喵！' '还没开通（' 'blue' %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="bubble-3"><div class="bubble"><span class="bubble-content">柠檬星博客的站长非常勤劳喵，</span><span class="bubble-notation bg-blue">指月更都差点维持不了</span></div><div class="bubble"><span class="bubble-content">他每天都勤勤恳恳的想着新文章该怎么写喵，</span><span class="bubble-notation bg-blue">只是想想而已</span></div><div class="bubble"><span class="bubble-content">所以希望大家能多多给他打赏喵！</span><span class="bubble-notation bg-blue">还没开通（</span></div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="Keyboard-键盘按键"><a href="#Keyboard-键盘按键" class="headerlink" title="Keyboard 键盘按键"></a>Keyboard 键盘按键</h2><p>展示键盘按键</p>
+<div class="tabs" id="keyboard"><ul class="nav-tabs">
+      <li class="tab">
+        <button type="button" data-href="#keyboard-0">
+          语法
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#keyboard-1">
+          参数
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#keyboard-2">
+          示例
+        </button>
+      </li>
+      <li class="tab active">
+        <button type="button" data-href="#keyboard-3">
+          效果
+        </button>
+      </li></ul><div class="tab-contents"><div class="tab-item-content" id="keyboard-0"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% keyboard [按键] %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="keyboard-1"><ul>
+<li>[按键]：按键内文字，会自动转换大小写，Enter | Windows | Command | Option 键会附带特殊图标</li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="keyboard-2"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Windows 11 更新了很多新的快捷键，其中我最喜欢的是 {% keyboard 'windows' %} + {% keyboard 'prtsc' %}，可以识别屏幕上的所有文字并且可以复制下来。</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="keyboard-3"><p>Windows 11 更新了很多新的快捷键，其中我最喜欢的是 <span class="keyboard-tag">Win⌘</span> + <span class="keyboard-tag">Q</span>，可以识别屏幕上的所有文字并且可以复制下来。<span class="keyboard-tag">F11</span>（或 <span class="keyboard-tag">Fn</span> + <span class="keyboard-tag">F11</span>）在网页浏览时相当好用。它可以让你进入网页全屏模式，让你在专注时不受其他网页的干扰。</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="Spoiler-剧透"><a href="#Spoiler-剧透" class="headerlink" title="Spoiler 剧透"></a>Spoiler 剧透</h2><p>展示剧透</p>
+<div class="tabs" id="spoiler"><ul class="nav-tabs">
+      <li class="tab">
+        <button type="button" data-href="#spoiler-0">
+          语法
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#spoiler-1">
+          参数
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#spoiler-2">
+          示例
+        </button>
+      </li>
+      <li class="tab active">
+        <button type="button" data-href="#spoiler-3">
+          效果
+        </button>
+      </li></ul><div class="tab-contents"><div class="tab-item-content" id="spoiler-0"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% spoiler [样式] [文字] %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="spoiler-1"><ul>
+<li>[样式]：剧透文本遮罩类型 blur | block</li>
+<li>[文字]：遮罩的文字内容（不支持Markdown语法）</li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="spoiler-2"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">不要{% spoiler 'block' '绝对不要' %}打开这个网址：{% spoiler 'blur' 'https://lemonstar.me/' %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="spoiler-3"><p>不要<span class="spoiler block-text">绝对不要</span>打开这个网址：<span class="spoiler blur-text"><a target="_blank" rel="noopener" href="https://lemonstar.me/">https://lemonstar.me/</a></span></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="P-标签"><a href="#P-标签" class="headerlink" title="P 标签"></a>P 标签</h2><p>HTML里面的P标签，可以自定义一段文本的格式。</p>
+<div class="tabs" id="p"><ul class="nav-tabs">
+      <li class="tab">
+        <button type="button" data-href="#p-0">
+          语法
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#p-1">
+          参数
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#p-2">
+          示例
+        </button>
+      </li>
+      <li class="tab active">
+        <button type="button" data-href="#p-3">
+          效果
+        </button>
+      </li></ul><div class="tab-contents"><div class="tab-item-content" id="p-0"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% p [样式] [内容] %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="p-1"><ul>
+<li>[样式]：控制该段显示样式<ul>
+<li>控制位置：center, left, right</li>
+<li>控制文字大小：h1, h2, h3, h4, h5, h6 </li>
+<li>控制文字颜色：red, green, blue, yellow, purple, orange, gray</li>
+</ul>
+</li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="p-2"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% p 'center h2' 'Hello World!' %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="p-3"><p class="center h2">Hello World!</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="Span-标签"><a href="#Span-标签" class="headerlink" title="Span 标签"></a>Span 标签</h2><p>HTML里面的P标签，可以自定义一个文本块的格式。</p>
+<p>与P标签不同，Span标签不会强制分行。</p>
+<div class="tabs" id="span"><ul class="nav-tabs">
+      <li class="tab">
+        <button type="button" data-href="#span-0">
+          语法
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#span-1">
+          参数
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#span-2">
+          示例
+        </button>
+      </li>
+      <li class="tab active">
+        <button type="button" data-href="#span-3">
+          效果
+        </button>
+      </li></ul><div class="tab-contents"><div class="tab-item-content" id="span-0"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% span [样式] [内容] %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="span-1"><ul>
+<li>[样式]：控制该段显示样式<ul>
+<li>控制位置：center, left, right</li>
+<li>控制文字大小：h1, h2, h3, h4, h5, h6 </li>
+<li>控制文字颜色：red, green, blue, yellow, purple, orange, gray</li>
+</ul>
+</li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="span-2"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://blog.{% span 'h2' 'Lemonstar' %}.me</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="span-3"><p>https://blog.<span class="h2">Lemonstar</span>.me</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="Img-图片"><a href="#Img-图片" class="headerlink" title="Img 图片"></a>Img 图片</h2><p>和<code>![]()</code>语法效果差不多，主要是可以控制大小。</p>
+<div class="tabs" id="img"><ul class="nav-tabs">
+      <li class="tab">
+        <button type="button" data-href="#img-0">
+          语法
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#img-1">
+          参数
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#img-2">
+          示例
+        </button>
+      </li>
+      <li class="tab active">
+        <button type="button" data-href="#img-3">
+          效果
+        </button>
+      </li></ul><div class="tab-contents"><div class="tab-item-content" id="img-0"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% img [链接] [描述] [样式] %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="img-1"><ul>
+<li>样式：控制图片的样式<ul>
+<li>所有可以作用于&lt;img&gt;元素的css样式应该都能用。</li>
+<li>常用的样式：<ul>
+<li>控制大小：width: 100px, height:200px</li>
+<li>控制位置：float: left</li>
+</ul>
+</li>
+<li>样式之间用<code>;</code>相隔</li>
+</ul>
+</li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="img-2"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% img 'https://cloud.lemonstar.me/raw/%E4%BA%8C%E6%AC%A1%E5%85%83%E7%BE%8E%E5%9B%BE%EF%BC%81/%E8%80%81%E4%BA%BA%E4%B8%8E%E6%B5%B7%E7%B4%A0%E6%9D%90%E5%9B%BE.png' 'うみと電車' 'width: 200px' %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="img-3"><img src="https://cloud.lemonstar.me/raw/%E4%BA%8C%E6%AC%A1%E5%85%83%E7%BE%8E%E5%9B%BE%EF%BC%81/%E8%80%81%E4%BA%BA%E4%B8%8E%E6%B5%B7%E7%B4%A0%E6%9D%90%E5%9B%BE.png" alt="うみと電車" style="width: 200px"><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="Inline-Img-内联图片"><a href="#Inline-Img-内联图片" class="headerlink" title="Inline Img 内联图片"></a>Inline Img 内联图片</h2><div class="tabs" id="inlineimg"><ul class="nav-tabs">
+      <li class="tab">
+        <button type="button" data-href="#inlineimg-0">
+          语法
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#inlineimg-1">
+          参数
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#inlineimg-2">
+          示例
+        </button>
+      </li>
+      <li class="tab active">
+        <button type="button" data-href="#inlineimg-3">
+          效果
+        </button>
+      </li></ul><div class="tab-contents"><div class="tab-item-content" id="inlineimg-0"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% img [链接] [描述] [样式] %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="inlineimg-1"><ul>
+<li>样式：控制图片的样式<ul>
+<li>所有可以作用于&lt;img&gt;元素的css样式应该都能用。</li>
+<li>常用的样式：<ul>
+<li>控制大小：width: 100px, height:200px</li>
+<li>控制位置：float: left</li>
+</ul>
+</li>
+<li>样式之间用<code>;</code>相隔</li>
+</ul>
+</li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="inlineimg-2"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% inline<span class="emphasis">_img 'https://cloud.lemonstar.me/raw/%E4%BA%8C%E6%AC%A1%E5%85%83%E7%BE%8E%E5%9B%BE%EF%BC%81/%E8%80%81%E4%BA%BA%E4%B8%8E%E6%B5%B7%E7%B4%A0%E6%9D%90%E5%9B%BE.png' 'うみと電車' '200px' %}</span></span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="inlineimg-3"><img src="https://cloud.lemonstar.me/raw/%E4%BA%8C%E6%AC%A1%E5%85%83%E7%BE%8E%E5%9B%BE%EF%BC%81/%E8%80%81%E4%BA%BA%E4%B8%8E%E6%B5%B7%E7%B4%A0%E6%9D%90%E5%9B%BE.png" title="うみと電車" height="200px" class="inline-img"><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="Audio-音频"><a href="#Audio-音频" class="headerlink" title="Audio 音频"></a>Audio 音频</h2><div class="tabs" id="audio"><ul class="nav-tabs">
+      <li class="tab">
+        <button type="button" data-href="#audio-0">
+          语法
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#audio-1">
+          示例
+        </button>
+      </li>
+      <li class="tab active">
+        <button type="button" data-href="#audio-2">
+          效果
+        </button>
+      </li></ul><div class="tab-contents"><div class="tab-item-content" id="audio-0"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% audio [音频链接] %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="audio-1"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% audio 'https://music.163.com/song/media/outer/url?id=1969519579.mp3' %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="audio-2"><div class="audio"><audio controls="" preload=""><source src="https://music.163.com/song/media/outer/url?id=1969519579.mp3" type="audio/mp3">Your browser does not support the audio tag.</audio></div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="Video-视频"><a href="#Video-视频" class="headerlink" title="Video 视频"></a>Video 视频</h2><div class="tabs" id="video"><ul class="nav-tabs">
+      <li class="tab">
+        <button type="button" data-href="#video-0">
+          语法
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#video-1">
+          示例
+        </button>
+      </li>
+      <li class="tab active">
+        <button type="button" data-href="#video-2">
+          效果
+        </button>
+      </li></ul><div class="tab-contents"><div class="tab-item-content" id="video-0"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% video [视频链接] %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="video-1"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% video 'https://cloud.lemonstar.me/raw/%E5%8D%9A%E5%AE%A2%E8%B5%84%E6%BA%90/%E7%B2%BE%E7%BF%BBNCOP%E3%80%8C%E3%82%A2%E3%82%A4%E3%83%87%E3%83%B3%E8%B2%9E%E8%B2%9E%E3%83%A1%E3%83%AB%E3%83%88%E3%83%80%E3%82%A6%E3%83%B3%EF%BC%88%E8%87%AA%E6%88%91%E8%8A%82%E6%93%8D%E7%86%94%E6%AF%81%E4%B8%AD%EF%BC%89%E3%80%8D(1080P).mp4' %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="video-2"><div class="video"><video controls="" preload=""><source src="https://cloud.lemonstar.me/raw/%E5%8D%9A%E5%AE%A2%E8%B5%84%E6%BA%90/%E7%B2%BE%E7%BF%BBNCOP%E3%80%8C%E3%82%A2%E3%82%A4%E3%83%87%E3%83%B3%E8%B2%9E%E8%B2%9E%E3%83%A1%E3%83%AB%E3%83%88%E3%83%80%E3%82%A6%E3%83%B3%EF%BC%88%E8%87%AA%E6%88%91%E8%8A%82%E6%93%8D%E7%86%94%E6%AF%81%E4%B8%AD%EF%BC%89%E3%80%8D(1080P).mp4" type="video/mp4">Your browser does not support the video tag.</video></div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="Videos-视频列表"><a href="#Videos-视频列表" class="headerlink" title="Videos 视频列表"></a>Videos 视频列表</h2><div class="tabs" id="videos"><ul class="nav-tabs">
+      <li class="tab">
+        <button type="button" data-href="#videos-0">
+          语法
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#videos-1">
+          参数
+        </button>
+      </li>
+      <li class="tab">
+        <button type="button" data-href="#videos-2">
+          示例
+        </button>
+      </li>
+      <li class="tab active">
+        <button type="button" data-href="#videos-3">
+          效果
+        </button>
+      </li></ul><div class="tab-contents"><div class="tab-item-content" id="videos-0"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">{% videos [列数] %}</span><br><span class="line">{% endvideos %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="videos-1"><ul>
+<li>[列数]：一排显示的视频个数<ul>
+<li>如果不设置的话默认是2</li>
+</ul>
+</li>
+</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="videos-2"><figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">{% videos %}</span><br><span class="line">{% video 'https://cloud.lemonstar.me/raw/%E5%8D%9A%E5%AE%A2%E8%B5%84%E6%BA%90/%E7%B2%BE%E7%BF%BBNCOP%E3%80%8C%E3%82%A2%E3%82%A4%E3%83%87%E3%83%B3%E8%B2%9E%E8%B2%9E%E3%83%A1%E3%83%AB%E3%83%88%E3%83%80%E3%82%A6%E3%83%B3%EF%BC%88%E8%87%AA%E6%88%91%E8%8A%82%E6%93%8D%E7%86%94%E6%AF%81%E4%B8%AD%EF%BC%89%E3%80%8D(1080P).mp4' %}</span><br><span class="line">{% video 'https://cloud.lemonstar.me/raw/%E5%8D%9A%E5%AE%A2%E8%B5%84%E6%BA%90/%E7%B2%BE%E7%BF%BBNCED%E3%80%8C%E3%81%B2%E3%82%81%E3%81%94%E3%81%A8%EF%BC%8A%E3%82%AF%E3%83%A9%E3%82%A4%E3%82%B7%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%BA%EF%BC%88%E9%97%BA%E5%AF%86%EF%BC%8A%E5%8D%B1%E6%9C%BA%E5%A7%90%E5%A6%B9%EF%BC%89%E3%80%8D(1080P).mp4' %}</span><br><span class="line">{% endvideos %}</span><br></pre></td></tr></tbody></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="videos-3"><div class="videos" col="2"><div class="video"><video controls="" preload=""><source src="https://cloud.lemonstar.me/raw/%E5%8D%9A%E5%AE%A2%E8%B5%84%E6%BA%90/%E7%B2%BE%E7%BF%BBNCOP%E3%80%8C%E3%82%A2%E3%82%A4%E3%83%87%E3%83%B3%E8%B2%9E%E8%B2%9E%E3%83%A1%E3%83%AB%E3%83%88%E3%83%80%E3%82%A6%E3%83%B3%EF%BC%88%E8%87%AA%E6%88%91%E8%8A%82%E6%93%8D%E7%86%94%E6%AF%81%E4%B8%AD%EF%BC%89%E3%80%8D(1080P).mp4" type="video/mp4">Your browser does not support the video tag.</video></div>
+<div class="video"><video controls="" preload=""><source src="https://cloud.lemonstar.me/raw/%E5%8D%9A%E5%AE%A2%E8%B5%84%E6%BA%90/%E7%B2%BE%E7%BF%BBNCED%E3%80%8C%E3%81%B2%E3%82%81%E3%81%94%E3%81%A8%EF%BC%8A%E3%82%AF%E3%83%A9%E3%82%A4%E3%82%B7%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%BA%EF%BC%88%E9%97%BA%E5%AF%86%EF%BC%8A%E5%8D%B1%E6%9C%BA%E5%A7%90%E5%A6%B9%EF%BC%89%E3%80%8D(1080P).mp4" type="video/mp4">Your browser does not support the video tag.</video></div></div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>正如前言所言，这篇文章本来是要和<a href="/post/markdown/">Markdown格式详解与Solitude主题Front Matter使用说明</a>一起发的，但是由于这篇文章的标签整理起来相当累人，所以拖到现在才发，到了写后记的这个时间点，连前言都是一年多前写的了（应该是本博客拖更时间最久的一篇文章了吧？）</p>
+<p>看了下这篇文章的文件是在2025年6月7号08:11创建的……</p>
+<p>熬了这么久本来找的3篇参考文章有两篇都下线了，幸好我找其中一篇文章的站长拿到了文章的源文件，再参照<a target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=https://solitude.blog-archive.hpcesia.com/posts/e5415539/">另外一篇还没下线的文章</a>写了这篇，应该是整理得比较全的一篇了吧，虽然说有一篇参考文章下线了就没法拿到其中缺的标签用法就是了。</p>
+<p>这篇文章整理用了我整整8个小时……难怪我之前不愿意做呢……<del>人之常情嘛</del></p>
+<p>那么这篇文章就这样啦，也是补上了我的一个大坑，本博客还是会尽量保持月更的，那就拜拜！</p>
+</article><div class="post-copyright"><div class="post-copyright__author_group"><div class="post-copyright__author_img"><img class="post-copyright__author_img_front" src="/custom/img/avatar.webp"></div><div class="post-copyright__author_name">Meteorite</div><div class="post-copyright__author_desc"></div></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div id="quit-box" onclick="RemoveRewardMask()"></div></div></div><div class="social-share"><a class="social-share-ico icon-qq" target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=https://connect.qq.com/widget/shareqq/index.html?url=http%3A%2F%2Fblog.lemonstar.me%2Fpost%2Fsolitude-tabs%2F&amp;title=Solitude%E4%B8%BB%E9%A2%98%E5%86%85%E7%BD%AE%26%E5%A4%96%E6%8C%82%E6%A0%87%E7%AD%BE%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E&amp;desc=undefined&amp;summary=undefined&amp;site=Solitude%E4%B8%BB%E9%A2%98%E5%86%85%E7%BD%AE%26%E5%A4%96%E6%8C%82%E6%A0%87%E7%AD%BE%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E&amp;pics=https%3A%2F%2Fpic-2.yoxo.top%2FCanvas-Ruom-32.webp" title="分享到QQ"><i class="solitude fab fa-qq"></i></a><a class="social-share-ico icon-weibo" target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=http://service.weibo.com/share/share.php?url=http%3A%2F%2Fblog.lemonstar.me%2Fpost%2Fsolitude-tabs%2F&amp;title=Solitude%E4%B8%BB%E9%A2%98%E5%86%85%E7%BD%AE%26%E5%A4%96%E6%8C%82%E6%A0%87%E7%AD%BE%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E&amp;pic=https%3A%2F%2Fpic-2.yoxo.top%2FCanvas-Ruom-32.webp" title="分享到微博"><i class="solitude fab fa-weibo"></i></a><a class="social-share-ico icon-twitter" target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=https://twitter.com/intent/tweet?url=http%3A%2F%2Fblog.lemonstar.me%2Fpost%2Fsolitude-tabs%2F&amp;text=Solitude%E4%B8%BB%E9%A2%98%E5%86%85%E7%BD%AE%26%E5%A4%96%E6%8C%82%E6%A0%87%E7%AD%BE%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E" title="分享到Twitter"><i class="solitude fab fa-twitter"></i></a><a class="social-share-ico icon-facebook" target="_blank" rel="external nofollow noopener noreferrer" href="/go.html?u=https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fblog.lemonstar.me%2Fpost%2Fsolitude-tabs%2F" title="分享到Facebook"><i class="solitude fab fa-facebook"></i></a><div class="social-share-ico icon-link" onclick="utils.copy(&quot;http://blog.lemonstar.me/post/solitude-tabs/&quot;)" title="复制文章链接"><i class="solitude fas fa-link"></i></div><div class="social-share-ico icon-qrcode" title="使用手机扫码阅读这篇文章"><i class="solitude fas fa-qrcode"></i><div class="share-main"><div class="share-main-all"><div id="qrcode"></div><div class="reward-dec">使用手机扫码阅读这篇文章</div></div></div><script pjax="">typeof QRCode === 'function' && new QRCode(document.getElementById("qrcode"), {
+    text: 'http://blog.lemonstar.me/post/solitude-tabs/',
+    correctLevel : QRCode.CorrectLevel.L
+});
+window.addEventListener('DOMContentLoaded', () => {
+    new QRCode(document.getElementById("qrcode"), {
+        text: 'http://blog.lemonstar.me/post/solitude-tabs/',
+        correctLevel : QRCode.CorrectLevel.L
+    });
+});
+</script></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本文是原创文章，采用<a href="/agreements/copyright/">CC BY-NC-SA 4.0</a>协议，完整转载请注明来自<a href="/">柠檬星 | 天空就是一杯橘子味的柠檬汽水</a></span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%86%99%E4%BD%9C/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>写作<span class="tagsPageCount">2</span></span></a><a class="post-meta__tags" href="/tags/Markdown/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>Markdown<span class="tagsPageCount">2</span></span></a><a class="post-meta__tags" href="/tags/Solitude/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>Solitude<span class="tagsPageCount">5</span></span></a><a class="post-meta__tags" href="/tags/%E5%A4%96%E6%8C%82%E6%A0%87%E7%AD%BE/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>外挂标签<span class="tagsPageCount">1</span></span></a></div></div></div><nav class="needEndHide pagination-post" id="pagination"><div class="next-post pull-full"><a href="/post/live2d-menu/"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Oh-My-Live2d 修改目录栏</div></div></a></div></nav>
+        <div class="relatedPosts">
+            <div class="headline">
+                <i class="solitude fas fa-star"></i>
+                <span>喜欢这篇的人也看了</span>
+                <div class="relatedPosts-link">
+                    <a onclick="event.preventDefault(); toRandomPost();" href="javascript:void(0);" rel="external nofollow" data-pjax-state="">随便逛逛</a>
+                </div>
+            </div>
+            <div class="relatedPosts-list">
+            <div>
+                <a href="/post/markdown/" title="Markdown 格式详解与 Solitude 主题 Front Matter 使用说明">
+                    <img class="cover" src="https://pic-1.yoxo.top/Canvas-Ruom-7.webp" alt="cover">
+                    <div class="content is-center">
+                        <div class="title">Markdown 格式详解与 Solitude 主题 Front Matter 使用说明</div>
+                    </div>
+                </a>
+            </div>
+            <div>
+                <a href="/post/password/" title="给你的博客内容添加密码保护">
+                    <img class="cover" src="https://pic-1.yoxo.top/Canvas-Ruom-17.webp" alt="cover">
+                    <div class="content is-center">
+                        <div class="title">给你的博客内容添加密码保护</div>
+                    </div>
+                </a>
+            </div>
+            </div>
+        </div><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="solitude fas fa-comment"></i><span> 评论</span><span class="count"> (<span class="twikoo-count"><i class="solitude fas fa-spinner fa-spin"></i></span>)</span></div><a class="plxycss" href="/agreements/comment/"><i class="solitude fas fa-file-lines"></i><span>&nbsp;评论协议</span></a></div><div class="comment-wrap"><div id="twikoo-wrap"></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><div class="top-group"><div class="sayhi" id="sayhi" onclick="sco.changeWittyWord()"></div></div></div><div class="avatar"><img alt="头像" src="/custom/img/avatar.webp"></div><div class="description">欢迎来到我的世界！ / Welcome to my world!</div><div class="bottom-group"><span class="left"><div class="name">Meteorite</div><div class="desc">『不管你在世界的哪个地方，我一定会，再次去见你的』</div></span><div class="social-icons is-center"><a class="social-icon" target="_blank" rel="noopener" href="https://github.com/yangle-q" title="Github"><i class="solitude  fab fa-github"></i></a><a class="social-icon" target="_blank" rel="noopener" href="https://space.bilibili.com/3546587441662405" title="Bilibili"><i class="solitude  fab fa-bilibili"></i></a><a class="social-icon" target="_blank" rel="noopener" href="https://www.zhihu.com/people/84-92-73-30" title="Zhihu"><i class="solitude  fab fa-zhihu"></i></a><a class="social-icon" href="mailto:yangle.q@outlook.com" title="Mail"><i class="solitude  far fa-envelope"></i></a></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="solitude fas fa-bars"></i><span>文章目录</span></div><div class="toc-content" id="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%85%E7%BD%AE%E6%A0%87%E7%AD%BE"><span class="toc-text">内置标签</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Tabs-%E6%A0%87%E7%AD%BE"><span class="toc-text">Tabs 标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Gallery-%E5%9B%BE%E7%89%87%E5%88%97%E8%A1%A8"><span class="toc-text">Gallery 图片列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GalleryGroup-%E5%9B%BE%E7%89%87%E7%BB%84"><span class="toc-text">GalleryGroup 图片组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chart-%E5%9B%BE%E8%A1%A8"><span class="toc-text">Chart 图表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mermaid-%E5%9B%BE%E8%A1%A8"><span class="toc-text">Mermaid 图表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Typeit-%E5%8A%A8%E7%94%BB"><span class="toc-text">Typeit 动画</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E6%A0%87%E7%AD%BE"><span class="toc-text">插件标签</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Youtube-%E8%A7%86%E9%A2%91"><span class="toc-text">Youtube 视频</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bilibili-%E8%A7%86%E9%A2%91"><span class="toc-text">Bilibili 视频</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fold-%E6%8A%98%E5%8F%A0"><span class="toc-text">Fold 折叠</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Timeline-%E6%97%B6%E9%97%B4%E8%BD%B4"><span class="toc-text">Timeline 时间轴</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Note-%E6%B3%A8%E6%84%8F"><span class="toc-text">Note 注意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Card-%E5%8D%A1%E7%89%87"><span class="toc-text">Card 卡片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Link-%E9%93%BE%E6%8E%A5"><span class="toc-text">Link 链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Checkbox-%E5%A4%8D%E9%80%89%E6%A1%86"><span class="toc-text">Checkbox 复选框</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Radio-%E5%8D%95%E9%80%89%E6%A1%86"><span class="toc-text">Radio 单选框</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Button-%E6%8C%89%E9%92%AE"><span class="toc-text">Button 按钮</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Repository-%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93"><span class="toc-text">Repository 代码仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bubble-%E6%B3%A8%E9%87%8A%E6%B0%94%E6%B3%A1"><span class="toc-text">Bubble 注释气泡</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Keyboard-%E9%94%AE%E7%9B%98%E6%8C%89%E9%94%AE"><span class="toc-text">Keyboard 键盘按键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spoiler-%E5%89%A7%E9%80%8F"><span class="toc-text">Spoiler 剧透</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#P-%E6%A0%87%E7%AD%BE"><span class="toc-text">P 标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Span-%E6%A0%87%E7%AD%BE"><span class="toc-text">Span 标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Img-%E5%9B%BE%E7%89%87"><span class="toc-text">Img 图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Inline-Img-%E5%86%85%E8%81%94%E5%9B%BE%E7%89%87"><span class="toc-text">Inline Img 内联图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Audio-%E9%9F%B3%E9%A2%91"><span class="toc-text">Audio 音频</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Video-%E8%A7%86%E9%A2%91"><span class="toc-text">Video 视频</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Videos-%E8%A7%86%E9%A2%91%E5%88%97%E8%A1%A8"><span class="toc-text">Videos 视频列表</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-text">后记</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="solitude fas fa-map"></i><span>最近发布</span></div><div class="aside-list"><a class="aside-list-item" href="/post/solitude-tabs/" title="Solitude主题内置&amp;外挂标签使用说明"><div class="thumbnail"><img alt="Solitude主题内置&amp;外挂标签使用说明" src="https://pic-2.yoxo.top/Canvas-Ruom-32.webp"></div><div class="content"><span class="title" href="/post/solitude-tabs/" title="Solitude主题内置&amp;外挂标签使用说明">Solitude主题内置&amp;外挂标签使用说明</span><span class="categories" href="/post/solitude-tabs/">教程</span></div></a><a class="aside-list-item" href="/post/live2d-menu/" title="Oh-My-Live2d 修改目录栏"><div class="thumbnail"><img alt="Oh-My-Live2d 修改目录栏" src="https://pic-2.yoxo.top/Canvas-Ruom-31.webp"></div><div class="content"><span class="title" href="/post/live2d-menu/" title="Oh-My-Live2d 修改目录栏">Oh-My-Live2d 修改目录栏</span><span class="categories" href="/post/live2d-menu/">教程</span></div></a><a class="aside-list-item" href="/post/telegram-bot/" title="开发一个属于你自己的角色扮演Telegram Bot"><div class="thumbnail"><img alt="开发一个属于你自己的角色扮演Telegram Bot" src="https://pic-2.yoxo.top/Canvas-Ruom-30-1.webp"></div><div class="content"><span class="title" href="/post/telegram-bot/" title="开发一个属于你自己的角色扮演Telegram Bot">开发一个属于你自己的角色扮演Telegram Bot</span><span class="categories" href="/post/telegram-bot/">教程</span></div></a><a class="aside-list-item" href="/post/anniversary-summarize/" title="柠檬星博客一周年总结！"><div class="thumbnail"><img alt="柠檬星博客一周年总结！" src="https://pic-2.yoxo.top/Canvas-Ruom-29.webp"></div><div class="content"><span class="title" href="/post/anniversary-summarize/" title="柠檬星博客一周年总结！">柠檬星博客一周年总结！</span><span class="categories" href="/post/anniversary-summarize/">记录</span></div></a><a class="aside-list-item" href="/post/AI-deployment/" title="本地部署Deepseek/Qwen等开源大模型"><div class="thumbnail"><img alt="本地部署Deepseek/Qwen等开源大模型" src="https://pic-2.yoxo.top/Canvas-Ruom-28.webp"></div><div class="content"><span class="title" href="/post/AI-deployment/" title="本地部署Deepseek/Qwen等开源大模型">本地部署Deepseek/Qwen等开源大模型</span><span class="categories" href="/post/AI-deployment/">教程</span></div></a></div></div></div></div></main><footer id="footer"><div id="st-footer-bar"><div class="footer-logo"><span>柠檬星</span></div><div class="footer-bar-description"></div><a class="footer-bar-link" href="/about/"></a></div><div id="footer_deal"><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/yangle-q" title="Github"><i class="solitude  fab fa-github"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://www.youtube.com/@Yangle.q" title="Youtube"><i class="solitude  fab fa-youtube"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://space.bilibili.com/3546587441662405" title="Bilibili"><i class="solitude  fab fa-bilibili"></i></a><div class="nolazyload footer_mini_logo" id="footer_mini_logo" title="返回顶部" onclick="sco.toTop()"><img src="" alt="返回顶部"></div><a class="deal_link" target="_blank" rel="noopener" href="https://www.zhihu.com/people/84-92-73-30" title="Zhihu"><i class="solitude  fab fa-zhihu"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://x.com/yngl592015" title="X"><i class="solitude  fab fa-x-twitter"></i></a><a class="deal_link" href="mailto:meteorite@star-lake.world" title="Mail"><i class="solitude  far fa-envelope"></i></a></div><div id="st-footer"><div class="footer-group"><h3 class="footer-title">导航</h3><div class="footer-links"><a class="footer-item" href="/archives/" title="Archives">Archives</a><a class="footer-item" href="/categories/" title="Categories">Categories</a><a class="footer-item" href="/tags/" title="Tags">Tags</a><a class="footer-item" href="/notpublic/" title="Not Public">Not Public</a></div></div><div class="footer-group"><h3 class="footer-title">协议</h3><div class="footer-links"><a class="footer-item" href="/agreements/comment/" title="评论协议">评论协议</a><a class="footer-item" href="/agreements/copyright/" title="版权声明">版权声明</a><a class="footer-item" href="/agreements/privacy/" title="隐私政策">隐私政策</a><a class="footer-item" href="/agreements/cookies/" title="Cookie 协议">Cookie 协议</a><a class="footer-item" href="/agreements/disclaimer/" title="免责声明">免责声明</a></div></div><div class="footer-group"><div class="footer-title-group"><h3 class="footer-title">友链</h3><button class="random-friends-btn" onclick="randomLinksList()" title="友链"><i class="solitude fas fa-arrows-rotate"></i></button></div><div class="footer-links" id="friend-links-in-footer"></div></div></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div class="copyright">© 2025 - 2026 By&nbsp;<a class="footer-bar-link" href="/"><img class="author-avatar" src="/custom/img/site-icon-lemon.webp">Meteorite</a></div><div class="beian-group"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://icp.hentioe.dev/sites/20258907" title="喵ICP备20258907号"><img class="beian-icon" src="https://icp.hentioe.dev/favicon-96x96.png" alt="喵ICP备20258907号"><span class="beian-name">喵ICP备20258907号</span></a><a class="footer-bar-link" target="_blank" rel="noopener" href="https://icp.gov.moe/?keyword=20250847" title="萌ICP备20250847号"><img class="beian-icon" src="https://icp.gov.moe/images/ico64.png" alt="萌ICP备20250847号"><span class="beian-name">萌ICP备20250847号</span></a><a class="footer-bar-link" target="_blank" rel="noopener" href="https://hexo.io/">框架：Hexo</a><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/everfu/hexo-theme-solitude">主题：Solitude</a></div></div><div class="footer-bar-right"><a class="footer-bar-link" href="/info/" alt="<span id=&quot;runtime&quot;></span>"><span id="runtime"></span></a><a class="footer-bar-link" href="/copyright/" alt="版权声明"><i class="solitude fas fa-copyright"></i><i class="solitude fab fa-creative-commons-by"></i><i class="solitude fab fa-creative-commons-nc"></i><i class="solitude fab fa-creative-commons-sa"></i></a></div></div></div><div class="comment-barrage needEndHide"></div></footer></div><!-- right_menu--><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="solitude fas fa-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="solitude fas fa-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="solitude fas fa-arrows-rotate"></i></div><div class="rightMenu-item" id="menu-top"><i class="solitude fas fa-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="solitude fas fa-clone"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="solitude fas fa-clipboard"></i><span>粘贴文本</span></div><div class="rightMenu-item" id="menu-commenttext"><i class="solitude fas fa-comment-medical"></i><span>引用到评论</span></div><div class="rightMenu-item" id="menu-newwindow"><i class="solitude far fa-window-maximize"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="solitude fas fa-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="solitude fas fa-clone"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="solitude fas fa-cloud-arrow-down"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-search"><i class="solitude fas fa-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="solitude fas fa-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="solitude fas fa-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="solitude fas fa-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="solitude fas fa-clone"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><div class="rightMenu-item" id="menu-randomPost" onclick="toRandomPost()||rm.hideRightMenu()"><i class="solitude fas fa-tower-broadcast"></i><span>随机文章</span></div><div class="rightMenu-item" onclick="pjax.loadUrl('/categories/')||rm.hideRightMenu()"><i class="solitude fas fa-clone"></i><span>全部分类</span></div><div class="rightMenu-item" onclick="pjax.loadUrl('/tags/')||rm.hideRightMenu()"><i class="solitude fas fa-tags"></i><span>全部标签</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><div class="rightMenu-item" id="menu-commentBarrage" onclick="sco.switchCommentBarrage()"><i class="solitude fas fa-comment"></i><span class="menu-commentBarrage-text">关闭热评</span></div><div class="rightMenu-item" id="menu-darkmode" onclick="sco.switchDarkMode()"><i class="solitude fas fa-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></div><div class="rightMenu-item" id="menu-translate"><i class="solitude fas fa-language"></i><span>轉為繁體</span></div></div></div><div id="rightmenu-mask"></div><!-- inject body--><div><script src="/js/utils.js?v=3.0.19"></script><script src="/js/main.js?v=3.0.19"></script><script src="/js/third_party/waterfall.min.js?v=3.0.19"></script><script src="https://fastly.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script src="https://fastly.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script><script src="https://fastly.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js"></script><script src="https://fastly.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script><script src="https://fastly.jsdelivr.net/npm/typeit@8.8.7/dist/index.umd.min.js"></script><script src="/js/tw_cn.js?v=3.0.19"></script><script src="https://fastly.jsdelivr.net/npm/katex@0.16.9/dist/contrib/copy-tex.min.js"><script>(() => {
+  document.querySelectorAll('.article-container span.katex-display').forEach(item => {
+    utils.wrap(item, 'div', {class: 'katex-wrap'})
+  })
+})();
+</script><script src="https://fastly.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script src="https://fastly.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.umd.min.js"></script><script src="https://fastly.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.js"></script><script src="/js/post_ai.js?v=3.0.19"></script><script>var meting_api = 'https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r';</script><script src="https://fastly.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><script src="https://fastly.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script><script src="https://fastly.jsdelivr.net/npm/colorthief@2.6.0/dist/color-thief.min.js"></script><script src="/js/covercolor/local.js?v=3.0.19"></script><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+utils.addGlobalFn('pjaxSend', () => {
+  Pace.restart()
+}, 'pace_restart')
+</script><script src="https://fastly.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><script src="https://fastly.jsdelivr.net/npm/instantsearch.js@4.75.7/dist/instantsearch.production.min.js"></script><script src="https://fastly.jsdelivr.net/npm/algoliasearch@5.19.0/dist/algoliasearch.umd.min.js"></script><script src="/js/right_menu.js?v=3.0.19"></script><script src="https://open.lightxi.com/unpkg/chinese-lunar@0.1.4/lib/chinese-lunar.js"></script><script defer="" pjax="" src="/custom/js/custom.js?v1"></script><script defer="" pjax="" src="/custom/js/jz.min.js"></script><div class="js-pjax"><script>(() => {
+    const getCount = () => {
+        const ele = document.querySelectorAll('.twikoo-count')
+        if (!ele) return
+        twikoo.getCommentsCount({
+            envId: 'https://twikoo.yoxo.top/.netlify/functions/twikoo',
+            region: '',
+            urls: [window.location.pathname],
+            includeReply: false
+        }).then(res => {
+            ele.forEach(item => item.textContent = res[0].count)
+        }).catch(err => {
+            console.error(err)
+        })
+    }
+    const init = () => {
+        twikoo.init(Object.assign({
+            el: '#twikoo-wrap',
+            envId: 'https://twikoo.yoxo.top/.netlify/functions/twikoo',
+            region: '',
+            path: window.location.pathname,
+            onCommentLoaded: () => {
+                GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+            }
+        }, null))
+
+         && getCount()
+        sco.owoBig({
+            body: '.OwO-body',
+            item: '.OwO-items li'
+        })
+
+        true && barrageTwikoo()
+    }
+
+    const loadTwikoo = () => {
+        if (typeof twikoo === 'object') setTimeout(init,0)
+        else utils.getScript('https://fastly.jsdelivr.net/npm/twikoo@1.6.41/dist/twikoo.all.min.js').then(init)
+    }
+
+    if ('Twikoo' === 'Twikoo' || true) {
+        if (true) utils.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+        else loadTwikoo()
+    } else {
+        window.loadTwoComment = loadTwikoo
+    }
+})()
+</script><script>async function barrageTwikoo() {
+    await fetch("https://twikoo.yoxo.top/.netlify/functions/twikoo", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            event: "COMMENT_GET",
+            accessToken: "",
+            url: window.location.pathname
+        })
+    }).then(async res => {
+        if (!res.ok) throw new Error("HTTP error! status: " + res.status)
+        const data = await res.json();
+        const init = () => {
+            initializeCommentBarrage((data.data).map(item => Object.assign({
+                content: item.comment,
+                nick: item.nick,
+                mailMd5: item.mailMd5,
+                id: item.id
+            })))
+        }
+        if (typeof initializeCommentBarrage === "undefined") await utils.getScript('/js/third_party/barrage.min.js?v=3.0.19').then(init)
+        else init()
+    }).catch(error => console.error("An error occurred while fetching comments: ", error))
+}</script><script>mermaid.run();
+</script></div></div><script>const links = [{"name":"柠檬星","link":"https://blog.lemonstar.me"},{"name":"Yangleの博客","link":"https://yangle-q.github.io"},{"name":"叶泯希","link":"https://blog.418121.xyz/"},{"name":"❖星港◎Star☆","link":"https://blog.starsharbor.com"},{"name":"冰火之砺","link":"https://blog.marice.top/"},{"name":"张洪Heo","link":"https://blog.zhheo.com/"},{"name":"静莹莹的小空间","link":"https://jingyingying.lemonstar.me"},{"name":"青桔气球","link":"https://blog.qjqq.cn/"},{"name":"璜珀的小屋","link":"https://blog.hpcesia.com/"},{"name":"白云苍狗","link":"https://www.imalun.com"},{"name":"安知鱼","link":"https://blog.anheyu.com/"},{"name":"iMaeGoo’s Blog","link":"https://www.imaegoo.com"},{"name":"技研录","link":"https://linmohan.fun"},{"name":"yiiko","link":"https://blog.yik.at/"},{"name":"间窗的博客","link":"https://www.vindo.cn/"},{"name":"猫普的精神世界","link":"https://maplezz.com/"},{"name":"Mugzx’s Blog","link":"https://blog.mugzx.top/"},{"name":"孤芳不自赏","link":"https://www.gfbzsblog.site/"},{"name":"梦爱吃鱼","link":"https://blog.bsgun.cn/"},{"name":"MysticStars","link":"https://www.mysticstars.cn"},{"name":"Zephyr","link":"https://lorcas.top/"},{"name":"yusuble特效","link":"https://blog.suble.cn"},{"name":"Nebula Blog","link":"https://www.996icu.eu.org/"},{"name":"哔哔一二","link":"https://www.bber.cn"},{"name":"Leonus","link":"https://blog.leonus.cn/"},{"name":"一曝十寒","link":"http://yuhhhy.cn/"},{"name":"Another","link":"https://axm.moe"},{"name":"栖童の小站","link":"https://blog.linux-qitong.top"},{"name":"btwoa","link":"https://blog.btwoa.com"},{"name":"Yaten-Z","link":"https://blog.yaten.xyz/"},{"name":"NihaoShop","link":"https://nihao.show/"},{"name":"阿猹的小窝","link":"https://acha.xx.kg"},{"name":"TATEN","link":"https://taten.org/"},{"name":"萌国ICP备案","link":"https://icp.gov.moe/"},{"name":"喵星ICP备案","link":"https://icp.hentioe.dev/"},{"name":"开往","link":"https://www.travellings.cn/"},{"name":"中文博客导航","link":"https://blog.liushen.fun/"},{"name":"博客集","link":"https://bloginc.cn/"}]
+const randomText = '点击前往按钮进入随机一个友链，不保证跳转网站的安全性和可用性。本次随机到的是本站友链：⌈ ${name} ⌋'
+function travelling() {
+    const link = links[utils.randomNum(links.length)];
+    Snackbar.show({
+        text: randomText.replace(/\$\{name}/,link.name),
+        duration: 8000,
+        pos: 'top-center',
+        actionText: '前往',
+        onActionClick: function(element) {
+            element.style.opacity = 0;
+            window.open(link.link, '_blank');
+        }
+    });
+}
+</script><script>function randomLinksList() {
+    const linkcard = document.getElementById('friend-links-in-footer');
+    if (linkcard == null) return;
+
+    let data = '';
+    let linksCopy = [...links];
+    let count = Math.min(3, linksCopy.length);
+
+    for (let i = 0; i < count; i++) {
+        let index = utils.randomNum(linksCopy.length);
+        const {link, name} = linksCopy[index];
+        data += `<a class="footer-item" href="${link}" target="_blank" rel="noopener noreferrer nofollow">${name}</a>`;
+        linksCopy.splice(index, 1);
+    }
+
+    linkcard.innerHTML = data + '<a class="footer-item" href="/links/">更多</a>';
+}</script><!-- pjax--><script>const pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: ["title","#body-wrap","#site-config","meta[name=\"description\"]",".js-pjax","meta[property^=\"og:\"]","#config-diff",".rs_show",".rs_hide"],
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+})
+
+document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+})
+
+document.addEventListener('pjax:complete', () => {
+    window.refreshFn()
+
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+        const newScript = document.createElement('script')
+        const content = item.text || item.textContent || item.innerHTML || ""
+        Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+        newScript.appendChild(document.createTextNode(content))
+        item.parentNode.replaceChild(newScript, item)
+    })
+
+    GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+})
+
+document.addEventListener('pjax:error', (e) => {
+    if (e.request.status === 404) {
+        pjax.loadUrl('/404.html')
+    }
+})</script><!-- google adsense--><!-- search--><div id="algolia-search"><div class="search-dialog"><div class="algolia-navbar"><div class="search-dialog__title" id="algolia-search-title">搜索</div><div class="algolia-tips"><i class="solitude fab fa-algolia"></i><span class="algolia-tips-text">Algolia</span></div><span class="search-close-button"><i class="solitude fas fa-xmark"></i></span></div><div id="algolia-input-panel"><div id="algolia-search-input"></div></div><div id="search-results"><div id="algolia-hits"><a class="tag-list" href="javascript:void(0);" onclick="pjax.loadUrl('/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/')">个人博客</a><a class="tag-list" href="javascript:void(0);" onclick="pjax.loadUrl('/tags/%E5%BB%BA%E7%AB%99%E8%AE%B0%E5%BD%95/')">建站记录</a><a class="tag-list" href="javascript:void(0);" onclick="pjax.loadUrl('/tags/%E5%8E%86%E5%8F%B2/')">历史</a><a class="tag-list" href="javascript:void(0);" onclick="pjax.loadUrl('/tags/%E6%95%99%E7%A8%8B/')">教程</a></div></div><div id="algolia-tips"><div id="algolia-pagination"></div><div id="algolia-stats"></div></div></div><div id="search-mask"></div></div><script src="/js/search/algolia.js?v=3.0.19"></script><!-- music--><div class="needEndHide" id="nav-music"><div id="nav-music-hoverTips"><i class="music-control-btn fas fa-backward-step" id="music-prev" onclick="sco.musicSkipBack()"></i><i class="music-control-btn fas fa-pause" id="music-pause" onclick="sco.musicToggle()"></i><i class="music-control-btn fas fa-play" id="music-play" onclick="sco.musicToggle()"></i><i class="music-control-btn fas fa-forward-step" id="music-next" onclick="sco.musicSkipForward()"></i></div><meting-js id="33911782" server="netease" type="song" mutex="true" preload="none" theme="var(--efu-main)" data-lrctype="0" order="random" volume="0.8"></meting-js></div><!-- hexo injector body_end start --><script data-pjax="" src="https://unpkg.com/oh-my-live2d"></script><script>const oml2d = OML2D.loadOml2d({dockedPosition:"right",menus:{items:(defaultItems) => {
+  const keepIds = ['Rest'];
+  const result = defaultItems.filter(item => keepIds.includes(item.id));
+  result.push({
+    id: 'myGithub',
+    icon: 'my-github',
+    title: '我的GitHub',
+    onClick: () => window.open('https://github.com/yangle-q')
+  },
+  {
+    id: 'blog',
+    icon: 'jingyingying-blog',
+    title: '静莹莹的博客',
+    onClick: () => window.open('https://jingyingying.lemonstar.me')
+  },
+  {
+    id: 'kouzi',
+    icon: 'jingyingying-kouzi',
+    title: '和静莹莹在扣子聊天',
+    onClick: () => window.open('https://www.coze.cn/store/agent/7530885968761700394?bot_id=true')
+  },
+  {
+    id: 'telegram',
+    icon: 'jingyingying-telegram',
+    title: '来和静莹莹在Telegram聊天吧！',
+    onClick: () => window.open('https://t.me/jingyingying_bot')
+  });
+  return result;
+}
+},mobileDisplay:false,models:[{"path":"https://live2d.yoxo.top/model/dollsfrontline/kp31_310/normal/model.json","mobilePosition":[0,27],"mobileScale":0.1,"mobileStageStyle":{"width":180,"height":166},"motionPreloadStrategy":"IDLE","position":[-5,-6],"scale":0.09,"stageStyle":{"width":250,"height":400}}],parentElement:document.body,primaryColor:"var(--btn-bg)",sayHello:false,tips:{style: {"width":230,"height":120,"left":"calc(50% - 20px)","top":"-100px"},mobileStyle: {"width":180,"height":80,"left":"calc(50% - 30px)","top":"-100px"},idleTips:{interval:15000,message:["嗨！我是静莹莹！","欢迎来到我哥哥的小站！"]}}});</script><!-- hexo injector body_end end --></body></html>
+        <script>
+            const posts = ["/post/solitude-tabs/","/post/live2d-menu/","/post/telegram-bot/","/post/anniversary-summarize/","/post/AI-deployment/","/post/yosuganosora/","/post/imgbed-2/","/post/win-11-customization/","/post/onimai-figures/","/post/onimai-resources/","/post/Twikoo-email/","/post/onimai-twikoo/","/post/oyama-mahiro/","/post/huanbohai-2/","/post/huanbohai-1/","/post/password/","/post/jingyingying/","/post/solitude-sidebar/","/post/web-server/","/post/birthday2025/","/post/recent-update-2/","/post/imgbed/","/post/changsanjiao/","/post/recent-update-1/","/post/free-domain/","/post/markdown/","/post/henryviii/","/post/introduction/","/post/solitude-reinventing/","/post/vercel/","/post/why-we-do-this/","/post/establishment-of-the-site/"];
+            function toRandomPost() {
+                const randomPost = posts[Math.floor(Math.random() * posts.length)];
+                pjax.loadUrl(GLOBAL_CONFIG.root + randomPost);
+            }
+        </script>

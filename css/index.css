@@ -190,6 +190,10 @@ div.videos[col='4'] iframe {
 [data-theme="dark"] video {
   filter: brightness(0.7);
 }
+.article-container img.inline-img {
+  display: inline-block;
+  margin: 0;
+}
 .checkbox {
   display: flex;
   align-items: center;
