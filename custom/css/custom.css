@@ -13,6 +13,13 @@
   font-style: normal;
   font-display: swap !important;
 }
+@font-face {
+  font-family: 'GuanKiapTsingKhai';        
+  src: url(/custom/font/GuanKiapTsingKhai.ttf) format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap !important;
+}
 /* History */
 #aside-content .card-history .swiper-wrapper {
     flex-direction: column
